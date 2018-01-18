@@ -73,133 +73,92 @@ package OpenGL is
    -- Vectors and matrices --
    --------------------------
 
-   --  Components of all arrays should be aliased. It doesn't work for A2JS,
-   --  so declarations for native and WebGL platforms are little bit different.
+   type GLbyte_Vector_2 is array (Positive range 1 .. 2) of aliased GLbyte;
+   type GLbyte_Vector_3 is array (Positive range 1 .. 3) of aliased GLbyte;
+   type GLbyte_Vector_4 is array (Positive range 1 .. 4) of aliased GLbyte;
 
-   type GLbyte_Vector_2 is array (Positive range 1 .. 2) of GLbyte;
---   pragma JavaScript_Typed_Array (GLbyte_Vector_2);
-   type GLbyte_Vector_3 is array (Positive range 1 .. 3) of GLbyte;
---   pragma JavaScript_Typed_Array (GLbyte_Vector_3);
-   type GLbyte_Vector_4 is array (Positive range 1 .. 4) of GLbyte;
---   pragma JavaScript_Typed_Array (GLbyte_Vector_4);
+   type GLubyte_Vector_2 is array (Positive range 1 .. 2) of aliased GLubyte;
+   type GLubyte_Vector_3 is array (Positive range 1 .. 3) of aliased GLubyte;
+   type GLubyte_Vector_4 is array (Positive range 1 .. 4) of aliased GLubyte;
 
-   type GLubyte_Vector_2 is array (Positive range 1 .. 2) of GLubyte;
---   pragma JavaScript_Typed_Array (GLubyte_Vector_2);
-   type GLubyte_Vector_3 is array (Positive range 1 .. 3) of GLubyte;
---   pragma JavaScript_Typed_Array (GLubyte_Vector_3);
-   type GLubyte_Vector_4 is array (Positive range 1 .. 4) of GLubyte;
---   pragma JavaScript_Typed_Array (GLubyte_Vector_4);
+   type GLshort_Vector_2 is array (Positive range 1 .. 2) of aliased GLshort;
+   type GLshort_Vector_3 is array (Positive range 1 .. 3) of aliased GLshort;
+   type GLshort_Vector_4 is array (Positive range 1 .. 4) of aliased GLshort;
 
-   type GLshort_Vector_2 is array (Positive range 1 .. 2) of GLshort;
---   pragma JavaScript_Typed_Array (GLshort_Vector_2);
-   type GLshort_Vector_3 is array (Positive range 1 .. 3) of GLshort;
---   pragma JavaScript_Typed_Array (GLshort_Vector_3);
-   type GLshort_Vector_4 is array (Positive range 1 .. 4) of GLshort;
---   pragma JavaScript_Typed_Array (GLshort_Vector_4);
+   type GLushort_Vector_2 is array (Positive range 1 .. 2) of aliased GLushort;
+   type GLushort_Vector_3 is array (Positive range 1 .. 3) of aliased GLushort;
+   type GLushort_Vector_4 is array (Positive range 1 .. 4) of aliased GLushort;
 
-   type GLushort_Vector_2 is array (Positive range 1 .. 2) of GLushort;
---   pragma JavaScript_Typed_Array (GLushort_Vector_2);
-   type GLushort_Vector_3 is array (Positive range 1 .. 3) of GLushort;
---   pragma JavaScript_Typed_Array (GLushort_Vector_3);
-   type GLushort_Vector_4 is array (Positive range 1 .. 4) of GLushort;
---   pragma JavaScript_Typed_Array (GLushort_Vector_4);
+   type GLfixed_Vector_2 is array (Positive range 1 .. 2) of aliased GLfixed;
+   type GLfixed_Vector_3 is array (Positive range 1 .. 3) of aliased GLfixed;
+   type GLfixed_Vector_4 is array (Positive range 1 .. 4) of aliased GLfixed;
 
-   type GLfixed_Vector_2 is array (Positive range 1 .. 2) of GLfixed;
---   pragma JavaScript_Typed_Array (GLfixed_Vector_2);
-   type GLfixed_Vector_3 is array (Positive range 1 .. 3) of GLfixed;
---   pragma JavaScript_Typed_Array (GLfixed_Vector_3);
-   type GLfixed_Vector_4 is array (Positive range 1 .. 4) of GLfixed;
---   pragma JavaScript_Typed_Array (GLfixed_Vector_4);
-
-   type GLfloat_Vector_2 is array (Positive range 1 .. 2) of GLfloat;
---   pragma JavaScript_Typed_Array (GLfloat_Vector_2);
-   type GLfloat_Vector_3 is array (Positive range 1 .. 3) of GLfloat;
---   pragma JavaScript_Typed_Array (GLfloat_Vector_3);
-   type GLfloat_Vector_4 is array (Positive range 1 .. 4) of GLfloat;
---   pragma JavaScript_Typed_Array (GLfloat_Vector_4);
+   type GLfloat_Vector_2 is array (Positive range 1 .. 2) of aliased GLfloat;
+   type GLfloat_Vector_3 is array (Positive range 1 .. 3) of aliased GLfloat;
+   type GLfloat_Vector_4 is array (Positive range 1 .. 4) of aliased GLfloat;
 
    type GLbyte_Matrix_2x2 is
-     array (Positive range 1 .. 2, Positive range 1 .. 2) of GLbyte
+     array (Positive range 1 .. 2, Positive range 1 .. 2) of aliased GLbyte
        with Convention => Fortran;
---   pragma JavaScript_Typed_Array (GLbyte_Matrix_2x2);
    type GLbyte_Matrix_3x3 is
-     array (Positive range 1 .. 3, Positive range 1 .. 3) of GLbyte
+     array (Positive range 1 .. 3, Positive range 1 .. 3) of aliased GLbyte
        with Convention => Fortran;
---   pragma JavaScript_Typed_Array (GLbyte_Matrix_3x3);
    type GLbyte_Matrix_4x4 is
-     array (Positive range 1 .. 4, Positive range 1 .. 4) of GLbyte
+     array (Positive range 1 .. 4, Positive range 1 .. 4) of aliased GLbyte
        with Convention => Fortran;
---   pragma JavaScript_Typed_Array (GLbyte_Matrix_4x4);
 
    type GLubyte_Matrix_2x2 is
-     array (Positive range 1 .. 2, Positive range 1 .. 2) of GLubyte
+     array (Positive range 1 .. 2, Positive range 1 .. 2) of aliased GLubyte
        with Convention => Fortran;
---   pragma JavaScript_Typed_Array (GLubyte_Matrix_2x2);
    type GLubyte_Matrix_3x3 is
-     array (Positive range 1 .. 3, Positive range 1 .. 3) of GLubyte
+     array (Positive range 1 .. 3, Positive range 1 .. 3) of aliased GLubyte
        with Convention => Fortran;
---   pragma JavaScript_Typed_Array (GLubyte_Matrix_3x3);
    type GLubyte_Matrix_4x4 is
-     array (Positive range 1 .. 4, Positive range 1 .. 4) of GLubyte
+     array (Positive range 1 .. 4, Positive range 1 .. 4) of aliased GLubyte
        with Convention => Fortran;
---   pragma JavaScript_Typed_Array (GLubyte_Matrix_4x4);
 
    type GLshort_Matrix_2x2 is
-     array (Positive range 1 .. 2, Positive range 1 .. 2) of GLshort
+     array (Positive range 1 .. 2, Positive range 1 .. 2) of aliased GLshort
        with Convention => Fortran;
---   pragma JavaScript_Typed_Array (GLshort_Matrix_2x2);
    type GLshort_Matrix_3x3 is
-     array (Positive range 1 .. 3, Positive range 1 .. 3) of GLshort
+     array (Positive range 1 .. 3, Positive range 1 .. 3) of aliased GLshort
        with Convention => Fortran;
---   pragma JavaScript_Typed_Array (GLshort_Matrix_3x3);
    type GLshort_Matrix_4x4 is
-     array (Positive range 1 .. 4, Positive range 1 .. 4) of GLshort
+     array (Positive range 1 .. 4, Positive range 1 .. 4) of aliased GLshort
        with Convention => Fortran;
---   pragma JavaScript_Typed_Array (GLshort_Matrix_4x4);
 
    type GLushort_Matrix_2x2 is
-     array (Positive range 1 .. 2, Positive range 1 .. 2) of GLushort
+     array (Positive range 1 .. 2, Positive range 1 .. 2) of aliased GLushort
        with Convention => Fortran;
---   pragma JavaScript_Typed_Array (GLushort_Matrix_2x2);
    type GLushort_Matrix_3x3 is
-     array (Positive range 1 .. 3, Positive range 1 .. 3) of GLushort
+     array (Positive range 1 .. 3, Positive range 1 .. 3) of aliased GLushort
        with Convention => Fortran;
---   pragma JavaScript_Typed_Array (GLushort_Matrix_3x3);
    type GLushort_Matrix_4x4 is
-     array (Positive range 1 .. 4, Positive range 1 .. 4) of GLushort
+     array (Positive range 1 .. 4, Positive range 1 .. 4) of aliased GLushort
        with Convention => Fortran;
---   pragma JavaScript_Typed_Array (GLushort_Matrix_4x4);
 
    type GLfixed_Matrix_2x2 is
-     array (Positive range 1 .. 2, Positive range 1 .. 2) of GLfixed
+     array (Positive range 1 .. 2, Positive range 1 .. 2) of aliased GLfixed
        with Convention => Fortran;
---   pragma JavaScript_Typed_Array (GLfixed_Matrix_2x2);
    type GLfixed_Matrix_3x3 is
-     array (Positive range 1 .. 3, Positive range 1 .. 3) of GLfixed
+     array (Positive range 1 .. 3, Positive range 1 .. 3) of aliased GLfixed
        with Convention => Fortran;
---   pragma JavaScript_Typed_Array (GLfixed_Matrix_3x3);
    type GLfixed_Matrix_4x4 is
-     array (Positive range 1 .. 4, Positive range 1 .. 4) of GLfixed
+     array (Positive range 1 .. 4, Positive range 1 .. 4) of aliased GLfixed
        with Convention => Fortran;
---   pragma JavaScript_Typed_Array (GLfixed_Matrix_4x4);
 
    type GLfloat_Matrix_2x2 is
-     array (Positive range 1 .. 2, Positive range 1 .. 2) of GLfloat
+     array (Positive range 1 .. 2, Positive range 1 .. 2) of aliased GLfloat
        with Convention => Fortran;
---   pragma JavaScript_Typed_Array (GLfloat_Matrix_2x2);
    type GLfloat_Matrix_3x3 is
-     array (Positive range 1 .. 3, Positive range 1 .. 3) of GLfloat
+     array (Positive range 1 .. 3, Positive range 1 .. 3) of aliased GLfloat
        with Convention => Fortran;
---   pragma JavaScript_Typed_Array (GLfloat_Matrix_3x3);
    type GLfloat_Matrix_4x4 is
-     array (Positive range 1 .. 4) of GLfloat_Vector_4
+     array (Positive range 1 .. 4, Positive range 1 .. 4) of aliased GLfloat
        with Convention => Fortran;
---     array (Positive range 1 .. 4, Positive range 1 .. 4) of GLfloat
---       with Convention => Fortran;
---   pragma JavaScript_Typed_Array (GLfloat_Matrix_4x4);
 
    type GLubyte_Vector_4_Array is
-     array (Positive range <>) of GLubyte_Vector_4;
+     array (Positive range <>) of aliased GLubyte_Vector_4;
 
    --------------
    -- Bitfield --

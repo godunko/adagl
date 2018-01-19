@@ -37,45 +37,16 @@
 -- SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.             --
 --                                                                          --
 ------------------------------------------------------------------------------
-with "matreshka_league.gpr";
-with "matreshka_webapi.gpr";
 
 with "adagl_config.gpr";
+with "adagl.gpr";
 
-project AdaGL is
+project AdaGL_Examples is
 
-   Source_Dirs := ("../sources");
-
-   case AdaGL_Config.Target_Name is
-      when "javascript" =>
-         Source_Dirs := Source_Dirs & "../sources/webgl";
-
-      when others =>
-         Source_Dirs := Source_Dirs & "../sources/glew";
-   end case;
-
-   for Source_Dirs use Source_Dirs;
+   for Source_Dirs use ("../examples/pyramid");
    for Object_Dir use AdaGL_Config.Object_Dir;
+   for Main use ("pyramid");
 
    package Compiler renames AdaGL_Config.Compiler;
 
-   package Naming is
-      case AdaGL_Config.Target_Name is
-         when "javascript" =>
---            for Specification ("OpenGL") use "opengl__webgl.ads";
-
-         when others =>
-            for Specification ("OpenGL") use "opengl__native.ads";
-      end case;
-   end Naming;
-
-   package Linker is
-      case AdaGL_Config.Target_Name is
-         when "javascript" =>
-
-         when others =>
-            for Linker_Options use ("-lGLEW", "-lglfw", "-lGL");
-      end case;
-   end Linker;
-
-end AdaGL;
+end AdaGL_Examples;

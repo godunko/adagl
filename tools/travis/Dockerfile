@@ -10,7 +10,7 @@ RUN curl -o /etc/yum.repos.d/bintray-reznikmm-matreshka.repo \
  dnf --assumeyes install --repo bintray--reznikmm-matreshka matreshka-devel &&\
  dnf --assumeyes install --repo bintray--reznikmm-matreshka libgnatutil &&\
  dnf --assumeyes install --repo bintray--reznikmm-matreshka asis &&\
- dnf --assumeyes install --repo bintray--reznikmm-matreshka matreshka-a2sj &&\
+ dnf --assumeyes install --repo bintray--reznikmm-matreshka matreshka-a2js &&\
 useradd max
 COPY adagl.tar.gz /src/
 

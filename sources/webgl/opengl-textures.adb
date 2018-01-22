@@ -137,7 +137,7 @@ package body OpenGL.Textures is
       Self.Context.Delete_Texture (Self.Texture);
 
       Self.Texture := null;
-      Self.Context     := null;
+      Self.Context := null;
    end Delete;
 
    -------------

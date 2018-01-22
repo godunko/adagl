@@ -154,9 +154,10 @@ package body OpenGL.Generic_Buffers is
    ------------
 
    function Stride return System.Storage_Elements.Storage_Count is
+      use type System.Storage_Elements.Storage_Offset;
+
    begin
---      return Element_Array'Component_Size / System.Storage_Unit;
-      return 0;
+      return Element_Array'Component_Size / System.Storage_Unit;
    end Stride;
 
 end OpenGL.Generic_Buffers;

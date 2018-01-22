@@ -37,19 +37,41 @@
 -- SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.             --
 --                                                                          --
 ------------------------------------------------------------------------------
+with OpenGL.Generic_Buffers;
 with OpenGL.Programs;
 
 package Pyramid.Programs is
+
+   type Vertex_Data is record
+      VP : OpenGL.Glfloat_Vector_3;
+      TC : OpenGL.Glfloat_Vector_2;
+   end record;
+
+   type Vertex_Data_Array is array (Positive range <>) of Vertex_Data;
+
+   package Vertex_Data_Buffers is
+     new OpenGL.Generic_Buffers (Vertex_Data, Positive, Vertex_Data_Array);
 
    type Pyramid_Program is new OpenGL.Programs.OpenGL_Program with private;
 
    procedure Initialize (Self : in out Pyramid_Program'Class);
    --  Initialize program object.
 
+   procedure Set_Vertex_Data_Buffer
+    (Self   : in out Pyramid_Program'Class;
+     Buffer : Vertex_Data_Buffers.OpenGL_Buffer'Class);
+   --  Sets buffer with data to draw.
+
 private
 
    type Pyramid_Program is new OpenGL.Programs.OpenGL_Program with record
-      null;
+      GS : OpenGL.Uniform_Location;
+      VP : OpenGL.Attribute_Location;
+      TC : OpenGL.Attribute_Location;
    end record;
+
+   overriding function Link (Self : in out Pyramid_Program) return Boolean;
+   --  Executed at link time. Link shaders into program and extracts locations
+   --  of attributes.
 
 end Pyramid.Programs;

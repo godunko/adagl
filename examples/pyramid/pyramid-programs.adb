@@ -64,6 +64,13 @@ package body Pyramid.Programs is
      "  frag_colour = texture2D(gSampler, TexCoord0.xy) +vec4(0.0, 0.0, 0.2, 0.2);" &
      "}";
 
+   GS : constant League.Strings.Universal_String :=
+     League.Strings.To_Universal_String ("gSampler");
+   VP : constant League.Strings.Universal_String :=
+     League.Strings.To_Universal_String ("vp");
+   TC : constant League.Strings.Universal_String :=
+     League.Strings.To_Universal_String ("tc");
+
    ----------------
    -- Initialize --
    ----------------
@@ -73,5 +80,53 @@ package body Pyramid.Programs is
       Self.Add_Shader_From_Source_Code (OpenGL.Vertex, Text_V);
       Self.Add_Shader_From_Source_Code (OpenGL.Fragment, Text_F);
    end Initialize;
+
+   ----------
+   -- Link --
+   ----------
+
+   overriding function Link (Self : in out Pyramid_Program) return Boolean is
+   begin
+      if not OpenGL.Programs.OpenGL_Program (Self).Link then
+         return False;
+      end if;
+
+      Self.GS := Self.Uniform_Location (GS);
+      Self.VP := Self.Attribute_Location (VP);
+      Self.TC := Self.Attribute_Location (TC);
+
+      Self.Enable_Attribute_Array (Self.VP);
+      Self.Enable_Attribute_Array (Self.TC);
+
+      Self.Set_Uniform_Value (Self.GS, 0);
+
+      return True;
+   end Link;
+
+   ----------------------------
+   -- Set_Vertex_Data_Buffer --
+   ----------------------------
+
+   procedure Set_Vertex_Data_Buffer
+    (Self   : in out Pyramid_Program'Class;
+     Buffer : Vertex_Data_Buffers.OpenGL_Buffer'Class)
+   is
+      Dummy : Vertex_Data;
+
+   begin
+      Self.Set_Attribute_Buffer
+       (Location   => Self.VP,
+        Data_Type  => OpenGL.GL_FLOAT,
+        Tuple_Size => Dummy.VP'Length,
+        Offset     => Dummy.VP'Position,
+        Stride     => Vertex_Data_Buffers.Stride);
+
+      Self.Set_Attribute_Buffer
+       (Location   => Self.TC,
+        Data_Type  => OpenGL.GL_FLOAT,
+        Tuple_Size => Dummy.TC'Length,
+        Offset     => Dummy.TC'Position,
+        Stride     => Vertex_Data_Buffers.Stride);
+   end Set_Vertex_Data_Buffer;
 
 end Pyramid.Programs;

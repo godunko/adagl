@@ -357,7 +357,7 @@ package OpenGL.Functions is
    --  Some functions are available as subprograms for objects of tagged
    --  types from other packages:
    --
-   --  OpenGL.Framebuffer:
+   --  OpenGL.Framebuffers:
    --   - glBindFramebuffer
    --   - glDeleteFramebuffers
    --   - glFramebufferRenderbuffer

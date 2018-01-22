@@ -2,7 +2,7 @@
 --                                                                          --
 --                       Ada binding for OpenGL/WebGL                       --
 --                                                                          --
---                        Runtime Library Component                         --
+--                            Examples Component                            --
 --                                                                          --
 ------------------------------------------------------------------------------
 --                                                                          --

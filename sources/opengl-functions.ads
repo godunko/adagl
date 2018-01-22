@@ -78,14 +78,11 @@ package OpenGL.Functions is
 --   GL_APICALL void GL_APIENTRY glClearDepthf (GLfloat d);
 --   GL_APICALL void GL_APIENTRY glClearStencil (GLint s);
 --   GL_APICALL void GL_APIENTRY glColorMask (GLboolean red, GLboolean green, GLboolean blue, GLboolean alpha);
---   GL_APICALL void GL_APIENTRY glCompileShader (GLuint shader);
 --   GL_APICALL void GL_APIENTRY glCompressedTexImage2D (GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLint border, GLsizei imageSize, const void *data);
 --   GL_APICALL void GL_APIENTRY glCompressedTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLsizei imageSize, const void *data);
 --   GL_APICALL void GL_APIENTRY glCopyTexImage2D (GLenum target, GLint level, GLenum internalformat, GLint x, GLint y, GLsizei width, GLsizei height, GLint border);
 --   GL_APICALL void GL_APIENTRY glCopyTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint x, GLint y, GLsizei width, GLsizei height);
---   GL_APICALL GLuint GL_APIENTRY glCreateShader (GLenum type);
 --   GL_APICALL void GL_APIENTRY glCullFace (GLenum mode);
---   GL_APICALL void GL_APIENTRY glDeleteShader (GLuint shader);
 --   GL_APICALL void GL_APIENTRY glDeleteTextures (GLsizei n, const GLuint *textures);
 --   GL_APICALL void GL_APIENTRY glDepthFunc (GLenum func);
 --   GL_APICALL void GL_APIENTRY glDepthMask (GLboolean flag);
@@ -126,8 +123,6 @@ package OpenGL.Functions is
 --   GL_APICALL void GL_APIENTRY glGetIntegerv (GLenum pname, GLint *data);
 --   GL_APICALL void GL_APIENTRY glGetProgramInfoLog (GLuint program, GLsizei bufSize, GLsizei *length, GLchar *infoLog);
 --   GL_APICALL void GL_APIENTRY glGetRenderbufferParameteriv (GLenum target, GLenum pname, GLint *params);
---   GL_APICALL void GL_APIENTRY glGetShaderiv (GLuint shader, GLenum pname, GLint *params);
---   GL_APICALL void GL_APIENTRY glGetShaderInfoLog (GLuint shader, GLsizei bufSize, GLsizei *length, GLchar *infoLog);
 --   GL_APICALL void GL_APIENTRY glGetShaderPrecisionFormat (GLenum shadertype, GLenum precisiontype, GLint *range, GLint *precision);
 --   GL_APICALL void GL_APIENTRY glGetShaderSource (GLuint shader, GLsizei bufSize, GLsizei *length, GLchar *source);
 --   GL_APICALL const GLubyte *GL_APIENTRY glGetString (GLenum name);
@@ -153,7 +148,6 @@ package OpenGL.Functions is
 --   GL_APICALL void GL_APIENTRY glSampleCoverage (GLfloat value, GLboolean invert);
 --   GL_APICALL void GL_APIENTRY glScissor (GLint x, GLint y, GLsizei width, GLsizei height);
 --   GL_APICALL void GL_APIENTRY glShaderBinary (GLsizei count, const GLuint *shaders, GLenum binaryformat, const void *binary, GLsizei length);
---   GL_APICALL void GL_APIENTRY glShaderSource (GLuint shader, GLsizei count, const GLchar *const*string, const GLint *length);
 --   GL_APICALL void GL_APIENTRY glStencilFunc (GLenum func, GLint ref, GLuint mask);
 --   GL_APICALL void GL_APIENTRY glStencilFuncSeparate (GLenum face, GLenum func, GLint ref, GLuint mask);
 --   GL_APICALL void GL_APIENTRY glStencilMask (GLuint mask);
@@ -199,14 +193,11 @@ package OpenGL.Functions is
 --            <command name="glClearDepthf"/>
 --            <command name="glClearStencil"/>
 --            <command name="glColorMask"/>
---            <command name="glCompileShader"/>
 --            <command name="glCompressedTexImage2D"/>
 --            <command name="glCompressedTexSubImage2D"/>
 --            <command name="glCopyTexImage2D"/>
 --            <command name="glCopyTexSubImage2D"/>
---            <command name="glCreateShader"/>
 --            <command name="glCullFace"/>
---            <command name="glDeleteShader"/>
 --            <command name="glDeleteTextures"/>
 --            <command name="glDepthFunc"/>
 --            <command name="glDepthMask"/>
@@ -230,8 +221,6 @@ package OpenGL.Functions is
 --            <command name="glGetIntegerv"/>
 --            <command name="glGetProgramInfoLog"/>
 --            <command name="glGetRenderbufferParameteriv"/>
---            <command name="glGetShaderiv"/>
---            <command name="glGetShaderInfoLog"/>
 --            <command name="glGetShaderPrecisionFormat"/>
 --            <command name="glGetShaderSource"/>
 --            <command name="glGetString"/>
@@ -257,7 +246,6 @@ package OpenGL.Functions is
 --            <command name="glSampleCoverage"/>
 --            <command name="glScissor"/>
 --            <command name="glShaderBinary"/>
---            <command name="glShaderSource"/>
 --            <command name="glStencilFunc"/>
 --            <command name="glStencilFuncSeparate"/>
 --            <command name="glStencilMask"/>
@@ -334,5 +322,13 @@ package OpenGL.Functions is
    --   - glDeleteRenderbuffers
    --   - glGenRenderbuffers
    --   - glRenderbufferStorage
+   --
+   --  OpenGL.Shaders:
+   --   - glCompileShader
+   --   - glCreateShader
+   --   - glDeleteShader
+   --   - glGetShaderInfoLog
+   --   - glGetShaderiv
+   --   - glShaderSource
 
 end OpenGL.Functions;

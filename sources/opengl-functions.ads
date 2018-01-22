@@ -47,7 +47,6 @@ package OpenGL.Functions is
 --   GL_APICALL void GL_APIENTRY glActiveTexture (GLenum texture);
 --   GL_APICALL void GL_APIENTRY glAttachShader (GLuint program, GLuint shader);
 --   GL_APICALL void GL_APIENTRY glBindAttribLocation (GLuint program, GLuint index, const GLchar *name);
---   GL_APICALL void GL_APIENTRY glBindBuffer (GLenum target, GLuint buffer);
 --   GL_APICALL void GL_APIENTRY glBindRenderbuffer (GLenum target, GLuint renderbuffer);
 --   GL_APICALL void GL_APIENTRY glBindTexture (GLenum target, GLuint texture);
 --   GL_APICALL void GL_APIENTRY glBlendColor (GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);
@@ -60,7 +59,6 @@ package OpenGL.Functions is
      Destination_Factor : OpenGL.GLenum) is abstract;
 
 --   GL_APICALL void GL_APIENTRY glBlendFuncSeparate (GLenum sfactorRGB, GLenum dfactorRGB, GLenum sfactorAlpha, GLenum dfactorAlpha);
---   GL_APICALL void GL_APIENTRY glBufferData (GLenum target, GLsizeiptr size, const void *data, GLenum usage);
 --   GL_APICALL void GL_APIENTRY glBufferSubData (GLenum target, GLintptr offset, GLsizeiptr size, const void *data);
 --   GL_APICALL GLenum GL_APIENTRY glCheckFramebufferStatus (GLenum target);
 
@@ -90,7 +88,6 @@ package OpenGL.Functions is
 --   GL_APICALL GLuint GL_APIENTRY glCreateProgram (void);
 --   GL_APICALL GLuint GL_APIENTRY glCreateShader (GLenum type);
 --   GL_APICALL void GL_APIENTRY glCullFace (GLenum mode);
---   GL_APICALL void GL_APIENTRY glDeleteBuffers (GLsizei n, const GLuint *buffers);
 --   GL_APICALL void GL_APIENTRY glDeleteProgram (GLuint program);
 --   GL_APICALL void GL_APIENTRY glDeleteRenderbuffers (GLsizei n, const GLuint *renderbuffers);
 --   GL_APICALL void GL_APIENTRY glDeleteShader (GLuint shader);
@@ -125,7 +122,6 @@ package OpenGL.Functions is
    not overriding procedure Flush (Self : OpenGL_Functions) is abstract;
 
 --   GL_APICALL void GL_APIENTRY glFrontFace (GLenum mode);
---   GL_APICALL void GL_APIENTRY glGenBuffers (GLsizei n, GLuint *buffers);
 --   GL_APICALL void GL_APIENTRY glGenerateMipmap (GLenum target);
 --   GL_APICALL void GL_APIENTRY glGenRenderbuffers (GLsizei n, GLuint *renderbuffers);
 --   GL_APICALL void GL_APIENTRY glGenTextures (GLsizei n, GLuint *textures);
@@ -226,14 +222,12 @@ package OpenGL.Functions is
 --            <command name="glActiveTexture"/>
 --            <command name="glAttachShader"/>
 --            <command name="glBindAttribLocation"/>
---            <command name="glBindBuffer"/>
 --            <command name="glBindRenderbuffer"/>
 --            <command name="glBindTexture"/>
 --            <command name="glBlendColor"/>
 --            <command name="glBlendEquation"/>
 --            <command name="glBlendEquationSeparate"/>
 --            <command name="glBlendFuncSeparate"/>
---            <command name="glBufferData"/>
 --            <command name="glBufferSubData"/>
 --            <command name="glCheckFramebufferStatus"/>
 --            <command name="glClearDepthf"/>
@@ -247,7 +241,6 @@ package OpenGL.Functions is
 --            <command name="glCreateProgram"/>
 --            <command name="glCreateShader"/>
 --            <command name="glCullFace"/>
---            <command name="glDeleteBuffers"/>
 --            <command name="glDeleteProgram"/>
 --            <command name="glDeleteRenderbuffers"/>
 --            <command name="glDeleteShader"/>
@@ -263,7 +256,6 @@ package OpenGL.Functions is
 --            <command name="glFinish"/>
 --            <command name="glFlush"/>
 --            <command name="glFrontFace"/>
---            <command name="glGenBuffers"/>
 --            <command name="glGenerateMipmap"/>
 --            <command name="glGenRenderbuffers"/>
 --            <command name="glGenTextures"/>
@@ -364,5 +356,11 @@ package OpenGL.Functions is
    --   - glFramebufferTexture2D
    --   - glGenFramebuffers
    --   - glReadPixels
+   --
+   --  OpenGL.Generic_Buffers:
+   --   - glBindBuffer
+   --   - glBufferData
+   --   - glDeleteBuffers
+   --   - glGenBuffers
 
 end OpenGL.Functions;

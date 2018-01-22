@@ -46,7 +46,6 @@ package OpenGL.Functions is
 
 --   GL_APICALL void GL_APIENTRY glActiveTexture (GLenum texture);
 --   GL_APICALL void GL_APIENTRY glBindAttribLocation (GLuint program, GLuint index, const GLchar *name);
---   GL_APICALL void GL_APIENTRY glBindRenderbuffer (GLenum target, GLuint renderbuffer);
 --   GL_APICALL void GL_APIENTRY glBindTexture (GLenum target, GLuint texture);
 --   GL_APICALL void GL_APIENTRY glBlendColor (GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);
 --   GL_APICALL void GL_APIENTRY glBlendEquation (GLenum mode);
@@ -86,7 +85,6 @@ package OpenGL.Functions is
 --   GL_APICALL void GL_APIENTRY glCopyTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint x, GLint y, GLsizei width, GLsizei height);
 --   GL_APICALL GLuint GL_APIENTRY glCreateShader (GLenum type);
 --   GL_APICALL void GL_APIENTRY glCullFace (GLenum mode);
---   GL_APICALL void GL_APIENTRY glDeleteRenderbuffers (GLsizei n, const GLuint *renderbuffers);
 --   GL_APICALL void GL_APIENTRY glDeleteShader (GLuint shader);
 --   GL_APICALL void GL_APIENTRY glDeleteTextures (GLsizei n, const GLuint *textures);
 --   GL_APICALL void GL_APIENTRY glDepthFunc (GLenum func);
@@ -116,7 +114,6 @@ package OpenGL.Functions is
 
 --   GL_APICALL void GL_APIENTRY glFrontFace (GLenum mode);
 --   GL_APICALL void GL_APIENTRY glGenerateMipmap (GLenum target);
---   GL_APICALL void GL_APIENTRY glGenRenderbuffers (GLsizei n, GLuint *renderbuffers);
 --   GL_APICALL void GL_APIENTRY glGenTextures (GLsizei n, GLuint *textures);
 --   GL_APICALL void GL_APIENTRY glGetActiveAttrib (GLuint program, GLuint index, GLsizei bufSize, GLsizei *length, GLint *size, GLenum *type, GLchar *name);
 --   GL_APICALL void GL_APIENTRY glGetActiveUniform (GLuint program, GLuint index, GLsizei bufSize, GLsizei *length, GLint *size, GLenum *type, GLchar *name);
@@ -153,7 +150,6 @@ package OpenGL.Functions is
 --   GL_APICALL void GL_APIENTRY glPixelStorei (GLenum pname, GLint param);
 --   GL_APICALL void GL_APIENTRY glPolygonOffset (GLfloat factor, GLfloat units);
 --   GL_APICALL void GL_APIENTRY glReleaseShaderCompiler (void);
---   GL_APICALL void GL_APIENTRY glRenderbufferStorage (GLenum target, GLenum internalformat, GLsizei width, GLsizei height);
 --   GL_APICALL void GL_APIENTRY glSampleCoverage (GLfloat value, GLboolean invert);
 --   GL_APICALL void GL_APIENTRY glScissor (GLint x, GLint y, GLsizei width, GLsizei height);
 --   GL_APICALL void GL_APIENTRY glShaderBinary (GLsizei count, const GLuint *shaders, GLenum binaryformat, const void *binary, GLsizei length);
@@ -193,7 +189,6 @@ package OpenGL.Functions is
 
 --            <command name="glActiveTexture"/>
 --            <command name="glBindAttribLocation"/>
---            <command name="glBindRenderbuffer"/>
 --            <command name="glBindTexture"/>
 --            <command name="glBlendColor"/>
 --            <command name="glBlendEquation"/>
@@ -211,7 +206,6 @@ package OpenGL.Functions is
 --            <command name="glCopyTexSubImage2D"/>
 --            <command name="glCreateShader"/>
 --            <command name="glCullFace"/>
---            <command name="glDeleteRenderbuffers"/>
 --            <command name="glDeleteShader"/>
 --            <command name="glDeleteTextures"/>
 --            <command name="glDepthFunc"/>
@@ -224,7 +218,6 @@ package OpenGL.Functions is
 --            <command name="glFlush"/>
 --            <command name="glFrontFace"/>
 --            <command name="glGenerateMipmap"/>
---            <command name="glGenRenderbuffers"/>
 --            <command name="glGenTextures"/>
 --            <command name="glGetActiveAttrib"/>
 --            <command name="glGetActiveUniform"/>
@@ -261,7 +254,6 @@ package OpenGL.Functions is
 --            <command name="glPixelStorei"/>
 --            <command name="glPolygonOffset"/>
 --            <command name="glReleaseShaderCompiler"/>
---            <command name="glRenderbufferStorage"/>
 --            <command name="glSampleCoverage"/>
 --            <command name="glScissor"/>
 --            <command name="glShaderBinary"/>
@@ -336,5 +328,11 @@ package OpenGL.Functions is
    --   - glVertexAttrib4f
    --   - glVertexAttrib4fv
    --   - glVertexAttribPointer
+   --
+   --  OpenGL.Renderbuffers:
+   --   - glBindRenderbuffer
+   --   - glDeleteRenderbuffers
+   --   - glGenRenderbuffers
+   --   - glRenderbufferStorage
 
 end OpenGL.Functions;

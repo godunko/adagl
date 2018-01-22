@@ -50,7 +50,7 @@ with OpenGL.Programs;
 with OpenGL.Shaders;
 with OpenGL.Textures;
 
-procedure Pyramid is
+procedure Pyramid.Driver is
    use type OpenGL.GLfloat;
    use type League.Strings.Universal_String;
 
@@ -148,4 +148,4 @@ begin
       end loop;
    end;
 
-end Pyramid;
+end Pyramid.Driver;

@@ -2,11 +2,11 @@
 --                                                                          --
 --                       Ada binding for OpenGL/WebGL                       --
 --                                                                          --
---                        Runtime Library Component                         --
+--                            Examples Component                            --
 --                                                                          --
 ------------------------------------------------------------------------------
 --                                                                          --
--- Copyright © 2016-2018, Vadim Godunko <vgodunko@gmail.com>                --
+-- Copyright © 2018, Vadim Godunko <vgodunko@gmail.com>                     --
 -- All rights reserved.                                                     --
 --                                                                          --
 -- Redistribution and use in source and binary forms, with or without       --
@@ -38,21 +38,8 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 
-with "adagl_config.gpr";
-with "adagl.gpr";
+package Pyramid is
 
-project AdaGL_Examples is
+   pragma Pure;
 
-   for Source_Dirs use ("../examples/pyramid");
-   for Object_Dir use AdaGL_Config.Object_Dir;
-   for Main use ("pyramid-driver.adb");
-
-   package Compiler renames AdaGL_Config.Compiler;
-
-   package Builder is
-
-      for Executable ("pyramid-driver.adb") use "pyramid";
-
-   end Builder;
-
-end AdaGL_Examples;
+end Pyramid;

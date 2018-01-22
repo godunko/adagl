@@ -46,7 +46,6 @@ package OpenGL.Functions is
 
 --   GL_APICALL void GL_APIENTRY glActiveTexture (GLenum texture);
 --   GL_APICALL void GL_APIENTRY glBindAttribLocation (GLuint program, GLuint index, const GLchar *name);
---   GL_APICALL void GL_APIENTRY glBindTexture (GLenum target, GLuint texture);
 --   GL_APICALL void GL_APIENTRY glBlendColor (GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);
 --   GL_APICALL void GL_APIENTRY glBlendEquation (GLenum mode);
 --   GL_APICALL void GL_APIENTRY glBlendEquationSeparate (GLenum modeRGB, GLenum modeAlpha);
@@ -83,7 +82,6 @@ package OpenGL.Functions is
 --   GL_APICALL void GL_APIENTRY glCopyTexImage2D (GLenum target, GLint level, GLenum internalformat, GLint x, GLint y, GLsizei width, GLsizei height, GLint border);
 --   GL_APICALL void GL_APIENTRY glCopyTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint x, GLint y, GLsizei width, GLsizei height);
 --   GL_APICALL void GL_APIENTRY glCullFace (GLenum mode);
---   GL_APICALL void GL_APIENTRY glDeleteTextures (GLsizei n, const GLuint *textures);
 --   GL_APICALL void GL_APIENTRY glDepthFunc (GLenum func);
 --   GL_APICALL void GL_APIENTRY glDepthMask (GLboolean flag);
 --   GL_APICALL void GL_APIENTRY glDepthRangef (GLfloat n, GLfloat f);
@@ -111,7 +109,6 @@ package OpenGL.Functions is
 
 --   GL_APICALL void GL_APIENTRY glFrontFace (GLenum mode);
 --   GL_APICALL void GL_APIENTRY glGenerateMipmap (GLenum target);
---   GL_APICALL void GL_APIENTRY glGenTextures (GLsizei n, GLuint *textures);
 --   GL_APICALL void GL_APIENTRY glGetActiveAttrib (GLuint program, GLuint index, GLsizei bufSize, GLsizei *length, GLint *size, GLenum *type, GLchar *name);
 --   GL_APICALL void GL_APIENTRY glGetActiveUniform (GLuint program, GLuint index, GLsizei bufSize, GLsizei *length, GLint *size, GLenum *type, GLchar *name);
 --   GL_APICALL void GL_APIENTRY glGetAttachedShaders (GLuint program, GLsizei maxCount, GLsizei *count, GLuint *shaders);
@@ -154,10 +151,8 @@ package OpenGL.Functions is
 --   GL_APICALL void GL_APIENTRY glStencilMaskSeparate (GLenum face, GLuint mask);
 --   GL_APICALL void GL_APIENTRY glStencilOp (GLenum fail, GLenum zfail, GLenum zpass);
 --   GL_APICALL void GL_APIENTRY glStencilOpSeparate (GLenum face, GLenum sfail, GLenum dpfail, GLenum dppass);
---   GL_APICALL void GL_APIENTRY glTexImage2D (GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const void *pixels);
 --   GL_APICALL void GL_APIENTRY glTexParameterf (GLenum target, GLenum pname, GLfloat param);
 --   GL_APICALL void GL_APIENTRY glTexParameterfv (GLenum target, GLenum pname, const GLfloat *params);
---   GL_APICALL void GL_APIENTRY glTexParameteri (GLenum target, GLenum pname, GLint param);
 --   GL_APICALL void GL_APIENTRY glTexParameteriv (GLenum target, GLenum pname, const GLint *params);
 --   GL_APICALL void GL_APIENTRY glTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const void *pixels);
 --   GL_APICALL void GL_APIENTRY glUniform1fv (GLint location, GLsizei count, const GLfloat *value);
@@ -183,7 +178,6 @@ package OpenGL.Functions is
 
 --            <command name="glActiveTexture"/>
 --            <command name="glBindAttribLocation"/>
---            <command name="glBindTexture"/>
 --            <command name="glBlendColor"/>
 --            <command name="glBlendEquation"/>
 --            <command name="glBlendEquationSeparate"/>
@@ -198,7 +192,6 @@ package OpenGL.Functions is
 --            <command name="glCopyTexImage2D"/>
 --            <command name="glCopyTexSubImage2D"/>
 --            <command name="glCullFace"/>
---            <command name="glDeleteTextures"/>
 --            <command name="glDepthFunc"/>
 --            <command name="glDepthMask"/>
 --            <command name="glDepthRangef"/>
@@ -209,7 +202,6 @@ package OpenGL.Functions is
 --            <command name="glFlush"/>
 --            <command name="glFrontFace"/>
 --            <command name="glGenerateMipmap"/>
---            <command name="glGenTextures"/>
 --            <command name="glGetActiveAttrib"/>
 --            <command name="glGetActiveUniform"/>
 --            <command name="glGetAttachedShaders"/>
@@ -252,10 +244,8 @@ package OpenGL.Functions is
 --            <command name="glStencilMaskSeparate"/>
 --            <command name="glStencilOp"/>
 --            <command name="glStencilOpSeparate"/>
---            <command name="glTexImage2D"/>
 --            <command name="glTexParameterf"/>
 --            <command name="glTexParameterfv"/>
---            <command name="glTexParameteri"/>
 --            <command name="glTexParameteriv"/>
 --            <command name="glTexSubImage2D"/>
 --            <command name="glUniform1fv"/>
@@ -330,5 +320,12 @@ package OpenGL.Functions is
    --   - glGetShaderInfoLog
    --   - glGetShaderiv
    --   - glShaderSource
+   --
+   --  OpenGL.Textures:
+   --   - glBindTexture
+   --   - glDeleteTextures
+   --   - glGenTextures
+   --   - glTexImage2D
+   --   - glTexParameteri
 
 end OpenGL.Functions;

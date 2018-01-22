@@ -62,7 +62,7 @@ project AdaGL is
    package Naming is
       case AdaGL_Config.Target_Name is
          when "javascript" =>
---            for Specification ("OpenGL") use "opengl__webgl.ads";
+            for Specification ("OpenGL") use "opengl__webgl.ads";
 
          when others =>
             for Specification ("OpenGL") use "opengl__native.ads";

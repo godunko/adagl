@@ -45,7 +45,6 @@ package OpenGL.Functions is
    type OpenGL_Functions is limited interface;
 
 --   GL_APICALL void GL_APIENTRY glActiveTexture (GLenum texture);
---   GL_APICALL void GL_APIENTRY glAttachShader (GLuint program, GLuint shader);
 --   GL_APICALL void GL_APIENTRY glBindAttribLocation (GLuint program, GLuint index, const GLchar *name);
 --   GL_APICALL void GL_APIENTRY glBindRenderbuffer (GLenum target, GLuint renderbuffer);
 --   GL_APICALL void GL_APIENTRY glBindTexture (GLenum target, GLuint texture);
@@ -85,10 +84,8 @@ package OpenGL.Functions is
 --   GL_APICALL void GL_APIENTRY glCompressedTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLsizei imageSize, const void *data);
 --   GL_APICALL void GL_APIENTRY glCopyTexImage2D (GLenum target, GLint level, GLenum internalformat, GLint x, GLint y, GLsizei width, GLsizei height, GLint border);
 --   GL_APICALL void GL_APIENTRY glCopyTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint x, GLint y, GLsizei width, GLsizei height);
---   GL_APICALL GLuint GL_APIENTRY glCreateProgram (void);
 --   GL_APICALL GLuint GL_APIENTRY glCreateShader (GLenum type);
 --   GL_APICALL void GL_APIENTRY glCullFace (GLenum mode);
---   GL_APICALL void GL_APIENTRY glDeleteProgram (GLuint program);
 --   GL_APICALL void GL_APIENTRY glDeleteRenderbuffers (GLsizei n, const GLuint *renderbuffers);
 --   GL_APICALL void GL_APIENTRY glDeleteShader (GLuint shader);
 --   GL_APICALL void GL_APIENTRY glDeleteTextures (GLsizei n, const GLuint *textures);
@@ -100,8 +97,6 @@ package OpenGL.Functions is
    not overriding procedure Disable
     (Self       : OpenGL_Functions;
      Capability : OpenGL.GLenum) is abstract;
-
---   GL_APICALL void GL_APIENTRY glDisableVertexAttribArray (GLuint index);
 
    not overriding procedure Draw_Arrays
     (Self  : OpenGL_Functions;
@@ -115,8 +110,6 @@ package OpenGL.Functions is
     (Self       : OpenGL_Functions;
      Capability : OpenGL.GLenum) is abstract;
 
---   GL_APICALL void GL_APIENTRY glEnableVertexAttribArray (GLuint index);
-
    not overriding procedure Finish (Self : OpenGL_Functions) is abstract;
 
    not overriding procedure Flush (Self : OpenGL_Functions) is abstract;
@@ -128,14 +121,12 @@ package OpenGL.Functions is
 --   GL_APICALL void GL_APIENTRY glGetActiveAttrib (GLuint program, GLuint index, GLsizei bufSize, GLsizei *length, GLint *size, GLenum *type, GLchar *name);
 --   GL_APICALL void GL_APIENTRY glGetActiveUniform (GLuint program, GLuint index, GLsizei bufSize, GLsizei *length, GLint *size, GLenum *type, GLchar *name);
 --   GL_APICALL void GL_APIENTRY glGetAttachedShaders (GLuint program, GLsizei maxCount, GLsizei *count, GLuint *shaders);
---   GL_APICALL GLint GL_APIENTRY glGetAttribLocation (GLuint program, const GLchar *name);
 --   GL_APICALL void GL_APIENTRY glGetBooleanv (GLenum pname, GLboolean *data);
 --   GL_APICALL void GL_APIENTRY glGetBufferParameteriv (GLenum target, GLenum pname, GLint *params);
 --   GL_APICALL GLenum GL_APIENTRY glGetError (void);
 --   GL_APICALL void GL_APIENTRY glGetFloatv (GLenum pname, GLfloat *data);
 --   GL_APICALL void GL_APIENTRY glGetFramebufferAttachmentParameteriv (GLenum target, GLenum attachment, GLenum pname, GLint *params);
 --   GL_APICALL void GL_APIENTRY glGetIntegerv (GLenum pname, GLint *data);
---   GL_APICALL void GL_APIENTRY glGetProgramiv (GLuint program, GLenum pname, GLint *params);
 --   GL_APICALL void GL_APIENTRY glGetProgramInfoLog (GLuint program, GLsizei bufSize, GLsizei *length, GLchar *infoLog);
 --   GL_APICALL void GL_APIENTRY glGetRenderbufferParameteriv (GLenum target, GLenum pname, GLint *params);
 --   GL_APICALL void GL_APIENTRY glGetShaderiv (GLuint shader, GLenum pname, GLint *params);
@@ -147,7 +138,6 @@ package OpenGL.Functions is
 --   GL_APICALL void GL_APIENTRY glGetTexParameteriv (GLenum target, GLenum pname, GLint *params);
 --   GL_APICALL void GL_APIENTRY glGetUniformfv (GLuint program, GLint location, GLfloat *params);
 --   GL_APICALL void GL_APIENTRY glGetUniformiv (GLuint program, GLint location, GLint *params);
---   GL_APICALL GLint GL_APIENTRY glGetUniformLocation (GLuint program, const GLchar *name);
 --   GL_APICALL void GL_APIENTRY glGetVertexAttribfv (GLuint index, GLenum pname, GLfloat *params);
 --   GL_APICALL void GL_APIENTRY glGetVertexAttribiv (GLuint index, GLenum pname, GLint *params);
 --   GL_APICALL void GL_APIENTRY glGetVertexAttribPointerv (GLuint index, GLenum pname, void **pointer);
@@ -160,7 +150,6 @@ package OpenGL.Functions is
 --   GL_APICALL GLboolean GL_APIENTRY glIsShader (GLuint shader);
 --   GL_APICALL GLboolean GL_APIENTRY glIsTexture (GLuint texture);
 --   GL_APICALL void GL_APIENTRY glLineWidth (GLfloat width);
---   GL_APICALL void GL_APIENTRY glLinkProgram (GLuint program);
 --   GL_APICALL void GL_APIENTRY glPixelStorei (GLenum pname, GLint param);
 --   GL_APICALL void GL_APIENTRY glPolygonOffset (GLfloat factor, GLfloat units);
 --   GL_APICALL void GL_APIENTRY glReleaseShaderCompiler (void);
@@ -181,36 +170,19 @@ package OpenGL.Functions is
 --   GL_APICALL void GL_APIENTRY glTexParameteri (GLenum target, GLenum pname, GLint param);
 --   GL_APICALL void GL_APIENTRY glTexParameteriv (GLenum target, GLenum pname, const GLint *params);
 --   GL_APICALL void GL_APIENTRY glTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const void *pixels);
---   GL_APICALL void GL_APIENTRY glUniform1f (GLint location, GLfloat v0);
 --   GL_APICALL void GL_APIENTRY glUniform1fv (GLint location, GLsizei count, const GLfloat *value);
---   GL_APICALL void GL_APIENTRY glUniform1i (GLint location, GLint v0);
 --   GL_APICALL void GL_APIENTRY glUniform1iv (GLint location, GLsizei count, const GLint *value);
---   GL_APICALL void GL_APIENTRY glUniform2f (GLint location, GLfloat v0, GLfloat v1);
 --   GL_APICALL void GL_APIENTRY glUniform2fv (GLint location, GLsizei count, const GLfloat *value);
 --   GL_APICALL void GL_APIENTRY glUniform2i (GLint location, GLint v0, GLint v1);
 --   GL_APICALL void GL_APIENTRY glUniform2iv (GLint location, GLsizei count, const GLint *value);
---   GL_APICALL void GL_APIENTRY glUniform3f (GLint location, GLfloat v0, GLfloat v1, GLfloat v2);
 --   GL_APICALL void GL_APIENTRY glUniform3fv (GLint location, GLsizei count, const GLfloat *value);
 --   GL_APICALL void GL_APIENTRY glUniform3i (GLint location, GLint v0, GLint v1, GLint v2);
 --   GL_APICALL void GL_APIENTRY glUniform3iv (GLint location, GLsizei count, const GLint *value);
---   GL_APICALL void GL_APIENTRY glUniform4f (GLint location, GLfloat v0, GLfloat v1, GLfloat v2, GLfloat v3);
 --   GL_APICALL void GL_APIENTRY glUniform4fv (GLint location, GLsizei count, const GLfloat *value);
 --   GL_APICALL void GL_APIENTRY glUniform4i (GLint location, GLint v0, GLint v1, GLint v2, GLint v3);
 --   GL_APICALL void GL_APIENTRY glUniform4iv (GLint location, GLsizei count, const GLint *value);
---   GL_APICALL void GL_APIENTRY glUniformMatrix2fv (GLint location, GLsizei count, GLboolean transpose, const GLfloat *value);
---   GL_APICALL void GL_APIENTRY glUniformMatrix3fv (GLint location, GLsizei count, GLboolean transpose, const GLfloat *value);
---   GL_APICALL void GL_APIENTRY glUniformMatrix4fv (GLint location, GLsizei count, GLboolean transpose, const GLfloat *value);
---   GL_APICALL void GL_APIENTRY glUseProgram (GLuint program);
 --   GL_APICALL void GL_APIENTRY glValidateProgram (GLuint program);
---   GL_APICALL void GL_APIENTRY glVertexAttrib1f (GLuint index, GLfloat x);
 --   GL_APICALL void GL_APIENTRY glVertexAttrib1fv (GLuint index, const GLfloat *v);
---   GL_APICALL void GL_APIENTRY glVertexAttrib2f (GLuint index, GLfloat x, GLfloat y);
---   GL_APICALL void GL_APIENTRY glVertexAttrib2fv (GLuint index, const GLfloat *v);
---   GL_APICALL void GL_APIENTRY glVertexAttrib3f (GLuint index, GLfloat x, GLfloat y, GLfloat z);
---   GL_APICALL void GL_APIENTRY glVertexAttrib3fv (GLuint index, const GLfloat *v);
---   GL_APICALL void GL_APIENTRY glVertexAttrib4f (GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
---   GL_APICALL void GL_APIENTRY glVertexAttrib4fv (GLuint index, const GLfloat *v);
---   GL_APICALL void GL_APIENTRY glVertexAttribPointer (GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const void *pointer);
 
    not overriding procedure Viewport
     (Self   : OpenGL_Functions;
@@ -220,7 +192,6 @@ package OpenGL.Functions is
      Height : OpenGL.GLsizei) is abstract;
 
 --            <command name="glActiveTexture"/>
---            <command name="glAttachShader"/>
 --            <command name="glBindAttribLocation"/>
 --            <command name="glBindRenderbuffer"/>
 --            <command name="glBindTexture"/>
@@ -238,10 +209,8 @@ package OpenGL.Functions is
 --            <command name="glCompressedTexSubImage2D"/>
 --            <command name="glCopyTexImage2D"/>
 --            <command name="glCopyTexSubImage2D"/>
---            <command name="glCreateProgram"/>
 --            <command name="glCreateShader"/>
 --            <command name="glCullFace"/>
---            <command name="glDeleteProgram"/>
 --            <command name="glDeleteRenderbuffers"/>
 --            <command name="glDeleteShader"/>
 --            <command name="glDeleteTextures"/>
@@ -249,10 +218,8 @@ package OpenGL.Functions is
 --            <command name="glDepthMask"/>
 --            <command name="glDepthRangef"/>
 --            <command name="glDetachShader"/>
---            <command name="glDisableVertexAttribArray"/>
 --            <command name="glDrawArrays"/>
 --            <command name="glDrawElements"/>
---            <command name="glEnableVertexAttribArray"/>
 --            <command name="glFinish"/>
 --            <command name="glFlush"/>
 --            <command name="glFrontFace"/>
@@ -262,14 +229,12 @@ package OpenGL.Functions is
 --            <command name="glGetActiveAttrib"/>
 --            <command name="glGetActiveUniform"/>
 --            <command name="glGetAttachedShaders"/>
---            <command name="glGetAttribLocation"/>
 --            <command name="glGetBooleanv"/>
 --            <command name="glGetBufferParameteriv"/>
 --            <command name="glGetError"/>
 --            <command name="glGetFloatv"/>
 --            <command name="glGetFramebufferAttachmentParameteriv"/>
 --            <command name="glGetIntegerv"/>
---            <command name="glGetProgramiv"/>
 --            <command name="glGetProgramInfoLog"/>
 --            <command name="glGetRenderbufferParameteriv"/>
 --            <command name="glGetShaderiv"/>
@@ -281,7 +246,6 @@ package OpenGL.Functions is
 --            <command name="glGetTexParameteriv"/>
 --            <command name="glGetUniformfv"/>
 --            <command name="glGetUniformiv"/>
---            <command name="glGetUniformLocation"/>
 --            <command name="glGetVertexAttribfv"/>
 --            <command name="glGetVertexAttribiv"/>
 --            <command name="glGetVertexAttribPointerv"/>
@@ -294,7 +258,6 @@ package OpenGL.Functions is
 --            <command name="glIsShader"/>
 --            <command name="glIsTexture"/>
 --            <command name="glLineWidth"/>
---            <command name="glLinkProgram"/>
 --            <command name="glPixelStorei"/>
 --            <command name="glPolygonOffset"/>
 --            <command name="glReleaseShaderCompiler"/>
@@ -315,36 +278,19 @@ package OpenGL.Functions is
 --            <command name="glTexParameteri"/>
 --            <command name="glTexParameteriv"/>
 --            <command name="glTexSubImage2D"/>
---            <command name="glUniform1f"/>
 --            <command name="glUniform1fv"/>
---            <command name="glUniform1i"/>
 --            <command name="glUniform1iv"/>
---            <command name="glUniform2f"/>
 --            <command name="glUniform2fv"/>
 --            <command name="glUniform2i"/>
 --            <command name="glUniform2iv"/>
---            <command name="glUniform3f"/>
 --            <command name="glUniform3fv"/>
 --            <command name="glUniform3i"/>
 --            <command name="glUniform3iv"/>
---            <command name="glUniform4f"/>
 --            <command name="glUniform4fv"/>
 --            <command name="glUniform4i"/>
 --            <command name="glUniform4iv"/>
---            <command name="glUniformMatrix2fv"/>
---            <command name="glUniformMatrix3fv"/>
---            <command name="glUniformMatrix4fv"/>
---            <command name="glUseProgram"/>
 --            <command name="glValidateProgram"/>
---            <command name="glVertexAttrib1f"/>
 --            <command name="glVertexAttrib1fv"/>
---            <command name="glVertexAttrib2f"/>
---            <command name="glVertexAttrib2fv"/>
---            <command name="glVertexAttrib3f"/>
---            <command name="glVertexAttrib3fv"/>
---            <command name="glVertexAttrib4f"/>
---            <command name="glVertexAttrib4fv"/>
---            <command name="glVertexAttribPointer"/>
 
    --  Some functions are available as subprograms for objects of tagged
    --  types from other packages:
@@ -362,5 +308,33 @@ package OpenGL.Functions is
    --   - glBufferData
    --   - glDeleteBuffers
    --   - glGenBuffers
+   --
+   --  OpenGL.Programs:
+   --   - glAttachShader
+   --   - glCreateProgram
+   --   - glDeleteProgram
+   --   - glDisableVertexAttribArray
+   --   - glEnableVertexAttribArray
+   --   - glGetAttribLocation
+   --   - glGetProgramiv
+   --   - glGetUniformLocation
+   --   - glLinkProgram
+   --   - glUniform1i
+   --   - glUniform1f
+   --   - glUniform2f
+   --   - glUniform3f
+   --   - glUniform4f
+   --   - glUniformMatrix2fv
+   --   - glUniformMatrix3fv
+   --   - glUniformMatrix4fv
+   --   - glUseProgram
+   --   - glVertexAttrib1f
+   --   - glVertexAttrib2f
+   --   - glVertexAttrib2fv
+   --   - glVertexAttrib3f
+   --   - glVertexAttrib3fv
+   --   - glVertexAttrib4f
+   --   - glVertexAttrib4fv
+   --   - glVertexAttribPointer
 
 end OpenGL.Functions;

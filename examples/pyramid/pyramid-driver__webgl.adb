@@ -59,6 +59,7 @@ procedure Pyramid.Driver is
 --     ((255, 0, 0),   (127, 0, 0), (0, 0, 127),
 --      (127, 255, 0), (0, 127, 0), (0, 0, 127),
 --      (32, 0, 255),  (0, 0, 127), (0,0, 127));
+   Unit   : constant OpenGL.Texture_Unit := 0;
 
    Context : OpenGL.Contexts.OpenGL_Context;
    Buffer  :
@@ -79,16 +80,17 @@ begin
    Buffer.Bind;
    Buffer.Allocate (Points);
 
-   Program.Initialize;
-   Program.Bind;
-   Program.Set_Vertex_Data_Buffer (Buffer);
-
    Texture.Create;
-   Texture.Bind;
+   Texture.Bind (Unit);
 --   Texture.Set_Image_2D
 --     (0, OpenGL.GL_RGB, 3, 3, OpenGL.GL_UNSIGNED_BYTE, Img'Address);
    Texture.Set_Parameter (OpenGL.GL_TEXTURE_MIN_FILTER, OpenGL.GL_LINEAR);
    Texture.Set_Parameter (OpenGL.GL_TEXTURE_MAG_FILTER, OpenGL.GL_LINEAR);
+
+   Program.Initialize;
+   Program.Bind;
+   Program.Set_Vertex_Data_Buffer (Buffer);
+   Program.Set_Texture_Unit (Unit);
 
    declare
       use type OpenGL.GLbitfield;

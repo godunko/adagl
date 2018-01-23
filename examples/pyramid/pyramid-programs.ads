@@ -63,6 +63,11 @@ package Pyramid.Programs is
      Buffer : Vertex_Data_Buffers.OpenGL_Buffer'Class);
    --  Sets buffer with data to draw.
 
+   procedure Set_Texture_Unit
+    (Self : in out Pyramid_Program'Class;
+     Unit : OpenGL.Texture_Unit);
+   --  Sets texture unit to be used to draw.
+
 private
 
    type Pyramid_Program is new OpenGL.Programs.OpenGL_Program with record

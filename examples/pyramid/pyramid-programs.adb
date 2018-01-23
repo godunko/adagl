@@ -95,13 +95,19 @@ package body Pyramid.Programs is
       Self.VP := Self.Attribute_Location (VP);
       Self.TC := Self.Attribute_Location (TC);
 
-      Self.Enable_Attribute_Array (Self.VP);
-      Self.Enable_Attribute_Array (Self.TC);
-
-      Self.Set_Uniform_Value (Self.GS, 0);
-
       return True;
    end Link;
+
+   ----------------------
+   -- Set_Texture_Unit --
+   ----------------------
+
+   procedure Set_Texture_Unit
+    (Self : in out Pyramid_Program'Class;
+     Unit : OpenGL.Texture_Unit) is
+   begin
+      Self.Set_Uniform_Value (Self.GS, Unit);
+   end Set_Texture_Unit;
 
    ----------------------------
    -- Set_Vertex_Data_Buffer --
@@ -114,6 +120,9 @@ package body Pyramid.Programs is
       Dummy : Vertex_Data;
 
    begin
+      Self.Enable_Attribute_Array (Self.VP);
+      Self.Enable_Attribute_Array (Self.TC);
+
       Self.Set_Attribute_Buffer
        (Location   => Self.VP,
         Data_Type  => OpenGL.GL_FLOAT,

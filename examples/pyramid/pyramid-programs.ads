@@ -48,6 +48,7 @@ package Pyramid.Programs is
    end record;
 
    type Vertex_Data_Array is array (Positive range <>) of Vertex_Data;
+   pragma JavaScript_Typed_Array (Vertex_Data_Array);
 
    package Vertex_Data_Buffers is
      new OpenGL.Generic_Buffers (Vertex_Data, Positive, Vertex_Data_Array);

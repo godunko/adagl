@@ -2,11 +2,11 @@
 --                                                                          --
 --                       Ada binding for OpenGL/WebGL                       --
 --                                                                          --
---                        Runtime Library Component                         --
+--                            Examples Component                            --
 --                                                                          --
 ------------------------------------------------------------------------------
 --                                                                          --
--- Copyright © 2016-2018, Vadim Godunko <vgodunko@gmail.com>                --
+-- Copyright © 2018, Vadim Godunko <vgodunko@gmail.com>                     --
 -- All rights reserved.                                                     --
 --                                                                          --
 -- Redistribution and use in source and binary forms, with or without       --
@@ -37,38 +37,68 @@
 -- SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.             --
 --                                                                          --
 ------------------------------------------------------------------------------
+with League.Strings;
 
-with "adagl_config.gpr";
-with "adagl.gpr";
+with WebAPI.HTML.Globals;
+with WebAPI.HTML.Canvas_Elements;
 
-project AdaGL_Examples is
+with OpenGL.Contexts;
+with OpenGL.Textures;
 
-   for Source_Dirs use ("../examples/pyramid");
-   for Object_Dir use AdaGL_Config.Object_Dir;
+with Pyramid.Programs;
 
-   case AdaGL_Config.Target_Name is
-      when "javascript" =>
+procedure Pyramid.Driver is
 
-      when others =>
-         for Main use ("pyramid-driver__native.adb");
-   end case;
+   use type OpenGL.GLfloat;
 
-   package Compiler renames AdaGL_Config.Compiler;
+   Points : constant Pyramid.Programs.Vertex_Data_Array
+     := (((0.0, 0.5, 0.0),   (0.5, 1.0)),
+         ((0.5, -0.5, 0.0),  (1.0, 0.0)),
+         ((-0.5, -0.5, 0.0), (0.0, 0.0)));
+--   Img    : constant array (1 .. 9, 1 .. 3) of OpenGL.GLubyte :=
+--     ((255, 0, 0),   (127, 0, 0), (0, 0, 127),
+--      (127, 255, 0), (0, 127, 0), (0, 0, 127),
+--      (32, 0, 255),  (0, 0, 127), (0,0, 127));
 
-   package Builder is
+   Context : OpenGL.Contexts.OpenGL_Context;
+   Buffer  :
+     Pyramid.Programs.Vertex_Data_Buffers.OpenGL_Buffer (OpenGL.Vertex);
+   Program : Pyramid.Programs.Pyramid_Program;
+   Texture : OpenGL.Textures.OpenGL_Texture (OpenGL.Texture_2D);
 
-      for Executable ("pyramid-driver__native.adb") use "pyramid";
+begin
+   Context.Create
+    (WebAPI.HTML.Canvas_Elements.HTML_Canvas_Element_Access
+      (WebAPI.HTML.Globals.Window.Get_Document.Get_Element_By_Id
+        (League.Strings.To_Universal_String ("canvas"))));
+   Context.Make_Current;
 
-   end Builder;
+   Context.Functions.Enable (OpenGL.GL_DEPTH_TEST);
 
-   package Naming is
-      case AdaGL_Config.Target_Name is
-         when "javascript" =>
-            for Body ("Pyramid.Driver") use "pyramid-driver__webgl.adb";
+   Buffer.Create;
+   Buffer.Bind;
+   Buffer.Allocate (Points);
 
-         when others =>
-            for Body ("Pyramid.Driver") use "pyramid-driver__native.adb";
-      end case;
-   end Naming;
+   Program.Initialize;
+   Program.Bind;
+   Program.Set_Vertex_Data_Buffer (Buffer);
 
-end AdaGL_Examples;
+   Texture.Create;
+   Texture.Bind;
+--   Texture.Set_Image_2D
+--     (0, OpenGL.GL_RGB, 3, 3, OpenGL.GL_UNSIGNED_BYTE, Img'Address);
+   Texture.Set_Parameter (OpenGL.GL_TEXTURE_MIN_FILTER, OpenGL.GL_LINEAR);
+   Texture.Set_Parameter (OpenGL.GL_TEXTURE_MAG_FILTER, OpenGL.GL_LINEAR);
+
+   declare
+      use type OpenGL.GLbitfield;
+
+      Clear_Flag : OpenGL.Clear_Buffer_Mask :=
+        OpenGL.GL_DEPTH_BUFFER_BIT + OpenGL.GL_COLOR_BUFFER_BIT;
+
+   begin
+      Context.Functions.Clear (Clear_Flag);
+
+      Context.Functions.Draw_Arrays (OpenGL.GL_TRIANGLES, 0, Points'Length);
+   end;
+end Pyramid.Driver;

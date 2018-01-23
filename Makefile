@@ -8,4 +8,5 @@ clean:
 	rm -rf .objs
 
 example:
+	gprbuild -p -P gnat/adagl_examples.gpr --target=javascript --db ${GPRBUILDDB}
 	gprbuild -p -P gnat/adagl_examples.gpr

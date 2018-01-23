@@ -237,6 +237,10 @@ package OpenGL.Programs is
    procedure Set_Uniform_Value
     (Self     : in out OpenGL_Program'Class;
      Location : OpenGL.Uniform_Location;
+     Value    : OpenGL.GLint);
+   procedure Set_Uniform_Value
+    (Self     : in out OpenGL_Program'Class;
+     Location : OpenGL.Uniform_Location;
      Value    : OpenGL.Glfloat);
    procedure Set_Uniform_Value
     (Self     : in out OpenGL_Program'Class;
@@ -264,6 +268,10 @@ package OpenGL.Programs is
      Value    : OpenGL.Glfloat_Matrix_4x4);
    --  Sets the uniform variable at Location in the current context to Value.
 
+   procedure Set_Uniform_Value
+    (Self  : in out OpenGL_Program'Class;
+     Name  : League.Strings.Universal_String;
+     Value : OpenGL.GLint);
    procedure Set_Uniform_Value
     (Self  : in out OpenGL_Program'Class;
      Name  : League.Strings.Universal_String;

@@ -659,6 +659,31 @@ package body OpenGL.Programs is
    procedure Set_Uniform_Value
     (Self     : in out OpenGL_Program'Class;
      Location : OpenGL.Uniform_Location;
+     Value    : OpenGL.GLint) is
+   begin
+      if Self.Context = null
+        or Self.Context /= OpenGL.Contexts.Internals.Current_WebGL_Context
+        or Location = No_Uniform_Location
+      then
+         --  Program object is not initialized properly, belongs to another
+         --  context, or location is undefined.
+
+         return;
+      end if;
+
+      Self.Context.Uniform_1i
+       (WebAPI.WebGL.Uniform_Locations.WebGL_Uniform_Location_Access
+         (Location),
+        WebAPI.WebGL.GLint (Value));
+   end Set_Uniform_Value;
+
+   -----------------------
+   -- Set_Uniform_Value --
+   -----------------------
+
+   procedure Set_Uniform_Value
+    (Self     : in out OpenGL_Program'Class;
+     Location : OpenGL.Uniform_Location;
      Value    : OpenGL.Glfloat) is
    begin
       if Self.Context = null
@@ -860,6 +885,18 @@ package body OpenGL.Programs is
           WebAPI.WebGL.GLfloat (Value (4) (2)),
           WebAPI.WebGL.GLfloat (Value (4) (3)),
           WebAPI.WebGL.GLfloat (Value (4) (4)))));
+   end Set_Uniform_Value;
+
+   -----------------------
+   -- Set_Uniform_Value --
+   -----------------------
+
+   procedure Set_Uniform_Value
+    (Self  : in out OpenGL_Program'Class;
+     Name  : League.Strings.Universal_String;
+     Value : OpenGL.GLint) is
+   begin
+      Self.Set_Uniform_Value (Self.Uniform_Location (Name), Value);
    end Set_Uniform_Value;
 
    -----------------------

@@ -561,6 +561,8 @@ package OpenGL is
      Cube_Map_Positive_Z,
      Cube_Map_Negative_Z);
 
+   subtype Texture_Unit is GLint range 0 .. GLint'Last;
+
    type Uniform_Location is private;
 
    No_Uniform_Location : constant Uniform_Location;

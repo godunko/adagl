@@ -85,6 +85,54 @@ package body OpenGL.Textures is
       end if;
    end Bind;
 
+   ----------
+   -- Bind --
+   ----------
+
+   function Bind
+    (Self : in out OpenGL_Texture'Class;
+     Unit : Texture_Unit) return Boolean
+   is
+      use type WebAPI.WebGL.GLenum;
+
+   begin
+      if Self.Context = null
+        or Self.Context /= OpenGL.Contexts.Internals.Current_WebGL_Context
+        or Self.Texture = null
+      then
+         return False;
+      end if;
+
+      Self.Context.Active_Texture
+       (WebAPI.WebGL.Rendering_Contexts.TEXTURE0 + WebAPI.WebGL.GLenum (Unit));
+      Self.Context.Bind_Texture
+       ((case Self.Texture_Type is
+           when Texture_2D => WebAPI.WebGL.Rendering_Contexts.TEXTURE_2D,
+           when Cube_Map_Positive_X
+                 | Cube_Map_Negative_X
+                 | Cube_Map_Positive_Y
+                 | Cube_Map_Negative_Y
+                 | Cube_Map_Positive_Z
+                 | Cube_Map_Negative_Z =>
+             WebAPI.WebGL.Rendering_Contexts.TEXTURE_CUBE_MAP),
+        Self.Texture);
+
+      return True;
+   end Bind;
+
+   ----------
+   -- Bind --
+   ----------
+
+   procedure Bind
+    (Self : in out OpenGL_Texture'Class;
+     Unit : Texture_Unit) is
+   begin
+      if not Self.Bind (Unit) then
+         raise Program_Error;
+      end if;
+   end Bind;
+
    ------------
    -- Create --
    ------------

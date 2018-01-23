@@ -64,6 +64,16 @@ package OpenGL.Textures is
 
    function Bind (Self : in out OpenGL_Texture'Class) return Boolean;
    procedure Bind (Self : in out OpenGL_Texture'Class);
+   --  Binds this texture to the currently active texture unit ready for
+   --  rendering.
+
+   function Bind
+    (Self : in out OpenGL_Texture'Class;
+     Unit : Texture_Unit) return Boolean;
+   procedure Bind
+    (Self : in out OpenGL_Texture'Class;
+     Unit : Texture_Unit);
+   --  Binds this texture to texture unit Unit ready for rendering.
 
    procedure Release (Self : in out OpenGL_Texture'Class);
 

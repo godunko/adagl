@@ -84,7 +84,6 @@ package body OpenGL.Textures is
          return False;
       end if;
 
-      GLEW.glActiveTexture (16#84C0#);  --  GL_TEXTURE0
       GLEW.glBindTexture (Map_Bind (Self.Texture_Type), Self.Texture);
 
       return True;
@@ -97,6 +96,40 @@ package body OpenGL.Textures is
    procedure Bind (Self : in out OpenGL_Texture'Class) is
    begin
       if not Self.Bind then
+         raise Program_Error;
+      end if;
+   end Bind;
+
+   ----------
+   -- Bind --
+   ----------
+
+   function Bind
+    (Self : in out OpenGL_Texture'Class;
+     Unit : Texture_Unit) return Boolean is
+   begin
+      if Self.Context = null
+        or Self.Context /= OpenGL.Contexts.Internals.Current_GLFW_Context
+        or Self.Texture = 0
+      then
+         return False;
+      end if;
+
+      GLEW.glActiveTexture (16#84C0# + GLenum (Unit));  --  GL_TEXTURE0
+      GLEW.glBindTexture (Map_Bind (Self.Texture_Type), Self.Texture);
+
+      return True;
+   end Bind;
+
+   ----------
+   -- Bind --
+   ----------
+
+   procedure Bind
+    (Self : in out OpenGL_Texture'Class;
+     Unit : Texture_Unit) is
+   begin
+      if not Self.Bind (Unit) then
          raise Program_Error;
       end if;
    end Bind;

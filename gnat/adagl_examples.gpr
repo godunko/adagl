@@ -45,14 +45,31 @@ project AdaGL_Examples is
 
    for Source_Dirs use ("../examples/pyramid");
    for Object_Dir use AdaGL_Config.Object_Dir;
-   for Main use ("pyramid-driver.adb");
+
+   case AdaGL_Config.Target_Name is
+      when "javascript" =>
+         for Main use ("pyramid-driver__webgl.adb");
+
+      when others =>
+         for Main use ("pyramid-driver__native.adb");
+   end case;
 
    package Compiler renames AdaGL_Config.Compiler;
 
    package Builder is
 
-      for Executable ("pyramid-driver.adb") use "pyramid";
+      for Executable ("pyramid-driver__native.adb") use "pyramid";
 
    end Builder;
+
+   package Naming is
+      case AdaGL_Config.Target_Name is
+         when "javascript" =>
+            for Body ("Pyramid.Driver") use "pyramid-driver__webgl.adb";
+
+         when others =>
+            for Body ("Pyramid.Driver") use "pyramid-driver__native.adb";
+      end case;
+   end Naming;
 
 end AdaGL_Examples;

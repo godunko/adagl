@@ -46,9 +46,10 @@ package Pyramid.Programs is
       VP : OpenGL.Glfloat_Vector_3;
       TC : OpenGL.Glfloat_Vector_2;
    end record;
+   pragma JavaScript_Array_Buffer (Vertex_Data);
 
    type Vertex_Data_Array is array (Positive range <>) of Vertex_Data;
-   pragma JavaScript_Typed_Array (Vertex_Data_Array);
+   pragma JavaScript_Array_Buffer (Vertex_Data_Array);
 
    package Vertex_Data_Buffers is
      new OpenGL.Generic_Buffers (Vertex_Data, Positive, Vertex_Data_Array);

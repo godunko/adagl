@@ -193,10 +193,8 @@ package OpenGL is
        with Convention => Fortran;
    pragma JavaScript_Array_Buffer (GLfloat_Matrix_3x3);
    type GLfloat_Matrix_4x4 is
-     array (Positive range 1 .. 4) of GLfloat_Vector_4
+     array (Positive range 1 .. 4, Positive range 1 .. 4) of GLfloat
        with Convention => Fortran;
---     array (Positive range 1 .. 4, Positive range 1 .. 4) of GLfloat
---       with Convention => Fortran;
    pragma JavaScript_Array_Buffer (GLfloat_Matrix_4x4);
 
    type GLubyte_Vector_4_Array is

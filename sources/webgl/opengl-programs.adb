@@ -550,22 +550,22 @@ package body OpenGL.Programs is
 
       Self.Context.Vertex_Attrib_2fv
        (WebAPI.WebGL.GLuint (Location),
-        ((WebAPI.WebGL.GLfloat (Value (1) (1)),
-          WebAPI.WebGL.GLfloat (Value (1) (2)),
-          WebAPI.WebGL.GLfloat (Value (1) (3)),
-          WebAPI.WebGL.GLfloat (Value (1) (4))),
-         (WebAPI.WebGL.GLfloat (Value (2) (1)),
-          WebAPI.WebGL.GLfloat (Value (2) (2)),
-          WebAPI.WebGL.GLfloat (Value (2) (3)),
-          WebAPI.WebGL.GLfloat (Value (2) (4))),
-         (WebAPI.WebGL.GLfloat (Value (3) (1)),
-          WebAPI.WebGL.GLfloat (Value (3) (2)),
-          WebAPI.WebGL.GLfloat (Value (3) (3)),
-          WebAPI.WebGL.GLfloat (Value (3) (4))),
-         (WebAPI.WebGL.GLfloat (Value (4) (1)),
-          WebAPI.WebGL.GLfloat (Value (4) (2)),
-          WebAPI.WebGL.GLfloat (Value (4) (3)),
-          WebAPI.WebGL.GLfloat (Value (4) (4)))));
+        ((WebAPI.WebGL.GLfloat (Value (1, 1)),
+          WebAPI.WebGL.GLfloat (Value (1, 2)),
+          WebAPI.WebGL.GLfloat (Value (1, 3)),
+          WebAPI.WebGL.GLfloat (Value (1, 4))),
+         (WebAPI.WebGL.GLfloat (Value (2, 1)),
+          WebAPI.WebGL.GLfloat (Value (2, 2)),
+          WebAPI.WebGL.GLfloat (Value (2, 3)),
+          WebAPI.WebGL.GLfloat (Value (2, 4))),
+         (WebAPI.WebGL.GLfloat (Value (3, 1)),
+          WebAPI.WebGL.GLfloat (Value (3, 2)),
+          WebAPI.WebGL.GLfloat (Value (3, 3)),
+          WebAPI.WebGL.GLfloat (Value (3, 4))),
+         (WebAPI.WebGL.GLfloat (Value (4, 1)),
+          WebAPI.WebGL.GLfloat (Value (4, 2)),
+          WebAPI.WebGL.GLfloat (Value (4, 3)),
+          WebAPI.WebGL.GLfloat (Value (4, 4)))));
    end Set_Attribute_Value;
 
    -------------------------
@@ -869,22 +869,22 @@ package body OpenGL.Programs is
        (WebAPI.WebGL.Uniform_Locations.WebGL_Uniform_Location_Access
          (Location),
         False,
-        ((WebAPI.WebGL.GLfloat (Value (1) (1)),
-          WebAPI.WebGL.GLfloat (Value (1) (2)),
-          WebAPI.WebGL.GLfloat (Value (1) (3)),
-          WebAPI.WebGL.GLfloat (Value (1) (4))),
-         (WebAPI.WebGL.GLfloat (Value (2) (1)),
-          WebAPI.WebGL.GLfloat (Value (2) (2)),
-          WebAPI.WebGL.GLfloat (Value (2) (3)),
-          WebAPI.WebGL.GLfloat (Value (2) (4))),
-         (WebAPI.WebGL.GLfloat (Value (3) (1)),
-          WebAPI.WebGL.GLfloat (Value (3) (2)),
-          WebAPI.WebGL.GLfloat (Value (3) (3)),
-          WebAPI.WebGL.GLfloat (Value (3) (4))),
-         (WebAPI.WebGL.GLfloat (Value (4) (1)),
-          WebAPI.WebGL.GLfloat (Value (4) (2)),
-          WebAPI.WebGL.GLfloat (Value (4) (3)),
-          WebAPI.WebGL.GLfloat (Value (4) (4)))));
+        ((WebAPI.WebGL.GLfloat (Value (1, 1)),
+          WebAPI.WebGL.GLfloat (Value (1, 2)),
+          WebAPI.WebGL.GLfloat (Value (1, 3)),
+          WebAPI.WebGL.GLfloat (Value (1, 4))),
+         (WebAPI.WebGL.GLfloat (Value (2, 1)),
+          WebAPI.WebGL.GLfloat (Value (2, 2)),
+          WebAPI.WebGL.GLfloat (Value (2, 3)),
+          WebAPI.WebGL.GLfloat (Value (2, 4))),
+         (WebAPI.WebGL.GLfloat (Value (3, 1)),
+          WebAPI.WebGL.GLfloat (Value (3, 2)),
+          WebAPI.WebGL.GLfloat (Value (3, 3)),
+          WebAPI.WebGL.GLfloat (Value (3, 4))),
+         (WebAPI.WebGL.GLfloat (Value (4, 1)),
+          WebAPI.WebGL.GLfloat (Value (4, 2)),
+          WebAPI.WebGL.GLfloat (Value (4, 3)),
+          WebAPI.WebGL.GLfloat (Value (4, 4)))));
    end Set_Uniform_Value;
 
    -----------------------

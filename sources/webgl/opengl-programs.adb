@@ -516,7 +516,7 @@ package body OpenGL.Programs is
          return;
       end if;
 
-      Self.Context.Vertex_Attrib_2fv
+      Self.Context.Vertex_Attrib_3fv
        (WebAPI.WebGL.GLuint (Location),
         ((WebAPI.WebGL.GLfloat (Value (1, 1)),
           WebAPI.WebGL.GLfloat (Value (1, 2)),
@@ -548,7 +548,7 @@ package body OpenGL.Programs is
          return;
       end if;
 
-      Self.Context.Vertex_Attrib_2fv
+      Self.Context.Vertex_Attrib_4fv
        (WebAPI.WebGL.GLuint (Location),
         ((WebAPI.WebGL.GLfloat (Value (1, 1)),
           WebAPI.WebGL.GLfloat (Value (1, 2)),

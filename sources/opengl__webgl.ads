@@ -302,6 +302,15 @@ package OpenGL is
    GL_ONE_MINUS_CONSTANT_ALPHA : constant GLenum;
    GL_SRC_ALPHA_SATURATE       : constant GLenum;
 
+   GL_NEVER                    : constant GLenum;
+   GL_LESS                     : constant GLenum;
+   GL_EQUAL                    : constant GLenum;
+   GL_LEQUAL                   : constant GLenum;
+   GL_GREATER                  : constant GLenum;
+   GL_NOTEQUAL                 : constant GLenum;
+   GL_GEQUAL                   : constant GLenum;
+   GL_ALWAYS                   : constant GLenum;
+
 --            <enum name="GL_FALSE"/>
 --            <enum name="GL_TRUE"/>
 --            <enum name="GL_FUNC_ADD"/>
@@ -410,14 +419,6 @@ package OpenGL is
 --            <enum name="GL_ACTIVE_ATTRIBUTE_MAX_LENGTH"/>
 --            <enum name="GL_SHADING_LANGUAGE_VERSION"/>
 --            <enum name="GL_CURRENT_PROGRAM"/>
---            <enum name="GL_NEVER"/>
---            <enum name="GL_LESS"/>
---            <enum name="GL_EQUAL"/>
---            <enum name="GL_LEQUAL"/>
---            <enum name="GL_GREATER"/>
---            <enum name="GL_NOTEQUAL"/>
---            <enum name="GL_GEQUAL"/>
---            <enum name="GL_ALWAYS"/>
 --            <enum name="GL_KEEP"/>
 --            <enum name="GL_REPLACE"/>
 --            <enum name="GL_INCR"/>
@@ -600,6 +601,15 @@ private
    GL_TRIANGLES                   : constant GLenum := 16#0004#;
    GL_TRIANGLE_STRIP              : constant GLenum := 16#0005#;
    GL_TRIANGLE_FAN                : constant GLenum := 16#0006#;
+
+   GL_NEVER                       : constant GLenum := 16#0200#;
+   GL_LESS                        : constant GLenum := 16#0201#;
+   GL_EQUAL                       : constant GLenum := 16#0202#;
+   GL_LEQUAL                      : constant GLenum := 16#0203#;
+   GL_GREATER                     : constant GLenum := 16#0204#;
+   GL_NOTEQUAL                    : constant GLenum := 16#0205#;
+   GL_GEQUAL                      : constant GLenum := 16#0206#;
+   GL_ALWAYS                      : constant GLenum := 16#0207#;
 
    GL_SRC_COLOR                   : constant GLenum := 16#0300#;
    GL_ONE_MINUS_SRC_COLOR         : constant GLenum := 16#0301#;

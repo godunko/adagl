@@ -82,7 +82,11 @@ package OpenGL.Functions is
 --   GL_APICALL void GL_APIENTRY glCopyTexImage2D (GLenum target, GLint level, GLenum internalformat, GLint x, GLint y, GLsizei width, GLsizei height, GLint border);
 --   GL_APICALL void GL_APIENTRY glCopyTexSubImage2D (GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint x, GLint y, GLsizei width, GLsizei height);
 --   GL_APICALL void GL_APIENTRY glCullFace (GLenum mode);
---   GL_APICALL void GL_APIENTRY glDepthFunc (GLenum func);
+
+   not overriding procedure Depth_Func
+    (Self : OpenGL_Functions;
+     Func : OpenGL.GLenum) is abstract;
+
 --   GL_APICALL void GL_APIENTRY glDepthMask (GLboolean flag);
 --   GL_APICALL void GL_APIENTRY glDepthRangef (GLfloat n, GLfloat f);
 --   GL_APICALL void GL_APIENTRY glDetachShader (GLuint program, GLuint shader);

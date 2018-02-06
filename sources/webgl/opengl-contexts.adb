@@ -184,6 +184,17 @@ package body OpenGL.Contexts is
            WebAPI.WebGL.GLfloat (Alpha));
       end Clear_Color;
 
+      ----------------
+      -- Depth_Func --
+      ----------------
+
+      overriding procedure Depth_Func
+       (Self : WebGL_Functions;
+        Func : OpenGL.GLenum) is
+      begin
+         Self.Context.Depth_Func (WebAPI.WebGL.GLenum (Func));
+      end Depth_Func;
+
       -------------
       -- Disable --
       -------------

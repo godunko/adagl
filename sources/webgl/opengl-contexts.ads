@@ -103,6 +103,10 @@ private
         Blue  : OpenGL.GLfloat;
         Alpha : OpenGL.GLfloat);
 
+      overriding procedure Depth_Func
+       (Self : WebGL_Functions;
+        Func : OpenGL.GLenum);
+
       overriding procedure Disable
        (Self       : WebGL_Functions;
         Capability : OpenGL.GLenum);

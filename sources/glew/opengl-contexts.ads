@@ -99,6 +99,10 @@ private
         Blue  : OpenGL.GLfloat;
         Alpha : OpenGL.GLfloat);
 
+      overriding procedure Depth_Func
+        (Self : My_Functions;
+         Func : OpenGL.GLenum);
+
       overriding procedure Disable
        (Self       : My_Functions;
         Capability : OpenGL.GLenum);

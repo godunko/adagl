@@ -156,11 +156,21 @@ package body OpenGL.Contexts is
          Red   : OpenGL.GLfloat;
          Green : OpenGL.GLfloat;
          Blue  : OpenGL.GLfloat;
-         Alpha : OpenGL.GLfloat)
-      is
+         Alpha : OpenGL.GLfloat) is
       begin
          GLEW.glClearColor (Red, Green, Blue, Alpha);
       end Clear_Color;
+
+      ----------------
+      -- Depth_Func --
+      ----------------
+
+      overriding procedure Depth_Func
+        (Self : My_Functions;
+         Func : OpenGL.GLenum) is
+      begin
+         GLEW.glDepthFunc (Func);
+      end Depth_Func;
 
       -------------
       -- Disable --

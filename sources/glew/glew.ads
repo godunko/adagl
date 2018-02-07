@@ -372,6 +372,9 @@ package GLEW is
      (red, green, blue, alpha : OpenGL.GLclampf)
      with Import, Convention => C, External_Name => "glClearColor";
 
+   procedure glDepthFunc (func : OpenGL.GLenum)
+     with Import, Convention => C, External_Name => "glDepthFunc";
+
    procedure glFinish
      with Import, Convention => C, External_Name => "glFinish";
 

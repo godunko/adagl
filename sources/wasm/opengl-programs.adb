@@ -894,8 +894,7 @@ package body OpenGL.Programs is
          return;
       end if;
 
-      Self.Context.Uniform_Matrix_4fv
-       (Location, False, Web.GL.Glfloat_Matrix_4x4 (Value));
+      Self.Context.Uniform_Matrix_4fv (Location, False, Value);
    end Set_Uniform_Value;
 
    -----------------------

@@ -48,7 +48,6 @@ with OpenGL.Shaders.Internals;
 
 package body OpenGL.Programs is
 
---   use type WebAPI.WebGL.Programs.WebGL_Program_Access;
    use type Web.GL.Rendering_Contexts.WebGL_Rendering_Context;
 
    procedure Free is
@@ -693,11 +692,7 @@ package body OpenGL.Programs is
          return;
       end if;
 
---  XXX Not implemented
---      Self.Context.Uniform_1i
---       (WebAPI.WebGL.Uniform_Locations.WebGL_Uniform_Location_Access
---         (Location),
---        WebAPI.WebGL.GLint (Value));
+      Self.Context.Uniform_1i (Location, Value);
    end Set_Uniform_Value;
 
    -----------------------
@@ -719,11 +714,7 @@ package body OpenGL.Programs is
          return;
       end if;
 
---  XXX Not implemented
---      Self.Context.Uniform_1f
---       (WebAPI.WebGL.Uniform_Locations.WebGL_Uniform_Location_Access
---         (Location),
---        WebAPI.WebGL.GLfloat (Value));
+      Self.Context.Uniform_1f (Location, Value);
    end Set_Uniform_Value;
 
    -----------------------
@@ -745,12 +736,7 @@ package body OpenGL.Programs is
          return;
       end if;
 
---  XXX Not implemented
---      Self.Context.Uniform_2fv
---       (WebAPI.WebGL.Uniform_Locations.WebGL_Uniform_Location_Access
---         (Location),
---        (WebAPI.WebGL.GLfloat (Value (1)),
---         WebAPI.WebGL.GLfloat (Value (2))));
+      Self.Context.Uniform_2fv (Location, Value);
    end Set_Uniform_Value;
 
    -----------------------
@@ -772,13 +758,7 @@ package body OpenGL.Programs is
          return;
       end if;
 
---  XXX Not implemented
---      Self.Context.Uniform_3fv
---       (WebAPI.WebGL.Uniform_Locations.WebGL_Uniform_Location_Access
---         (Location),
---        (WebAPI.WebGL.GLfloat (Value (1)),
---         WebAPI.WebGL.GLfloat (Value (2)),
---         WebAPI.WebGL.GLfloat (Value (3))));
+      Self.Context.Uniform_3fv (Location, Value);
    end Set_Uniform_Value;
 
    -----------------------
@@ -800,14 +780,7 @@ package body OpenGL.Programs is
          return;
       end if;
 
---  XXX Not implemented
---      Self.Context.Uniform_4fv
---       (WebAPI.WebGL.Uniform_Locations.WebGL_Uniform_Location_Access
---         (Location),
---        (WebAPI.WebGL.GLfloat (Value (1)),
---         WebAPI.WebGL.GLfloat (Value (2)),
---         WebAPI.WebGL.GLfloat (Value (3)),
---         WebAPI.WebGL.GLfloat (Value (4))));
+      Self.Context.Uniform_4fv (Location, Value);
    end Set_Uniform_Value;
 
    -----------------------
@@ -829,15 +802,7 @@ package body OpenGL.Programs is
          return;
       end if;
 
---  XXX Not implemented
---      Self.Context.Uniform_Matrix_2fv
---       (WebAPI.WebGL.Uniform_Locations.WebGL_Uniform_Location_Access
---         (Location),
---        False,
---        ((WebAPI.WebGL.GLfloat (Value (1, 1)),
---          WebAPI.WebGL.GLfloat (Value (1, 2))),
---         (WebAPI.WebGL.GLfloat (Value (2, 1)),
---          WebAPI.WebGL.GLfloat (Value (2, 2)))));
+      Self.Context.Uniform_Matrix_2fv (Location, False, Value);
    end Set_Uniform_Value;
 
    -----------------------
@@ -859,20 +824,7 @@ package body OpenGL.Programs is
          return;
       end if;
 
---  XXX Not implemented
---      Self.Context.Uniform_Matrix_3fv
---       (WebAPI.WebGL.Uniform_Locations.WebGL_Uniform_Location_Access
---         (Location),
---        False,
---        ((WebAPI.WebGL.GLfloat (Value (1, 1)),
---          WebAPI.WebGL.GLfloat (Value (1, 2)),
---          WebAPI.WebGL.GLfloat (Value (1, 3))),
---         (WebAPI.WebGL.GLfloat (Value (2, 1)),
---          WebAPI.WebGL.GLfloat (Value (2, 2)),
---          WebAPI.WebGL.GLfloat (Value (2, 3))),
---         (WebAPI.WebGL.GLfloat (Value (3, 1)),
---          WebAPI.WebGL.GLfloat (Value (3, 2)),
---          WebAPI.WebGL.GLfloat (Value (3, 3)))));
+      Self.Context.Uniform_Matrix_3fv (Location, False, Value);
    end Set_Uniform_Value;
 
    -----------------------

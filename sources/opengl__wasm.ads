@@ -59,7 +59,7 @@ package OpenGL is
    type GLushort is new Interfaces.Unsigned_16;
    type GLfixed is private;
 
-   type GLint is new Interfaces.Integer_32;
+   subtype GLint is Web.GL.GLint;
    subtype GLsizei is GLint range 0 .. GLint'Last;
 
    subtype GLfloat is Web.GL.GLfloat;

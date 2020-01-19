@@ -6,7 +6,7 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 --                                                                          --
--- Copyright © 2018-2020, Vadim Godunko <vgodunko@gmail.com>                --
+-- Copyright © 2016-2020, Vadim Godunko <vgodunko@gmail.com>                --
 -- All rights reserved.                                                     --
 --                                                                          --
 -- Redistribution and use in source and binary forms, with or without       --
@@ -38,25 +38,31 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 
-abstract project AdaGL_Config is
+with Web.Strings;
 
-   Target_Name := project'Target;
+private with Web.GL.Shaders;
 
-   Object_Dir := "../.objs/" & Target_Name & "/";
+package OpenGL.Shaders is
 
-   package Compiler is
+   pragma Preelaborate;
 
-      case Target_Name is
-         when "javascript" =>
-            for Switches ("Ada") use ("-gnatW8");
+   type OpenGL_Shader (Shader_Type : OpenGL.Shader_Type) is
+     tagged limited private;
 
-         when "llvm" =>
-            for Switches ("Ada") use ("--target=wasm32");
+   type OpenGL_Shader_Access is access all OpenGL_Shader'Class;
 
-         when others =>
-            for Switches ("Ada") use ("-g", "-gnata", "-gnatW8", "-O2");
-      end case;
+   function Compile_Source_Code
+    (Self   : in out OpenGL_Shader'Class;
+     Source : Web.Strings.Web_String) return Boolean;
+   --  Sets the source code for this shader and compiles it. Returns True if
+   --  the source was successfully compiled, False otherwise.
 
-   end Compiler;
+private
 
-end AdaGL_Config;
+   type OpenGL_Shader (Shader_Type : OpenGL.Shader_Type) is
+     tagged limited record
+      Shader   : Web.GL.Shaders.WebGL_Shader;
+      Context  : Web.GL.Rendering_Contexts.WebGL_Rendering_Context;
+   end record;
+
+end OpenGL.Shaders;

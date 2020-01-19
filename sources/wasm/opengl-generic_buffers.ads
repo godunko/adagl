@@ -6,7 +6,7 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 --                                                                          --
--- Copyright © 2018-2020, Vadim Godunko <vgodunko@gmail.com>                --
+-- Copyright © 2016-2020, Vadim Godunko <vgodunko@gmail.com>                --
 -- All rights reserved.                                                     --
 --                                                                          --
 -- Redistribution and use in source and binary forms, with or without       --
@@ -37,26 +37,58 @@
 -- SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.             --
 --                                                                          --
 ------------------------------------------------------------------------------
+with System.Storage_Elements;
 
-abstract project AdaGL_Config is
+private with Web.GL.Buffers;
 
-   Target_Name := project'Target;
+generic
+   type Element is private;
+   type Index is (<>);
+   type Element_Array is array (Index range <>) of Element;
 
-   Object_Dir := "../.objs/" & Target_Name & "/";
+package OpenGL.Generic_Buffers is
 
-   package Compiler is
+   pragma Preelaborate;
 
-      case Target_Name is
-         when "javascript" =>
-            for Switches ("Ada") use ("-gnatW8");
+   type OpenGL_Buffer (Buffer_Type : OpenGL.Buffer_Type) is
+     tagged limited private;
 
-         when "llvm" =>
-            for Switches ("Ada") use ("--target=wasm32");
+   procedure Allocate
+    (Self : in out OpenGL_Buffer'Class; Data : Element_Array);
+   --  Allocates necessary space to the buffer, initialized to the contents of
+   --  Data. Any previous contents will be removed.
 
-         when others =>
-            for Switches ("Ada") use ("-g", "-gnata", "-gnatW8", "-O2");
-      end case;
+   function Bind (Self : in out OpenGL_Buffer'Class) return Boolean;
+   --  Binds the buffer associated with this object to the current OpenGL
+   --  context. Returns False if binding was not possible.
+   --
+   --  The buffer must be bound to the same OpenGL_Context current when Create
+   --  was called. Otherwise, False will be returned from this function.
 
-   end Compiler;
+   procedure Bind (Self : in out OpenGL_Buffer'Class);
+   --  Binds the buffer associated with this object to the current OpenGL
+   --  context. Raise Program_Error if binding was not possible.
+   --
+   --  The buffer must be bound to the same OpenGL_Context current when Create
+   --  was called. Otherwise, Program_Error will be raised by this function.
 
-end AdaGL_Config;
+   function Create (Self : in out OpenGL_Buffer'Class) return Boolean;
+   --  Creates the buffer object in the OpenGL server. Returns True if the
+   --  object was created; False otherwise.
+
+   procedure Create (Self : in out OpenGL_Buffer'Class);
+   --  Creates the buffer object in the OpenGL server. Raise Program_Error if
+   --  the object was created; False otherwise.
+
+   function Stride return System.Storage_Elements.Storage_Count;
+   --  Returns offset between two elements in element array in storage units.
+
+private
+
+   type OpenGL_Buffer (Buffer_Type : OpenGL.Buffer_Type) is
+     tagged limited record
+      Context : Web.GL.Rendering_Contexts.WebGL_Rendering_Context;
+      Buffer  : Web.GL.Buffers.WebGL_Buffer;
+   end record;
+
+end OpenGL.Generic_Buffers;

@@ -6,7 +6,7 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 --                                                                          --
--- Copyright © 2018-2020, Vadim Godunko <vgodunko@gmail.com>                --
+-- Copyright © 2016-2020, Vadim Godunko <vgodunko@gmail.com>                --
 -- All rights reserved.                                                     --
 --                                                                          --
 -- Redistribution and use in source and binary forms, with or without       --
@@ -38,25 +38,53 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 
-abstract project AdaGL_Config is
+with "adagl_config.gpr";
+with "../gnat-llvm/llvm-interface/adawebpack_src/gnat/adawebpack.gpr";
 
-   Target_Name := project'Target;
+project AdaGL_WASM is
 
-   Object_Dir := "../.objs/" & Target_Name & "/";
+   for Target use "llvm";
 
-   package Compiler is
+   Source_Dirs := ("../sources");
 
-      case Target_Name is
+   case AdaGL_Config.Target_Name is
+      when "javascript" =>
+         Source_Dirs := Source_Dirs & "../sources/webgl";
+
+      when "llvm" =>
+         Source_Dirs := Source_Dirs & "../sources/wasm";
+
+      when others =>
+         Source_Dirs := Source_Dirs & "../sources/glew";
+   end case;
+
+   for Source_Dirs use Source_Dirs;
+   for Object_Dir use AdaGL_Config.Object_Dir;
+
+   package Compiler renames AdaGL_Config.Compiler;
+
+   package Naming is
+      case AdaGL_Config.Target_Name is
          when "javascript" =>
-            for Switches ("Ada") use ("-gnatW8");
+            for Specification ("OpenGL") use "opengl__webgl.ads";
 
          when "llvm" =>
-            for Switches ("Ada") use ("--target=wasm32");
+            for Specification ("OpenGL") use "opengl__wasm.ads";
 
          when others =>
-            for Switches ("Ada") use ("-g", "-gnata", "-gnatW8", "-O2");
+            for Specification ("OpenGL") use "opengl__native.ads";
       end case;
+   end Naming;
 
-   end Compiler;
+   package Linker is
+      case AdaGL_Config.Target_Name is
+         when "javascript" =>
 
-end AdaGL_Config;
+         when "llvm" =>
+
+         when others =>
+            for Linker_Options use ("-lGLEW", "-lglfw", "-lGL");
+      end case;
+   end Linker;
+
+end AdaGL_WASM;

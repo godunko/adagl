@@ -6,7 +6,7 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 --                                                                          --
--- Copyright © 2018-2020, Vadim Godunko <vgodunko@gmail.com>                --
+-- Copyright © 2016-2020, Vadim Godunko <vgodunko@gmail.com>                --
 -- All rights reserved.                                                     --
 --                                                                          --
 -- Redistribution and use in source and binary forms, with or without       --
@@ -38,25 +38,119 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 
-abstract project AdaGL_Config is
+with System;
 
-   Target_Name := project'Target;
+with WASM.Objects;
 
-   Object_Dir := "../.objs/" & Target_Name & "/";
+with OpenGL.Contexts.Internals;
 
-   package Compiler is
+package body OpenGL.Generic_Buffers is
 
-      case Target_Name is
-         when "javascript" =>
-            for Switches ("Ada") use ("-gnatW8");
+   use type Web.GL.Rendering_Contexts.WebGL_Rendering_Context;
 
-         when "llvm" =>
-            for Switches ("Ada") use ("--target=wasm32");
+   --------------
+   -- Allocate --
+   --------------
 
-         when others =>
-            for Switches ("Ada") use ("-g", "-gnata", "-gnatW8", "-O2");
-      end case;
+   procedure Allocate
+    (Self : in out OpenGL_Buffer'Class; Data : Element_Array)
+   is
+      use type Web.GL.GLsizeiptr;
 
-   end Compiler;
+   begin
+      if Self.Context.Is_Null
+        or Self.Context /= OpenGL.Contexts.Internals.Current_WebGL_Context
+      then
+         --  Buffer was not created or created for another context.
 
-end AdaGL_Config;
+         return;
+      end if;
+
+      Self.Context.Buffer_Data
+       (Web.GL.Rendering_Contexts.ARRAY_BUFFER,
+        Element'Max_Size_In_Storage_Elements * Data'Length,
+        Data (Data'First)'Address,
+        Web.GL.Rendering_Contexts.STATIC_DRAW);
+   end Allocate;
+
+   ----------
+   -- Bind --
+   ----------
+
+   function Bind (Self : in out OpenGL_Buffer'Class) return Boolean is
+   begin
+      if Self.Context.Is_Null
+        or Self.Context /= OpenGL.Contexts.Internals.Current_WebGL_Context
+      then
+         --  Buffer was not created or created for another context.
+
+         return False;
+      end if;
+
+      Self.Context.Bind_Buffer
+       (Web.GL.Rendering_Contexts.ARRAY_BUFFER, Self.Buffer);
+
+      return True;
+   end Bind;
+
+   ----------
+   -- Bind --
+   ----------
+
+   procedure Bind (Self : in out OpenGL_Buffer'Class) is
+   begin
+      if not Self.Bind then
+         raise Program_Error;
+      end if;
+   end Bind;
+
+   ------------
+   -- Create --
+   ------------
+
+   function Create (Self : in out OpenGL_Buffer'Class) return Boolean is
+   begin
+      if Self.Context.Is_Null then
+         Self.Context := OpenGL.Contexts.Internals.Current_WebGL_Context;
+
+         if Self.Context.Is_Null then
+            return False;
+         end if;
+      end if;
+
+      if Self.Buffer.Is_Null then
+         Self.Buffer := Self.Context.Create_Buffer;
+
+         if Self.Buffer.Is_null then
+            Self.Context := (WASM.Objects.Object_Reference with null record); -- null;
+
+            return False;
+         end if;
+      end if;
+
+      return True;
+   end Create;
+
+   ------------
+   -- Create --
+   ------------
+
+   procedure Create (Self : in out OpenGL_Buffer'Class) is
+   begin
+      if not Self.Create then
+         raise Program_Error;
+      end if;
+   end Create;
+
+   ------------
+   -- Stride --
+   ------------
+
+   function Stride return System.Storage_Elements.Storage_Count is
+      use type System.Storage_Elements.Storage_Offset;
+
+   begin
+      return Element_Array'Component_Size / System.Storage_Unit;
+   end Stride;
+
+end OpenGL.Generic_Buffers;

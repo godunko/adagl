@@ -6,7 +6,7 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 --                                                                          --
--- Copyright © 2018-2020, Vadim Godunko <vgodunko@gmail.com>                --
+-- Copyright © 2016-2020, Vadim Godunko <vgodunko@gmail.com>                --
 -- All rights reserved.                                                     --
 --                                                                          --
 -- Redistribution and use in source and binary forms, with or without       --
@@ -38,25 +38,55 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 
-abstract project AdaGL_Config is
+with OpenGL.Contexts.Internals;
 
-   Target_Name := project'Target;
+package body OpenGL.Shaders is
 
-   Object_Dir := "../.objs/" & Target_Name & "/";
+   -------------------------
+   -- Compile_Source_Code --
+   -------------------------
 
-   package Compiler is
+   function Compile_Source_Code
+    (Self   : in out OpenGL_Shader'Class;
+     Source : Web.Strings.Web_String) return Boolean is
+   begin
+      if Self.Context.Is_Null then
+         Self.Context := OpenGL.Contexts.Internals.Current_WebGL_Context;
 
-      case Target_Name is
-         when "javascript" =>
-            for Switches ("Ada") use ("-gnatW8");
+         if Self.Context.Is_Null then
+            return False;
+         end if;
+      end if;
 
-         when "llvm" =>
-            for Switches ("Ada") use ("--target=wasm32");
+      if Self.Shader.Is_Null then
+         Self.Shader :=
+           Self.Context.Create_Shader
+            ((case Self.Shader_Type is
+                when Vertex   => Web.GL.Rendering_Contexts.VERTEX_SHADER,
+                when Fragment => Web.GL.Rendering_Contexts.FRAGMENT_SHADER));
 
-         when others =>
-            for Switches ("Ada") use ("-g", "-gnata", "-gnatW8", "-O2");
-      end case;
+         if Self.Shader.Is_Null then
+            return False;
+         end if;
+      end if;
 
-   end Compiler;
+      Self.Context.Shader_Source (Self.Shader, Source);
+      Self.Context.Compile_Shader (Self.Shader);
 
-end AdaGL_Config;
+--  XXX Not implemented
+--      if not Self.Context.Get_Shader_Parameter
+--              (Self.Shader, WebAPI.WebGL.Rendering_Contexts.COMPILE_STATUS)
+--      then
+--         Self.Context.Delete_Shader (Self.Shader);
+--         Self.Shader  := null;
+--         Self.Context := null;
+--
+--         --  XXX Error handling must be implemented.
+--
+--         raise Program_Error;
+--      end if;
+
+      return True;
+   end Compile_Source_Code;
+
+end OpenGL.Shaders;

@@ -6,7 +6,7 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 --                                                                          --
--- Copyright © 2018-2020, Vadim Godunko <vgodunko@gmail.com>                --
+-- Copyright © 2016-2020, Vadim Godunko <vgodunko@gmail.com>                --
 -- All rights reserved.                                                     --
 --                                                                          --
 -- Redistribution and use in source and binary forms, with or without       --
@@ -38,25 +38,14 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 
-abstract project AdaGL_Config is
+with Web.GL.Shaders;
 
-   Target_Name := project'Target;
+package OpenGL.Shaders.Internals is
 
-   Object_Dir := "../.objs/" & Target_Name & "/";
+   pragma Preelaborate;
 
-   package Compiler is
+   function Get_WebGL_Shader
+    (Self : not null access OpenGL_Shader'Class)
+       return Web.GL.Shaders.WebGL_Shader;
 
-      case Target_Name is
-         when "javascript" =>
-            for Switches ("Ada") use ("-gnatW8");
-
-         when "llvm" =>
-            for Switches ("Ada") use ("--target=wasm32");
-
-         when others =>
-            for Switches ("Ada") use ("-g", "-gnata", "-gnatW8", "-O2");
-      end case;
-
-   end Compiler;
-
-end AdaGL_Config;
+end OpenGL.Shaders.Internals;

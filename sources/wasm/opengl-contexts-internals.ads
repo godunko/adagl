@@ -6,7 +6,7 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 --                                                                          --
--- Copyright © 2018-2020, Vadim Godunko <vgodunko@gmail.com>                --
+-- Copyright © 2016-2020, Vadim Godunko <vgodunko@gmail.com>                --
 -- All rights reserved.                                                     --
 --                                                                          --
 -- Redistribution and use in source and binary forms, with or without       --
@@ -37,26 +37,19 @@
 -- SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.             --
 --                                                                          --
 ------------------------------------------------------------------------------
+with Web.GL.Rendering_Contexts;
 
-abstract project AdaGL_Config is
+package OpenGL.Contexts.Internals is
 
-   Target_Name := project'Target;
+   pragma Preelaborate;
 
-   Object_Dir := "../.objs/" & Target_Name & "/";
+   function WebGL_Context
+    (Self : OpenGL_Context'Class)
+       return Web.GL.Rendering_Contexts.WebGL_Rendering_Context;
+   --  Returns associated WebGL_Rendering_Context.
 
-   package Compiler is
+   function Current_WebGL_Context
+     return Web.GL.Rendering_Contexts.WebGL_Rendering_Context;
+   --  Returns current WebGL_Rendering_Context.
 
-      case Target_Name is
-         when "javascript" =>
-            for Switches ("Ada") use ("-gnatW8");
-
-         when "llvm" =>
-            for Switches ("Ada") use ("--target=wasm32");
-
-         when others =>
-            for Switches ("Ada") use ("-g", "-gnata", "-gnatW8", "-O2");
-      end case;
-
-   end Compiler;
-
-end AdaGL_Config;
+end OpenGL.Contexts.Internals;

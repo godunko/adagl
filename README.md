@@ -27,6 +27,8 @@ make all example
 It depends on [Matreshka](https://forge.ada-ru.org/matreshka) library
 with a2js enabled. Note, to enable a2js you need ASIS installed.
 
+WASM/WebGL port depends on [AdaWebPack](https://github.com/godunko/adawebpack).
+
 Native implementation depends on glew and glfw libraries.
 
 ### Install dependecies from RPM on Fedora

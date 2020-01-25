@@ -37,6 +37,7 @@
 -- SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.             --
 --                                                                          --
 ------------------------------------------------------------------------------
+
 with Web.Strings;
 
 package body OpenGL.Contexts is
@@ -49,7 +50,7 @@ package body OpenGL.Contexts is
 
    function Create
     (Self   : in out OpenGL_Context'Class;
-     Canvas : Web.HTML.Canvases.HTML_Canvas_Element) return Boolean is
+     Canvas : Web.HTML.Canvases.HTML_Canvas_Element'Class) return Boolean is
    begin
       Self.Functions.Context :=
         Canvas.Get_Context (Web.Strings.To_Web_String ("webgl"));
@@ -71,7 +72,7 @@ package body OpenGL.Contexts is
 
    procedure Create
     (Self   : in out OpenGL_Context'Class;
-     Canvas : Web.HTML.Canvases.HTML_Canvas_Element) is
+     Canvas : Web.HTML.Canvases.HTML_Canvas_Element'Class) is
    begin
       if not Self.Create (Canvas) then
          raise Program_Error;

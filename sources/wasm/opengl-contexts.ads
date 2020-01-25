@@ -37,6 +37,7 @@
 -- SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.             --
 --                                                                          --
 ------------------------------------------------------------------------------
+
 with Web.HTML.Canvases;
 private with Web.GL.Rendering_Contexts;
 
@@ -52,12 +53,12 @@ package OpenGL.Contexts is
 
    function Create
     (Self   : in out OpenGL_Context'Class;
-     Canvas : Web.HTML.Canvases.HTML_Canvas_Element) return Boolean;
+     Canvas : Web.HTML.Canvases.HTML_Canvas_Element'Class) return Boolean;
    --  Attempts to create the OpenGL context. Returns False on failure.
 
    procedure Create
     (Self   : in out OpenGL_Context'Class;
-     Canvas : Web.HTML.Canvases.HTML_Canvas_Element);
+     Canvas : Web.HTML.Canvases.HTML_Canvas_Element'Class);
    --  Attempts to create the OpenGL context. Raise Program_Error on failure.
 
    function Functions

@@ -265,11 +265,11 @@ package body OpenGL.Contexts is
       ------------
 
       overriding procedure Finish (Self : WebGL_Functions) is
-      begin
-         null;
-         --  XXX Not implemented in Web API
+         Context_Ref : Web.GL.Rendering_Contexts.WebGL_Rendering_Context
+           := Self.Context;
 
---         Self.Context.Finish;
+      begin
+         Context_Ref.Finish;
       end Finish;
 
       -----------
@@ -277,11 +277,11 @@ package body OpenGL.Contexts is
       -----------
 
       overriding procedure Flush (Self : WebGL_Functions) is
-      begin
-         null;
-         --  XXX Not implemented in Web API
+         Context_Ref : Web.GL.Rendering_Contexts.WebGL_Rendering_Context
+           := Self.Context;
 
---         Self.Context.Flush;
+      begin
+         Context_Ref.Flush;
       end Flush;
 
       --------------
@@ -293,16 +293,13 @@ package body OpenGL.Contexts is
         X      : OpenGL.GLint;
         Y      : OpenGL.GLint;
         Width  : OpenGL.GLsizei;
-        Height : OpenGL.GLsizei) is
-      begin
-         null;
-         --  XXX Not implemented in Web API
+        Height : OpenGL.GLsizei)
+      is
+         Context_Ref : Web.GL.Rendering_Contexts.WebGL_Rendering_Context
+           := Self.Context;
 
---         Self.Context.Viewport
---          (WebAPI.WebGL.GLint (X),
---           WebAPI.WebGL.GLint (Y),
---           WebAPI.WebGL.GLsizei (Width),
---           WebAPI.WebGL.GLsizei (Height));
+      begin
+         Context_Ref.Viewport (X, Y, Width, Height);
       end Viewport;
 
    end WebGL_Functions;

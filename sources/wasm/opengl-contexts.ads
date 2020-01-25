@@ -83,7 +83,6 @@ private
 
       type WebGL_Functions is
         limited new OpenGL.Functions.OpenGL_Functions with record
---         Context : WebGL_Rendering_Context_Access;
          Context : Web.GL.Rendering_Contexts.WebGL_Rendering_Context;
       end record;
 

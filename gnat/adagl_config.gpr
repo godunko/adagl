@@ -51,7 +51,7 @@ abstract project AdaGL_Config is
             for Switches ("Ada") use ("-gnatW8");
 
          when "llvm" =>
-            for Switches ("Ada") use ("--target=wasm32");
+            for Switches ("Ada") use ("--target=wasm32", "-O1");
 
          when others =>
             for Switches ("Ada") use ("-g", "-gnata", "-gnatW8", "-O2");

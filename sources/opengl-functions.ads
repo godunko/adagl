@@ -74,7 +74,10 @@ package OpenGL.Functions is
 --                           and Blue in OpenGL.GLclampf'Range
 --                           and Alpha in OpenGL.GLclampf'Range;
 
---   GL_APICALL void GL_APIENTRY glClearDepthf (GLfloat d);
+   not overriding procedure Clear_Depth
+    (Self  : OpenGL_Functions;
+     Depth : OpenGL.GLfloat) is abstract;
+
 --   GL_APICALL void GL_APIENTRY glClearStencil (GLint s);
 --   GL_APICALL void GL_APIENTRY glColorMask (GLboolean red, GLboolean green, GLboolean blue, GLboolean alpha);
 --   GL_APICALL void GL_APIENTRY glCompressedTexImage2D (GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLint border, GLsizei imageSize, const void *data);

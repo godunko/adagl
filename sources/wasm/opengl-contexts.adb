@@ -191,6 +191,21 @@ package body OpenGL.Contexts is
            Web.GL.GLfloat (Alpha));
       end Clear_Color;
 
+      -----------------
+      -- Clear_Depth --
+      -----------------
+
+      overriding procedure Clear_Depth
+       (Self  : WebGL_Functions;
+        Depth : OpenGL.GLfloat)
+      is
+         Context_Ref : Web.GL.Rendering_Contexts.WebGL_Rendering_Context
+           := Self.Context;
+
+      begin
+         Context_Ref.Clear_Depth (Depth);
+      end Clear_Depth;
+
       ----------------
       -- Depth_Func --
       ----------------

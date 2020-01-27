@@ -53,7 +53,7 @@ package body OpenGL.Generic_Buffers is
    --------------
 
    procedure Allocate
-    (Self : in out OpenGL_Buffer'Class; Data : Element_Array)
+    (Self : in out OpenGL_Buffer'Class; Data : Element_Array_Type)
    is
       use type Web.GL.GLsizeiptr;
 
@@ -67,8 +67,10 @@ package body OpenGL.Generic_Buffers is
       end if;
 
       Self.Context.Buffer_Data
-       (Web.GL.Rendering_Contexts.ARRAY_BUFFER,
-        Element'Max_Size_In_Storage_Elements * Data'Length,
+       ((case Self.Buffer_Type is
+           when Vertex => Web.GL.Rendering_Contexts.ARRAY_BUFFER,
+           when Index  => Web.GL.Rendering_Contexts.ELEMENT_ARRAY_BUFFER),
+        Element_Type'Max_Size_In_Storage_Elements * Data'Length,
         Data (Data'First)'Address,
         Web.GL.Rendering_Contexts.STATIC_DRAW);
    end Allocate;
@@ -88,7 +90,10 @@ package body OpenGL.Generic_Buffers is
       end if;
 
       Self.Context.Bind_Buffer
-       (Web.GL.Rendering_Contexts.ARRAY_BUFFER, Self.Buffer);
+       ((case Self.Buffer_Type is
+           when Vertex => Web.GL.Rendering_Contexts.ARRAY_BUFFER,
+           when Index  => Web.GL.Rendering_Contexts.ELEMENT_ARRAY_BUFFER),
+        Self.Buffer);
 
       return True;
    end Bind;
@@ -150,7 +155,7 @@ package body OpenGL.Generic_Buffers is
       use type System.Storage_Elements.Storage_Offset;
 
    begin
-      return Element_Array'Component_Size / System.Storage_Unit;
+      return Element_Array_Type'Component_Size / System.Storage_Unit;
    end Stride;
 
 end OpenGL.Generic_Buffers;

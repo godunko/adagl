@@ -42,9 +42,9 @@ with System.Storage_Elements;
 private with Web.GL.Buffers;
 
 generic
-   type Element is private;
-   type Index is (<>);
-   type Element_Array is array (Index range <>) of Element;
+   type Element_Type is private;
+   type Index_Type is (<>);
+   type Element_Array_Type is array (Index_Type range <>) of Element_Type;
 
 package OpenGL.Generic_Buffers is
 
@@ -54,7 +54,7 @@ package OpenGL.Generic_Buffers is
      tagged limited private;
 
    procedure Allocate
-    (Self : in out OpenGL_Buffer'Class; Data : Element_Array);
+    (Self : in out OpenGL_Buffer'Class; Data : Element_Array_Type);
    --  Allocates necessary space to the buffer, initialized to the contents of
    --  Data. Any previous contents will be removed.
 

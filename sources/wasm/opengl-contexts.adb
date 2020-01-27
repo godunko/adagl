@@ -229,7 +229,6 @@ package body OpenGL.Contexts is
         First : OpenGL.GLint;
         Count : OpenGL.GLsizei) is
       begin
-         --  XXX A2JS: case expression can be replaced by Unchecked_Conversion
          Self.Context.Draw_Arrays
           ((case Mode is
               when GL_POINTS     => Web.GL.Rendering_Contexts.POINTS,
@@ -245,6 +244,38 @@ package body OpenGL.Contexts is
            Web.GL.GLint (First),
            Web.GL.GLsizei (Count));
       end Draw_Arrays;
+
+      -------------------
+      -- Draw_Elements --
+      -------------------
+
+      overriding procedure Draw_Elements
+       (Self      : WebGL_Functions;
+        Mode      : OpenGL.GLenum;
+        Count     : OpenGL.GLsizei;
+        Item_Type : OpenGL.GLenum;
+        Offset    : OpenGL.GLintptr) is
+      begin
+         Self.Context.Draw_Elements
+          ((case Mode is
+              when GL_POINTS     => Web.GL.Rendering_Contexts.POINTS,
+              when GL_LINE_STRIP => Web.GL.Rendering_Contexts.LINE_STRIP,
+              when GL_LINE_LOOP  => Web.GL.Rendering_Contexts.LINE_LOOP,
+              when GL_LINES      => Web.GL.Rendering_Contexts.LINES,
+              when GL_TRIANGLE_STRIP =>
+                Web.GL.Rendering_Contexts.TRIANGLE_STRIP,
+              when GL_TRIANGLE_FAN =>
+                Web.GL.Rendering_Contexts.TRIANGLE_FAN,
+              when GL_TRIANGLES  => Web.GL.Rendering_Contexts.TRIANGLES,
+              when others        => raise Constraint_Error),
+           Count,
+           (case Item_Type is
+              when GL_UNSIGNED_BYTE => Web.GL.Rendering_Contexts.UNSIGNED_BYTE,
+              when GL_UNSIGNED_SHORT =>
+                Web.GL.Rendering_Contexts.UNSIGNED_SHORT,
+              when others        => raise Constraint_Error),
+           Offset);
+      end Draw_Elements;
 
       ------------
       -- Enable --

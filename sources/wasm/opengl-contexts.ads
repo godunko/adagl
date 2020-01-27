@@ -116,6 +116,13 @@ private
         First : OpenGL.GLint;
         Count : OpenGL.GLsizei);
 
+      overriding procedure Draw_Elements
+       (Self      : WebGL_Functions;
+        Mode      : OpenGL.GLenum;
+        Count     : OpenGL.GLsizei;
+        Item_Type : OpenGL.GLenum;
+        Offset    : OpenGL.GLintptr);
+
       overriding procedure Enable
        (Self       : WebGL_Functions;
         Capability : OpenGL.GLenum);

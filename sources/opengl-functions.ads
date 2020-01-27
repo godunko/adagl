@@ -6,7 +6,7 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 --                                                                          --
--- Copyright © 2016-2018, Vadim Godunko <vgodunko@gmail.com>                --
+-- Copyright © 2016-2020, Vadim Godunko <vgodunko@gmail.com>                --
 -- All rights reserved.                                                     --
 --                                                                          --
 -- Redistribution and use in source and binary forms, with or without       --
@@ -101,7 +101,12 @@ package OpenGL.Functions is
      First : OpenGL.GLint;
      Count : OpenGL.GLsizei) is abstract;
 
---   GL_APICALL void GL_APIENTRY glDrawElements (GLenum mode, GLsizei count, GLenum type, const void *indices);
+   not overriding procedure Draw_Elements
+    (Self      : OpenGL_Functions;
+     Mode      : OpenGL.GLenum;
+     Count     : OpenGL.GLsizei;
+     Item_Type : OpenGL.GLenum;
+     Offset    : OpenGL.GLintptr) is abstract;
 
    not overriding procedure Enable
     (Self       : OpenGL_Functions;

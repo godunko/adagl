@@ -65,11 +65,12 @@ package OpenGL is
    subtype GLfloat is Web.GL.GLfloat;
    subtype GLclampf is GLfloat range 0.0 .. 1.0;
 
+   subtype GLintptr is Web.GL.GLintptr;
+
 --        <type api="gles2" requires="khrplatform">typedef khronos_int64_t <name>GLint64</name>;</type>
 --        <type api="gles2" requires="khrplatform">typedef khronos_uint64_t <name>GLuint64</name>;</type>
 --        <type api="gles2" requires="khrplatform">typedef khronos_int64_t <name>GLint64EXT</name>;</type>
 --        <type api="gles2" requires="khrplatform">typedef khronos_uint64_t <name>GLuint64EXT</name>;</type>
---        <type api="gles2" requires="khrplatform">typedef khronos_intptr_t <name>GLintptr</name>;</type>
 --        <type api="gles2" requires="khrplatform">typedef khronos_ssize_t <name>GLsizeiptr</name>;</type>
 
    --------------------------

@@ -212,12 +212,13 @@ package body OpenGL.Contexts is
 
       overriding procedure Depth_Func
        (Self : WebGL_Functions;
-        Func : OpenGL.GLenum) is
-      begin
-         null;
-         --  XXX Not implemented in Web API
+        Func : OpenGL.GLenum)
+      is
+         Context_Ref : Web.GL.Rendering_Contexts.WebGL_Rendering_Context
+           := Self.Context;
 
---         Self.Context.Depth_Func (WebAPI.WebGL.GLenum (Func));
+      begin
+         Context_Ref.Depth_Func (Web.GL.GLenum (Func));
       end Depth_Func;
 
       -------------
@@ -298,12 +299,13 @@ package body OpenGL.Contexts is
 
       overriding procedure Enable
        (Self       : WebGL_Functions;
-        Capability : OpenGL.GLenum) is
-      begin
-         null;
-         --  XXX Not implemented in Web API
+        Capability : OpenGL.GLenum)
+      is
+         Context_Ref : Web.GL.Rendering_Contexts.WebGL_Rendering_Context
+           := Self.Context;
 
---         Self.Context.Enable (WebAPI.WebGL.GLenum (Capability));
+      begin
+         Context_Ref.Enable (Web.GL.GLenum (Capability));
       end Enable;
 
       ------------

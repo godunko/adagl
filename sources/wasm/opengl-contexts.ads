@@ -120,7 +120,7 @@ private
        (Self      : WebGL_Functions;
         Mode      : OpenGL.GLenum;
         Count     : OpenGL.GLsizei;
-        Item_Type : OpenGL.GLenum;
+        Data_Type : OpenGL.GLenum;
         Offset    : OpenGL.GLintptr);
 
       overriding procedure Enable

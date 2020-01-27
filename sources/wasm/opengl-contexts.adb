@@ -253,7 +253,7 @@ package body OpenGL.Contexts is
        (Self      : WebGL_Functions;
         Mode      : OpenGL.GLenum;
         Count     : OpenGL.GLsizei;
-        Item_Type : OpenGL.GLenum;
+        Data_Type : OpenGL.GLenum;
         Offset    : OpenGL.GLintptr) is
       begin
          Self.Context.Draw_Elements
@@ -269,7 +269,7 @@ package body OpenGL.Contexts is
               when GL_TRIANGLES  => Web.GL.Rendering_Contexts.TRIANGLES,
               when others        => raise Constraint_Error),
            Count,
-           (case Item_Type is
+           (case Data_Type is
               when GL_UNSIGNED_BYTE => Web.GL.Rendering_Contexts.UNSIGNED_BYTE,
               when GL_UNSIGNED_SHORT =>
                 Web.GL.Rendering_Contexts.UNSIGNED_SHORT,

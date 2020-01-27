@@ -105,7 +105,7 @@ package OpenGL.Functions is
     (Self      : OpenGL_Functions;
      Mode      : OpenGL.GLenum;
      Count     : OpenGL.GLsizei;
-     Item_Type : OpenGL.GLenum;
+     Data_Type : OpenGL.GLenum;
      Offset    : OpenGL.GLintptr) is abstract;
 
    not overriding procedure Enable

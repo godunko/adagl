@@ -169,6 +169,17 @@ package body OpenGL.Textures is
       Self.Context.Set_Null;
    end Delete;
 
+   ----------------
+   -- Is_Created --
+   ----------------
+
+   function Is_Created (Self : OpenGL_Texture'Class) return Boolean is
+   begin
+      return not Self.Context.Is_Null
+        and then Self.Context = OpenGL.Contexts.Internals.Current_WebGL_Context
+        and then not Self.Texture.Is_Null;
+   end Is_Created;
+
 --   -------------
 --   -- Release --
 --   -------------

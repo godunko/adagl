@@ -54,6 +54,9 @@ package OpenGL.Textures is
 
    procedure Delete (Self : in out OpenGL_Texture'Class);
 
+   function Is_Created (Self : OpenGL_Texture'Class) return Boolean;
+   --  Returns True if the underlying OpenGL texture object has been created.
+
    procedure Bind (Self : in out OpenGL_Texture'Class);
    --  Binds this texture to the currently active texture unit ready for
    --  rendering.

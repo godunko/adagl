@@ -543,14 +543,7 @@ package OpenGL is
 
    type Shader_Type is (Vertex, Fragment);
 
-   type Texture_Type is
-    (Texture_2D,
-     Cube_Map_Positive_X,
-     Cube_Map_Negative_X,
-     Cube_Map_Positive_Y,
-     Cube_Map_Negative_Y,
-     Cube_Map_Positive_Z,
-     Cube_Map_Negative_Z);
+   type Texture_Type is (Texture_2D, Cube_Map);
 
    subtype Texture_Unit is GLint range 0 .. GLint'Last;
 

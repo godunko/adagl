@@ -86,13 +86,10 @@ package OpenGL is
 --   pragma JavaScript_Array_Buffer (GLbyte_Vector_3);
 --   type GLbyte_Vector_4 is array (Positive range 1 .. 4) of GLbyte;
 --   pragma JavaScript_Array_Buffer (GLbyte_Vector_4);
---
---   type GLubyte_Vector_2 is array (Positive range 1 .. 2) of GLubyte;
---   pragma JavaScript_Array_Buffer (GLubyte_Vector_2);
---   type GLubyte_Vector_3 is array (Positive range 1 .. 3) of GLubyte;
---   pragma JavaScript_Array_Buffer (GLubyte_Vector_3);
---   type GLubyte_Vector_4 is array (Positive range 1 .. 4) of GLubyte;
---   pragma JavaScript_Array_Buffer (GLubyte_Vector_4);
+
+   subtype GLubyte_Vector_2 is Web.GL.GLubyte_Vector_2;
+   subtype GLubyte_Vector_3 is Web.GL.GLubyte_Vector_3;
+   subtype GLubyte_Vector_4 is Web.GL.GLubyte_Vector_4;
 --
 --   type GLshort_Vector_2 is array (Positive range 1 .. 2) of GLshort;
 --   pragma JavaScript_Array_Buffer (GLshort_Vector_2);

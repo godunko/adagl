@@ -67,6 +67,8 @@ package body OpenGL.Programs is
       Shader : OpenGL.Shaders.OpenGL_Shader_Access;
 
    begin
+      Self.Log.Clear;
+
       --  Create WebGL_Program object when necessary.
 
       if not Self.Create then
@@ -78,6 +80,7 @@ package body OpenGL.Programs is
       Shader := new OpenGL.Shaders.OpenGL_Shader (Shader_Type);
 
       if not Shader.Compile_Source_Code (Source) then
+         Self.Log := Shader.Log;
          Free (Shader);
 
          return False;
@@ -263,13 +266,11 @@ package body OpenGL.Programs is
 
    function Is_Linked (Self : OpenGL_Program'Class) return Boolean is
    begin
-      return False;
-      --  XXX Not implemented
---      return
---        not Self.Context.Is_Null
---          and then not Self.Program.Is_Null
---          and then Self.Context.Get_Program_Parameter
---                    (Self.Program, Web.GL.Rendering_Contexts.LINK_STATUS);
+      return
+        not Self.Context.Is_Null
+          and then not Self.Program.Is_Null
+          and then Self.Context.Get_Program_Parameter
+                    (Self.Program, Web.GL.Rendering_Contexts.LINK_STATUS);
    end Is_Linked;
 
    ----------
@@ -278,19 +279,28 @@ package body OpenGL.Programs is
 
    function Link (Self : in out OpenGL_Program) return Boolean is
    begin
+      Self.Log.Clear;
       Self.Context.Link_Program (Self.Program);
 
-      --  XXX Not implemented
---      if not Self.Context.Get_Program_Parameter
---              (Self.Program, WebAPI.WebGL.Rendering_Contexts.LINK_STATUS)
---      then
---         --  XXX Error handling should be implemented.
---
---         raise Program_Error;
---      end if;
+      if not Self.Context.Get_Program_Parameter
+              (Self.Program, Web.GL.Rendering_Contexts.LINK_STATUS)
+      then
+         Self.Log := Self.Context.Get_Program_Info_Log (Self.Program);
+
+         return False;
+      end if;
 
       return True;
    end Link;
+
+   ---------
+   -- Log --
+   ---------
+
+   function Log (Self : OpenGL_Program'Class) return Web.Strings.Web_String is
+   begin
+      return Self.Log;
+   end Log;
 
    -------------
    -- Release --

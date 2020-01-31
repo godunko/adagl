@@ -57,12 +57,16 @@ package OpenGL.Shaders is
    --  Sets the source code for this shader and compiles it. Returns True if
    --  the source was successfully compiled, False otherwise.
 
+   function Log (Self : OpenGL_Shader'Class) return Web.Strings.Web_String;
+   --  Returns the errors and warnings that occurred during the last compile.
+
 private
 
    type OpenGL_Shader (Shader_Type : OpenGL.Shader_Type) is
      tagged limited record
       Shader   : Web.GL.Shaders.WebGL_Shader;
       Context  : Web.GL.Rendering_Contexts.WebGL_Rendering_Context;
+      Log      : Web.Strings.Web_String;
    end record;
 
 end OpenGL.Shaders;

@@ -124,6 +124,10 @@ package OpenGL.Programs is
    --  Add_Shader. Returns True if the link was successful or False otherwise.
    --  If the link failed, the error messages can be retrieved with Log.
 
+   function Log (Self : OpenGL_Program'Class) return Web.Strings.Web_String;
+   --  Returns the errors and warnings that occurred during the last Link or
+   --  Add_Shader_From_Source_Code with explicitly specified source code.
+
    procedure Release (Self : OpenGL_Program'Class);
    --  Releases the active shader program from the current OpenGL_Context. This
    --  is equivalent to calling glUseProgram(0).
@@ -312,6 +316,7 @@ private
    type OpenGL_Program is tagged limited record
       Program : Web.GL.Programs.WebGL_Program;
       Context : Web.GL.Rendering_Contexts.WebGL_Rendering_Context;
+      Log     : Web.Strings.Web_String;
    end record;
 
 end OpenGL.Programs;

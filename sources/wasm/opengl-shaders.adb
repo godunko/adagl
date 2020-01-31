@@ -50,6 +50,8 @@ package body OpenGL.Shaders is
     (Self   : in out OpenGL_Shader'Class;
      Source : Web.Strings.Web_String) return Boolean is
    begin
+      Self.Log.Clear;
+
       if Self.Context.Is_Null then
          Self.Context := OpenGL.Contexts.Internals.Current_WebGL_Context;
 
@@ -73,20 +75,28 @@ package body OpenGL.Shaders is
       Self.Context.Shader_Source (Self.Shader, Source);
       Self.Context.Compile_Shader (Self.Shader);
 
---  XXX Not implemented
---      if not Self.Context.Get_Shader_Parameter
---              (Self.Shader, WebAPI.WebGL.Rendering_Contexts.COMPILE_STATUS)
---      then
---         Self.Context.Delete_Shader (Self.Shader);
---         Self.Shader  := null;
---         Self.Context := null;
---
---         --  XXX Error handling must be implemented.
---
---         raise Program_Error;
---      end if;
+      if not Self.Context.Get_Shader_Parameter
+              (Self.Shader, Web.GL.Rendering_Contexts.COMPILE_STATUS)
+      then
+         Self.Log := Self.Context.Get_Shader_Info_Log (Self.Shader);
+
+         Self.Context.Delete_Shader (Self.Shader);
+         Self.Shader.Set_Null;
+         Self.Context.Set_Null;
+
+         return False;
+      end if;
 
       return True;
    end Compile_Source_Code;
+
+   ---------
+   -- Log --
+   ---------
+
+   function Log (Self : OpenGL_Shader'Class) return Web.Strings.Web_String is
+   begin
+      return Self.Log;
+   end Log;
 
 end OpenGL.Shaders;

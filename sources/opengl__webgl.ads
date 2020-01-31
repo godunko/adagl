@@ -6,7 +6,7 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 --                                                                          --
--- Copyright © 2016-2018, Vadim Godunko <vgodunko@gmail.com>                --
+-- Copyright © 2016-2020, Vadim Godunko <vgodunko@gmail.com>                --
 -- All rights reserved.                                                     --
 --                                                                          --
 -- Redistribution and use in source and binary forms, with or without       --
@@ -63,11 +63,12 @@ package OpenGL is
    type GLfloat is new Interfaces.IEEE_Float_32;
    subtype GLclampf is GLfloat range 0.0 .. 1.0;
 
+   type GLintptr is new Interfaces.Unsigned_64;
+
 --        <type api="gles2" requires="khrplatform">typedef khronos_int64_t <name>GLint64</name>;</type>
 --        <type api="gles2" requires="khrplatform">typedef khronos_uint64_t <name>GLuint64</name>;</type>
 --        <type api="gles2" requires="khrplatform">typedef khronos_int64_t <name>GLint64EXT</name>;</type>
 --        <type api="gles2" requires="khrplatform">typedef khronos_uint64_t <name>GLuint64EXT</name>;</type>
---        <type api="gles2" requires="khrplatform">typedef khronos_intptr_t <name>GLintptr</name>;</type>
 --        <type api="gles2" requires="khrplatform">typedef khronos_ssize_t <name>GLsizeiptr</name>;</type>
 
    --------------------------

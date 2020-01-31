@@ -6,7 +6,7 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 --                                                                          --
--- Copyright © 2016-2018, Vadim Godunko <vgodunko@gmail.com>                --
+-- Copyright © 2016-2020, Vadim Godunko <vgodunko@gmail.com>                --
 -- All rights reserved.                                                     --
 --                                                                          --
 -- Redistribution and use in source and binary forms, with or without       --
@@ -103,6 +103,10 @@ private
         Blue  : OpenGL.GLfloat;
         Alpha : OpenGL.GLfloat);
 
+      overriding procedure Clear_Depth
+       (Self  : WebGL_Functions;
+        Depth : OpenGL.GLfloat);
+
       overriding procedure Depth_Func
        (Self : WebGL_Functions;
         Func : OpenGL.GLenum);
@@ -116,6 +120,13 @@ private
         Mode  : OpenGL.GLenum;
         First : OpenGL.GLint;
         Count : OpenGL.GLsizei);
+
+      overriding procedure Draw_Elements
+       (Self      : WebGL_Functions;
+        Mode      : OpenGL.GLenum;
+        Count     : OpenGL.GLsizei;
+        Data_Type : OpenGL.GLenum;
+        Offset    : OpenGL.GLintptr);
 
       overriding procedure Enable
        (Self       : WebGL_Functions;

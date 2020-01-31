@@ -6,7 +6,7 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 --                                                                          --
--- Copyright © 2016-2018, Vadim Godunko <vgodunko@gmail.com>                --
+-- Copyright © 2016-2020, Vadim Godunko <vgodunko@gmail.com>                --
 -- All rights reserved.                                                     --
 --                                                                          --
 -- Redistribution and use in source and binary forms, with or without       --
@@ -184,6 +184,17 @@ package body OpenGL.Contexts is
            WebAPI.WebGL.GLfloat (Alpha));
       end Clear_Color;
 
+      -----------------
+      -- Clear_Depth --
+      -----------------
+
+      overriding procedure Clear_Depth
+       (Self  : WebGL_Functions;
+        Depth : OpenGL.GLfloat) is
+      begin
+         Self.Context.Clear_Depth (WebAPI.WebGL.GLfloat (Depth));
+      end Clear_Depth;
+
       ----------------
       -- Depth_Func --
       ----------------
@@ -233,6 +244,43 @@ package body OpenGL.Contexts is
            WebAPI.WebGL.GLint (First),
            WebAPI.WebGL.GLsizei (Count));
       end Draw_Arrays;
+
+      -------------------
+      -- Draw_Elements --
+      -------------------
+
+      overriding procedure Draw_Elements
+       (Self      : WebGL_Functions;
+        Mode      : OpenGL.GLenum;
+        Count     : OpenGL.GLsizei;
+        Data_Type : OpenGL.GLenum;
+        Offset    : OpenGL.GLintptr) is
+      begin
+         --  XXX A2JS: case expression can be replaced by Unchecked_Conversion
+         Self.Context.Draw_Elements
+          ((case Mode is
+              when GL_POINTS     => WebAPI.WebGL.Rendering_Contexts.POINTS,
+              when GL_LINE_STRIP => WebAPI.WebGL.Rendering_Contexts.LINE_STRIP,
+              when GL_LINE_LOOP  => WebAPI.WebGL.Rendering_Contexts.LINE_LOOP,
+              when GL_LINES      => WebAPI.WebGL.Rendering_Contexts.LINES,
+              when GL_TRIANGLE_STRIP =>
+                WebAPI.WebGL.Rendering_Contexts.TRIANGLE_STRIP,
+              when GL_TRIANGLE_FAN =>
+                WebAPI.WebGL.Rendering_Contexts.TRIANGLE_FAN,
+              when GL_TRIANGLES  => WebAPI.WebGL.Rendering_Contexts.TRIANGLES,
+              when others => WebAPI.WebGL.Rendering_Contexts.POINTS),
+--              when others => raise Constrint_Error),
+           WebAPI.WebGL.GLsizei (Count),
+           (case Data_Type is
+              when GL_UNSIGNED_BYTE =>
+                WebAPI.WebGL.Rendering_Contexts.UNSIGNED_BYTE,
+              when GL_UNSIGNED_SHORT =>
+                WebAPI.WebGL.Rendering_Contexts.UNSIGNED_SHORT,
+              when others =>
+                WebAPI.WebGL.Rendering_Contexts.UNSIGNED_BYTE),
+--              when others => raise Constrint_Error),
+           WebAPI.WebGL.GLintptr (Offset));
+      end Draw_Elements;
 
       ------------
       -- Enable --

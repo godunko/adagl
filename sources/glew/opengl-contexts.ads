@@ -99,6 +99,10 @@ private
         Blue  : OpenGL.GLfloat;
         Alpha : OpenGL.GLfloat);
 
+      procedure Clear_Depth
+       (Self  : My_Functions;
+        Depth : OpenGL.GLfloat);
+
       overriding procedure Depth_Func
         (Self : My_Functions;
          Func : OpenGL.GLenum);
@@ -113,12 +117,12 @@ private
         First : OpenGL.GLint;
         Count : OpenGL.GLsizei);
 
---        overriding procedure Draw_Elements
---         (Self   : My_Functions;
---          Mode   : OpenGL.GLenum;
---          Count  : OpenGL.GLsizei;
---          TType  : OpenGL.GLenum;
---          Offset : OpenGL.GLsizei);
+      procedure Draw_Elements
+       (Self      : My_Functions;
+        Mode      : OpenGL.GLenum;
+        Count     : OpenGL.GLsizei;
+        Data_Type : OpenGL.GLenum;
+        Offset    : OpenGL.GLintptr);
 
       overriding procedure Enable
        (Self       : My_Functions;

@@ -6,7 +6,7 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 --                                                                          --
--- Copyright © 2018, Vadim Godunko <vgodunko@gmail.com>                     --
+-- Copyright © 2018-2020, Vadim Godunko <vgodunko@gmail.com>                --
 -- All rights reserved.                                                     --
 --                                                                          --
 -- Redistribution and use in source and binary forms, with or without       --
@@ -161,6 +161,17 @@ package body OpenGL.Contexts is
          GLEW.glClearColor (Red, Green, Blue, Alpha);
       end Clear_Color;
 
+      -----------------
+      -- Clear_Depth --
+      -----------------
+
+      procedure Clear_Depth
+       (Self  : My_Functions;
+        Depth : OpenGL.GLfloat) is
+      begin
+         GLEW.glClearDepth (OpenGL.GLdouble (Depth));
+      end Clear_Depth;
+
       ----------------
       -- Depth_Func --
       ----------------
@@ -200,18 +211,20 @@ package body OpenGL.Contexts is
       -- Draw_Elements --
       -------------------
 
---        overriding procedure Draw_Elements
---         (Self   : My_Functions;
---          Mode   : OpenGL.GLenum;
---          Count  : OpenGL.GLsizei;
---          TType  : OpenGL.GLenum;
---          Offset : OpenGL.GLsizei) is
---        begin
---           GLEW.glDrawElements
---             (Mode, Count, TType,
---                System.Storage_Elements.To_Address
---                  (System.Storage_Elements.Integer_Address (Offset)));
---        end Draw_Elements;
+      procedure Draw_Elements
+       (Self      : My_Functions;
+        Mode      : OpenGL.GLenum;
+        Count     : OpenGL.GLsizei;
+        Data_Type : OpenGL.GLenum;
+        Offset    : OpenGL.GLintptr) is
+      begin
+         GLEW.glDrawElements
+           (Mode,
+            Count,
+            Data_Type,
+            System.Storage_Elements.To_Address
+              (System.Storage_Elements.Integer_Address (Offset)));
+      end Draw_Elements;
 
       ------------
       -- Enable --

@@ -39,7 +39,7 @@
 ------------------------------------------------------------------------------
 
 with "adagl_config.gpr";
-with "../gnat-llvm/llvm-interface/adawebpack_src/gnat/adawebpack.gpr";
+with "../../adawebpack/gnat/adawebpack.gpr";
 
 project AdaGL_WASM is
 

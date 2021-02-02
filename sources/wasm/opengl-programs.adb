@@ -6,7 +6,7 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 --                                                                          --
--- Copyright © 2016-2020, Vadim Godunko <vgodunko@gmail.com>                --
+-- Copyright © 2016-2021, Vadim Godunko <vgodunko@gmail.com>                --
 -- All rights reserved.                                                     --
 --                                                                          --
 -- Redistribution and use in source and binary forms, with or without       --
@@ -746,7 +746,7 @@ package body OpenGL.Programs is
          return;
       end if;
 
-      Self.Context.Uniform_2fv (Location, Value);
+      Self.Context.Uniform_2fv (Location, Web.GL.Glfloat_Vector_2 (Value));
    end Set_Uniform_Value;
 
    -----------------------
@@ -768,7 +768,7 @@ package body OpenGL.Programs is
          return;
       end if;
 
-      Self.Context.Uniform_3fv (Location, Value);
+      Self.Context.Uniform_3fv (Location, Web.GL.Glfloat_Vector_3 (Value));
    end Set_Uniform_Value;
 
    -----------------------
@@ -790,7 +790,7 @@ package body OpenGL.Programs is
          return;
       end if;
 
-      Self.Context.Uniform_4fv (Location, Value);
+      Self.Context.Uniform_4fv (Location, Web.GL.Glfloat_Vector_4 (Value));
    end Set_Uniform_Value;
 
    -----------------------
@@ -812,7 +812,8 @@ package body OpenGL.Programs is
          return;
       end if;
 
-      Self.Context.Uniform_Matrix_2fv (Location, False, Value);
+      Self.Context.Uniform_Matrix_2fv
+        (Location, False, Web.GL.Glfloat_Matrix_2x2 (Value));
    end Set_Uniform_Value;
 
    -----------------------
@@ -834,7 +835,8 @@ package body OpenGL.Programs is
          return;
       end if;
 
-      Self.Context.Uniform_Matrix_3fv (Location, False, Value);
+      Self.Context.Uniform_Matrix_3fv
+        (Location, False, Web.GL.Glfloat_Matrix_3x3 (Value));
    end Set_Uniform_Value;
 
    -----------------------
@@ -856,7 +858,8 @@ package body OpenGL.Programs is
          return;
       end if;
 
-      Self.Context.Uniform_Matrix_4fv (Location, False, Value);
+      Self.Context.Uniform_Matrix_4fv
+        (Location, False, Web.GL.Glfloat_Matrix_4x4 (Value));
    end Set_Uniform_Value;
 
    -----------------------

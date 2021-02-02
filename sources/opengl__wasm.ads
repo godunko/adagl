@@ -6,7 +6,7 @@
 --                                                                          --
 ------------------------------------------------------------------------------
 --                                                                          --
--- Copyright © 2020, Vadim Godunko <vgodunko@gmail.com>                     --
+-- Copyright © 2020-2021, Vadim Godunko <vgodunko@gmail.com>                --
 -- All rights reserved.                                                     --
 --                                                                          --
 -- Redistribution and use in source and binary forms, with or without       --
@@ -77,9 +77,6 @@ package OpenGL is
    -- Vectors and matrices --
    --------------------------
 
-   --  Components of all arrays should be aliased. It doesn't work for A2JS,
-   --  so declarations for native and WebGL platforms are little bit different.
-
 --   type GLbyte_Vector_2 is array (Positive range 1 .. 2) of GLbyte;
 --   pragma JavaScript_Array_Buffer (GLbyte_Vector_2);
 --   type GLbyte_Vector_3 is array (Positive range 1 .. 3) of GLbyte;
@@ -87,10 +84,10 @@ package OpenGL is
 --   type GLbyte_Vector_4 is array (Positive range 1 .. 4) of GLbyte;
 --   pragma JavaScript_Array_Buffer (GLbyte_Vector_4);
 
-   subtype GLubyte_Vector_2 is Web.GL.GLubyte_Vector_2;
-   subtype GLubyte_Vector_3 is Web.GL.GLubyte_Vector_3;
-   subtype GLubyte_Vector_4 is Web.GL.GLubyte_Vector_4;
---
+   type GLubyte_Vector_2 is array (Positive range 1 .. 2) of aliased GLubyte;
+   type GLubyte_Vector_3 is array (Positive range 1 .. 3) of aliased GLubyte;
+   type GLubyte_Vector_4 is array (Positive range 1 .. 4) of aliased GLubyte;
+
 --   type GLshort_Vector_2 is array (Positive range 1 .. 2) of GLshort;
 --   pragma JavaScript_Array_Buffer (GLshort_Vector_2);
 --   type GLshort_Vector_3 is array (Positive range 1 .. 3) of GLshort;
@@ -112,9 +109,9 @@ package OpenGL is
 --   type GLfixed_Vector_4 is array (Positive range 1 .. 4) of GLfixed;
 --   pragma JavaScript_Array_Buffer (GLfixed_Vector_4);
 
-     subtype GLfloat_Vector_2 is Web.GL.GLfloat_Vector_2;
-     subtype GLfloat_Vector_3 is Web.GL.GLfloat_Vector_3;
-     subtype GLfloat_Vector_4 is Web.GL.GLfloat_Vector_4;
+   type GLfloat_Vector_2 is array (Positive range 1 .. 2) of aliased GLfloat;
+   type GLfloat_Vector_3 is array (Positive range 1 .. 3) of aliased GLfloat;
+   type GLfloat_Vector_4 is array (Positive range 1 .. 4) of aliased GLfloat;
 
 --   type GLbyte_Matrix_2x2 is
 --     array (Positive range 1 .. 2, Positive range 1 .. 2) of GLbyte
@@ -181,9 +178,15 @@ package OpenGL is
 --       with Convention => Fortran;
 --   pragma JavaScript_Array_Buffer (GLfixed_Matrix_4x4);
 
-   subtype GLfloat_Matrix_2x2 is Web.GL.GLfloat_Matrix_2x2;
-   subtype GLfloat_Matrix_3x3 is Web.GL.GLfloat_Matrix_3x3;
-   subtype GLfloat_Matrix_4x4 is Web.GL.GLfloat_Matrix_4x4;
+   type GLfloat_Matrix_2x2 is
+     array (Positive range 1 .. 2, Positive range 1 .. 2) of aliased GLfloat
+       with Convention => Fortran;
+   type GLfloat_Matrix_3x3 is
+     array (Positive range 1 .. 3, Positive range 1 .. 3) of aliased GLfloat
+       with Convention => Fortran;
+   type GLfloat_Matrix_4x4 is
+     array (Positive range 1 .. 4, Positive range 1 .. 4) of aliased GLfloat
+       with Convention => Fortran;
 
 --   type GLubyte_Vector_4_Array is
 --     array (Positive range <>) of GLubyte_Vector_4;

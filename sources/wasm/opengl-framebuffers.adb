@@ -169,14 +169,12 @@ package body OpenGL.Framebuffers is
 
       Self.Context.Renderbuffer_Storage
         (Web.GL.Rendering_Contexts.RENDERBUFFER,
-         Web.GL.Rendering_Contexts.DEPTH_COMPONENT16,
---         Web.GL.Rendering_Contexts.DEPTH_STENCIL,
+         Web.GL.Rendering_Contexts.DEPTH_STENCIL,
          Web.GL.Glsizei (Width),
          Web.GL.Glsizei (Height));
       Self.Context.Framebuffer_Renderbuffer
         (Web.GL.Rendering_Contexts.FRAMEBUFFER,
-         Web.GL.Rendering_Contexts.DEPTH_ATTACHMENT,
---         Web.GL.Rendering_Contexts.DEPTH_STENCIL_ATTACHMENT,
+         Web.GL.Rendering_Contexts.DEPTH_STENCIL_ATTACHMENT,
          Web.GL.Rendering_Contexts.RENDERBUFFER,
          Self.Renderbuffer);
 

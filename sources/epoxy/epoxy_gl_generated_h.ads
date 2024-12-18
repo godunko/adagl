@@ -16,6 +16,9 @@ package epoxy_gl_generated_h
   with Preelaborate
 is
 
+   type GLint_Array is array (Positive range <>) of OpenGL.GLint
+     with Convention => C;
+
 --  #define GL_NEXT_BUFFER_NV                                                          -2
 --  #define GL_SKIP_COMPONENTS4_NV                                                     -3
 --  #define GL_SKIP_COMPONENTS3_NV                                                     -4
@@ -3644,9 +3647,9 @@ is
 --  #define GL_COMPRESSED_SRGB_PVRTC_4BPPV1_EXT                                        0x8A55
 --  #define GL_COMPRESSED_SRGB_ALPHA_PVRTC_2BPPV1_EXT                                  0x8A56
 --  #define GL_COMPRESSED_SRGB_ALPHA_PVRTC_4BPPV1_EXT                                  0x8A57
---  #define GL_FRAGMENT_SHADER                                                         0x8B30
+   GL_FRAGMENT_SHADER                                  : constant := 16#8B30#;
 --  #define GL_FRAGMENT_SHADER_ARB                                                     0x8B30
---  #define GL_VERTEX_SHADER                                                           0x8B31
+   GL_VERTEX_SHADER                                    : constant := 16#8B31#;
 --  #define GL_VERTEX_SHADER_ARB                                                       0x8B31
 --  #define GL_PROGRAM_OBJECT_ARB                                                      0x8B40
 --  #define GL_PROGRAM_OBJECT_EXT                                                      0x8B40
@@ -3725,7 +3728,7 @@ is
 --  #define GL_FLOAT_MAT4x3_NV                                                         0x8B6A
 --  #define GL_DELETE_STATUS                                                           0x8B80
 --  #define GL_OBJECT_DELETE_STATUS_ARB                                                0x8B80
---  #define GL_COMPILE_STATUS                                                          0x8B81
+   GL_COMPILE_STATUS                                   : constant := 16#8B81#;
 --  #define GL_OBJECT_COMPILE_STATUS_ARB                                               0x8B81
 --  #define GL_LINK_STATUS                                                             0x8B82
 --  #define GL_OBJECT_LINK_STATUS_ARB                                                  0x8B82
@@ -6233,7 +6236,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLCOMBINERSTAGEPARAMETERFVNVPROC)(GLenum stage, GLenum pname, const GLfloat * params);
 --  typedef void (GLAPIENTRY *PFNGLCOMMANDLISTSEGMENTSNVPROC)(GLuint list, GLuint segments);
 --  typedef void (GLAPIENTRY *PFNGLCOMPILECOMMANDLISTNVPROC)(GLuint list);
---  typedef void (GLAPIENTRY *PFNGLCOMPILESHADERPROC)(GLuint shader);
 --  typedef void (GLAPIENTRY *PFNGLCOMPILESHADERARBPROC)(GLhandleARB shaderObj);
 --  typedef void (GLAPIENTRY *PFNGLCOMPILESHADERINCLUDEARBPROC)(GLuint shader, GLsizei count, const GLchar *const* path, const GLint * length);
 --  typedef void (GLAPIENTRY *PFNGLCOMPRESSEDMULTITEXIMAGE1DEXTPROC)(GLenum texunit, GLenum target, GLint level, GLenum internalformat, GLsizei width, GLint border, GLsizei imageSize, const void * bits);
@@ -6343,7 +6345,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLCREATEQUERIESPROC)(GLenum target, GLsizei n, GLuint * ids);
 --  typedef void (GLAPIENTRY *PFNGLCREATERENDERBUFFERSPROC)(GLsizei n, GLuint * renderbuffers);
 --  typedef void (GLAPIENTRY *PFNGLCREATESAMPLERSPROC)(GLsizei n, GLuint * samplers);
---  typedef GLuint (GLAPIENTRY *PFNGLCREATESHADERPROC)(GLenum type);
 --  typedef GLhandleARB (GLAPIENTRY *PFNGLCREATESHADEROBJECTARBPROC)(GLenum shaderType);
 --  typedef GLuint (GLAPIENTRY *PFNGLCREATESHADERPROGRAMEXTPROC)(GLenum type, const GLchar * string);
 --  typedef GLuint (GLAPIENTRY *PFNGLCREATESHADERPROGRAMVPROC)(GLenum type, GLsizei count, const GLchar *const* strings);
@@ -6406,7 +6407,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLDELETERENDERBUFFERSOESPROC)(GLsizei n, const GLuint * renderbuffers);
 --  typedef void (GLAPIENTRY *PFNGLDELETESAMPLERSPROC)(GLsizei count, const GLuint * samplers);
 --  typedef void (GLAPIENTRY *PFNGLDELETESEMAPHORESEXTPROC)(GLsizei n, const GLuint * semaphores);
---  typedef void (GLAPIENTRY *PFNGLDELETESHADERPROC)(GLuint shader);
 --  typedef void (GLAPIENTRY *PFNGLDELETESTATESNVPROC)(GLsizei n, const GLuint * states);
 --  typedef void (GLAPIENTRY *PFNGLDELETESYNCPROC)(GLsync sync);
 --  typedef void (GLAPIENTRY *PFNGLDELETESYNCAPPLEPROC)(GLsync sync);
@@ -7071,11 +7071,9 @@ is
 --  typedef void (GLAPIENTRY *PFNGLGETSEMAPHOREPARAMETERUI64VEXTPROC)(GLuint semaphore, GLenum pname, GLuint64 * params);
 --  typedef void (GLAPIENTRY *PFNGLGETSEPARABLEFILTERPROC)(GLenum target, GLenum format, GLenum type, void * row, void * column, void * span);
 --  typedef void (GLAPIENTRY *PFNGLGETSEPARABLEFILTEREXTPROC)(GLenum target, GLenum format, GLenum type, void * row, void * column, void * span);
---  typedef void (GLAPIENTRY *PFNGLGETSHADERINFOLOGPROC)(GLuint shader, GLsizei bufSize, GLsizei * length, GLchar * infoLog);
 --  typedef void (GLAPIENTRY *PFNGLGETSHADERPRECISIONFORMATPROC)(GLenum shadertype, GLenum precisiontype, GLint * range, GLint * precision);
 --  typedef void (GLAPIENTRY *PFNGLGETSHADERSOURCEPROC)(GLuint shader, GLsizei bufSize, GLsizei * length, GLchar * source);
 --  typedef void (GLAPIENTRY *PFNGLGETSHADERSOURCEARBPROC)(GLhandleARB obj, GLsizei maxLength, GLsizei * length, GLcharARB * source);
---  typedef void (GLAPIENTRY *PFNGLGETSHADERIVPROC)(GLuint shader, GLenum pname, GLint * params);
 --  typedef void (GLAPIENTRY *PFNGLGETSHADINGRATEIMAGEPALETTENVPROC)(GLuint viewport, GLuint entry, GLenum * rate);
 --  typedef void (GLAPIENTRY *PFNGLGETSHADINGRATESAMPLELOCATIONIVNVPROC)(GLenum rate, GLuint samples, GLuint index, GLint * location);
 --  typedef void (GLAPIENTRY *PFNGLGETSHARPENTEXFUNCSGISPROC)(GLenum target, GLfloat * points);
@@ -8275,7 +8273,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLSHADEROP1EXTPROC)(GLenum op, GLuint res, GLuint arg1);
 --  typedef void (GLAPIENTRY *PFNGLSHADEROP2EXTPROC)(GLenum op, GLuint res, GLuint arg1, GLuint arg2);
 --  typedef void (GLAPIENTRY *PFNGLSHADEROP3EXTPROC)(GLenum op, GLuint res, GLuint arg1, GLuint arg2, GLuint arg3);
---  typedef void (GLAPIENTRY *PFNGLSHADERSOURCEPROC)(GLuint shader, GLsizei count, const GLchar *const* string, const GLint * length);
 --  typedef void (GLAPIENTRY *PFNGLSHADERSOURCEARBPROC)(GLhandleARB shaderObj, GLsizei count, const GLcharARB ** string, const GLint * length);
 --  typedef void (GLAPIENTRY *PFNGLSHADERSTORAGEBLOCKBINDINGPROC)(GLuint program, GLuint storageBlockIndex, GLuint storageBlockBinding);
 --  typedef void (GLAPIENTRY *PFNGLSHADINGRATEIMAGEBARRIERNVPROC)(GLboolean synchronize);
@@ -9882,9 +9879,17 @@ is
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCommandListSegmentsNV)(GLuint list, GLuint segments);
 --  
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompileCommandListNV)(GLuint list);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompileShader)(GLuint shader);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLCOMPILESHADERPROC)(GLuint shader);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompileShader)(GLuint shader);
+   --  #define glCompileShader epoxy_glCompileShader
+
+   type PFNGLCOMPILESHADERPROC is access procedure (shader : epoxy.GLuint)
+     with Convention => C;
+
+   glCompileShader : constant not null PFNGLCOMPILESHADERPROC
+     with Import, Convention => C, External_Name => "epoxy_glCompileShader";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompileShaderARB)(GLhandleARB shaderObj);
 --  
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompileShaderIncludeARB)(GLuint shader, GLsizei count, const GLchar *const* path, const GLint * length);
@@ -10102,9 +10107,18 @@ is
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCreateRenderbuffers)(GLsizei n, GLuint * renderbuffers);
 --  
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCreateSamplers)(GLsizei n, GLuint * samplers);
---  
---  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glCreateShader)(GLenum type);
---  
+
+   --  typedef GLuint (GLAPIENTRY *PFNGLCREATESHADERPROC)(GLenum type);
+   --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glCreateShader)(GLenum type);
+   --  #define glCreateShader epoxy_glCreateShader
+
+   type PFNGLCREATESHADERPROC is access function
+     (the_type : OpenGL.GLenum) return epoxy.GLuint
+        with Convention => C;
+
+   glCreateShader : constant not null PFNGLCREATESHADERPROC
+     with Import, Convention => C, External_Name => "epoxy_glCreateShader";
+
 --  EPOXY_PUBLIC GLhandleARB (EPOXY_CALLSPEC *epoxy_glCreateShaderObjectARB)(GLenum shaderType);
 --  
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glCreateShaderProgramEXT)(GLenum type, const GLchar * string);
@@ -10228,9 +10242,17 @@ is
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteSamplers)(GLsizei count, const GLuint * samplers);
 --  
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteSemaphoresEXT)(GLsizei n, const GLuint * semaphores);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteShader)(GLuint shader);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLDELETESHADERPROC)(GLuint shader);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteShader)(GLuint shader);
+   --  #define glDeleteShader epoxy_glDeleteShader
+
+   type PFNGLDELETESHADERPROC is access procedure (shader : epoxy.GLuint)
+     with Convention => C;
+
+   glDeleteShader : constant not null PFNGLDELETESHADERPROC
+     with Import, Convention => C, External_Name => "epoxy_glDeleteShader";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteStatesNV)(GLsizei n, const GLuint * states);
 --  
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteSync)(GLsync sync);
@@ -11642,17 +11664,38 @@ is
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetSeparableFilter)(GLenum target, GLenum format, GLenum type, void * row, void * column, void * span);
 --  
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetSeparableFilterEXT)(GLenum target, GLenum format, GLenum type, void * row, void * column, void * span);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetShaderInfoLog)(GLuint shader, GLsizei bufSize, GLsizei * length, GLchar * infoLog);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLGETSHADERINFOLOGPROC)(GLuint shader, GLsizei bufSize, GLsizei * length, GLchar * infoLog);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetShaderInfoLog)(GLuint shader, GLsizei bufSize, GLsizei * length, GLchar * infoLog);
+   --  #define glGetShaderInfoLog epoxy_glGetShaderInfoLog
+
+   type PFNGLGETSHADERINFOLOGPROC is access procedure
+     (shader  : epoxy.GLuint;
+      bufSize : OpenGL.GLsizei;
+      length  : out OpenGL.GLsizei;
+      infoLog : out Interfaces.C.char_array) with Convention => C;
+
+   glGetShaderInfoLog : constant not null PFNGLGETSHADERINFOLOGPROC
+     with Import, Convention => C, External_Name => "epoxy_glGetShaderInfoLog";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetShaderPrecisionFormat)(GLenum shadertype, GLenum precisiontype, GLint * range, GLint * precision);
 --  
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetShaderSource)(GLuint shader, GLsizei bufSize, GLsizei * length, GLchar * source);
 --  
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetShaderSourceARB)(GLhandleARB obj, GLsizei maxLength, GLsizei * length, GLcharARB * source);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetShaderiv)(GLuint shader, GLenum pname, GLint * params);
---  
+
+   --  typedef void (GLAPIENTRY *PFNCOMPILE_STATUSPROC)(GLuint shader, GLenum pname, GLint * params);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetShaderiv)(GLuint shader, GLenum pname, GLint * params);
+   --  #define glGetShaderiv epoxy_glGetShaderiv
+
+   type PFNGLGETSHADERIVPROC is access procedure
+     (shader : epoxy.GLuint;
+      pname  : OpenGL.GLenum;
+      params : out OpenGL.GLint) with Convention => C;
+
+   glGetShaderiv : constant not null PFNGLGETSHADERIVPROC
+     with Import, Convention => C, External_Name => "epoxy_glGetShaderiv";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetShadingRateImagePaletteNV)(GLuint viewport, GLuint entry, GLenum * rate);
 --  
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetShadingRateSampleLocationivNV)(GLenum rate, GLuint samples, GLuint index, GLint * location);
@@ -14050,9 +14093,20 @@ is
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glShaderOp2EXT)(GLenum op, GLuint res, GLuint arg1, GLuint arg2);
 --  
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glShaderOp3EXT)(GLenum op, GLuint res, GLuint arg1, GLuint arg2, GLuint arg3);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glShaderSource)(GLuint shader, GLsizei count, const GLchar *const* string, const GLint * length);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLSHADERSOURCEPROC)(GLuint shader, GLsizei count, const GLchar *const* string, const GLint * length);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glShaderSource)(GLuint shader, GLsizei count, const GLchar *const* string, const GLint * length);
+   --  #define glShaderSource epoxy_glShaderSource
+
+   type PFNGLSHADERSOURCEPROC is access procedure
+     (shader : epoxy.GLuint;
+      count  : OpenGL.GLsizei;
+      string : Interfaces.C.Strings.chars_ptr_array;
+      length : GLint_Array) with Convention => C;
+
+   glShaderSource : constant not null PFNGLSHADERSOURCEPROC
+     with Import, Convention => C, External_Name => "epoxy_glShaderSource";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glShaderSourceARB)(GLhandleARB shaderObj, GLsizei count, const GLcharARB ** string, const GLint * length);
 --  
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glShaderStorageBlockBinding)(GLuint program, GLuint storageBlockIndex, GLuint storageBlockBinding);
@@ -16181,7 +16235,6 @@ is
 --  #define glCombinerStageParameterfvNV epoxy_glCombinerStageParameterfvNV
 --  #define glCommandListSegmentsNV epoxy_glCommandListSegmentsNV
 --  #define glCompileCommandListNV epoxy_glCompileCommandListNV
---  #define glCompileShader epoxy_glCompileShader
 --  #define glCompileShaderARB epoxy_glCompileShaderARB
 --  #define glCompileShaderIncludeARB epoxy_glCompileShaderIncludeARB
 --  #define glCompressedMultiTexImage1DEXT epoxy_glCompressedMultiTexImage1DEXT
@@ -16291,7 +16344,6 @@ is
 --  #define glCreateQueries epoxy_glCreateQueries
 --  #define glCreateRenderbuffers epoxy_glCreateRenderbuffers
 --  #define glCreateSamplers epoxy_glCreateSamplers
---  #define glCreateShader epoxy_glCreateShader
 --  #define glCreateShaderObjectARB epoxy_glCreateShaderObjectARB
 --  #define glCreateShaderProgramEXT epoxy_glCreateShaderProgramEXT
 --  #define glCreateShaderProgramv epoxy_glCreateShaderProgramv
@@ -16354,7 +16406,6 @@ is
 --  #define glDeleteRenderbuffersOES epoxy_glDeleteRenderbuffersOES
 --  #define glDeleteSamplers epoxy_glDeleteSamplers
 --  #define glDeleteSemaphoresEXT epoxy_glDeleteSemaphoresEXT
---  #define glDeleteShader epoxy_glDeleteShader
 --  #define glDeleteStatesNV epoxy_glDeleteStatesNV
 --  #define glDeleteSync epoxy_glDeleteSync
 --  #define glDeleteSyncAPPLE epoxy_glDeleteSyncAPPLE
@@ -17019,11 +17070,9 @@ is
 --  #define glGetSemaphoreParameterui64vEXT epoxy_glGetSemaphoreParameterui64vEXT
 --  #define glGetSeparableFilter epoxy_glGetSeparableFilter
 --  #define glGetSeparableFilterEXT epoxy_glGetSeparableFilterEXT
---  #define glGetShaderInfoLog epoxy_glGetShaderInfoLog
 --  #define glGetShaderPrecisionFormat epoxy_glGetShaderPrecisionFormat
 --  #define glGetShaderSource epoxy_glGetShaderSource
 --  #define glGetShaderSourceARB epoxy_glGetShaderSourceARB
---  #define glGetShaderiv epoxy_glGetShaderiv
 --  #define glGetShadingRateImagePaletteNV epoxy_glGetShadingRateImagePaletteNV
 --  #define glGetShadingRateSampleLocationivNV epoxy_glGetShadingRateSampleLocationivNV
 --  #define glGetSharpenTexFuncSGIS epoxy_glGetSharpenTexFuncSGIS
@@ -18223,7 +18272,6 @@ is
 --  #define glShaderOp1EXT epoxy_glShaderOp1EXT
 --  #define glShaderOp2EXT epoxy_glShaderOp2EXT
 --  #define glShaderOp3EXT epoxy_glShaderOp3EXT
---  #define glShaderSource epoxy_glShaderSource
 --  #define glShaderSourceARB epoxy_glShaderSourceARB
 --  #define glShaderStorageBlockBinding epoxy_glShaderStorageBlockBinding
 --  #define glShadingRateImageBarrierNV epoxy_glShadingRateImageBarrierNV
@@ -19129,53 +19177,6 @@ is
 
    --  type GLuint_Array is array (Positive range <>) of GLuint
    --    with Convention => C;
-   --  type GLint_Array is array (Positive range <>) of OpenGL.GLint
-   --    with Convention => C;
-   --
-   --  type glewCreateShader is access function
-   --    (shaderType : OpenGL.GLenum) return GLuint with Convention => C;
-   --
-   --  glCreateShader : glewCreateShader
-   --    with Import, Convention => C, External_Name => "__glewCreateShader";
-   --
-   --  type glewShaderSource is access procedure
-   --    (shader : GLuint;
-   --     count  : OpenGL.GLsizei;
-   --     string : Interfaces.C.Strings.chars_ptr_array;
-   --     length : GLint_Array) with Convention => C;
-   --
-   --  glShaderSource : glewShaderSource
-   --    with Import, Convention => C, External_Name => "__glewShaderSource";
-   --
-   --  type glewCompileShader is access procedure (shader : GLuint)
-   --    with Convention => C;
-   --
-   --  glCompileShader : glewCompileShader
-   --    with Import, Convention => C, External_Name => "__glewCompileShader";
-   --
-   --  type glewGetShaderiv is access procedure
-   --    (shader : GLuint;
-   --     pname  : OpenGL.GLenum;
-   --     params : access OpenGL.GLint) with Convention => C;
-   --
-   --  glGetShaderiv : glewGetShaderiv
-   --    with Import, Convention => C, External_Name => "__glewGetShaderiv";
-   --
-   --  type glewDeleteShader is access procedure (shader : GLuint)
-   --    with Convention => C;
-   --
-   --  glDeleteShader : glewDeleteShader
-   --    with Import, Convention => C, External_Name => "__glewDeleteShader";
-   --
-   --  type glewGetShaderInfoLog is access procedure
-   --    (shader    : GLuint;
-   --     maxLength : OpenGL.GLsizei;
-   --     length    : access OpenGL.GLsizei;
-   --     infoLog   : out Interfaces.C.char_array)
-   --    with Convention => C;
-   --
-   --  glGetShaderInfoLog : glewGetShaderInfoLog
-   --    with Import, Convention => C, External_Name => "__glewGetShaderInfoLog";
    --
    --  type glewAttachShader is access procedure
    --    (program   : GLuint;
@@ -19431,9 +19432,7 @@ is
    --       with Import, Convention => C, External_Name => "glTexParameteri";
    --
    --  FRAGMENT_SHADER : constant := 16#8B30#;
-   --  VERTEX_SHADER   : constant := 16#8B31#;
    --
-   --  COMPILE_STATUS : constant := 16#8B81#;
    --  LINK_STATUS    : constant := 16#8B82#;
 
 end epoxy_gl_generated_h;

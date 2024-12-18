@@ -7,12 +7,14 @@
 --  This package provides binding to entities in `epoxy/gl_generated.h` file.
 
 with OpenGL;
---  with Interfaces.C.Strings;
+with Interfaces.C.Strings;
 with System;
 
-package epoxy_gl_generated_h is
+with epoxy;
 
-   pragma Preelaborate;
+package epoxy_gl_generated_h
+  with Preelaborate
+is
 
 --  #define GL_NEXT_BUFFER_NV                                                          -2
 --  #define GL_SKIP_COMPONENTS4_NV                                                     -3
@@ -3256,9 +3258,9 @@ package epoxy_gl_generated_h is
 --  #define GL_TEXTURE_UNSIGNED_REMAP_MODE_NV                                          0x888F
 --  #define GL_DEPTH_BOUNDS_TEST_EXT                                                   0x8890
 --  #define GL_DEPTH_BOUNDS_EXT                                                        0x8891
---  #define GL_ARRAY_BUFFER                                                            0x8892
+   GL_ARRAY_BUFFER                                     : constant := 16#8892#;
 --  #define GL_ARRAY_BUFFER_ARB                                                        0x8892
---  #define GL_ELEMENT_ARRAY_BUFFER                                                    0x8893
+   GL_ELEMENT_ARRAY_BUFFER                             : constant := 16#8893#;
 --  #define GL_ELEMENT_ARRAY_BUFFER_ARB                                                0x8893
 --  #define GL_ARRAY_BUFFER_BINDING                                                    0x8894
 --  #define GL_ARRAY_BUFFER_BINDING_ARB                                                0x8894
@@ -3367,7 +3369,7 @@ package epoxy_gl_generated_h is
 --  #define GL_STREAM_READ_ARB                                                         0x88E1
 --  #define GL_STREAM_COPY                                                             0x88E2
 --  #define GL_STREAM_COPY_ARB                                                         0x88E2
---  #define GL_STATIC_DRAW                                                             0x88E4
+   GL_STATIC_DRAW                                      : constant := 16#88E4#;
 --  #define GL_STATIC_DRAW_ARB                                                         0x88E4
 --  #define GL_STATIC_READ                                                             0x88E5
 --  #define GL_STATIC_READ_ARB                                                         0x88E5
@@ -5970,7 +5972,6 @@ package epoxy_gl_generated_h is
 --  typedef void (GLAPIENTRY *PFNGLBEGINVIDEOCAPTURENVPROC)(GLuint video_capture_slot);
 --  typedef void (GLAPIENTRY *PFNGLBINDATTRIBLOCATIONPROC)(GLuint program, GLuint index, const GLchar * name);
 --  typedef void (GLAPIENTRY *PFNGLBINDATTRIBLOCATIONARBPROC)(GLhandleARB programObj, GLuint index, const GLcharARB * name);
---  typedef void (GLAPIENTRY *PFNGLBINDBUFFERPROC)(GLenum target, GLuint buffer);
 --  typedef void (GLAPIENTRY *PFNGLBINDBUFFERARBPROC)(GLenum target, GLuint buffer);
 --  typedef void (GLAPIENTRY *PFNGLBINDBUFFERBASEPROC)(GLenum target, GLuint index, GLuint buffer);
 --  typedef void (GLAPIENTRY *PFNGLBINDBUFFERBASEEXTPROC)(GLenum target, GLuint index, GLuint buffer);
@@ -6080,7 +6081,6 @@ package epoxy_gl_generated_h is
 --  typedef void (GLAPIENTRY *PFNGLBLITNAMEDFRAMEBUFFERPROC)(GLuint readFramebuffer, GLuint drawFramebuffer, GLint srcX0, GLint srcY0, GLint srcX1, GLint srcY1, GLint dstX0, GLint dstY0, GLint dstX1, GLint dstY1, GLbitfield mask, GLenum filter);
 --  typedef void (GLAPIENTRY *PFNGLBUFFERADDRESSRANGENVPROC)(GLenum pname, GLuint index, GLuint64EXT address, GLsizeiptr length);
 --  typedef void (GLAPIENTRY *PFNGLBUFFERATTACHMEMORYNVPROC)(GLenum target, GLuint memory, GLuint64 offset);
---  typedef void (GLAPIENTRY *PFNGLBUFFERDATAPROC)(GLenum target, GLsizeiptr size, const void * data, GLenum usage);
 --  typedef void (GLAPIENTRY *PFNGLBUFFERDATAARBPROC)(GLenum target, GLsizeiptrARB size, const void * data, GLenum usage);
 --  typedef void (GLAPIENTRY *PFNGLBUFFERPAGECOMMITMENTARBPROC)(GLenum target, GLintptr offset, GLsizeiptr size, GLboolean commit);
 --  typedef void (GLAPIENTRY *PFNGLBUFFERPARAMETERIAPPLEPROC)(GLenum target, GLenum pname, GLint param);
@@ -6707,7 +6707,6 @@ package epoxy_gl_generated_h is
 --  typedef void (GLAPIENTRY *PFNGLFRUSTUMXPROC)(GLfixed l, GLfixed r, GLfixed b, GLfixed t, GLfixed n, GLfixed f);
 --  typedef void (GLAPIENTRY *PFNGLFRUSTUMXOESPROC)(GLfixed l, GLfixed r, GLfixed b, GLfixed t, GLfixed n, GLfixed f);
 --  typedef GLuint (GLAPIENTRY *PFNGLGENASYNCMARKERSSGIXPROC)(GLsizei range);
---  typedef void (GLAPIENTRY *PFNGLGENBUFFERSPROC)(GLsizei n, GLuint * buffers);
 --  typedef void (GLAPIENTRY *PFNGLGENBUFFERSARBPROC)(GLsizei n, GLuint * buffers);
 --  typedef void (GLAPIENTRY *PFNGLGENFENCESAPPLEPROC)(GLsizei n, GLuint * fences);
 --  typedef void (GLAPIENTRY *PFNGLGENFENCESNVPROC)(GLsizei n, GLuint * fences);
@@ -9278,9 +9277,18 @@ package epoxy_gl_generated_h is
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindAttribLocation)(GLuint program, GLuint index, const GLchar * name);
 --  
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindAttribLocationARB)(GLhandleARB programObj, GLuint index, const GLcharARB * name);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindBuffer)(GLenum target, GLuint buffer);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLBINDBUFFERPROC)(GLenum target, GLuint buffer);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindBuffer)(GLenum target, GLuint buffer);
+   --  #define glBindBuffer epoxy_glBindBuffer
+
+   type PFNGLBINDBUFFERPROC is access procedure
+     (target : OpenGL.GLenum;
+      buffer : epoxy.GLuint) with Convention => C;
+
+   glBindBuffer : constant not null PFNGLBINDBUFFERPROC
+     with Import, Convention => C, External_Name => "epoxy_glBindBuffer";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindBufferARB)(GLenum target, GLuint buffer);
 --  
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindBufferBase)(GLenum target, GLuint index, GLuint buffer);
@@ -9469,7 +9477,7 @@ package epoxy_gl_generated_h is
       dfactor : OpenGL.GLenum) with Convention => C;
 
    glBlendFunc : constant not null PFNGLBLENDFUNCPROC 
-     with Import, External_Name => "epoxy_glBlendFunc";
+     with Import, Convention => C, External_Name => "epoxy_glBlendFunc";
    
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendFuncIndexedAMD)(GLuint buf, GLenum src, GLenum dst);
 --  
@@ -9514,9 +9522,30 @@ package epoxy_gl_generated_h is
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBufferAddressRangeNV)(GLenum pname, GLuint index, GLuint64EXT address, GLsizeiptr length);
 --  
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBufferAttachMemoryNV)(GLenum target, GLuint memory, GLuint64 offset);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBufferData)(GLenum target, GLsizeiptr size, const void * data, GLenum usage);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLBUFFERDATAPROC)(GLenum target, GLsizeiptr size, const void * data, GLenum usage);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBufferData)(GLenum target, GLsizeiptr size, const void * data, GLenum usage);
+   --  #define glBufferData epoxy_glBufferData
+   --
+   --  type glewBufferData is access procedure
+   --    (target : OpenGL.GLenum;
+   --     size   : Interfaces.C.ptrdiff_t;
+   --     data   : System.Address;
+   --     buffer : GLuint) with Convention => C;
+   --
+   --  glBufferData : glewBufferData
+   --    with Import, Convention => C, External_Name => "__glewBufferData";
+
+   type PFNGLBUFFERDATAPROC is access procedure
+     (target : OpenGL.GLenum;
+      --  size   : OpenGL.GLsizeiptr;
+      size   : Interfaces.C.ptrdiff_t;
+      data   : System.Address;
+      usage  : OpenGL.GLenum) with Convention => C;
+
+   glBufferData : constant not null PFNGLBUFFERDATAPROC
+     with Import, Convention => C, External_Name => "epoxy_glBufferData";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBufferDataARB)(GLenum target, GLsizeiptrARB size, const void * data, GLenum usage);
 --  
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBufferPageCommitmentARB)(GLenum target, GLintptr offset, GLsizeiptr size, GLboolean commit);
@@ -9563,7 +9592,7 @@ package epoxy_gl_generated_h is
      with Convention => C;
    
    glClear : constant not null PFNGLCLEARPROC
-     with Import, External_Name => "epoxy_glClear";
+     with Import, Convention => C, External_Name => "epoxy_glClear";
    
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearAccum)(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);
 --  
@@ -9592,7 +9621,7 @@ package epoxy_gl_generated_h is
       alpha : OpenGL.GLfloat) with Convention => C;
    
    glClearColor : constant not null PFNGLCLEARCOLORPROC
-     with Import, External_Name => "epoxy_glClearColor";
+     with Import, Convention => C, External_Name => "epoxy_glClearColor";
    
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearColorIiEXT)(GLint red, GLint green, GLint blue, GLint alpha);
 --  
@@ -9614,7 +9643,7 @@ package epoxy_gl_generated_h is
      with Convention => C;
    
    glClearDepthf : constant not null PFNGLCLEARDEPTHFPROC
-     with Import, External_Name => "epoxy_glClearDepthf";
+     with Import, Convention => C, External_Name => "epoxy_glClearDepthf";
    
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearDepthfOES)(GLclampf depth);
 --  
@@ -10236,7 +10265,7 @@ package epoxy_gl_generated_h is
      with Convention => C;
    
    glDepthFunc : constant not null PFNGLDEPTHFUNCPROC
-     with Import, External_Name => "epoxy_glDepthFunc";
+     with Import, Convention => C, External_Name => "epoxy_glDepthFunc";
    
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDepthMask)(GLboolean flag);
 --  
@@ -10278,7 +10307,7 @@ package epoxy_gl_generated_h is
      with Convention => C;
    
    glDisable : constant not null PFNGLDISABLEPROC
-     with Import, External_Name => "epoxy_glDisable";
+     with Import, Convention => C, External_Name => "epoxy_glDisable";
    
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDisableClientState)(GLenum array);
 --  
@@ -10330,7 +10359,7 @@ package epoxy_gl_generated_h is
       count : OpenGL.GLsizei) with Convention => C;
    
    glDrawArrays : constant not null PFNGLDRAWARRAYSPROC 
-     with Import, External_Name => "epoxy_glDrawArrays";
+     with Import, Convention => C, External_Name => "epoxy_glDrawArrays";
    
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawArraysEXT)(GLenum mode, GLint first, GLsizei count);
 --  
@@ -10387,7 +10416,7 @@ package epoxy_gl_generated_h is
       indices  : System.Address) with Convention => C;
    
    glDrawElements : constant not null PFNGLDRAWELEMENTSPROC
-     with Import, External_Name => "epoxy_glDrawElements";
+     with Import, Convention => C, External_Name => "epoxy_glDrawElements";
    
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawElementsBaseVertex)(GLenum mode, GLsizei count, GLenum type, const void * indices, GLint basevertex);
 --  
@@ -10509,7 +10538,7 @@ package epoxy_gl_generated_h is
      with Convention => C;
    
    glEnable : constant not null PFNGLENABLEPROC
-     with Import, External_Name => "epoxy_glEnable";
+     with Import, Convention => C, External_Name => "epoxy_glEnable";
    
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEnableClientState)(GLenum array);
 --  
@@ -10662,7 +10691,7 @@ package epoxy_gl_generated_h is
    type PFNGLFINISHPROC is access procedure with Convention => C;
    
    glFinish : constant not null PFNGLFINISHPROC
-     with Import, External_Name => "epoxy_glFinish";
+     with Import, Convention => C, External_Name => "epoxy_glFinish";
    
 --  EPOXY_PUBLIC GLint (EPOXY_CALLSPEC *epoxy_glFinishAsyncSGIX)(GLuint * markerp);
 --  
@@ -10681,7 +10710,7 @@ package epoxy_gl_generated_h is
    type PFNGLFLUSHPROC is access procedure with Convention => C;
    
    glFlush : constant not null PFNGLFLUSHPROC
-     with Import, External_Name => "epoxy_glFlush";
+     with Import, Convention => C, External_Name => "epoxy_glFlush";
    
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFlushMappedBufferRange)(GLenum target, GLintptr offset, GLsizeiptr length);
 --  
@@ -10874,9 +10903,18 @@ package epoxy_gl_generated_h is
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFrustumxOES)(GLfixed l, GLfixed r, GLfixed b, GLfixed t, GLfixed n, GLfixed f);
 --  
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glGenAsyncMarkersSGIX)(GLsizei range);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenBuffers)(GLsizei n, GLuint * buffers);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLGENBUFFERSPROC)(GLsizei n, GLuint * buffers);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenBuffers)(GLsizei n, GLuint * buffers);
+   --  #define glGenBuffers epoxy_glGenBuffers
+
+   type PFNGLGENBUFFERSPROC is access procedure
+     (n       : OpenGL.GLsizei;
+      buffers : access epoxy.GLuint) with Convention => C;
+
+   glGenBuffers : constant not null PFNGLGENBUFFERSPROC
+     with Import, Convention => C, External_Name => "epoxy_glGenBuffers";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenBuffersARB)(GLsizei n, GLuint * buffers);
 --  
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenFencesAPPLE)(GLsizei n, GLuint * fences);
@@ -15660,7 +15698,7 @@ package epoxy_gl_generated_h is
       height : OpenGL.GLsizei) with Convention => C;
    
    glViewport : constant not null PFNGLVIEWPORTPROC
-     with Import, External_Name => "epoxy_glViewport";
+     with Import, Convention => C, External_Name => "epoxy_glViewport";
    
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glViewportArrayv)(GLuint first, GLsizei count, const GLfloat * v);
 --  
@@ -15882,7 +15920,6 @@ package epoxy_gl_generated_h is
 --  #define glBeginVideoCaptureNV epoxy_glBeginVideoCaptureNV
 --  #define glBindAttribLocation epoxy_glBindAttribLocation
 --  #define glBindAttribLocationARB epoxy_glBindAttribLocationARB
---  #define glBindBuffer epoxy_glBindBuffer
 --  #define glBindBufferARB epoxy_glBindBufferARB
 --  #define glBindBufferBase epoxy_glBindBufferBase
 --  #define glBindBufferBaseEXT epoxy_glBindBufferBaseEXT
@@ -15992,7 +16029,6 @@ package epoxy_gl_generated_h is
 --  #define glBlitNamedFramebuffer epoxy_glBlitNamedFramebuffer
 --  #define glBufferAddressRangeNV epoxy_glBufferAddressRangeNV
 --  #define glBufferAttachMemoryNV epoxy_glBufferAttachMemoryNV
---  #define glBufferData epoxy_glBufferData
 --  #define glBufferDataARB epoxy_glBufferDataARB
 --  #define glBufferPageCommitmentARB epoxy_glBufferPageCommitmentARB
 --  #define glBufferParameteriAPPLE epoxy_glBufferParameteriAPPLE
@@ -16619,7 +16655,6 @@ package epoxy_gl_generated_h is
 --  #define glFrustumx epoxy_glFrustumx
 --  #define glFrustumxOES epoxy_glFrustumxOES
 --  #define glGenAsyncMarkersSGIX epoxy_glGenAsyncMarkersSGIX
---  #define glGenBuffers epoxy_glGenBuffers
 --  #define glGenBuffersARB epoxy_glGenBuffersARB
 --  #define glGenFencesAPPLE epoxy_glGenFencesAPPLE
 --  #define glGenFencesNV epoxy_glGenFencesNV
@@ -19092,34 +19127,10 @@ package epoxy_gl_generated_h is
 --  #define glWindowRectanglesEXT epoxy_glWindowRectanglesEXT
 --  #define glWriteMaskEXT epoxy_glWriteMaskEXT
 
-   --  type GLuint is new Interfaces.Unsigned_32;
    --  type GLuint_Array is array (Positive range <>) of GLuint
    --    with Convention => C;
    --  type GLint_Array is array (Positive range <>) of OpenGL.GLint
    --    with Convention => C;
-   --
-   --  type glewGenBuffers is access procedure
-   --    (n       : OpenGL.GLsizei;
-   --     buffers : access GLuint) with Convention => C;
-   --
-   --  glGenBuffers : glewGenBuffers
-   --    with Import, Convention => C, External_Name => "__glewGenBuffers";
-   --
-   --  type glewBufferData is access procedure
-   --    (target : OpenGL.GLenum;
-   --     size   : Interfaces.C.ptrdiff_t;
-   --     data   : System.Address;
-   --     buffer : GLuint) with Convention => C;
-   --
-   --  glBufferData : glewBufferData
-   --    with Import, Convention => C, External_Name => "__glewBufferData";
-   --
-   --  type glewBindBuffer is access procedure
-   --    (target : OpenGL.GLenum;
-   --     buffer : GLuint) with Convention => C;
-   --
-   --  glBindBuffer : glewBindBuffer
-   --    with Import, Convention => C, External_Name => "__glewBindBuffer";
    --
    --  type glewCreateShader is access function
    --    (shaderType : OpenGL.GLenum) return GLuint with Convention => C;
@@ -19418,11 +19429,6 @@ package epoxy_gl_generated_h is
    --     pname  : OpenGL.GLenum;
    --     param  : OpenGL.GLint)
    --       with Import, Convention => C, External_Name => "glTexParameteri";
-   --
-   --  ARRAY_BUFFER         : constant := 16#8892#;
-   --  ELEMENT_ARRAY_BUFFER : constant := 16#8893#;
-   --
-   --  STATIC_DRAW : constant := 16#88E4#;
    --
    --  FRAGMENT_SHADER : constant := 16#8B30#;
    --  VERTEX_SHADER   : constant := 16#8B31#;

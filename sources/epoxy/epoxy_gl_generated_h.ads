@@ -6018,7 +6018,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLBINDTEXTURESPROC)(GLuint first, GLsizei count, const GLuint * textures);
 --  typedef void (GLAPIENTRY *PFNGLBINDTRANSFORMFEEDBACKPROC)(GLenum target, GLuint id);
 --  typedef void (GLAPIENTRY *PFNGLBINDTRANSFORMFEEDBACKNVPROC)(GLenum target, GLuint id);
---  typedef void (GLAPIENTRY *PFNGLBINDVERTEXARRAYPROC)(GLuint array);
 --  typedef void (GLAPIENTRY *PFNGLBINDVERTEXARRAYAPPLEPROC)(GLuint array);
 --  typedef void (GLAPIENTRY *PFNGLBINDVERTEXARRAYOESPROC)(GLuint array);
 --  typedef void (GLAPIENTRY *PFNGLBINDVERTEXBUFFERPROC)(GLuint bindingindex, GLuint buffer, GLintptr offset, GLsizei stride);
@@ -6733,7 +6732,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLGENTEXTURESEXTPROC)(GLsizei n, GLuint * textures);
 --  typedef void (GLAPIENTRY *PFNGLGENTRANSFORMFEEDBACKSPROC)(GLsizei n, GLuint * ids);
 --  typedef void (GLAPIENTRY *PFNGLGENTRANSFORMFEEDBACKSNVPROC)(GLsizei n, GLuint * ids);
---  typedef void (GLAPIENTRY *PFNGLGENVERTEXARRAYSPROC)(GLsizei n, GLuint * arrays);
 --  typedef void (GLAPIENTRY *PFNGLGENVERTEXARRAYSAPPLEPROC)(GLsizei n, GLuint * arrays);
 --  typedef void (GLAPIENTRY *PFNGLGENVERTEXARRAYSOESPROC)(GLsizei n, GLuint * arrays);
 --  typedef GLuint (GLAPIENTRY *PFNGLGENVERTEXSHADERSEXTPROC)(GLuint range);
@@ -6818,7 +6816,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLGETDOUBLEVPROC)(GLenum pname, GLdouble * data);
 --  typedef void (GLAPIENTRY *PFNGLGETDRIVERCONTROLSTRINGQCOMPROC)(GLuint driverControl, GLsizei bufSize, GLsizei * length, GLchar * driverControlString);
 --  typedef void (GLAPIENTRY *PFNGLGETDRIVERCONTROLSQCOMPROC)(GLint * num, GLsizei size, GLuint * driverControls);
---  typedef GLenum (GLAPIENTRY *PFNGLGETERRORPROC)(void);
 --  typedef void (GLAPIENTRY *PFNGLGETFENCEIVNVPROC)(GLuint fence, GLenum pname, GLint * params);
 --  typedef void (GLAPIENTRY *PFNGLGETFINALCOMBINERINPUTPARAMETERFVNVPROC)(GLenum variable, GLenum pname, GLfloat * params);
 --  typedef void (GLAPIENTRY *PFNGLGETFINALCOMBINERINPUTPARAMETERIVNVPROC)(GLenum variable, GLenum pname, GLint * params);
@@ -9359,9 +9356,17 @@ is
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindTransformFeedback)(GLenum target, GLuint id);
 --
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindTransformFeedbackNV)(GLenum target, GLuint id);
---
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindVertexArray)(GLuint array);
---
+
+   --  typedef void (GLAPIENTRY *PFNGLBINDVERTEXARRAYPROC)(GLuint array);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindVertexArray)(GLuint array);
+   --  #define glBindVertexArray epoxy_glBindVertexArray
+
+   type PFNGLBINDVERTEXARRAYPROC is access procedure
+     (the_array : epoxy.GLuint) with Convention => C;
+
+   glBindVertexArray : constant not null PFNGLBINDVERTEXARRAYPROC
+     with Import, Convention => C, External_Name => "epoxy_glBindVertexArray";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindVertexArrayAPPLE)(GLuint array);
 --
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindVertexArrayOES)(GLuint array);
@@ -11012,9 +11017,18 @@ is
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenTransformFeedbacks)(GLsizei n, GLuint * ids);
 --
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenTransformFeedbacksNV)(GLsizei n, GLuint * ids);
---
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenVertexArrays)(GLsizei n, GLuint * arrays);
---
+
+   --  typedef void (GLAPIENTRY *PFNGLGENVERTEXARRAYSPROC)(GLsizei n, GLuint * arrays);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenVertexArrays)(GLsizei n, GLuint * arrays);
+   --  #define glGenVertexArrays epoxy_glGenVertexArrays
+
+   type PFNGLGENVERTEXARRAYSPROC is access procedure
+     (n      : OpenGL.GLsizei;
+      arrays : access epoxy.GLuint) with Convention => C;
+
+   glGenVertexArrays : constant not null PFNGLGENVERTEXARRAYSPROC
+     with Import, Convention => C, External_Name => "epoxy_glGenVertexArrays";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenVertexArraysAPPLE)(GLsizei n, GLuint * arrays);
 --
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenVertexArraysOES)(GLsizei n, GLuint * arrays);
@@ -11196,9 +11210,17 @@ is
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetDriverControlStringQCOM)(GLuint driverControl, GLsizei bufSize, GLsizei * length, GLchar * driverControlString);
 --
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetDriverControlsQCOM)(GLint * num, GLsizei size, GLuint * driverControls);
---
---  EPOXY_PUBLIC GLenum (EPOXY_CALLSPEC *epoxy_glGetError)(void);
---
+
+   --  typedef GLenum (GLAPIENTRY *PFNGLGETERRORPROC)(void);
+   --  EPOXY_PUBLIC GLenum (EPOXY_CALLSPEC *epoxy_glGetError)(void);
+   --  #define glGetError epoxy_glGetError
+
+   type PFNGLGETERRORPROC is access function return OpenGL.GLenum
+     with Convention => C;
+
+   glGetError : constant not null PFNGLGETERRORPROC
+     with Import, Convention => C, External_Name => "epoxy_glGetError";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFenceivNV)(GLuint fence, GLenum pname, GLint * params);
 --
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFinalCombinerInputParameterfvNV)(GLenum variable, GLenum pname, GLfloat * params);
@@ -16234,7 +16256,6 @@ is
 --  #define glBindTextures epoxy_glBindTextures
 --  #define glBindTransformFeedback epoxy_glBindTransformFeedback
 --  #define glBindTransformFeedbackNV epoxy_glBindTransformFeedbackNV
---  #define glBindVertexArray epoxy_glBindVertexArray
 --  #define glBindVertexArrayAPPLE epoxy_glBindVertexArrayAPPLE
 --  #define glBindVertexArrayOES epoxy_glBindVertexArrayOES
 --  #define glBindVertexBuffer epoxy_glBindVertexBuffer
@@ -16949,7 +16970,6 @@ is
 --  #define glGenTexturesEXT epoxy_glGenTexturesEXT
 --  #define glGenTransformFeedbacks epoxy_glGenTransformFeedbacks
 --  #define glGenTransformFeedbacksNV epoxy_glGenTransformFeedbacksNV
---  #define glGenVertexArrays epoxy_glGenVertexArrays
 --  #define glGenVertexArraysAPPLE epoxy_glGenVertexArraysAPPLE
 --  #define glGenVertexArraysOES epoxy_glGenVertexArraysOES
 --  #define glGenVertexShadersEXT epoxy_glGenVertexShadersEXT
@@ -17034,7 +17054,6 @@ is
 --  #define glGetDoublev epoxy_glGetDoublev
 --  #define glGetDriverControlStringQCOM epoxy_glGetDriverControlStringQCOM
 --  #define glGetDriverControlsQCOM epoxy_glGetDriverControlsQCOM
---  #define glGetError epoxy_glGetError
 --  #define glGetFenceivNV epoxy_glGetFenceivNV
 --  #define glGetFinalCombinerInputParameterfvNV epoxy_glGetFinalCombinerInputParameterfvNV
 --  #define glGetFinalCombinerInputParameterivNV epoxy_glGetFinalCombinerInputParameterivNV

@@ -43,7 +43,7 @@ project AdaGL_Gtk3 is
          when "javascript" =>
 
          when others =>
-            --  for Linker_Options use ("-lGLEW", "-lglfw", "-lGL");
+            for Linker_Options use ("-lepoxy");
       end case;
    end Linker;
 

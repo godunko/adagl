@@ -1,0 +1,21 @@
+name = "adagl_gtk3"
+description = "OpenGL/Gtk3 binding"
+version = "0.0.1-dev"
+
+authors = ["Vadim Godunko"]
+maintainers = ["Vadim Godunko <vgodunko@gmail.com>"]
+maintainers-logins = ["godunko"]
+licenses = "Apache-2.0 WITH LLVM-exception"
+website = ""
+tags = ["opengl", "gtk"]
+
+project-files = ["../gnat/adagl_gtk3.gpr"]
+
+[configuration]
+generate_ada = false
+generate_c = false
+generate_gpr = true
+
+[[depends-on]]
+gtkada = "^25.0.1"
+matreshka_league = "*"

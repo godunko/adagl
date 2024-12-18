@@ -1,0 +1,50 @@
+--
+--  Copyright (C) 2016-2024, Vadim Godunko
+--
+--  SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+--
+
+with "../adagl_gtk3/config/adagl_gtk3_config";
+with "matreshka_league.gpr";
+with "matreshka_webapi.gpr";
+
+with "adagl_config.gpr";
+
+project AdaGL_Gtk3 is
+
+   Source_Dirs := ("../sources");
+
+   case AdaGL_Config.Target_Name is
+      when "javascript" =>
+         Source_Dirs := Source_Dirs & "../sources/webgl";
+
+      when others =>
+--         Source_Dirs := Source_Dirs & "../sources/glew";
+         Source_Dirs := Source_Dirs & "../sources/epoxy";
+   end case;
+
+   for Source_Dirs use Source_Dirs;
+   for Object_Dir use AdaGL_Config.Object_Dir;
+
+   package Compiler renames AdaGL_Config.Compiler;
+
+   package Naming is
+      case AdaGL_Config.Target_Name is
+         when "javascript" =>
+            for Specification ("OpenGL") use "opengl__webgl.ads";
+
+         when others =>
+            for Specification ("OpenGL") use "opengl__native.ads";
+      end case;
+   end Naming;
+
+   package Linker is
+      case AdaGL_Config.Target_Name is
+         when "javascript" =>
+
+         when others =>
+            --  for Linker_Options use ("-lGLEW", "-lglfw", "-lGL");
+      end case;
+   end Linker;
+
+end AdaGL_Gtk3;

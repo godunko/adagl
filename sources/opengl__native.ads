@@ -240,6 +240,12 @@ package OpenGL is
    GL_GEQUAL                   : constant GLenum;
    GL_ALWAYS                   : constant GLenum;
 
+   GL_NO_ERROR                 : constant GLenum;
+   GL_INVALID_ENUM             : constant GLenum;
+   GL_INVALID_VALUE            : constant GLenum;
+   GL_INVALID_OPERATION        : constant GLenum;
+   GL_OUT_OF_MEMORY            : constant GLenum;
+
 --            <enum name="GL_FALSE"/>
 --            <enum name="GL_TRUE"/>
 --            <enum name="GL_FUNC_ADD"/>
@@ -266,11 +272,6 @@ package OpenGL is
 --            <enum name="GL_FRONT"/>
 --            <enum name="GL_BACK"/>
 --            <enum name="GL_FRONT_AND_BACK"/>
---            <enum name="GL_NO_ERROR"/>
---            <enum name="GL_INVALID_ENUM"/>
---            <enum name="GL_INVALID_VALUE"/>
---            <enum name="GL_INVALID_OPERATION"/>
---            <enum name="GL_OUT_OF_MEMORY"/>
 --            <enum name="GL_CW"/>
 --            <enum name="GL_CCW"/>
 --            <enum name="GL_LINE_WIDTH"/>
@@ -521,6 +522,12 @@ private
 
    GL_ZERO                        : constant GLenum := 16#0000#;
    GL_ONE                         : constant GLenum := 16#0001#;
+
+   GL_NO_ERROR                    : constant GLenum := 16#0000#;
+   GL_INVALID_ENUM                : constant GLenum := 16#0500#;
+   GL_INVALID_VALUE               : constant GLenum := 16#0501#;
+   GL_INVALID_OPERATION           : constant GLenum := 16#0502#;
+   GL_OUT_OF_MEMORY               : constant GLenum := 16#0505#;
 
    GL_POINTS                      : constant GLenum := 16#0000#;
    GL_LINES                       : constant GLenum := 16#0001#;

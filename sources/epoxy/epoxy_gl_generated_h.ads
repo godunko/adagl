@@ -24,7 +24,7 @@ is
 --  #define GL_SKIP_COMPONENTS3_NV                                                     -4
 --  #define GL_SKIP_COMPONENTS2_NV                                                     -5
 --  #define GL_SKIP_COMPONENTS1_NV                                                     -6
---  #define GL_FALSE                                                                   0
+   GL_FALSE                                            : constant :=        0;
 --  #define GL_LAYOUT_DEFAULT_INTEL                                                    0
 --  #define GL_NONE                                                                    0
 --  #define GL_NONE_OES                                                                0
@@ -3730,7 +3730,7 @@ is
 --  #define GL_OBJECT_DELETE_STATUS_ARB                                                0x8B80
    GL_COMPILE_STATUS                                   : constant := 16#8B81#;
 --  #define GL_OBJECT_COMPILE_STATUS_ARB                                               0x8B81
---  #define GL_LINK_STATUS                                                             0x8B82
+   GL_LINK_STATUS                                      : constant := 16#8B82#;
 --  #define GL_OBJECT_LINK_STATUS_ARB                                                  0x8B82
 --  #define GL_OBJECT_VALIDATE_STATUS_ARB                                              0x8B83
 --  #define GL_VALIDATE_STATUS                                                         0x8B83
@@ -5955,7 +5955,6 @@ is
 --  typedef GLuint (GLAPIENTRY *PFNGLASYNCCOPYIMAGESUBDATANVXPROC)(GLsizei waitSemaphoreCount, const GLuint * waitSemaphoreArray, const GLuint64 * waitValueArray, GLuint srcGpu, GLbitfield dstGpuMask, GLuint srcName, GLenum srcTarget, GLint srcLevel, GLint srcX, GLint srcY, GLint srcZ, GLuint dstName, GLenum dstTarget, GLint dstLevel, GLint dstX, GLint dstY, GLint dstZ, GLsizei srcWidth, GLsizei srcHeight, GLsizei srcDepth, GLsizei signalSemaphoreCount, const GLuint * signalSemaphoreArray, const GLuint64 * signalValueArray);
 --  typedef void (GLAPIENTRY *PFNGLASYNCMARKERSGIXPROC)(GLuint marker);
 --  typedef void (GLAPIENTRY *PFNGLATTACHOBJECTARBPROC)(GLhandleARB containerObj, GLhandleARB obj);
---  typedef void (GLAPIENTRY *PFNGLATTACHSHADERPROC)(GLuint program, GLuint shader);
 --  typedef void (GLAPIENTRY *PFNGLBEGINPROC)(GLenum mode);
 --  typedef void (GLAPIENTRY *PFNGLBEGINCONDITIONALRENDERPROC)(GLuint id, GLenum mode);
 --  typedef void (GLAPIENTRY *PFNGLBEGINCONDITIONALRENDERNVPROC)(GLuint id, GLenum mode);
@@ -6338,7 +6337,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLCREATEFRAMEBUFFERSPROC)(GLsizei n, GLuint * framebuffers);
 --  typedef void (GLAPIENTRY *PFNGLCREATEMEMORYOBJECTSEXTPROC)(GLsizei n, GLuint * memoryObjects);
 --  typedef void (GLAPIENTRY *PFNGLCREATEPERFQUERYINTELPROC)(GLuint queryId, GLuint * queryHandle);
---  typedef GLuint (GLAPIENTRY *PFNGLCREATEPROGRAMPROC)(void);
 --  typedef GLhandleARB (GLAPIENTRY *PFNGLCREATEPROGRAMOBJECTARBPROC)(void);
 --  typedef void (GLAPIENTRY *PFNGLCREATEPROGRAMPIPELINESPROC)(GLsizei n, GLuint * pipelines);
 --  typedef GLuint (GLAPIENTRY *PFNGLCREATEPROGRESSFENCENVXPROC)(void);
@@ -6446,7 +6444,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLDISABLEVERTEXARRAYATTRIBEXTPROC)(GLuint vaobj, GLuint index);
 --  typedef void (GLAPIENTRY *PFNGLDISABLEVERTEXARRAYEXTPROC)(GLuint vaobj, GLenum array);
 --  typedef void (GLAPIENTRY *PFNGLDISABLEVERTEXATTRIBAPPLEPROC)(GLuint index, GLenum pname);
---  typedef void (GLAPIENTRY *PFNGLDISABLEVERTEXATTRIBARRAYPROC)(GLuint index);
 --  typedef void (GLAPIENTRY *PFNGLDISABLEVERTEXATTRIBARRAYARBPROC)(GLuint index);
 --  typedef void (GLAPIENTRY *PFNGLDISABLEIPROC)(GLenum target, GLuint index);
 --  typedef void (GLAPIENTRY *PFNGLDISABLEIEXTPROC)(GLenum target, GLuint index);
@@ -6544,7 +6541,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLENABLEVERTEXARRAYATTRIBEXTPROC)(GLuint vaobj, GLuint index);
 --  typedef void (GLAPIENTRY *PFNGLENABLEVERTEXARRAYEXTPROC)(GLuint vaobj, GLenum array);
 --  typedef void (GLAPIENTRY *PFNGLENABLEVERTEXATTRIBAPPLEPROC)(GLuint index, GLenum pname);
---  typedef void (GLAPIENTRY *PFNGLENABLEVERTEXATTRIBARRAYPROC)(GLuint index);
 --  typedef void (GLAPIENTRY *PFNGLENABLEVERTEXATTRIBARRAYARBPROC)(GLuint index);
 --  typedef void (GLAPIENTRY *PFNGLENABLEIPROC)(GLenum target, GLuint index);
 --  typedef void (GLAPIENTRY *PFNGLENABLEIEXTPROC)(GLenum target, GLuint index);
@@ -6764,7 +6760,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLGETARRAYOBJECTIVATIPROC)(GLenum array, GLenum pname, GLint * params);
 --  typedef void (GLAPIENTRY *PFNGLGETATTACHEDOBJECTSARBPROC)(GLhandleARB containerObj, GLsizei maxCount, GLsizei * count, GLhandleARB * obj);
 --  typedef void (GLAPIENTRY *PFNGLGETATTACHEDSHADERSPROC)(GLuint program, GLsizei maxCount, GLsizei * count, GLuint * shaders);
---  typedef GLint (GLAPIENTRY *PFNGLGETATTRIBLOCATIONPROC)(GLuint program, const GLchar * name);
 --  typedef GLint (GLAPIENTRY *PFNGLGETATTRIBLOCATIONARBPROC)(GLhandleARB programObj, const GLcharARB * name);
 --  typedef void (GLAPIENTRY *PFNGLGETBOOLEANINDEXEDVEXTPROC)(GLenum target, GLuint index, GLboolean * data);
 --  typedef void (GLAPIENTRY *PFNGLGETBOOLEANI_VPROC)(GLenum target, GLuint index, GLboolean * data);
@@ -7036,7 +7031,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLGETPROGRAMSTRINGARBPROC)(GLenum target, GLenum pname, void * string);
 --  typedef void (GLAPIENTRY *PFNGLGETPROGRAMSTRINGNVPROC)(GLuint id, GLenum pname, GLubyte * program);
 --  typedef void (GLAPIENTRY *PFNGLGETPROGRAMSUBROUTINEPARAMETERUIVNVPROC)(GLenum target, GLuint index, GLuint * param);
---  typedef void (GLAPIENTRY *PFNGLGETPROGRAMIVPROC)(GLuint program, GLenum pname, GLint * params);
 --  typedef void (GLAPIENTRY *PFNGLGETPROGRAMIVARBPROC)(GLenum target, GLenum pname, GLint * params);
 --  typedef void (GLAPIENTRY *PFNGLGETPROGRAMIVNVPROC)(GLuint id, GLenum pname, GLint * params);
 --  typedef void (GLAPIENTRY *PFNGLGETQUERYBUFFEROBJECTI64VPROC)(GLuint id, GLuint buffer, GLenum pname, GLintptr offset);
@@ -7144,7 +7138,6 @@ is
 --  typedef GLuint (GLAPIENTRY *PFNGLGETUNIFORMBLOCKINDEXPROC)(GLuint program, const GLchar * uniformBlockName);
 --  typedef GLint (GLAPIENTRY *PFNGLGETUNIFORMBUFFERSIZEEXTPROC)(GLuint program, GLint location);
 --  typedef void (GLAPIENTRY *PFNGLGETUNIFORMINDICESPROC)(GLuint program, GLsizei uniformCount, const GLchar *const* uniformNames, GLuint * uniformIndices);
---  typedef GLint (GLAPIENTRY *PFNGLGETUNIFORMLOCATIONPROC)(GLuint program, const GLchar * name);
 --  typedef GLint (GLAPIENTRY *PFNGLGETUNIFORMLOCATIONARBPROC)(GLhandleARB programObj, const GLcharARB * name);
 --  typedef GLintptr (GLAPIENTRY *PFNGLGETUNIFORMOFFSETEXTPROC)(GLuint program, GLint location);
 --  typedef void (GLAPIENTRY *PFNGLGETUNIFORMSUBROUTINEUIVPROC)(GLenum shadertype, GLint location, GLuint * params);
@@ -7388,7 +7381,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLLINEWIDTHPROC)(GLfloat width);
 --  typedef void (GLAPIENTRY *PFNGLLINEWIDTHXPROC)(GLfixed width);
 --  typedef void (GLAPIENTRY *PFNGLLINEWIDTHXOESPROC)(GLfixed width);
---  typedef void (GLAPIENTRY *PFNGLLINKPROGRAMPROC)(GLuint program);
 --  typedef void (GLAPIENTRY *PFNGLLINKPROGRAMARBPROC)(GLhandleARB programObj);
 --  typedef void (GLAPIENTRY *PFNGLLISTBASEPROC)(GLuint base);
 --  typedef void (GLAPIENTRY *PFNGLLISTDRAWCOMMANDSSTATESCLIENTNVPROC)(GLuint list, GLuint segment, const void ** indirects, const GLsizei * sizes, const GLuint * states, const GLuint * fbos, GLuint count);
@@ -8572,11 +8564,9 @@ is
 --  typedef void (GLAPIENTRY *PFNGLTRANSLATEXOESPROC)(GLfixed x, GLfixed y, GLfixed z);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM1DPROC)(GLint location, GLdouble x);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM1DVPROC)(GLint location, GLsizei count, const GLdouble * value);
---  typedef void (GLAPIENTRY *PFNGLUNIFORM1FPROC)(GLint location, GLfloat v0);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM1FARBPROC)(GLint location, GLfloat v0);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM1FVPROC)(GLint location, GLsizei count, const GLfloat * value);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM1FVARBPROC)(GLint location, GLsizei count, const GLfloat * value);
---  typedef void (GLAPIENTRY *PFNGLUNIFORM1IPROC)(GLint location, GLint v0);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM1I64ARBPROC)(GLint location, GLint64 x);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM1I64NVPROC)(GLint location, GLint64EXT x);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM1I64VARBPROC)(GLint location, GLsizei count, const GLint64 * value);
@@ -8594,7 +8584,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM1UIVEXTPROC)(GLint location, GLsizei count, const GLuint * value);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM2DPROC)(GLint location, GLdouble x, GLdouble y);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM2DVPROC)(GLint location, GLsizei count, const GLdouble * value);
---  typedef void (GLAPIENTRY *PFNGLUNIFORM2FPROC)(GLint location, GLfloat v0, GLfloat v1);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM2FARBPROC)(GLint location, GLfloat v0, GLfloat v1);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM2FVPROC)(GLint location, GLsizei count, const GLfloat * value);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM2FVARBPROC)(GLint location, GLsizei count, const GLfloat * value);
@@ -8616,7 +8605,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM2UIVEXTPROC)(GLint location, GLsizei count, const GLuint * value);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM3DPROC)(GLint location, GLdouble x, GLdouble y, GLdouble z);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM3DVPROC)(GLint location, GLsizei count, const GLdouble * value);
---  typedef void (GLAPIENTRY *PFNGLUNIFORM3FPROC)(GLint location, GLfloat v0, GLfloat v1, GLfloat v2);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM3FARBPROC)(GLint location, GLfloat v0, GLfloat v1, GLfloat v2);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM3FVPROC)(GLint location, GLsizei count, const GLfloat * value);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM3FVARBPROC)(GLint location, GLsizei count, const GLfloat * value);
@@ -8638,7 +8626,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM3UIVEXTPROC)(GLint location, GLsizei count, const GLuint * value);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM4DPROC)(GLint location, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM4DVPROC)(GLint location, GLsizei count, const GLdouble * value);
---  typedef void (GLAPIENTRY *PFNGLUNIFORM4FPROC)(GLint location, GLfloat v0, GLfloat v1, GLfloat v2, GLfloat v3);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM4FARBPROC)(GLint location, GLfloat v0, GLfloat v1, GLfloat v2, GLfloat v3);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM4FVPROC)(GLint location, GLsizei count, const GLfloat * value);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORM4FVARBPROC)(GLint location, GLsizei count, const GLfloat * value);
@@ -8667,7 +8654,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLUNIFORMHANDLEUI64VIMGPROC)(GLint location, GLsizei count, const GLuint64 * value);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORMHANDLEUI64VNVPROC)(GLint location, GLsizei count, const GLuint64 * value);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORMMATRIX2DVPROC)(GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  typedef void (GLAPIENTRY *PFNGLUNIFORMMATRIX2FVPROC)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORMMATRIX2FVARBPROC)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORMMATRIX2X3DVPROC)(GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORMMATRIX2X3FVPROC)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
@@ -8676,7 +8662,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLUNIFORMMATRIX2X4FVPROC)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORMMATRIX2X4FVNVPROC)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORMMATRIX3DVPROC)(GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  typedef void (GLAPIENTRY *PFNGLUNIFORMMATRIX3FVPROC)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORMMATRIX3FVARBPROC)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORMMATRIX3X2DVPROC)(GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORMMATRIX3X2FVPROC)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
@@ -8685,7 +8670,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLUNIFORMMATRIX3X4FVPROC)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORMMATRIX3X4FVNVPROC)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORMMATRIX4DVPROC)(GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  typedef void (GLAPIENTRY *PFNGLUNIFORMMATRIX4FVPROC)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORMMATRIX4FVARBPROC)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORMMATRIX4X2DVPROC)(GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
 --  typedef void (GLAPIENTRY *PFNGLUNIFORMMATRIX4X2FVPROC)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
@@ -8706,7 +8690,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLUNMAPTEXTURE2DINTELPROC)(GLuint texture, GLint level);
 --  typedef void (GLAPIENTRY *PFNGLUPDATEOBJECTBUFFERATIPROC)(GLuint buffer, GLuint offset, GLsizei size, const void * pointer, GLenum preserve);
 --  typedef void (GLAPIENTRY *PFNGLUPLOADGPUMASKNVXPROC)(GLbitfield mask);
---  typedef void (GLAPIENTRY *PFNGLUSEPROGRAMPROC)(GLuint program);
 --  typedef void (GLAPIENTRY *PFNGLUSEPROGRAMOBJECTARBPROC)(GLhandleARB programObj);
 --  typedef void (GLAPIENTRY *PFNGLUSEPROGRAMSTAGESPROC)(GLuint pipeline, GLbitfield stages, GLuint program);
 --  typedef void (GLAPIENTRY *PFNGLUSEPROGRAMSTAGESEXTPROC)(GLuint pipeline, GLbitfield stages, GLuint program);
@@ -8814,7 +8797,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB1DVPROC)(GLuint index, const GLdouble * v);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB1DVARBPROC)(GLuint index, const GLdouble * v);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB1DVNVPROC)(GLuint index, const GLdouble * v);
---  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB1FPROC)(GLuint index, GLfloat x);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB1FARBPROC)(GLuint index, GLfloat x);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB1FNVPROC)(GLuint index, GLfloat x);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB1FVPROC)(GLuint index, const GLfloat * v);
@@ -8834,10 +8816,8 @@ is
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB2DVPROC)(GLuint index, const GLdouble * v);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB2DVARBPROC)(GLuint index, const GLdouble * v);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB2DVNVPROC)(GLuint index, const GLdouble * v);
---  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB2FPROC)(GLuint index, GLfloat x, GLfloat y);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB2FARBPROC)(GLuint index, GLfloat x, GLfloat y);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB2FNVPROC)(GLuint index, GLfloat x, GLfloat y);
---  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB2FVPROC)(GLuint index, const GLfloat * v);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB2FVARBPROC)(GLuint index, const GLfloat * v);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB2FVNVPROC)(GLuint index, const GLfloat * v);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB2HNVPROC)(GLuint index, GLhalfNV x, GLhalfNV y);
@@ -8854,7 +8834,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB3DVPROC)(GLuint index, const GLdouble * v);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB3DVARBPROC)(GLuint index, const GLdouble * v);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB3DVNVPROC)(GLuint index, const GLdouble * v);
---  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB3FPROC)(GLuint index, GLfloat x, GLfloat y, GLfloat z);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB3FARBPROC)(GLuint index, GLfloat x, GLfloat y, GLfloat z);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB3FNVPROC)(GLuint index, GLfloat x, GLfloat y, GLfloat z);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB3FVPROC)(GLuint index, const GLfloat * v);
@@ -8890,7 +8869,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB4DVPROC)(GLuint index, const GLdouble * v);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB4DVARBPROC)(GLuint index, const GLdouble * v);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB4DVNVPROC)(GLuint index, const GLdouble * v);
---  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB4FPROC)(GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB4FARBPROC)(GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB4FNVPROC)(GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB4FVPROC)(GLuint index, const GLfloat * v);
@@ -9014,7 +8992,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIBP4UIPROC)(GLuint index, GLenum type, GLboolean normalized, GLuint value);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIBP4UIVPROC)(GLuint index, GLenum type, GLboolean normalized, const GLuint * value);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIBPARAMETERIAMDPROC)(GLuint index, GLenum pname, GLint param);
---  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIBPOINTERPROC)(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const void * pointer);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIBPOINTERARBPROC)(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const void * pointer);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIBPOINTERNVPROC)(GLuint index, GLint fsize, GLenum type, GLsizei stride, const void * pointer);
 --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIBS1DVNVPROC)(GLuint index, GLsizei count, const GLdouble * v);
@@ -9176,103 +9153,112 @@ is
 --  typedef void (GLAPIENTRY *PFNGLWINDOWRECTANGLESEXTPROC)(GLenum mode, GLsizei count, const GLint * box);
 --  typedef void (GLAPIENTRY *PFNGLWRITEMASKEXTPROC)(GLuint res, GLuint in, GLenum outX, GLenum outY, GLenum outZ, GLenum outW);
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glAccum)(GLenum op, GLfloat value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glAccumxOES)(GLenum op, GLfixed value);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glAcquireKeyedMutexWin32EXT)(GLuint memory, GLuint64 key, GLuint timeout);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glActiveProgramEXT)(GLuint program);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glActiveShaderProgram)(GLuint pipeline, GLuint program);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glActiveShaderProgramEXT)(GLuint pipeline, GLuint program);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glActiveStencilFaceEXT)(GLenum face);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glActiveTexture)(GLenum texture);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glActiveTextureARB)(GLenum texture);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glActiveVaryingNV)(GLuint program, const GLchar * name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glAlphaFragmentOp1ATI)(GLenum op, GLuint dst, GLuint dstMod, GLuint arg1, GLuint arg1Rep, GLuint arg1Mod);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glAlphaFragmentOp2ATI)(GLenum op, GLuint dst, GLuint dstMod, GLuint arg1, GLuint arg1Rep, GLuint arg1Mod, GLuint arg2, GLuint arg2Rep, GLuint arg2Mod);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glAlphaFragmentOp3ATI)(GLenum op, GLuint dst, GLuint dstMod, GLuint arg1, GLuint arg1Rep, GLuint arg1Mod, GLuint arg2, GLuint arg2Rep, GLuint arg2Mod, GLuint arg3, GLuint arg3Rep, GLuint arg3Mod);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glAlphaFunc)(GLenum func, GLfloat ref);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glAlphaFuncQCOM)(GLenum func, GLclampf ref);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glAlphaFuncx)(GLenum func, GLfixed ref);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glAlphaFuncxOES)(GLenum func, GLfixed ref);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glAlphaToCoverageDitherControlNV)(GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glApplyFramebufferAttachmentCMAAINTEL)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glApplyTextureEXT)(GLenum mode);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glAreProgramsResidentNV)(GLsizei n, const GLuint * programs, GLboolean * residences);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glAreTexturesResident)(GLsizei n, const GLuint * textures, GLboolean * residences);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glAreTexturesResidentEXT)(GLsizei n, const GLuint * textures, GLboolean * residences);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glArrayElement)(GLint i);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glArrayElementEXT)(GLint i);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glArrayObjectATI)(GLenum array, GLint size, GLenum type, GLsizei stride, GLuint buffer, GLuint offset);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glAsyncCopyBufferSubDataNVX)(GLsizei waitSemaphoreCount, const GLuint * waitSemaphoreArray, const GLuint64 * fenceValueArray, GLuint readGpu, GLbitfield writeGpuMask, GLuint readBuffer, GLuint writeBuffer, GLintptr readOffset, GLintptr writeOffset, GLsizeiptr size, GLsizei signalSemaphoreCount, const GLuint * signalSemaphoreArray, const GLuint64 * signalValueArray);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glAsyncCopyImageSubDataNVX)(GLsizei waitSemaphoreCount, const GLuint * waitSemaphoreArray, const GLuint64 * waitValueArray, GLuint srcGpu, GLbitfield dstGpuMask, GLuint srcName, GLenum srcTarget, GLint srcLevel, GLint srcX, GLint srcY, GLint srcZ, GLuint dstName, GLenum dstTarget, GLint dstLevel, GLint dstX, GLint dstY, GLint dstZ, GLsizei srcWidth, GLsizei srcHeight, GLsizei srcDepth, GLsizei signalSemaphoreCount, const GLuint * signalSemaphoreArray, const GLuint64 * signalValueArray);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glAsyncMarkerSGIX)(GLuint marker);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glAttachObjectARB)(GLhandleARB containerObj, GLhandleARB obj);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glAttachShader)(GLuint program, GLuint shader);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLATTACHSHADERPROC)(GLuint program, GLuint shader);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glAttachShader)(GLuint program, GLuint shader);
+   --  #define glAttachShader epoxy_glAttachShader
+
+   type PFNGLATTACHSHADERPROC is access procedure
+     (program : epoxy.GLuint;
+      shader  : epoxy.GLuint) with Convention => C;
+
+   glAttachShader : constant not null PFNGLATTACHSHADERPROC
+     with Import, Convention => C, External_Name => "epoxy_glAttachShader";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBegin)(GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBeginConditionalRender)(GLuint id, GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBeginConditionalRenderNV)(GLuint id, GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBeginConditionalRenderNVX)(GLuint id);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBeginFragmentShaderATI)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBeginOcclusionQueryNV)(GLuint id);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBeginPerfMonitorAMD)(GLuint monitor);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBeginPerfQueryINTEL)(GLuint queryHandle);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBeginQuery)(GLenum target, GLuint id);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBeginQueryARB)(GLenum target, GLuint id);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBeginQueryEXT)(GLenum target, GLuint id);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBeginQueryIndexed)(GLenum target, GLuint index, GLuint id);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBeginTransformFeedback)(GLenum primitiveMode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBeginTransformFeedbackEXT)(GLenum primitiveMode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBeginTransformFeedbackNV)(GLenum primitiveMode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBeginVertexShaderEXT)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBeginVideoCaptureNV)(GLuint video_capture_slot);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindAttribLocation)(GLuint program, GLuint index, const GLchar * name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindAttribLocationARB)(GLhandleARB programObj, GLuint index, const GLcharARB * name);
 
    --  typedef void (GLAPIENTRY *PFNGLBINDBUFFERPROC)(GLenum target, GLuint buffer);
@@ -9287,177 +9273,177 @@ is
      with Import, Convention => C, External_Name => "epoxy_glBindBuffer";
 
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindBufferARB)(GLenum target, GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindBufferBase)(GLenum target, GLuint index, GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindBufferBaseEXT)(GLenum target, GLuint index, GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindBufferBaseNV)(GLenum target, GLuint index, GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindBufferOffsetEXT)(GLenum target, GLuint index, GLuint buffer, GLintptr offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindBufferOffsetNV)(GLenum target, GLuint index, GLuint buffer, GLintptr offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindBufferRange)(GLenum target, GLuint index, GLuint buffer, GLintptr offset, GLsizeiptr size);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindBufferRangeEXT)(GLenum target, GLuint index, GLuint buffer, GLintptr offset, GLsizeiptr size);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindBufferRangeNV)(GLenum target, GLuint index, GLuint buffer, GLintptr offset, GLsizeiptr size);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindBuffersBase)(GLenum target, GLuint first, GLsizei count, const GLuint * buffers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindBuffersRange)(GLenum target, GLuint first, GLsizei count, const GLuint * buffers, const GLintptr * offsets, const GLsizeiptr * sizes);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindFragDataLocation)(GLuint program, GLuint color, const GLchar * name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindFragDataLocationEXT)(GLuint program, GLuint color, const GLchar * name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindFragDataLocationIndexed)(GLuint program, GLuint colorNumber, GLuint index, const GLchar * name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindFragDataLocationIndexedEXT)(GLuint program, GLuint colorNumber, GLuint index, const GLchar * name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindFragmentShaderATI)(GLuint id);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindFramebuffer)(GLenum target, GLuint framebuffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindFramebufferEXT)(GLenum target, GLuint framebuffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindFramebufferOES)(GLenum target, GLuint framebuffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindImageTexture)(GLuint unit, GLuint texture, GLint level, GLboolean layered, GLint layer, GLenum access, GLenum format);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindImageTextureEXT)(GLuint index, GLuint texture, GLint level, GLboolean layered, GLint layer, GLenum access, GLint format);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindImageTextures)(GLuint first, GLsizei count, const GLuint * textures);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glBindLightParameterEXT)(GLenum light, GLenum value);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glBindMaterialParameterEXT)(GLenum face, GLenum value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindMultiTextureEXT)(GLenum texunit, GLenum target, GLuint texture);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glBindParameterEXT)(GLenum value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindProgramARB)(GLenum target, GLuint program);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindProgramNV)(GLenum target, GLuint id);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindProgramPipeline)(GLuint pipeline);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindProgramPipelineEXT)(GLuint pipeline);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindRenderbuffer)(GLenum target, GLuint renderbuffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindRenderbufferEXT)(GLenum target, GLuint renderbuffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindRenderbufferOES)(GLenum target, GLuint renderbuffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindSampler)(GLuint unit, GLuint sampler);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindSamplers)(GLuint first, GLsizei count, const GLuint * samplers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindShadingRateImageNV)(GLuint texture);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glBindTexGenParameterEXT)(GLenum unit, GLenum coord, GLenum value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindTexture)(GLenum target, GLuint texture);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindTextureEXT)(GLenum target, GLuint texture);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindTextureUnit)(GLuint unit, GLuint texture);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glBindTextureUnitParameterEXT)(GLenum unit, GLenum value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindTextures)(GLuint first, GLsizei count, const GLuint * textures);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindTransformFeedback)(GLenum target, GLuint id);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindTransformFeedbackNV)(GLenum target, GLuint id);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindVertexArray)(GLuint array);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindVertexArrayAPPLE)(GLuint array);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindVertexArrayOES)(GLuint array);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindVertexBuffer)(GLuint bindingindex, GLuint buffer, GLintptr offset, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindVertexBuffers)(GLuint first, GLsizei count, const GLuint * buffers, const GLintptr * offsets, const GLsizei * strides);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindVertexShaderEXT)(GLuint id);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindVideoCaptureStreamBufferNV)(GLuint video_capture_slot, GLuint stream, GLenum frame_region, GLintptrARB offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBindVideoCaptureStreamTextureNV)(GLuint video_capture_slot, GLuint stream, GLenum frame_region, GLenum target, GLuint texture);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBinormal3bEXT)(GLbyte bx, GLbyte by, GLbyte bz);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBinormal3bvEXT)(const GLbyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBinormal3dEXT)(GLdouble bx, GLdouble by, GLdouble bz);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBinormal3dvEXT)(const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBinormal3fEXT)(GLfloat bx, GLfloat by, GLfloat bz);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBinormal3fvEXT)(const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBinormal3iEXT)(GLint bx, GLint by, GLint bz);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBinormal3ivEXT)(const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBinormal3sEXT)(GLshort bx, GLshort by, GLshort bz);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBinormal3svEXT)(const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBinormalPointerEXT)(GLenum type, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBitmap)(GLsizei width, GLsizei height, GLfloat xorig, GLfloat yorig, GLfloat xmove, GLfloat ymove, const GLubyte * bitmap);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBitmapxOES)(GLsizei width, GLsizei height, GLfixed xorig, GLfixed yorig, GLfixed xmove, GLfixed ymove, const GLubyte * bitmap);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendBarrier)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendBarrierKHR)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendBarrierNV)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendColor)(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendColorEXT)(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendColorxOES)(GLfixed red, GLfixed green, GLfixed blue, GLfixed alpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendEquation)(GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendEquationEXT)(GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendEquationIndexedAMD)(GLuint buf, GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendEquationOES)(GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendEquationSeparate)(GLenum modeRGB, GLenum modeAlpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendEquationSeparateEXT)(GLenum modeRGB, GLenum modeAlpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendEquationSeparateIndexedAMD)(GLuint buf, GLenum modeRGB, GLenum modeAlpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendEquationSeparateOES)(GLenum modeRGB, GLenum modeAlpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendEquationSeparatei)(GLuint buf, GLenum modeRGB, GLenum modeAlpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendEquationSeparateiARB)(GLuint buf, GLenum modeRGB, GLenum modeAlpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendEquationSeparateiEXT)(GLuint buf, GLenum modeRGB, GLenum modeAlpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendEquationSeparateiOES)(GLuint buf, GLenum modeRGB, GLenum modeAlpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendEquationi)(GLuint buf, GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendEquationiARB)(GLuint buf, GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendEquationiEXT)(GLuint buf, GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendEquationiOES)(GLuint buf, GLenum mode);
 
    --  typedef void (GLAPIENTRY *PFNGLBLENDFUNCPROC)(GLenum sfactor, GLenum dfactor);
@@ -9469,55 +9455,55 @@ is
    --     dfactor : OpenGL.GLenum)
    --    with Import, Convention => C, External_Name => "glBlendFunc";
 
-   type PFNGLBLENDFUNCPROC is access procedure 
+   type PFNGLBLENDFUNCPROC is access procedure
      (sfactor : OpenGL.GLenum;
       dfactor : OpenGL.GLenum) with Convention => C;
 
-   glBlendFunc : constant not null PFNGLBLENDFUNCPROC 
+   glBlendFunc : constant not null PFNGLBLENDFUNCPROC
      with Import, Convention => C, External_Name => "epoxy_glBlendFunc";
-   
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendFuncIndexedAMD)(GLuint buf, GLenum src, GLenum dst);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendFuncSeparate)(GLenum sfactorRGB, GLenum dfactorRGB, GLenum sfactorAlpha, GLenum dfactorAlpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendFuncSeparateEXT)(GLenum sfactorRGB, GLenum dfactorRGB, GLenum sfactorAlpha, GLenum dfactorAlpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendFuncSeparateINGR)(GLenum sfactorRGB, GLenum dfactorRGB, GLenum sfactorAlpha, GLenum dfactorAlpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendFuncSeparateIndexedAMD)(GLuint buf, GLenum srcRGB, GLenum dstRGB, GLenum srcAlpha, GLenum dstAlpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendFuncSeparateOES)(GLenum srcRGB, GLenum dstRGB, GLenum srcAlpha, GLenum dstAlpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendFuncSeparatei)(GLuint buf, GLenum srcRGB, GLenum dstRGB, GLenum srcAlpha, GLenum dstAlpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendFuncSeparateiARB)(GLuint buf, GLenum srcRGB, GLenum dstRGB, GLenum srcAlpha, GLenum dstAlpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendFuncSeparateiEXT)(GLuint buf, GLenum srcRGB, GLenum dstRGB, GLenum srcAlpha, GLenum dstAlpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendFuncSeparateiOES)(GLuint buf, GLenum srcRGB, GLenum dstRGB, GLenum srcAlpha, GLenum dstAlpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendFunci)(GLuint buf, GLenum src, GLenum dst);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendFunciARB)(GLuint buf, GLenum src, GLenum dst);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendFunciEXT)(GLuint buf, GLenum src, GLenum dst);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendFunciOES)(GLuint buf, GLenum src, GLenum dst);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlendParameteriNV)(GLenum pname, GLint value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlitFramebuffer)(GLint srcX0, GLint srcY0, GLint srcX1, GLint srcY1, GLint dstX0, GLint dstY0, GLint dstX1, GLint dstY1, GLbitfield mask, GLenum filter);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlitFramebufferANGLE)(GLint srcX0, GLint srcY0, GLint srcX1, GLint srcY1, GLint dstX0, GLint dstY0, GLint dstX1, GLint dstY1, GLbitfield mask, GLenum filter);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlitFramebufferEXT)(GLint srcX0, GLint srcY0, GLint srcX1, GLint srcY1, GLint dstX0, GLint dstY0, GLint dstX1, GLint dstY1, GLbitfield mask, GLenum filter);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlitFramebufferNV)(GLint srcX0, GLint srcY0, GLint srcX1, GLint srcY1, GLint dstX0, GLint dstY0, GLint dstX1, GLint dstY1, GLbitfield mask, GLenum filter);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBlitNamedFramebuffer)(GLuint readFramebuffer, GLuint drawFramebuffer, GLint srcX0, GLint srcY0, GLint srcX1, GLint srcY1, GLint dstX0, GLint dstY0, GLint dstX1, GLint dstY1, GLbitfield mask, GLenum filter);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBufferAddressRangeNV)(GLenum pname, GLuint index, GLuint64EXT address, GLsizeiptr length);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBufferAttachMemoryNV)(GLenum target, GLuint memory, GLuint64 offset);
 
    --  typedef void (GLAPIENTRY *PFNGLBUFFERDATAPROC)(GLenum target, GLsizeiptr size, const void * data, GLenum usage);
@@ -9544,41 +9530,41 @@ is
      with Import, Convention => C, External_Name => "epoxy_glBufferData";
 
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBufferDataARB)(GLenum target, GLsizeiptrARB size, const void * data, GLenum usage);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBufferPageCommitmentARB)(GLenum target, GLintptr offset, GLsizeiptr size, GLboolean commit);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBufferParameteriAPPLE)(GLenum target, GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBufferStorage)(GLenum target, GLsizeiptr size, const void * data, GLbitfield flags);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBufferStorageEXT)(GLenum target, GLsizeiptr size, const void * data, GLbitfield flags);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBufferStorageExternalEXT)(GLenum target, GLintptr offset, GLsizeiptr size, GLeglClientBufferEXT clientBuffer, GLbitfield flags);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBufferStorageMemEXT)(GLenum target, GLsizeiptr size, GLuint memory, GLuint64 offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBufferSubData)(GLenum target, GLintptr offset, GLsizeiptr size, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glBufferSubDataARB)(GLenum target, GLintptrARB offset, GLsizeiptrARB size, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCallCommandListNV)(GLuint list);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCallList)(GLuint list);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCallLists)(GLsizei n, GLenum type, const void * lists);
---  
+--
 --  EPOXY_PUBLIC GLenum (EPOXY_CALLSPEC *epoxy_glCheckFramebufferStatus)(GLenum target);
---  
+--
 --  EPOXY_PUBLIC GLenum (EPOXY_CALLSPEC *epoxy_glCheckFramebufferStatusEXT)(GLenum target);
---  
+--
 --  EPOXY_PUBLIC GLenum (EPOXY_CALLSPEC *epoxy_glCheckFramebufferStatusOES)(GLenum target);
---  
+--
 --  EPOXY_PUBLIC GLenum (EPOXY_CALLSPEC *epoxy_glCheckNamedFramebufferStatus)(GLuint framebuffer, GLenum target);
---  
+--
 --  EPOXY_PUBLIC GLenum (EPOXY_CALLSPEC *epoxy_glCheckNamedFramebufferStatusEXT)(GLuint framebuffer, GLenum target);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClampColor)(GLenum target, GLenum clamp);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClampColorARB)(GLenum target, GLenum clamp);
 
    --  typedef void (GLAPIENTRY *PFNGLCLEARPROC)(GLbitfield mask);
@@ -9587,49 +9573,49 @@ is
 
    type PFNGLCLEARPROC is access procedure (mask : OpenGL.GLbitfield)
      with Convention => C;
-   
+
    glClear : constant not null PFNGLCLEARPROC
      with Import, Convention => C, External_Name => "epoxy_glClear";
-   
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearAccum)(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearAccumxOES)(GLfixed red, GLfixed green, GLfixed blue, GLfixed alpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearBufferData)(GLenum target, GLenum internalformat, GLenum format, GLenum type, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearBufferSubData)(GLenum target, GLenum internalformat, GLintptr offset, GLsizeiptr size, GLenum format, GLenum type, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearBufferfi)(GLenum buffer, GLint drawbuffer, GLfloat depth, GLint stencil);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearBufferfv)(GLenum buffer, GLint drawbuffer, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearBufferiv)(GLenum buffer, GLint drawbuffer, const GLint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearBufferuiv)(GLenum buffer, GLint drawbuffer, const GLuint * value);
 
    --  typedef void (GLAPIENTRY *PFNGLCLEARCOLORPROC)(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);
    --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearColor)(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);
    --  #define glClearColor epoxy_glClearColor
 
-   type PFNGLCLEARCOLORPROC is access procedure 
+   type PFNGLCLEARCOLORPROC is access procedure
      (red   : OpenGL.GLfloat;
       green : OpenGL.GLfloat;
       blue  : OpenGL.GLfloat;
       alpha : OpenGL.GLfloat) with Convention => C;
-   
+
    glClearColor : constant not null PFNGLCLEARCOLORPROC
      with Import, Convention => C, External_Name => "epoxy_glClearColor";
-   
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearColorIiEXT)(GLint red, GLint green, GLint blue, GLint alpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearColorIuiEXT)(GLuint red, GLuint green, GLuint blue, GLuint alpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearColorx)(GLfixed red, GLfixed green, GLfixed blue, GLfixed alpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearColorxOES)(GLfixed red, GLfixed green, GLfixed blue, GLfixed alpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearDepth)(GLdouble depth);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearDepthdNV)(GLdouble depth);
 
    --  typedef void (GLAPIENTRY *PFNGLCLEARDEPTHFPROC)(GLfloat d);
@@ -9638,246 +9624,246 @@ is
 
    type PFNGLCLEARDEPTHFPROC is access procedure (d : OpenGL.GLfloat)
      with Convention => C;
-   
+
    glClearDepthf : constant not null PFNGLCLEARDEPTHFPROC
      with Import, Convention => C, External_Name => "epoxy_glClearDepthf";
-   
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearDepthfOES)(GLclampf depth);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearDepthx)(GLfixed depth);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearDepthxOES)(GLfixed depth);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearIndex)(GLfloat c);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearNamedBufferData)(GLuint buffer, GLenum internalformat, GLenum format, GLenum type, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearNamedBufferDataEXT)(GLuint buffer, GLenum internalformat, GLenum format, GLenum type, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearNamedBufferSubData)(GLuint buffer, GLenum internalformat, GLintptr offset, GLsizeiptr size, GLenum format, GLenum type, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearNamedBufferSubDataEXT)(GLuint buffer, GLenum internalformat, GLsizeiptr offset, GLsizeiptr size, GLenum format, GLenum type, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearNamedFramebufferfi)(GLuint framebuffer, GLenum buffer, GLint drawbuffer, GLfloat depth, GLint stencil);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearNamedFramebufferfv)(GLuint framebuffer, GLenum buffer, GLint drawbuffer, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearNamedFramebufferiv)(GLuint framebuffer, GLenum buffer, GLint drawbuffer, const GLint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearNamedFramebufferuiv)(GLuint framebuffer, GLenum buffer, GLint drawbuffer, const GLuint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearPixelLocalStorageuiEXT)(GLsizei offset, GLsizei n, const GLuint * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearStencil)(GLint s);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearTexImage)(GLuint texture, GLint level, GLenum format, GLenum type, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearTexImageEXT)(GLuint texture, GLint level, GLenum format, GLenum type, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearTexSubImage)(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClearTexSubImageEXT)(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClientActiveTexture)(GLenum texture);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClientActiveTextureARB)(GLenum texture);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClientActiveVertexStreamATI)(GLenum stream);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClientAttribDefaultEXT)(GLbitfield mask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClientWaitSemaphoreui64NVX)(GLsizei fenceObjectCount, const GLuint * semaphoreArray, const GLuint64 * fenceValueArray);
---  
+--
 --  EPOXY_PUBLIC GLenum (EPOXY_CALLSPEC *epoxy_glClientWaitSync)(GLsync sync, GLbitfield flags, GLuint64 timeout);
---  
+--
 --  EPOXY_PUBLIC GLenum (EPOXY_CALLSPEC *epoxy_glClientWaitSyncAPPLE)(GLsync sync, GLbitfield flags, GLuint64 timeout);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClipControl)(GLenum origin, GLenum depth);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClipControlEXT)(GLenum origin, GLenum depth);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClipPlane)(GLenum plane, const GLdouble * equation);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClipPlanef)(GLenum p, const GLfloat * eqn);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClipPlanefIMG)(GLenum p, const GLfloat * eqn);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClipPlanefOES)(GLenum plane, const GLfloat * equation);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClipPlanex)(GLenum plane, const GLfixed * equation);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClipPlanexIMG)(GLenum p, const GLfixed * eqn);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glClipPlanexOES)(GLenum plane, const GLfixed * equation);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor3b)(GLbyte red, GLbyte green, GLbyte blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor3bv)(const GLbyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor3d)(GLdouble red, GLdouble green, GLdouble blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor3dv)(const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor3f)(GLfloat red, GLfloat green, GLfloat blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor3fVertex3fSUN)(GLfloat r, GLfloat g, GLfloat b, GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor3fVertex3fvSUN)(const GLfloat * c, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor3fv)(const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor3hNV)(GLhalfNV red, GLhalfNV green, GLhalfNV blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor3hvNV)(const GLhalfNV * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor3i)(GLint red, GLint green, GLint blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor3iv)(const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor3s)(GLshort red, GLshort green, GLshort blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor3sv)(const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor3ub)(GLubyte red, GLubyte green, GLubyte blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor3ubv)(const GLubyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor3ui)(GLuint red, GLuint green, GLuint blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor3uiv)(const GLuint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor3us)(GLushort red, GLushort green, GLushort blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor3usv)(const GLushort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor3xOES)(GLfixed red, GLfixed green, GLfixed blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor3xvOES)(const GLfixed * components);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4b)(GLbyte red, GLbyte green, GLbyte blue, GLbyte alpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4bv)(const GLbyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4d)(GLdouble red, GLdouble green, GLdouble blue, GLdouble alpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4dv)(const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4f)(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4fNormal3fVertex3fSUN)(GLfloat r, GLfloat g, GLfloat b, GLfloat a, GLfloat nx, GLfloat ny, GLfloat nz, GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4fNormal3fVertex3fvSUN)(const GLfloat * c, const GLfloat * n, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4fv)(const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4hNV)(GLhalfNV red, GLhalfNV green, GLhalfNV blue, GLhalfNV alpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4hvNV)(const GLhalfNV * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4i)(GLint red, GLint green, GLint blue, GLint alpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4iv)(const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4s)(GLshort red, GLshort green, GLshort blue, GLshort alpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4sv)(const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4ub)(GLubyte red, GLubyte green, GLubyte blue, GLubyte alpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4ubVertex2fSUN)(GLubyte r, GLubyte g, GLubyte b, GLubyte a, GLfloat x, GLfloat y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4ubVertex2fvSUN)(const GLubyte * c, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4ubVertex3fSUN)(GLubyte r, GLubyte g, GLubyte b, GLubyte a, GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4ubVertex3fvSUN)(const GLubyte * c, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4ubv)(const GLubyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4ui)(GLuint red, GLuint green, GLuint blue, GLuint alpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4uiv)(const GLuint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4us)(GLushort red, GLushort green, GLushort blue, GLushort alpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4usv)(const GLushort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4x)(GLfixed red, GLfixed green, GLfixed blue, GLfixed alpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4xOES)(GLfixed red, GLfixed green, GLfixed blue, GLfixed alpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColor4xvOES)(const GLfixed * components);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorFormatNV)(GLint size, GLenum type, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorFragmentOp1ATI)(GLenum op, GLuint dst, GLuint dstMask, GLuint dstMod, GLuint arg1, GLuint arg1Rep, GLuint arg1Mod);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorFragmentOp2ATI)(GLenum op, GLuint dst, GLuint dstMask, GLuint dstMod, GLuint arg1, GLuint arg1Rep, GLuint arg1Mod, GLuint arg2, GLuint arg2Rep, GLuint arg2Mod);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorFragmentOp3ATI)(GLenum op, GLuint dst, GLuint dstMask, GLuint dstMod, GLuint arg1, GLuint arg1Rep, GLuint arg1Mod, GLuint arg2, GLuint arg2Rep, GLuint arg2Mod, GLuint arg3, GLuint arg3Rep, GLuint arg3Mod);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorMask)(GLboolean red, GLboolean green, GLboolean blue, GLboolean alpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorMaskIndexedEXT)(GLuint index, GLboolean r, GLboolean g, GLboolean b, GLboolean a);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorMaski)(GLuint index, GLboolean r, GLboolean g, GLboolean b, GLboolean a);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorMaskiEXT)(GLuint index, GLboolean r, GLboolean g, GLboolean b, GLboolean a);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorMaskiOES)(GLuint index, GLboolean r, GLboolean g, GLboolean b, GLboolean a);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorMaterial)(GLenum face, GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorP3ui)(GLenum type, GLuint color);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorP3uiv)(GLenum type, const GLuint * color);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorP4ui)(GLenum type, GLuint color);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorP4uiv)(GLenum type, const GLuint * color);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorPointer)(GLint size, GLenum type, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorPointerEXT)(GLint size, GLenum type, GLsizei stride, GLsizei count, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorPointerListIBM)(GLint size, GLenum type, GLint stride, const void ** pointer, GLint ptrstride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorPointervINTEL)(GLint size, GLenum type, const void ** pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorSubTable)(GLenum target, GLsizei start, GLsizei count, GLenum format, GLenum type, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorSubTableEXT)(GLenum target, GLsizei start, GLsizei count, GLenum format, GLenum type, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorTable)(GLenum target, GLenum internalformat, GLsizei width, GLenum format, GLenum type, const void * table);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorTableEXT)(GLenum target, GLenum internalFormat, GLsizei width, GLenum format, GLenum type, const void * table);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorTableParameterfv)(GLenum target, GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorTableParameterfvSGI)(GLenum target, GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorTableParameteriv)(GLenum target, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorTableParameterivSGI)(GLenum target, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glColorTableSGI)(GLenum target, GLenum internalformat, GLsizei width, GLenum format, GLenum type, const void * table);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCombinerInputNV)(GLenum stage, GLenum portion, GLenum variable, GLenum input, GLenum mapping, GLenum componentUsage);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCombinerOutputNV)(GLenum stage, GLenum portion, GLenum abOutput, GLenum cdOutput, GLenum sumOutput, GLenum scale, GLenum bias, GLboolean abDotProduct, GLboolean cdDotProduct, GLboolean muxSum);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCombinerParameterfNV)(GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCombinerParameterfvNV)(GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCombinerParameteriNV)(GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCombinerParameterivNV)(GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCombinerStageParameterfvNV)(GLenum stage, GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCommandListSegmentsNV)(GLuint list, GLuint segments);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompileCommandListNV)(GLuint list);
 
    --  typedef void (GLAPIENTRY *PFNGLCOMPILESHADERPROC)(GLuint shader);
@@ -9891,221 +9877,229 @@ is
      with Import, Convention => C, External_Name => "epoxy_glCompileShader";
 
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompileShaderARB)(GLhandleARB shaderObj);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompileShaderIncludeARB)(GLuint shader, GLsizei count, const GLchar *const* path, const GLint * length);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedMultiTexImage1DEXT)(GLenum texunit, GLenum target, GLint level, GLenum internalformat, GLsizei width, GLint border, GLsizei imageSize, const void * bits);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedMultiTexImage2DEXT)(GLenum texunit, GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLint border, GLsizei imageSize, const void * bits);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedMultiTexImage3DEXT)(GLenum texunit, GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLsizei imageSize, const void * bits);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedMultiTexSubImage1DEXT)(GLenum texunit, GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLsizei imageSize, const void * bits);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedMultiTexSubImage2DEXT)(GLenum texunit, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLsizei imageSize, const void * bits);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedMultiTexSubImage3DEXT)(GLenum texunit, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLsizei imageSize, const void * bits);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedTexImage1D)(GLenum target, GLint level, GLenum internalformat, GLsizei width, GLint border, GLsizei imageSize, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedTexImage1DARB)(GLenum target, GLint level, GLenum internalformat, GLsizei width, GLint border, GLsizei imageSize, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedTexImage2D)(GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLint border, GLsizei imageSize, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedTexImage2DARB)(GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLint border, GLsizei imageSize, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedTexImage3D)(GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLsizei imageSize, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedTexImage3DARB)(GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLsizei imageSize, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedTexImage3DOES)(GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLsizei imageSize, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedTexSubImage1D)(GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLsizei imageSize, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedTexSubImage1DARB)(GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLsizei imageSize, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedTexSubImage2D)(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLsizei imageSize, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedTexSubImage2DARB)(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLsizei imageSize, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedTexSubImage3D)(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLsizei imageSize, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedTexSubImage3DARB)(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLsizei imageSize, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedTexSubImage3DOES)(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLsizei imageSize, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedTextureImage1DEXT)(GLuint texture, GLenum target, GLint level, GLenum internalformat, GLsizei width, GLint border, GLsizei imageSize, const void * bits);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedTextureImage2DEXT)(GLuint texture, GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLint border, GLsizei imageSize, const void * bits);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedTextureImage3DEXT)(GLuint texture, GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLsizei imageSize, const void * bits);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedTextureSubImage1D)(GLuint texture, GLint level, GLint xoffset, GLsizei width, GLenum format, GLsizei imageSize, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedTextureSubImage1DEXT)(GLuint texture, GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLsizei imageSize, const void * bits);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedTextureSubImage2D)(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLsizei imageSize, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedTextureSubImage2DEXT)(GLuint texture, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLsizei imageSize, const void * bits);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedTextureSubImage3D)(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLsizei imageSize, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCompressedTextureSubImage3DEXT)(GLuint texture, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLsizei imageSize, const void * bits);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glConservativeRasterParameterfNV)(GLenum pname, GLfloat value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glConservativeRasterParameteriNV)(GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glConvolutionFilter1D)(GLenum target, GLenum internalformat, GLsizei width, GLenum format, GLenum type, const void * image);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glConvolutionFilter1DEXT)(GLenum target, GLenum internalformat, GLsizei width, GLenum format, GLenum type, const void * image);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glConvolutionFilter2D)(GLenum target, GLenum internalformat, GLsizei width, GLsizei height, GLenum format, GLenum type, const void * image);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glConvolutionFilter2DEXT)(GLenum target, GLenum internalformat, GLsizei width, GLsizei height, GLenum format, GLenum type, const void * image);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glConvolutionParameterf)(GLenum target, GLenum pname, GLfloat params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glConvolutionParameterfEXT)(GLenum target, GLenum pname, GLfloat params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glConvolutionParameterfv)(GLenum target, GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glConvolutionParameterfvEXT)(GLenum target, GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glConvolutionParameteri)(GLenum target, GLenum pname, GLint params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glConvolutionParameteriEXT)(GLenum target, GLenum pname, GLint params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glConvolutionParameteriv)(GLenum target, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glConvolutionParameterivEXT)(GLenum target, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glConvolutionParameterxOES)(GLenum target, GLenum pname, GLfixed param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glConvolutionParameterxvOES)(GLenum target, GLenum pname, const GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyBufferSubData)(GLenum readTarget, GLenum writeTarget, GLintptr readOffset, GLintptr writeOffset, GLsizeiptr size);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyBufferSubDataNV)(GLenum readTarget, GLenum writeTarget, GLintptr readOffset, GLintptr writeOffset, GLsizeiptr size);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyColorSubTable)(GLenum target, GLsizei start, GLint x, GLint y, GLsizei width);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyColorSubTableEXT)(GLenum target, GLsizei start, GLint x, GLint y, GLsizei width);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyColorTable)(GLenum target, GLenum internalformat, GLint x, GLint y, GLsizei width);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyColorTableSGI)(GLenum target, GLenum internalformat, GLint x, GLint y, GLsizei width);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyConvolutionFilter1D)(GLenum target, GLenum internalformat, GLint x, GLint y, GLsizei width);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyConvolutionFilter1DEXT)(GLenum target, GLenum internalformat, GLint x, GLint y, GLsizei width);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyConvolutionFilter2D)(GLenum target, GLenum internalformat, GLint x, GLint y, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyConvolutionFilter2DEXT)(GLenum target, GLenum internalformat, GLint x, GLint y, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyImageSubData)(GLuint srcName, GLenum srcTarget, GLint srcLevel, GLint srcX, GLint srcY, GLint srcZ, GLuint dstName, GLenum dstTarget, GLint dstLevel, GLint dstX, GLint dstY, GLint dstZ, GLsizei srcWidth, GLsizei srcHeight, GLsizei srcDepth);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyImageSubDataEXT)(GLuint srcName, GLenum srcTarget, GLint srcLevel, GLint srcX, GLint srcY, GLint srcZ, GLuint dstName, GLenum dstTarget, GLint dstLevel, GLint dstX, GLint dstY, GLint dstZ, GLsizei srcWidth, GLsizei srcHeight, GLsizei srcDepth);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyImageSubDataNV)(GLuint srcName, GLenum srcTarget, GLint srcLevel, GLint srcX, GLint srcY, GLint srcZ, GLuint dstName, GLenum dstTarget, GLint dstLevel, GLint dstX, GLint dstY, GLint dstZ, GLsizei width, GLsizei height, GLsizei depth);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyImageSubDataOES)(GLuint srcName, GLenum srcTarget, GLint srcLevel, GLint srcX, GLint srcY, GLint srcZ, GLuint dstName, GLenum dstTarget, GLint dstLevel, GLint dstX, GLint dstY, GLint dstZ, GLsizei srcWidth, GLsizei srcHeight, GLsizei srcDepth);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyMultiTexImage1DEXT)(GLenum texunit, GLenum target, GLint level, GLenum internalformat, GLint x, GLint y, GLsizei width, GLint border);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyMultiTexImage2DEXT)(GLenum texunit, GLenum target, GLint level, GLenum internalformat, GLint x, GLint y, GLsizei width, GLsizei height, GLint border);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyMultiTexSubImage1DEXT)(GLenum texunit, GLenum target, GLint level, GLint xoffset, GLint x, GLint y, GLsizei width);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyMultiTexSubImage2DEXT)(GLenum texunit, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint x, GLint y, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyMultiTexSubImage3DEXT)(GLenum texunit, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLint x, GLint y, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyNamedBufferSubData)(GLuint readBuffer, GLuint writeBuffer, GLintptr readOffset, GLintptr writeOffset, GLsizeiptr size);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyPathNV)(GLuint resultPath, GLuint srcPath);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyPixels)(GLint x, GLint y, GLsizei width, GLsizei height, GLenum type);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyTexImage1D)(GLenum target, GLint level, GLenum internalformat, GLint x, GLint y, GLsizei width, GLint border);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyTexImage1DEXT)(GLenum target, GLint level, GLenum internalformat, GLint x, GLint y, GLsizei width, GLint border);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyTexImage2D)(GLenum target, GLint level, GLenum internalformat, GLint x, GLint y, GLsizei width, GLsizei height, GLint border);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyTexImage2DEXT)(GLenum target, GLint level, GLenum internalformat, GLint x, GLint y, GLsizei width, GLsizei height, GLint border);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyTexSubImage1D)(GLenum target, GLint level, GLint xoffset, GLint x, GLint y, GLsizei width);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyTexSubImage1DEXT)(GLenum target, GLint level, GLint xoffset, GLint x, GLint y, GLsizei width);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyTexSubImage2D)(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint x, GLint y, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyTexSubImage2DEXT)(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint x, GLint y, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyTexSubImage3D)(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLint x, GLint y, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyTexSubImage3DEXT)(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLint x, GLint y, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyTexSubImage3DOES)(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLint x, GLint y, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyTextureImage1DEXT)(GLuint texture, GLenum target, GLint level, GLenum internalformat, GLint x, GLint y, GLsizei width, GLint border);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyTextureImage2DEXT)(GLuint texture, GLenum target, GLint level, GLenum internalformat, GLint x, GLint y, GLsizei width, GLsizei height, GLint border);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyTextureLevelsAPPLE)(GLuint destinationTexture, GLuint sourceTexture, GLint sourceBaseLevel, GLsizei sourceLevelCount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyTextureSubImage1D)(GLuint texture, GLint level, GLint xoffset, GLint x, GLint y, GLsizei width);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyTextureSubImage1DEXT)(GLuint texture, GLenum target, GLint level, GLint xoffset, GLint x, GLint y, GLsizei width);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyTextureSubImage2D)(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint x, GLint y, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyTextureSubImage2DEXT)(GLuint texture, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint x, GLint y, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyTextureSubImage3D)(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLint x, GLint y, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCopyTextureSubImage3DEXT)(GLuint texture, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLint x, GLint y, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCoverFillPathInstancedNV)(GLsizei numPaths, GLenum pathNameType, const void * paths, GLuint pathBase, GLenum coverMode, GLenum transformType, const GLfloat * transformValues);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCoverFillPathNV)(GLuint path, GLenum coverMode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCoverStrokePathInstancedNV)(GLsizei numPaths, GLenum pathNameType, const void * paths, GLuint pathBase, GLenum coverMode, GLenum transformType, const GLfloat * transformValues);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCoverStrokePathNV)(GLuint path, GLenum coverMode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCoverageMaskNV)(GLboolean mask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCoverageModulationNV)(GLenum components);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCoverageModulationTableNV)(GLsizei n, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCoverageOperationNV)(GLenum operation);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCreateBuffers)(GLsizei n, GLuint * buffers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCreateCommandListsNV)(GLsizei n, GLuint * lists);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCreateFramebuffers)(GLsizei n, GLuint * framebuffers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCreateMemoryObjectsEXT)(GLsizei n, GLuint * memoryObjects);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCreatePerfQueryINTEL)(GLuint queryId, GLuint * queryHandle);
---  
---  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glCreateProgram)(void);
---  
+
+   --  typedef GLuint (GLAPIENTRY *PFNGLCREATEPROGRAMPROC)(void);
+   --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glCreateProgram)(void);
+   --  #define glCreateProgram epoxy_glCreateProgram
+
+   type PFNGLCREATEPROGRAMPROC is access function return epoxy.GLuint
+     with Convention => C;
+
+   glCreateProgram : constant not null PFNGLCREATEPROGRAMPROC
+     with Import, Convention => C, External_Name => "epoxy_glCreateProgram";
+
 --  EPOXY_PUBLIC GLhandleARB (EPOXY_CALLSPEC *epoxy_glCreateProgramObjectARB)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCreateProgramPipelines)(GLsizei n, GLuint * pipelines);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glCreateProgressFenceNVX)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCreateQueries)(GLenum target, GLsizei n, GLuint * ids);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCreateRenderbuffers)(GLsizei n, GLuint * renderbuffers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCreateSamplers)(GLsizei n, GLuint * samplers);
 
    --  typedef GLuint (GLAPIENTRY *PFNGLCREATESHADERPROC)(GLenum type);
@@ -10120,127 +10114,127 @@ is
      with Import, Convention => C, External_Name => "epoxy_glCreateShader";
 
 --  EPOXY_PUBLIC GLhandleARB (EPOXY_CALLSPEC *epoxy_glCreateShaderObjectARB)(GLenum shaderType);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glCreateShaderProgramEXT)(GLenum type, const GLchar * string);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glCreateShaderProgramv)(GLenum type, GLsizei count, const GLchar *const* strings);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glCreateShaderProgramvEXT)(GLenum type, GLsizei count, const GLchar ** strings);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCreateStatesNV)(GLsizei n, GLuint * states);
---  
+--
 --  EPOXY_PUBLIC GLsync (EPOXY_CALLSPEC *epoxy_glCreateSyncFromCLeventARB)(struct _cl_context * context, struct _cl_event * event, GLbitfield flags);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCreateTextures)(GLenum target, GLsizei n, GLuint * textures);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCreateTransformFeedbacks)(GLsizei n, GLuint * ids);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCreateVertexArrays)(GLsizei n, GLuint * arrays);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCullFace)(GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCullParameterdvEXT)(GLenum pname, GLdouble * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCullParameterfvEXT)(GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCurrentPaletteMatrixARB)(GLint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glCurrentPaletteMatrixOES)(GLuint matrixpaletteindex);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDebugMessageCallback)(GLDEBUGPROC callback, const void * userParam);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDebugMessageCallbackAMD)(GLDEBUGPROCAMD callback, void * userParam);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDebugMessageCallbackARB)(GLDEBUGPROCARB callback, const void * userParam);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDebugMessageCallbackKHR)(GLDEBUGPROCKHR callback, const void * userParam);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDebugMessageControl)(GLenum source, GLenum type, GLenum severity, GLsizei count, const GLuint * ids, GLboolean enabled);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDebugMessageControlARB)(GLenum source, GLenum type, GLenum severity, GLsizei count, const GLuint * ids, GLboolean enabled);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDebugMessageControlKHR)(GLenum source, GLenum type, GLenum severity, GLsizei count, const GLuint * ids, GLboolean enabled);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDebugMessageEnableAMD)(GLenum category, GLenum severity, GLsizei count, const GLuint * ids, GLboolean enabled);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDebugMessageInsert)(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar * buf);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDebugMessageInsertAMD)(GLenum category, GLenum severity, GLuint id, GLsizei length, const GLchar * buf);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDebugMessageInsertARB)(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar * buf);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDebugMessageInsertKHR)(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar * buf);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeformSGIX)(GLbitfield mask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeformationMap3dSGIX)(GLenum target, GLdouble u1, GLdouble u2, GLint ustride, GLint uorder, GLdouble v1, GLdouble v2, GLint vstride, GLint vorder, GLdouble w1, GLdouble w2, GLint wstride, GLint worder, const GLdouble * points);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeformationMap3fSGIX)(GLenum target, GLfloat u1, GLfloat u2, GLint ustride, GLint uorder, GLfloat v1, GLfloat v2, GLint vstride, GLint vorder, GLfloat w1, GLfloat w2, GLint wstride, GLint worder, const GLfloat * points);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteAsyncMarkersSGIX)(GLuint marker, GLsizei range);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteBuffers)(GLsizei n, const GLuint * buffers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteBuffersARB)(GLsizei n, const GLuint * buffers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteCommandListsNV)(GLsizei n, const GLuint * lists);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteFencesAPPLE)(GLsizei n, const GLuint * fences);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteFencesNV)(GLsizei n, const GLuint * fences);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteFragmentShaderATI)(GLuint id);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteFramebuffers)(GLsizei n, const GLuint * framebuffers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteFramebuffersEXT)(GLsizei n, const GLuint * framebuffers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteFramebuffersOES)(GLsizei n, const GLuint * framebuffers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteLists)(GLuint list, GLsizei range);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteMemoryObjectsEXT)(GLsizei n, const GLuint * memoryObjects);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteNamedStringARB)(GLint namelen, const GLchar * name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteNamesAMD)(GLenum identifier, GLuint num, const GLuint * names);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteObjectARB)(GLhandleARB obj);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteOcclusionQueriesNV)(GLsizei n, const GLuint * ids);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeletePathsNV)(GLuint path, GLsizei range);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeletePerfMonitorsAMD)(GLsizei n, GLuint * monitors);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeletePerfQueryINTEL)(GLuint queryHandle);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteProgram)(GLuint program);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteProgramPipelines)(GLsizei n, const GLuint * pipelines);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteProgramPipelinesEXT)(GLsizei n, const GLuint * pipelines);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteProgramsARB)(GLsizei n, const GLuint * programs);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteProgramsNV)(GLsizei n, const GLuint * programs);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteQueries)(GLsizei n, const GLuint * ids);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteQueriesARB)(GLsizei n, const GLuint * ids);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteQueriesEXT)(GLsizei n, const GLuint * ids);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteQueryResourceTagNV)(GLsizei n, const GLint * tagIds);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteRenderbuffers)(GLsizei n, const GLuint * renderbuffers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteRenderbuffersEXT)(GLsizei n, const GLuint * renderbuffers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteRenderbuffersOES)(GLsizei n, const GLuint * renderbuffers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteSamplers)(GLsizei count, const GLuint * samplers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteSemaphoresEXT)(GLsizei n, const GLuint * semaphores);
 
    --  typedef void (GLAPIENTRY *PFNGLDELETESHADERPROC)(GLuint shader);
@@ -10254,29 +10248,29 @@ is
      with Import, Convention => C, External_Name => "epoxy_glDeleteShader";
 
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteStatesNV)(GLsizei n, const GLuint * states);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteSync)(GLsync sync);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteSyncAPPLE)(GLsync sync);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteTextures)(GLsizei n, const GLuint * textures);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteTexturesEXT)(GLsizei n, const GLuint * textures);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteTransformFeedbacks)(GLsizei n, const GLuint * ids);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteTransformFeedbacksNV)(GLsizei n, const GLuint * ids);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteVertexArrays)(GLsizei n, const GLuint * arrays);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteVertexArraysAPPLE)(GLsizei n, const GLuint * arrays);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteVertexArraysOES)(GLsizei n, const GLuint * arrays);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDeleteVertexShaderEXT)(GLuint id);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDepthBoundsEXT)(GLclampd zmin, GLclampd zmax);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDepthBoundsdNV)(GLdouble zmin, GLdouble zmax);
 
    --  typedef void (GLAPIENTRY *PFNGLDEPTHFUNCPROC)(GLenum func);
@@ -10285,40 +10279,40 @@ is
 
    type PFNGLDEPTHFUNCPROC is access procedure (func : OpenGL.GLenum)
      with Convention => C;
-   
+
    glDepthFunc : constant not null PFNGLDEPTHFUNCPROC
      with Import, Convention => C, External_Name => "epoxy_glDepthFunc";
-   
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDepthMask)(GLboolean flag);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDepthRange)(GLdouble n, GLdouble f);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDepthRangeArrayfvNV)(GLuint first, GLsizei count, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDepthRangeArrayfvOES)(GLuint first, GLsizei count, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDepthRangeArrayv)(GLuint first, GLsizei count, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDepthRangeIndexed)(GLuint index, GLdouble n, GLdouble f);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDepthRangeIndexedfNV)(GLuint index, GLfloat n, GLfloat f);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDepthRangeIndexedfOES)(GLuint index, GLfloat n, GLfloat f);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDepthRangedNV)(GLdouble zNear, GLdouble zFar);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDepthRangef)(GLfloat n, GLfloat f);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDepthRangefOES)(GLclampf n, GLclampf f);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDepthRangex)(GLfixed n, GLfixed f);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDepthRangexOES)(GLfixed n, GLfixed f);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDetachObjectARB)(GLhandleARB containerObj, GLhandleARB attachedObj);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDetachShader)(GLuint program, GLuint shader);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDetailTexFuncSGIS)(GLenum target, GLsizei n, const GLfloat * points);
 
    --  typedef void (GLAPIENTRY *PFNGLDISABLEPROC)(GLenum cap);
@@ -10327,48 +10321,59 @@ is
 
    type PFNGLDISABLEPROC is access procedure (cap : OpenGL.GLenum)
      with Convention => C;
-   
+
    glDisable : constant not null PFNGLDISABLEPROC
      with Import, Convention => C, External_Name => "epoxy_glDisable";
-   
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDisableClientState)(GLenum array);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDisableClientStateIndexedEXT)(GLenum array, GLuint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDisableClientStateiEXT)(GLenum array, GLuint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDisableDriverControlQCOM)(GLuint driverControl);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDisableIndexedEXT)(GLenum target, GLuint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDisableVariantClientStateEXT)(GLuint id);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDisableVertexArrayAttrib)(GLuint vaobj, GLuint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDisableVertexArrayAttribEXT)(GLuint vaobj, GLuint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDisableVertexArrayEXT)(GLuint vaobj, GLenum array);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDisableVertexAttribAPPLE)(GLuint index, GLenum pname);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDisableVertexAttribArray)(GLuint index);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLDISABLEVERTEXATTRIBARRAYPROC)(GLuint index);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDisableVertexAttribArray)(GLuint index);
+   --  #define glDisableVertexAttribArray epoxy_glDisableVertexAttribArray
+
+   type PFNGLDISABLEVERTEXATTRIBARRAYPROC is access procedure
+     (index : epoxy.GLuint) with Convention => C;
+
+   glDisableVertexAttribArray : constant
+     not null PFNGLDISABLEVERTEXATTRIBARRAYPROC
+       with Import,
+            Convention    => C,
+            External_Name => "epoxy_glDisableVertexAttribArray";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDisableVertexAttribArrayARB)(GLuint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDisablei)(GLenum target, GLuint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDisableiEXT)(GLenum target, GLuint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDisableiNV)(GLenum target, GLuint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDisableiOES)(GLenum target, GLuint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDiscardFramebufferEXT)(GLenum target, GLsizei numAttachments, const GLenum * attachments);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDispatchCompute)(GLuint num_groups_x, GLuint num_groups_y, GLuint num_groups_z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDispatchComputeGroupSizeARB)(GLuint num_groups_x, GLuint num_groups_y, GLuint num_groups_z, GLuint group_size_x, GLuint group_size_y, GLuint group_size_z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDispatchComputeIndirect)(GLintptr indirect);
 
    --  typedef void (GLAPIENTRY *PFNGLDRAWARRAYSPROC)(GLenum mode, GLint first, GLsizei count);
@@ -10379,52 +10384,52 @@ is
      (mode  : OpenGL.GLenum;
       first : OpenGL.GLint;
       count : OpenGL.GLsizei) with Convention => C;
-   
-   glDrawArrays : constant not null PFNGLDRAWARRAYSPROC 
+
+   glDrawArrays : constant not null PFNGLDRAWARRAYSPROC
      with Import, Convention => C, External_Name => "epoxy_glDrawArrays";
-   
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawArraysEXT)(GLenum mode, GLint first, GLsizei count);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawArraysIndirect)(GLenum mode, const void * indirect);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawArraysInstanced)(GLenum mode, GLint first, GLsizei count, GLsizei instancecount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawArraysInstancedANGLE)(GLenum mode, GLint first, GLsizei count, GLsizei primcount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawArraysInstancedARB)(GLenum mode, GLint first, GLsizei count, GLsizei primcount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawArraysInstancedBaseInstance)(GLenum mode, GLint first, GLsizei count, GLsizei instancecount, GLuint baseinstance);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawArraysInstancedBaseInstanceEXT)(GLenum mode, GLint first, GLsizei count, GLsizei instancecount, GLuint baseinstance);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawArraysInstancedEXT)(GLenum mode, GLint start, GLsizei count, GLsizei primcount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawArraysInstancedNV)(GLenum mode, GLint first, GLsizei count, GLsizei primcount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawBuffer)(GLenum buf);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawBuffers)(GLsizei n, const GLenum * bufs);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawBuffersARB)(GLsizei n, const GLenum * bufs);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawBuffersATI)(GLsizei n, const GLenum * bufs);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawBuffersEXT)(GLsizei n, const GLenum * bufs);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawBuffersIndexedEXT)(GLint n, const GLenum * location, const GLint * indices);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawBuffersNV)(GLsizei n, const GLenum * bufs);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawCommandsAddressNV)(GLenum primitiveMode, const GLuint64 * indirects, const GLsizei * sizes, GLuint count);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawCommandsNV)(GLenum primitiveMode, GLuint buffer, const GLintptr * indirects, const GLsizei * sizes, GLuint count);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawCommandsStatesAddressNV)(const GLuint64 * indirects, const GLsizei * sizes, const GLuint * states, const GLuint * fbos, GLuint count);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawCommandsStatesNV)(GLuint buffer, const GLintptr * indirects, const GLsizei * sizes, const GLuint * states, const GLuint * fbos, GLuint count);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawElementArrayAPPLE)(GLenum mode, GLint first, GLsizei count);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawElementArrayATI)(GLenum mode, GLsizei count);
 
    --  typedef void (GLAPIENTRY *PFNGLDRAWELEMENTSPROC)(GLenum mode, GLsizei count, GLenum type, const void * indices);
@@ -10436,120 +10441,120 @@ is
       count    : OpenGL.GLsizei;
       the_type : OpenGL.GLenum;
       indices  : System.Address) with Convention => C;
-   
+
    glDrawElements : constant not null PFNGLDRAWELEMENTSPROC
      with Import, Convention => C, External_Name => "epoxy_glDrawElements";
-   
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawElementsBaseVertex)(GLenum mode, GLsizei count, GLenum type, const void * indices, GLint basevertex);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawElementsBaseVertexEXT)(GLenum mode, GLsizei count, GLenum type, const void * indices, GLint basevertex);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawElementsBaseVertexOES)(GLenum mode, GLsizei count, GLenum type, const void * indices, GLint basevertex);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawElementsIndirect)(GLenum mode, GLenum type, const void * indirect);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawElementsInstanced)(GLenum mode, GLsizei count, GLenum type, const void * indices, GLsizei instancecount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawElementsInstancedANGLE)(GLenum mode, GLsizei count, GLenum type, const void * indices, GLsizei primcount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawElementsInstancedARB)(GLenum mode, GLsizei count, GLenum type, const void * indices, GLsizei primcount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawElementsInstancedBaseInstance)(GLenum mode, GLsizei count, GLenum type, const void * indices, GLsizei instancecount, GLuint baseinstance);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawElementsInstancedBaseInstanceEXT)(GLenum mode, GLsizei count, GLenum type, const void * indices, GLsizei instancecount, GLuint baseinstance);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawElementsInstancedBaseVertex)(GLenum mode, GLsizei count, GLenum type, const void * indices, GLsizei instancecount, GLint basevertex);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawElementsInstancedBaseVertexBaseInstance)(GLenum mode, GLsizei count, GLenum type, const void * indices, GLsizei instancecount, GLint basevertex, GLuint baseinstance);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawElementsInstancedBaseVertexBaseInstanceEXT)(GLenum mode, GLsizei count, GLenum type, const void * indices, GLsizei instancecount, GLint basevertex, GLuint baseinstance);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawElementsInstancedBaseVertexEXT)(GLenum mode, GLsizei count, GLenum type, const void * indices, GLsizei instancecount, GLint basevertex);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawElementsInstancedBaseVertexOES)(GLenum mode, GLsizei count, GLenum type, const void * indices, GLsizei instancecount, GLint basevertex);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawElementsInstancedEXT)(GLenum mode, GLsizei count, GLenum type, const void * indices, GLsizei primcount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawElementsInstancedNV)(GLenum mode, GLsizei count, GLenum type, const void * indices, GLsizei primcount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawMeshArraysSUN)(GLenum mode, GLint first, GLsizei count, GLsizei width);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawMeshTasksIndirectNV)(GLintptr indirect);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawMeshTasksNV)(GLuint first, GLuint count);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawPixels)(GLsizei width, GLsizei height, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawRangeElementArrayAPPLE)(GLenum mode, GLuint start, GLuint end, GLint first, GLsizei count);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawRangeElementArrayATI)(GLenum mode, GLuint start, GLuint end, GLsizei count);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawRangeElements)(GLenum mode, GLuint start, GLuint end, GLsizei count, GLenum type, const void * indices);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawRangeElementsBaseVertex)(GLenum mode, GLuint start, GLuint end, GLsizei count, GLenum type, const void * indices, GLint basevertex);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawRangeElementsBaseVertexEXT)(GLenum mode, GLuint start, GLuint end, GLsizei count, GLenum type, const void * indices, GLint basevertex);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawRangeElementsBaseVertexOES)(GLenum mode, GLuint start, GLuint end, GLsizei count, GLenum type, const void * indices, GLint basevertex);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawRangeElementsEXT)(GLenum mode, GLuint start, GLuint end, GLsizei count, GLenum type, const void * indices);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawTexfOES)(GLfloat x, GLfloat y, GLfloat z, GLfloat width, GLfloat height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawTexfvOES)(const GLfloat * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawTexiOES)(GLint x, GLint y, GLint z, GLint width, GLint height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawTexivOES)(const GLint * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawTexsOES)(GLshort x, GLshort y, GLshort z, GLshort width, GLshort height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawTexsvOES)(const GLshort * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawTextureNV)(GLuint texture, GLuint sampler, GLfloat x0, GLfloat y0, GLfloat x1, GLfloat y1, GLfloat z, GLfloat s0, GLfloat t0, GLfloat s1, GLfloat t1);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawTexxOES)(GLfixed x, GLfixed y, GLfixed z, GLfixed width, GLfixed height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawTexxvOES)(const GLfixed * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawTransformFeedback)(GLenum mode, GLuint id);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawTransformFeedbackEXT)(GLenum mode, GLuint id);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawTransformFeedbackInstanced)(GLenum mode, GLuint id, GLsizei instancecount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawTransformFeedbackInstancedEXT)(GLenum mode, GLuint id, GLsizei instancecount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawTransformFeedbackNV)(GLenum mode, GLuint id);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawTransformFeedbackStream)(GLenum mode, GLuint id, GLuint stream);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawTransformFeedbackStreamInstanced)(GLenum mode, GLuint id, GLuint stream, GLsizei instancecount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glDrawVkImageNV)(GLuint64 vkImage, GLuint sampler, GLfloat x0, GLfloat y0, GLfloat x1, GLfloat y1, GLfloat z, GLfloat s0, GLfloat t0, GLfloat s1, GLfloat t1);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEGLImageTargetRenderbufferStorageOES)(GLenum target, GLeglImageOES image);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEGLImageTargetTexStorageEXT)(GLenum target, GLeglImageOES image, const GLint* attrib_list);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEGLImageTargetTexture2DOES)(GLenum target, GLeglImageOES image);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEGLImageTargetTextureStorageEXT)(GLuint texture, GLeglImageOES image, const GLint* attrib_list);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEdgeFlag)(GLboolean flag);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEdgeFlagFormatNV)(GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEdgeFlagPointer)(GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEdgeFlagPointerEXT)(GLsizei stride, GLsizei count, const GLboolean * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEdgeFlagPointerListIBM)(GLint stride, const GLboolean ** pointer, GLint ptrstride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEdgeFlagv)(const GLboolean * flag);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glElementPointerAPPLE)(GLenum type, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glElementPointerATI)(GLenum type, const void * pointer);
 
    --  typedef void (GLAPIENTRY *PFNGLENABLEPROC)(GLenum cap);
@@ -10558,152 +10563,163 @@ is
 
    type PFNGLENABLEPROC is access procedure (cap : OpenGL.GLenum)
      with Convention => C;
-   
+
    glEnable : constant not null PFNGLENABLEPROC
      with Import, Convention => C, External_Name => "epoxy_glEnable";
-   
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEnableClientState)(GLenum array);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEnableClientStateIndexedEXT)(GLenum array, GLuint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEnableClientStateiEXT)(GLenum array, GLuint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEnableDriverControlQCOM)(GLuint driverControl);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEnableIndexedEXT)(GLenum target, GLuint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEnableVariantClientStateEXT)(GLuint id);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEnableVertexArrayAttrib)(GLuint vaobj, GLuint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEnableVertexArrayAttribEXT)(GLuint vaobj, GLuint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEnableVertexArrayEXT)(GLuint vaobj, GLenum array);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEnableVertexAttribAPPLE)(GLuint index, GLenum pname);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEnableVertexAttribArray)(GLuint index);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLENABLEVERTEXATTRIBARRAYPROC)(GLuint index);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEnableVertexAttribArray)(GLuint index);
+   --  #define glEnableVertexAttribArray epoxy_glEnableVertexAttribArray
+
+   type PFNGLENABLEVERTEXATTRIBARRAYPROC is access procedure
+     (index : epoxy.GLuint) with Convention => C;
+
+   glEnableVertexAttribArray : constant
+     not null PFNGLENABLEVERTEXATTRIBARRAYPROC
+       with Import,
+            Convention    => C,
+            External_Name => "epoxy_glEnableVertexAttribArray";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEnableVertexAttribArrayARB)(GLuint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEnablei)(GLenum target, GLuint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEnableiEXT)(GLenum target, GLuint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEnableiNV)(GLenum target, GLuint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEnableiOES)(GLenum target, GLuint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEnd)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEndConditionalRender)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEndConditionalRenderNV)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEndConditionalRenderNVX)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEndFragmentShaderATI)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEndList)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEndOcclusionQueryNV)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEndPerfMonitorAMD)(GLuint monitor);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEndPerfQueryINTEL)(GLuint queryHandle);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEndQuery)(GLenum target);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEndQueryARB)(GLenum target);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEndQueryEXT)(GLenum target);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEndQueryIndexed)(GLenum target, GLuint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEndTilingQCOM)(GLbitfield preserveMask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEndTransformFeedback)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEndTransformFeedbackEXT)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEndTransformFeedbackNV)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEndVertexShaderEXT)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEndVideoCaptureNV)(GLuint video_capture_slot);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEvalCoord1d)(GLdouble u);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEvalCoord1dv)(const GLdouble * u);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEvalCoord1f)(GLfloat u);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEvalCoord1fv)(const GLfloat * u);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEvalCoord1xOES)(GLfixed u);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEvalCoord1xvOES)(const GLfixed * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEvalCoord2d)(GLdouble u, GLdouble v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEvalCoord2dv)(const GLdouble * u);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEvalCoord2f)(GLfloat u, GLfloat v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEvalCoord2fv)(const GLfloat * u);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEvalCoord2xOES)(GLfixed u, GLfixed v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEvalCoord2xvOES)(const GLfixed * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEvalMapsNV)(GLenum target, GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEvalMesh1)(GLenum mode, GLint i1, GLint i2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEvalMesh2)(GLenum mode, GLint i1, GLint i2, GLint j1, GLint j2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEvalPoint1)(GLint i);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEvalPoint2)(GLint i, GLint j);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glEvaluateDepthValuesARB)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glExecuteProgramNV)(GLenum target, GLuint id, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glExtGetBufferPointervQCOM)(GLenum target, void ** params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glExtGetBuffersQCOM)(GLuint * buffers, GLint maxBuffers, GLint * numBuffers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glExtGetFramebuffersQCOM)(GLuint * framebuffers, GLint maxFramebuffers, GLint * numFramebuffers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glExtGetProgramBinarySourceQCOM)(GLuint program, GLenum shadertype, GLchar * source, GLint * length);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glExtGetProgramsQCOM)(GLuint * programs, GLint maxPrograms, GLint * numPrograms);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glExtGetRenderbuffersQCOM)(GLuint * renderbuffers, GLint maxRenderbuffers, GLint * numRenderbuffers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glExtGetShadersQCOM)(GLuint * shaders, GLint maxShaders, GLint * numShaders);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glExtGetTexLevelParameterivQCOM)(GLuint texture, GLenum face, GLint level, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glExtGetTexSubImageQCOM)(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, void * texels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glExtGetTexturesQCOM)(GLuint * textures, GLint maxTextures, GLint * numTextures);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glExtIsProgramBinaryQCOM)(GLuint program);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glExtTexObjectStateOverrideiQCOM)(GLenum target, GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glExtractComponentEXT)(GLuint res, GLuint src, GLuint num);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFeedbackBuffer)(GLsizei size, GLenum type, GLfloat * buffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFeedbackBufferxOES)(GLsizei n, GLenum type, const GLfixed * buffer);
---  
+--
 --  EPOXY_PUBLIC GLsync (EPOXY_CALLSPEC *epoxy_glFenceSync)(GLenum condition, GLbitfield flags);
---  
+--
 --  EPOXY_PUBLIC GLsync (EPOXY_CALLSPEC *epoxy_glFenceSyncAPPLE)(GLenum condition, GLbitfield flags);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFinalCombinerInputNV)(GLenum variable, GLenum input, GLenum mapping, GLenum componentUsage);
 
    --  typedef void (GLAPIENTRY *PFNGLFINISHPROC)(void);
@@ -10711,18 +10727,18 @@ is
    --  #define glFinish epoxy_glFinish
 
    type PFNGLFINISHPROC is access procedure with Convention => C;
-   
+
    glFinish : constant not null PFNGLFINISHPROC
      with Import, Convention => C, External_Name => "epoxy_glFinish";
-   
+
 --  EPOXY_PUBLIC GLint (EPOXY_CALLSPEC *epoxy_glFinishAsyncSGIX)(GLuint * markerp);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFinishFenceAPPLE)(GLuint fence);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFinishFenceNV)(GLuint fence);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFinishObjectAPPLE)(GLenum object, GLint name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFinishTextureSUNX)(void);
 
    --  typedef void (GLAPIENTRY *PFNGLFLUSHPROC)(void);
@@ -10730,200 +10746,200 @@ is
    --  #define glFlush epoxy_glFlush
 
    type PFNGLFLUSHPROC is access procedure with Convention => C;
-   
+
    glFlush : constant not null PFNGLFLUSHPROC
      with Import, Convention => C, External_Name => "epoxy_glFlush";
-   
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFlushMappedBufferRange)(GLenum target, GLintptr offset, GLsizeiptr length);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFlushMappedBufferRangeAPPLE)(GLenum target, GLintptr offset, GLsizeiptr size);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFlushMappedBufferRangeEXT)(GLenum target, GLintptr offset, GLsizeiptr length);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFlushMappedNamedBufferRange)(GLuint buffer, GLintptr offset, GLsizeiptr length);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFlushMappedNamedBufferRangeEXT)(GLuint buffer, GLintptr offset, GLsizeiptr length);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFlushPixelDataRangeNV)(GLenum target);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFlushRasterSGIX)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFlushStaticDataIBM)(GLenum target);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFlushVertexArrayRangeAPPLE)(GLsizei length, void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFlushVertexArrayRangeNV)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFogCoordFormatNV)(GLenum type, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFogCoordPointer)(GLenum type, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFogCoordPointerEXT)(GLenum type, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFogCoordPointerListIBM)(GLenum type, GLint stride, const void ** pointer, GLint ptrstride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFogCoordd)(GLdouble coord);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFogCoorddEXT)(GLdouble coord);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFogCoorddv)(const GLdouble * coord);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFogCoorddvEXT)(const GLdouble * coord);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFogCoordf)(GLfloat coord);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFogCoordfEXT)(GLfloat coord);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFogCoordfv)(const GLfloat * coord);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFogCoordfvEXT)(const GLfloat * coord);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFogCoordhNV)(GLhalfNV fog);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFogCoordhvNV)(const GLhalfNV * fog);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFogFuncSGIS)(GLsizei n, const GLfloat * points);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFogf)(GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFogfv)(GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFogi)(GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFogiv)(GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFogx)(GLenum pname, GLfixed param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFogxOES)(GLenum pname, GLfixed param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFogxv)(GLenum pname, const GLfixed * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFogxvOES)(GLenum pname, const GLfixed * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFragmentColorMaterialSGIX)(GLenum face, GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFragmentCoverageColorNV)(GLuint color);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFragmentLightModelfSGIX)(GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFragmentLightModelfvSGIX)(GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFragmentLightModeliSGIX)(GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFragmentLightModelivSGIX)(GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFragmentLightfSGIX)(GLenum light, GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFragmentLightfvSGIX)(GLenum light, GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFragmentLightiSGIX)(GLenum light, GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFragmentLightivSGIX)(GLenum light, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFragmentMaterialfSGIX)(GLenum face, GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFragmentMaterialfvSGIX)(GLenum face, GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFragmentMaterialiSGIX)(GLenum face, GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFragmentMaterialivSGIX)(GLenum face, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFrameTerminatorGREMEDY)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFrameZoomSGIX)(GLint factor);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferDrawBufferEXT)(GLuint framebuffer, GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferDrawBuffersEXT)(GLuint framebuffer, GLsizei n, const GLenum * bufs);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferFetchBarrierEXT)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferFetchBarrierQCOM)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferFoveationConfigQCOM)(GLuint framebuffer, GLuint numLayers, GLuint focalPointsPerLayer, GLuint requestedFeatures, GLuint * providedFeatures);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferFoveationParametersQCOM)(GLuint framebuffer, GLuint layer, GLuint focalPoint, GLfloat focalX, GLfloat focalY, GLfloat gainX, GLfloat gainY, GLfloat foveaArea);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferParameteri)(GLenum target, GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferParameteriMESA)(GLenum target, GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferPixelLocalStorageSizeEXT)(GLuint target, GLsizei size);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferReadBufferEXT)(GLuint framebuffer, GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferRenderbuffer)(GLenum target, GLenum attachment, GLenum renderbuffertarget, GLuint renderbuffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferRenderbufferEXT)(GLenum target, GLenum attachment, GLenum renderbuffertarget, GLuint renderbuffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferRenderbufferOES)(GLenum target, GLenum attachment, GLenum renderbuffertarget, GLuint renderbuffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferSampleLocationsfvARB)(GLenum target, GLuint start, GLsizei count, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferSampleLocationsfvNV)(GLenum target, GLuint start, GLsizei count, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferSamplePositionsfvAMD)(GLenum target, GLuint numsamples, GLuint pixelindex, const GLfloat * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferTexture)(GLenum target, GLenum attachment, GLuint texture, GLint level);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferTexture1D)(GLenum target, GLenum attachment, GLenum textarget, GLuint texture, GLint level);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferTexture1DEXT)(GLenum target, GLenum attachment, GLenum textarget, GLuint texture, GLint level);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferTexture2D)(GLenum target, GLenum attachment, GLenum textarget, GLuint texture, GLint level);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferTexture2DDownsampleIMG)(GLenum target, GLenum attachment, GLenum textarget, GLuint texture, GLint level, GLint xscale, GLint yscale);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferTexture2DEXT)(GLenum target, GLenum attachment, GLenum textarget, GLuint texture, GLint level);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferTexture2DMultisampleEXT)(GLenum target, GLenum attachment, GLenum textarget, GLuint texture, GLint level, GLsizei samples);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferTexture2DMultisampleIMG)(GLenum target, GLenum attachment, GLenum textarget, GLuint texture, GLint level, GLsizei samples);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferTexture2DOES)(GLenum target, GLenum attachment, GLenum textarget, GLuint texture, GLint level);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferTexture3D)(GLenum target, GLenum attachment, GLenum textarget, GLuint texture, GLint level, GLint zoffset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferTexture3DEXT)(GLenum target, GLenum attachment, GLenum textarget, GLuint texture, GLint level, GLint zoffset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferTexture3DOES)(GLenum target, GLenum attachment, GLenum textarget, GLuint texture, GLint level, GLint zoffset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferTextureARB)(GLenum target, GLenum attachment, GLuint texture, GLint level);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferTextureEXT)(GLenum target, GLenum attachment, GLuint texture, GLint level);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferTextureFaceARB)(GLenum target, GLenum attachment, GLuint texture, GLint level, GLenum face);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferTextureFaceEXT)(GLenum target, GLenum attachment, GLuint texture, GLint level, GLenum face);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferTextureLayer)(GLenum target, GLenum attachment, GLuint texture, GLint level, GLint layer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferTextureLayerARB)(GLenum target, GLenum attachment, GLuint texture, GLint level, GLint layer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferTextureLayerDownsampleIMG)(GLenum target, GLenum attachment, GLuint texture, GLint level, GLint layer, GLint xscale, GLint yscale);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferTextureLayerEXT)(GLenum target, GLenum attachment, GLuint texture, GLint level, GLint layer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferTextureMultisampleMultiviewOVR)(GLenum target, GLenum attachment, GLuint texture, GLint level, GLsizei samples, GLint baseViewIndex, GLsizei numViews);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferTextureMultiviewOVR)(GLenum target, GLenum attachment, GLuint texture, GLint level, GLint baseViewIndex, GLsizei numViews);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFramebufferTextureOES)(GLenum target, GLenum attachment, GLuint texture, GLint level);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFreeObjectBufferATI)(GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFrontFace)(GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFrustum)(GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GLdouble zNear, GLdouble zFar);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFrustumf)(GLfloat l, GLfloat r, GLfloat b, GLfloat t, GLfloat n, GLfloat f);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFrustumfOES)(GLfloat l, GLfloat r, GLfloat b, GLfloat t, GLfloat n, GLfloat f);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFrustumx)(GLfixed l, GLfixed r, GLfixed b, GLfixed t, GLfixed n, GLfixed f);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glFrustumxOES)(GLfixed l, GLfixed r, GLfixed b, GLfixed t, GLfixed n, GLfixed f);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glGenAsyncMarkersSGIX)(GLsizei range);
 
    --  typedef void (GLAPIENTRY *PFNGLGENBUFFERSPROC)(GLsizei n, GLuint * buffers);
@@ -10938,731 +10954,753 @@ is
      with Import, Convention => C, External_Name => "epoxy_glGenBuffers";
 
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenBuffersARB)(GLsizei n, GLuint * buffers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenFencesAPPLE)(GLsizei n, GLuint * fences);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenFencesNV)(GLsizei n, GLuint * fences);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glGenFragmentShadersATI)(GLuint range);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenFramebuffers)(GLsizei n, GLuint * framebuffers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenFramebuffersEXT)(GLsizei n, GLuint * framebuffers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenFramebuffersOES)(GLsizei n, GLuint * framebuffers);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glGenLists)(GLsizei range);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenNamesAMD)(GLenum identifier, GLuint num, GLuint * names);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenOcclusionQueriesNV)(GLsizei n, GLuint * ids);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glGenPathsNV)(GLsizei range);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenPerfMonitorsAMD)(GLsizei n, GLuint * monitors);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenProgramPipelines)(GLsizei n, GLuint * pipelines);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenProgramPipelinesEXT)(GLsizei n, GLuint * pipelines);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenProgramsARB)(GLsizei n, GLuint * programs);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenProgramsNV)(GLsizei n, GLuint * programs);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenQueries)(GLsizei n, GLuint * ids);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenQueriesARB)(GLsizei n, GLuint * ids);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenQueriesEXT)(GLsizei n, GLuint * ids);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenQueryResourceTagNV)(GLsizei n, GLint * tagIds);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenRenderbuffers)(GLsizei n, GLuint * renderbuffers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenRenderbuffersEXT)(GLsizei n, GLuint * renderbuffers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenRenderbuffersOES)(GLsizei n, GLuint * renderbuffers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenSamplers)(GLsizei count, GLuint * samplers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenSemaphoresEXT)(GLsizei n, GLuint * semaphores);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glGenSymbolsEXT)(GLenum datatype, GLenum storagetype, GLenum range, GLuint components);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenTextures)(GLsizei n, GLuint * textures);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenTexturesEXT)(GLsizei n, GLuint * textures);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenTransformFeedbacks)(GLsizei n, GLuint * ids);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenTransformFeedbacksNV)(GLsizei n, GLuint * ids);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenVertexArrays)(GLsizei n, GLuint * arrays);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenVertexArraysAPPLE)(GLsizei n, GLuint * arrays);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenVertexArraysOES)(GLsizei n, GLuint * arrays);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glGenVertexShadersEXT)(GLuint range);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenerateMipmap)(GLenum target);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenerateMipmapEXT)(GLenum target);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenerateMipmapOES)(GLenum target);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenerateMultiTexMipmapEXT)(GLenum texunit, GLenum target);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenerateTextureMipmap)(GLuint texture);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGenerateTextureMipmapEXT)(GLuint texture, GLenum target);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetActiveAtomicCounterBufferiv)(GLuint program, GLuint bufferIndex, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetActiveAttrib)(GLuint program, GLuint index, GLsizei bufSize, GLsizei * length, GLint * size, GLenum * type, GLchar * name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetActiveAttribARB)(GLhandleARB programObj, GLuint index, GLsizei maxLength, GLsizei * length, GLint * size, GLenum * type, GLcharARB * name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetActiveSubroutineName)(GLuint program, GLenum shadertype, GLuint index, GLsizei bufsize, GLsizei * length, GLchar * name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetActiveSubroutineUniformName)(GLuint program, GLenum shadertype, GLuint index, GLsizei bufsize, GLsizei * length, GLchar * name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetActiveSubroutineUniformiv)(GLuint program, GLenum shadertype, GLuint index, GLenum pname, GLint * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetActiveUniform)(GLuint program, GLuint index, GLsizei bufSize, GLsizei * length, GLint * size, GLenum * type, GLchar * name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetActiveUniformARB)(GLhandleARB programObj, GLuint index, GLsizei maxLength, GLsizei * length, GLint * size, GLenum * type, GLcharARB * name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetActiveUniformBlockName)(GLuint program, GLuint uniformBlockIndex, GLsizei bufSize, GLsizei * length, GLchar * uniformBlockName);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetActiveUniformBlockiv)(GLuint program, GLuint uniformBlockIndex, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetActiveUniformName)(GLuint program, GLuint uniformIndex, GLsizei bufSize, GLsizei * length, GLchar * uniformName);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetActiveUniformsiv)(GLuint program, GLsizei uniformCount, const GLuint * uniformIndices, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetActiveVaryingNV)(GLuint program, GLuint index, GLsizei bufSize, GLsizei * length, GLsizei * size, GLenum * type, GLchar * name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetArrayObjectfvATI)(GLenum array, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetArrayObjectivATI)(GLenum array, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetAttachedObjectsARB)(GLhandleARB containerObj, GLsizei maxCount, GLsizei * count, GLhandleARB * obj);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetAttachedShaders)(GLuint program, GLsizei maxCount, GLsizei * count, GLuint * shaders);
---  
---  EPOXY_PUBLIC GLint (EPOXY_CALLSPEC *epoxy_glGetAttribLocation)(GLuint program, const GLchar * name);
---  
+
+   --  typedef GLint (GLAPIENTRY *PFNGLGETATTRIBLOCATIONPROC)(GLuint program, const GLchar * name);
+   --  EPOXY_PUBLIC GLint (EPOXY_CALLSPEC *epoxy_glGetAttribLocation)(GLuint program, const GLchar * name);
+   --  #define glGetAttribLocation epoxy_glGetAttribLocation
+
+   type PFNGLGETATTRIBLOCATIONPROC is access function
+     (program : epoxy.GLuint;
+      name    : Interfaces.C.char_array) return OpenGL.GLint
+        with Convention => C;
+
+   glGetAttribLocation : constant not null PFNGLGETATTRIBLOCATIONPROC
+     with Import,
+          Convention => C,
+          External_Name => "epoxy_glGetAttribLocation";
+
 --  EPOXY_PUBLIC GLint (EPOXY_CALLSPEC *epoxy_glGetAttribLocationARB)(GLhandleARB programObj, const GLcharARB * name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetBooleanIndexedvEXT)(GLenum target, GLuint index, GLboolean * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetBooleani_v)(GLenum target, GLuint index, GLboolean * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetBooleanv)(GLenum pname, GLboolean * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetBufferParameteri64v)(GLenum target, GLenum pname, GLint64 * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetBufferParameteriv)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetBufferParameterivARB)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetBufferParameterui64vNV)(GLenum target, GLenum pname, GLuint64EXT * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetBufferPointerv)(GLenum target, GLenum pname, void ** params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetBufferPointervARB)(GLenum target, GLenum pname, void ** params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetBufferPointervOES)(GLenum target, GLenum pname, void ** params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetBufferSubData)(GLenum target, GLintptr offset, GLsizeiptr size, void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetBufferSubDataARB)(GLenum target, GLintptrARB offset, GLsizeiptrARB size, void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetClipPlane)(GLenum plane, GLdouble * equation);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetClipPlanef)(GLenum plane, GLfloat * equation);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetClipPlanefOES)(GLenum plane, GLfloat * equation);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetClipPlanex)(GLenum plane, GLfixed * equation);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetClipPlanexOES)(GLenum plane, GLfixed * equation);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetColorTable)(GLenum target, GLenum format, GLenum type, void * table);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetColorTableEXT)(GLenum target, GLenum format, GLenum type, void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetColorTableParameterfv)(GLenum target, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetColorTableParameterfvEXT)(GLenum target, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetColorTableParameterfvSGI)(GLenum target, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetColorTableParameteriv)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetColorTableParameterivEXT)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetColorTableParameterivSGI)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetColorTableSGI)(GLenum target, GLenum format, GLenum type, void * table);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetCombinerInputParameterfvNV)(GLenum stage, GLenum portion, GLenum variable, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetCombinerInputParameterivNV)(GLenum stage, GLenum portion, GLenum variable, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetCombinerOutputParameterfvNV)(GLenum stage, GLenum portion, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetCombinerOutputParameterivNV)(GLenum stage, GLenum portion, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetCombinerStageParameterfvNV)(GLenum stage, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glGetCommandHeaderNV)(GLenum tokenID, GLuint size);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetCompressedMultiTexImageEXT)(GLenum texunit, GLenum target, GLint lod, void * img);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetCompressedTexImage)(GLenum target, GLint level, void * img);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetCompressedTexImageARB)(GLenum target, GLint level, void * img);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetCompressedTextureImage)(GLuint texture, GLint level, GLsizei bufSize, void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetCompressedTextureImageEXT)(GLuint texture, GLenum target, GLint lod, void * img);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetCompressedTextureSubImage)(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLsizei bufSize, void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetConvolutionFilter)(GLenum target, GLenum format, GLenum type, void * image);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetConvolutionFilterEXT)(GLenum target, GLenum format, GLenum type, void * image);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetConvolutionParameterfv)(GLenum target, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetConvolutionParameterfvEXT)(GLenum target, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetConvolutionParameteriv)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetConvolutionParameterivEXT)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetConvolutionParameterxvOES)(GLenum target, GLenum pname, GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetCoverageModulationTableNV)(GLsizei bufsize, GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glGetDebugMessageLog)(GLuint count, GLsizei bufSize, GLenum * sources, GLenum * types, GLuint * ids, GLenum * severities, GLsizei * lengths, GLchar * messageLog);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glGetDebugMessageLogAMD)(GLuint count, GLsizei bufsize, GLenum * categories, GLuint * severities, GLuint * ids, GLsizei * lengths, GLchar * message);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glGetDebugMessageLogARB)(GLuint count, GLsizei bufSize, GLenum * sources, GLenum * types, GLuint * ids, GLenum * severities, GLsizei * lengths, GLchar * messageLog);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glGetDebugMessageLogKHR)(GLuint count, GLsizei bufSize, GLenum * sources, GLenum * types, GLuint * ids, GLenum * severities, GLsizei * lengths, GLchar * messageLog);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetDetailTexFuncSGIS)(GLenum target, GLfloat * points);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetDoubleIndexedvEXT)(GLenum target, GLuint index, GLdouble * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetDoublei_v)(GLenum target, GLuint index, GLdouble * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetDoublei_vEXT)(GLenum pname, GLuint index, GLdouble * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetDoublev)(GLenum pname, GLdouble * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetDriverControlStringQCOM)(GLuint driverControl, GLsizei bufSize, GLsizei * length, GLchar * driverControlString);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetDriverControlsQCOM)(GLint * num, GLsizei size, GLuint * driverControls);
---  
+--
 --  EPOXY_PUBLIC GLenum (EPOXY_CALLSPEC *epoxy_glGetError)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFenceivNV)(GLuint fence, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFinalCombinerInputParameterfvNV)(GLenum variable, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFinalCombinerInputParameterivNV)(GLenum variable, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFirstPerfQueryIdINTEL)(GLuint * queryId);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFixedv)(GLenum pname, GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFixedvOES)(GLenum pname, GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFloatIndexedvEXT)(GLenum target, GLuint index, GLfloat * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFloati_v)(GLenum target, GLuint index, GLfloat * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFloati_vEXT)(GLenum pname, GLuint index, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFloati_vNV)(GLenum target, GLuint index, GLfloat * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFloati_vOES)(GLenum target, GLuint index, GLfloat * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFloatv)(GLenum pname, GLfloat * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFogFuncSGIS)(GLfloat * points);
---  
+--
 --  EPOXY_PUBLIC GLint (EPOXY_CALLSPEC *epoxy_glGetFragDataIndex)(GLuint program, const GLchar * name);
---  
+--
 --  EPOXY_PUBLIC GLint (EPOXY_CALLSPEC *epoxy_glGetFragDataIndexEXT)(GLuint program, const GLchar * name);
---  
+--
 --  EPOXY_PUBLIC GLint (EPOXY_CALLSPEC *epoxy_glGetFragDataLocation)(GLuint program, const GLchar * name);
---  
+--
 --  EPOXY_PUBLIC GLint (EPOXY_CALLSPEC *epoxy_glGetFragDataLocationEXT)(GLuint program, const GLchar * name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFragmentLightfvSGIX)(GLenum light, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFragmentLightivSGIX)(GLenum light, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFragmentMaterialfvSGIX)(GLenum face, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFragmentMaterialivSGIX)(GLenum face, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFramebufferAttachmentParameteriv)(GLenum target, GLenum attachment, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFramebufferAttachmentParameterivEXT)(GLenum target, GLenum attachment, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFramebufferAttachmentParameterivOES)(GLenum target, GLenum attachment, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFramebufferParameterfvAMD)(GLenum target, GLenum pname, GLuint numsamples, GLuint pixelindex, GLsizei size, GLfloat * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFramebufferParameteriv)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFramebufferParameterivEXT)(GLuint framebuffer, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetFramebufferParameterivMESA)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC GLsizei (EPOXY_CALLSPEC *epoxy_glGetFramebufferPixelLocalStorageSizeEXT)(GLuint target);
---  
+--
 --  EPOXY_PUBLIC GLenum (EPOXY_CALLSPEC *epoxy_glGetGraphicsResetStatus)(void);
---  
+--
 --  EPOXY_PUBLIC GLenum (EPOXY_CALLSPEC *epoxy_glGetGraphicsResetStatusARB)(void);
---  
+--
 --  EPOXY_PUBLIC GLenum (EPOXY_CALLSPEC *epoxy_glGetGraphicsResetStatusEXT)(void);
---  
+--
 --  EPOXY_PUBLIC GLenum (EPOXY_CALLSPEC *epoxy_glGetGraphicsResetStatusKHR)(void);
---  
+--
 --  EPOXY_PUBLIC GLhandleARB (EPOXY_CALLSPEC *epoxy_glGetHandleARB)(GLenum pname);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetHistogram)(GLenum target, GLboolean reset, GLenum format, GLenum type, void * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetHistogramEXT)(GLenum target, GLboolean reset, GLenum format, GLenum type, void * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetHistogramParameterfv)(GLenum target, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetHistogramParameterfvEXT)(GLenum target, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetHistogramParameteriv)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetHistogramParameterivEXT)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetHistogramParameterxvOES)(GLenum target, GLenum pname, GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC GLuint64 (EPOXY_CALLSPEC *epoxy_glGetImageHandleARB)(GLuint texture, GLint level, GLboolean layered, GLint layer, GLenum format);
---  
+--
 --  EPOXY_PUBLIC GLuint64 (EPOXY_CALLSPEC *epoxy_glGetImageHandleNV)(GLuint texture, GLint level, GLboolean layered, GLint layer, GLenum format);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetImageTransformParameterfvHP)(GLenum target, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetImageTransformParameterivHP)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetInfoLogARB)(GLhandleARB obj, GLsizei maxLength, GLsizei * length, GLcharARB * infoLog);
---  
+--
 --  EPOXY_PUBLIC GLint (EPOXY_CALLSPEC *epoxy_glGetInstrumentsSGIX)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetInteger64i_v)(GLenum target, GLuint index, GLint64 * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetInteger64v)(GLenum pname, GLint64 * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetInteger64vAPPLE)(GLenum pname, GLint64 * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetIntegerIndexedvEXT)(GLenum target, GLuint index, GLint * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetIntegeri_v)(GLenum target, GLuint index, GLint * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetIntegeri_vEXT)(GLenum target, GLuint index, GLint * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetIntegerui64i_vNV)(GLenum value, GLuint index, GLuint64EXT * result);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetIntegerui64vNV)(GLenum value, GLuint64EXT * result);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetIntegerv)(GLenum pname, GLint * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetInternalformatSampleivNV)(GLenum target, GLenum internalformat, GLsizei samples, GLenum pname, GLsizei bufSize, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetInternalformati64v)(GLenum target, GLenum internalformat, GLenum pname, GLsizei bufSize, GLint64 * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetInternalformativ)(GLenum target, GLenum internalformat, GLenum pname, GLsizei bufSize, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetInvariantBooleanvEXT)(GLuint id, GLenum value, GLboolean * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetInvariantFloatvEXT)(GLuint id, GLenum value, GLfloat * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetInvariantIntegervEXT)(GLuint id, GLenum value, GLint * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetLightfv)(GLenum light, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetLightiv)(GLenum light, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetLightxOES)(GLenum light, GLenum pname, GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetLightxv)(GLenum light, GLenum pname, GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetLightxvOES)(GLenum light, GLenum pname, GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetListParameterfvSGIX)(GLuint list, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetListParameterivSGIX)(GLuint list, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetLocalConstantBooleanvEXT)(GLuint id, GLenum value, GLboolean * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetLocalConstantFloatvEXT)(GLuint id, GLenum value, GLfloat * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetLocalConstantIntegervEXT)(GLuint id, GLenum value, GLint * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMapAttribParameterfvNV)(GLenum target, GLuint index, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMapAttribParameterivNV)(GLenum target, GLuint index, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMapControlPointsNV)(GLenum target, GLuint index, GLenum type, GLsizei ustride, GLsizei vstride, GLboolean packed, void * points);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMapParameterfvNV)(GLenum target, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMapParameterivNV)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMapdv)(GLenum target, GLenum query, GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMapfv)(GLenum target, GLenum query, GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMapiv)(GLenum target, GLenum query, GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMapxvOES)(GLenum target, GLenum query, GLfixed * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMaterialfv)(GLenum face, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMaterialiv)(GLenum face, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMaterialxOES)(GLenum face, GLenum pname, GLfixed param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMaterialxv)(GLenum face, GLenum pname, GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMaterialxvOES)(GLenum face, GLenum pname, GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMemoryObjectDetachedResourcesuivNV)(GLuint memory, GLenum pname, GLint first, GLsizei count, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMemoryObjectParameterivEXT)(GLuint memoryObject, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMinmax)(GLenum target, GLboolean reset, GLenum format, GLenum type, void * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMinmaxEXT)(GLenum target, GLboolean reset, GLenum format, GLenum type, void * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMinmaxParameterfv)(GLenum target, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMinmaxParameterfvEXT)(GLenum target, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMinmaxParameteriv)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMinmaxParameterivEXT)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMultiTexEnvfvEXT)(GLenum texunit, GLenum target, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMultiTexEnvivEXT)(GLenum texunit, GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMultiTexGendvEXT)(GLenum texunit, GLenum coord, GLenum pname, GLdouble * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMultiTexGenfvEXT)(GLenum texunit, GLenum coord, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMultiTexGenivEXT)(GLenum texunit, GLenum coord, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMultiTexImageEXT)(GLenum texunit, GLenum target, GLint level, GLenum format, GLenum type, void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMultiTexLevelParameterfvEXT)(GLenum texunit, GLenum target, GLint level, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMultiTexLevelParameterivEXT)(GLenum texunit, GLenum target, GLint level, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMultiTexParameterIivEXT)(GLenum texunit, GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMultiTexParameterIuivEXT)(GLenum texunit, GLenum target, GLenum pname, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMultiTexParameterfvEXT)(GLenum texunit, GLenum target, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMultiTexParameterivEXT)(GLenum texunit, GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMultisamplefv)(GLenum pname, GLuint index, GLfloat * val);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetMultisamplefvNV)(GLenum pname, GLuint index, GLfloat * val);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetNamedBufferParameteri64v)(GLuint buffer, GLenum pname, GLint64 * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetNamedBufferParameteriv)(GLuint buffer, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetNamedBufferParameterivEXT)(GLuint buffer, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetNamedBufferParameterui64vNV)(GLuint buffer, GLenum pname, GLuint64EXT * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetNamedBufferPointerv)(GLuint buffer, GLenum pname, void ** params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetNamedBufferPointervEXT)(GLuint buffer, GLenum pname, void ** params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetNamedBufferSubData)(GLuint buffer, GLintptr offset, GLsizeiptr size, void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetNamedBufferSubDataEXT)(GLuint buffer, GLintptr offset, GLsizeiptr size, void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetNamedFramebufferAttachmentParameteriv)(GLuint framebuffer, GLenum attachment, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetNamedFramebufferAttachmentParameterivEXT)(GLuint framebuffer, GLenum attachment, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetNamedFramebufferParameterfvAMD)(GLuint framebuffer, GLenum pname, GLuint numsamples, GLuint pixelindex, GLsizei size, GLfloat * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetNamedFramebufferParameteriv)(GLuint framebuffer, GLenum pname, GLint * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetNamedFramebufferParameterivEXT)(GLuint framebuffer, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetNamedProgramLocalParameterIivEXT)(GLuint program, GLenum target, GLuint index, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetNamedProgramLocalParameterIuivEXT)(GLuint program, GLenum target, GLuint index, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetNamedProgramLocalParameterdvEXT)(GLuint program, GLenum target, GLuint index, GLdouble * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetNamedProgramLocalParameterfvEXT)(GLuint program, GLenum target, GLuint index, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetNamedProgramStringEXT)(GLuint program, GLenum target, GLenum pname, void * string);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetNamedProgramivEXT)(GLuint program, GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetNamedRenderbufferParameteriv)(GLuint renderbuffer, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetNamedRenderbufferParameterivEXT)(GLuint renderbuffer, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetNamedStringARB)(GLint namelen, const GLchar * name, GLsizei bufSize, GLint * stringlen, GLchar * string);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetNamedStringivARB)(GLint namelen, const GLchar * name, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetNextPerfQueryIdINTEL)(GLuint queryId, GLuint * nextQueryId);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetObjectBufferfvATI)(GLuint buffer, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetObjectBufferivATI)(GLuint buffer, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetObjectLabel)(GLenum identifier, GLuint name, GLsizei bufSize, GLsizei * length, GLchar * label);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetObjectLabelEXT)(GLenum type, GLuint object, GLsizei bufSize, GLsizei * length, GLchar * label);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetObjectLabelKHR)(GLenum identifier, GLuint name, GLsizei bufSize, GLsizei * length, GLchar * label);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetObjectParameterfvARB)(GLhandleARB obj, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetObjectParameterivAPPLE)(GLenum objectType, GLuint name, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetObjectParameterivARB)(GLhandleARB obj, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetObjectPtrLabel)(const void * ptr, GLsizei bufSize, GLsizei * length, GLchar * label);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetObjectPtrLabelKHR)(const void * ptr, GLsizei bufSize, GLsizei * length, GLchar * label);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetOcclusionQueryivNV)(GLuint id, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetOcclusionQueryuivNV)(GLuint id, GLenum pname, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPathColorGenfvNV)(GLenum color, GLenum pname, GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPathColorGenivNV)(GLenum color, GLenum pname, GLint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPathCommandsNV)(GLuint path, GLubyte * commands);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPathCoordsNV)(GLuint path, GLfloat * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPathDashArrayNV)(GLuint path, GLfloat * dashArray);
---  
+--
 --  EPOXY_PUBLIC GLfloat (EPOXY_CALLSPEC *epoxy_glGetPathLengthNV)(GLuint path, GLsizei startSegment, GLsizei numSegments);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPathMetricRangeNV)(GLbitfield metricQueryMask, GLuint firstPathName, GLsizei numPaths, GLsizei stride, GLfloat * metrics);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPathMetricsNV)(GLbitfield metricQueryMask, GLsizei numPaths, GLenum pathNameType, const void * paths, GLuint pathBase, GLsizei stride, GLfloat * metrics);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPathParameterfvNV)(GLuint path, GLenum pname, GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPathParameterivNV)(GLuint path, GLenum pname, GLint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPathSpacingNV)(GLenum pathListMode, GLsizei numPaths, GLenum pathNameType, const void * paths, GLuint pathBase, GLfloat advanceScale, GLfloat kerningScale, GLenum transformType, GLfloat * returnedSpacing);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPathTexGenfvNV)(GLenum texCoordSet, GLenum pname, GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPathTexGenivNV)(GLenum texCoordSet, GLenum pname, GLint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPerfCounterInfoINTEL)(GLuint queryId, GLuint counterId, GLuint counterNameLength, GLchar * counterName, GLuint counterDescLength, GLchar * counterDesc, GLuint * counterOffset, GLuint * counterDataSize, GLuint * counterTypeEnum, GLuint * counterDataTypeEnum, GLuint64 * rawCounterMaxValue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPerfMonitorCounterDataAMD)(GLuint monitor, GLenum pname, GLsizei dataSize, GLuint * data, GLint * bytesWritten);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPerfMonitorCounterInfoAMD)(GLuint group, GLuint counter, GLenum pname, void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPerfMonitorCounterStringAMD)(GLuint group, GLuint counter, GLsizei bufSize, GLsizei * length, GLchar * counterString);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPerfMonitorCountersAMD)(GLuint group, GLint * numCounters, GLint * maxActiveCounters, GLsizei counterSize, GLuint * counters);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPerfMonitorGroupStringAMD)(GLuint group, GLsizei bufSize, GLsizei * length, GLchar * groupString);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPerfMonitorGroupsAMD)(GLint * numGroups, GLsizei groupsSize, GLuint * groups);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPerfQueryDataINTEL)(GLuint queryHandle, GLuint flags, GLsizei dataSize, void * data, GLuint * bytesWritten);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPerfQueryIdByNameINTEL)(GLchar * queryName, GLuint * queryId);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPerfQueryInfoINTEL)(GLuint queryId, GLuint queryNameLength, GLchar * queryName, GLuint * dataSize, GLuint * noCounters, GLuint * noInstances, GLuint * capsMask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPixelMapfv)(GLenum map, GLfloat * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPixelMapuiv)(GLenum map, GLuint * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPixelMapusv)(GLenum map, GLushort * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPixelMapxv)(GLenum map, GLint size, GLfixed * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPixelTexGenParameterfvSGIS)(GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPixelTexGenParameterivSGIS)(GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPixelTransformParameterfvEXT)(GLenum target, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPixelTransformParameterivEXT)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPointerIndexedvEXT)(GLenum target, GLuint index, void ** data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPointeri_vEXT)(GLenum pname, GLuint index, void ** params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPointerv)(GLenum pname, void ** params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPointervEXT)(GLenum pname, void ** params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPointervKHR)(GLenum pname, void ** params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetPolygonStipple)(GLubyte * mask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramBinary)(GLuint program, GLsizei bufSize, GLsizei * length, GLenum * binaryFormat, void * binary);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramBinaryOES)(GLuint program, GLsizei bufSize, GLsizei * length, GLenum * binaryFormat, void * binary);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramEnvParameterIivNV)(GLenum target, GLuint index, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramEnvParameterIuivNV)(GLenum target, GLuint index, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramEnvParameterdvARB)(GLenum target, GLuint index, GLdouble * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramEnvParameterfvARB)(GLenum target, GLuint index, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramInfoLog)(GLuint program, GLsizei bufSize, GLsizei * length, GLchar * infoLog);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramInterfaceiv)(GLuint program, GLenum programInterface, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramLocalParameterIivNV)(GLenum target, GLuint index, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramLocalParameterIuivNV)(GLenum target, GLuint index, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramLocalParameterdvARB)(GLenum target, GLuint index, GLdouble * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramLocalParameterfvARB)(GLenum target, GLuint index, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramNamedParameterdvNV)(GLuint id, GLsizei len, const GLubyte * name, GLdouble * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramNamedParameterfvNV)(GLuint id, GLsizei len, const GLubyte * name, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramParameterdvNV)(GLenum target, GLuint index, GLenum pname, GLdouble * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramParameterfvNV)(GLenum target, GLuint index, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramPipelineInfoLog)(GLuint pipeline, GLsizei bufSize, GLsizei * length, GLchar * infoLog);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramPipelineInfoLogEXT)(GLuint pipeline, GLsizei bufSize, GLsizei * length, GLchar * infoLog);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramPipelineiv)(GLuint pipeline, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramPipelineivEXT)(GLuint pipeline, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glGetProgramResourceIndex)(GLuint program, GLenum programInterface, const GLchar * name);
---  
+--
 --  EPOXY_PUBLIC GLint (EPOXY_CALLSPEC *epoxy_glGetProgramResourceLocation)(GLuint program, GLenum programInterface, const GLchar * name);
---  
+--
 --  EPOXY_PUBLIC GLint (EPOXY_CALLSPEC *epoxy_glGetProgramResourceLocationIndex)(GLuint program, GLenum programInterface, const GLchar * name);
---  
+--
 --  EPOXY_PUBLIC GLint (EPOXY_CALLSPEC *epoxy_glGetProgramResourceLocationIndexEXT)(GLuint program, GLenum programInterface, const GLchar * name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramResourceName)(GLuint program, GLenum programInterface, GLuint index, GLsizei bufSize, GLsizei * length, GLchar * name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramResourcefvNV)(GLuint program, GLenum programInterface, GLuint index, GLsizei propCount, const GLenum * props, GLsizei bufSize, GLsizei * length, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramResourceiv)(GLuint program, GLenum programInterface, GLuint index, GLsizei propCount, const GLenum * props, GLsizei bufSize, GLsizei * length, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramStageiv)(GLuint program, GLenum shadertype, GLenum pname, GLint * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramStringARB)(GLenum target, GLenum pname, void * string);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramStringNV)(GLuint id, GLenum pname, GLubyte * program);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramSubroutineParameteruivNV)(GLenum target, GLuint index, GLuint * param);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramiv)(GLuint program, GLenum pname, GLint * params);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLGETPROGRAMIVPROC)(GLuint program, GLenum pname, GLint * params);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramiv)(GLuint program, GLenum pname, GLint * params);
+   --  #define glGetProgramiv epoxy_glGetProgramiv
+
+   type PFNGLGETPROGRAMIVPROC is access procedure
+     (program : epoxy.GLuint;
+      pname   : OpenGL.GLenum;
+      params  : out OpenGL.GLint) with Convention => C;
+
+   glGetProgramiv : constant not null PFNGLGETPROGRAMIVPROC
+     with Import, Convention => C, External_Name => "epoxy_glGetProgramiv";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramivARB)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramivNV)(GLuint id, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetQueryBufferObjecti64v)(GLuint id, GLuint buffer, GLenum pname, GLintptr offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetQueryBufferObjectiv)(GLuint id, GLuint buffer, GLenum pname, GLintptr offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetQueryBufferObjectui64v)(GLuint id, GLuint buffer, GLenum pname, GLintptr offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetQueryBufferObjectuiv)(GLuint id, GLuint buffer, GLenum pname, GLintptr offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetQueryIndexediv)(GLenum target, GLuint index, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetQueryObjecti64v)(GLuint id, GLenum pname, GLint64 * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetQueryObjecti64vEXT)(GLuint id, GLenum pname, GLint64 * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetQueryObjectiv)(GLuint id, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetQueryObjectivARB)(GLuint id, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetQueryObjectivEXT)(GLuint id, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetQueryObjectui64v)(GLuint id, GLenum pname, GLuint64 * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetQueryObjectui64vEXT)(GLuint id, GLenum pname, GLuint64 * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetQueryObjectuiv)(GLuint id, GLenum pname, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetQueryObjectuivARB)(GLuint id, GLenum pname, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetQueryObjectuivEXT)(GLuint id, GLenum pname, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetQueryiv)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetQueryivARB)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetQueryivEXT)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetRenderbufferParameteriv)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetRenderbufferParameterivEXT)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetRenderbufferParameterivOES)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetSamplerParameterIiv)(GLuint sampler, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetSamplerParameterIivEXT)(GLuint sampler, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetSamplerParameterIivOES)(GLuint sampler, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetSamplerParameterIuiv)(GLuint sampler, GLenum pname, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetSamplerParameterIuivEXT)(GLuint sampler, GLenum pname, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetSamplerParameterIuivOES)(GLuint sampler, GLenum pname, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetSamplerParameterfv)(GLuint sampler, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetSamplerParameteriv)(GLuint sampler, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetSemaphoreParameterui64vEXT)(GLuint semaphore, GLenum pname, GLuint64 * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetSeparableFilter)(GLenum target, GLenum format, GLenum type, void * row, void * column, void * span);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetSeparableFilterEXT)(GLenum target, GLenum format, GLenum type, void * row, void * column, void * span);
 
    --  typedef void (GLAPIENTRY *PFNGLGETSHADERINFOLOGPROC)(GLuint shader, GLsizei bufSize, GLsizei * length, GLchar * infoLog);
@@ -11679,9 +11717,9 @@ is
      with Import, Convention => C, External_Name => "epoxy_glGetShaderInfoLog";
 
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetShaderPrecisionFormat)(GLenum shadertype, GLenum precisiontype, GLint * range, GLint * precision);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetShaderSource)(GLuint shader, GLsizei bufSize, GLsizei * length, GLchar * source);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetShaderSourceARB)(GLhandleARB obj, GLsizei maxLength, GLsizei * length, GLcharARB * source);
 
    --  typedef void (GLAPIENTRY *PFNCOMPILE_STATUSPROC)(GLuint shader, GLenum pname, GLint * params);
@@ -11697,2401 +11735,2421 @@ is
      with Import, Convention => C, External_Name => "epoxy_glGetShaderiv";
 
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetShadingRateImagePaletteNV)(GLuint viewport, GLuint entry, GLenum * rate);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetShadingRateSampleLocationivNV)(GLenum rate, GLuint samples, GLuint index, GLint * location);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetSharpenTexFuncSGIS)(GLenum target, GLfloat * points);
---  
+--
 --  EPOXY_PUBLIC GLushort (EPOXY_CALLSPEC *epoxy_glGetStageIndexNV)(GLenum shadertype);
---  
+--
 --  EPOXY_PUBLIC const GLubyte * (EPOXY_CALLSPEC *epoxy_glGetString)(GLenum name);
---  
+--
 --  EPOXY_PUBLIC const GLubyte * (EPOXY_CALLSPEC *epoxy_glGetStringi)(GLenum name, GLuint index);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glGetSubroutineIndex)(GLuint program, GLenum shadertype, const GLchar * name);
---  
+--
 --  EPOXY_PUBLIC GLint (EPOXY_CALLSPEC *epoxy_glGetSubroutineUniformLocation)(GLuint program, GLenum shadertype, const GLchar * name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetSynciv)(GLsync sync, GLenum pname, GLsizei bufSize, GLsizei * length, GLint * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetSyncivAPPLE)(GLsync sync, GLenum pname, GLsizei bufSize, GLsizei * length, GLint * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexBumpParameterfvATI)(GLenum pname, GLfloat * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexBumpParameterivATI)(GLenum pname, GLint * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexEnvfv)(GLenum target, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexEnviv)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexEnvxv)(GLenum target, GLenum pname, GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexEnvxvOES)(GLenum target, GLenum pname, GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexFilterFuncSGIS)(GLenum target, GLenum filter, GLfloat * weights);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexGendv)(GLenum coord, GLenum pname, GLdouble * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexGenfv)(GLenum coord, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexGenfvOES)(GLenum coord, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexGeniv)(GLenum coord, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexGenivOES)(GLenum coord, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexGenxvOES)(GLenum coord, GLenum pname, GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexImage)(GLenum target, GLint level, GLenum format, GLenum type, void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexLevelParameterfv)(GLenum target, GLint level, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexLevelParameteriv)(GLenum target, GLint level, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexLevelParameterxvOES)(GLenum target, GLint level, GLenum pname, GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexParameterIiv)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexParameterIivEXT)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexParameterIivOES)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexParameterIuiv)(GLenum target, GLenum pname, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexParameterIuivEXT)(GLenum target, GLenum pname, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexParameterIuivOES)(GLenum target, GLenum pname, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexParameterPointervAPPLE)(GLenum target, GLenum pname, void ** params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexParameterfv)(GLenum target, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexParameteriv)(GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexParameterxv)(GLenum target, GLenum pname, GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTexParameterxvOES)(GLenum target, GLenum pname, GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC GLuint64 (EPOXY_CALLSPEC *epoxy_glGetTextureHandleARB)(GLuint texture);
---  
+--
 --  EPOXY_PUBLIC GLuint64 (EPOXY_CALLSPEC *epoxy_glGetTextureHandleIMG)(GLuint texture);
---  
+--
 --  EPOXY_PUBLIC GLuint64 (EPOXY_CALLSPEC *epoxy_glGetTextureHandleNV)(GLuint texture);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTextureImage)(GLuint texture, GLint level, GLenum format, GLenum type, GLsizei bufSize, void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTextureImageEXT)(GLuint texture, GLenum target, GLint level, GLenum format, GLenum type, void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTextureLevelParameterfv)(GLuint texture, GLint level, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTextureLevelParameterfvEXT)(GLuint texture, GLenum target, GLint level, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTextureLevelParameteriv)(GLuint texture, GLint level, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTextureLevelParameterivEXT)(GLuint texture, GLenum target, GLint level, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTextureParameterIiv)(GLuint texture, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTextureParameterIivEXT)(GLuint texture, GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTextureParameterIuiv)(GLuint texture, GLenum pname, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTextureParameterIuivEXT)(GLuint texture, GLenum target, GLenum pname, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTextureParameterfv)(GLuint texture, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTextureParameterfvEXT)(GLuint texture, GLenum target, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTextureParameteriv)(GLuint texture, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTextureParameterivEXT)(GLuint texture, GLenum target, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC GLuint64 (EPOXY_CALLSPEC *epoxy_glGetTextureSamplerHandleARB)(GLuint texture, GLuint sampler);
---  
+--
 --  EPOXY_PUBLIC GLuint64 (EPOXY_CALLSPEC *epoxy_glGetTextureSamplerHandleIMG)(GLuint texture, GLuint sampler);
---  
+--
 --  EPOXY_PUBLIC GLuint64 (EPOXY_CALLSPEC *epoxy_glGetTextureSamplerHandleNV)(GLuint texture, GLuint sampler);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTextureSubImage)(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, GLsizei bufSize, void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTrackMatrixivNV)(GLenum target, GLuint address, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTransformFeedbackVarying)(GLuint program, GLuint index, GLsizei bufSize, GLsizei * length, GLsizei * size, GLenum * type, GLchar * name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTransformFeedbackVaryingEXT)(GLuint program, GLuint index, GLsizei bufSize, GLsizei * length, GLsizei * size, GLenum * type, GLchar * name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTransformFeedbackVaryingNV)(GLuint program, GLuint index, GLint * location);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTransformFeedbacki64_v)(GLuint xfb, GLenum pname, GLuint index, GLint64 * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTransformFeedbacki_v)(GLuint xfb, GLenum pname, GLuint index, GLint * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTransformFeedbackiv)(GLuint xfb, GLenum pname, GLint * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetTranslatedShaderSourceANGLE)(GLuint shader, GLsizei bufsize, GLsizei * length, GLchar * source);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glGetUniformBlockIndex)(GLuint program, const GLchar * uniformBlockName);
---  
+--
 --  EPOXY_PUBLIC GLint (EPOXY_CALLSPEC *epoxy_glGetUniformBufferSizeEXT)(GLuint program, GLint location);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetUniformIndices)(GLuint program, GLsizei uniformCount, const GLchar *const* uniformNames, GLuint * uniformIndices);
---  
---  EPOXY_PUBLIC GLint (EPOXY_CALLSPEC *epoxy_glGetUniformLocation)(GLuint program, const GLchar * name);
---  
+
+   --  typedef GLint (GLAPIENTRY *PFNGLGETUNIFORMLOCATIONPROC)(GLuint program, const GLchar * name);
+   --  EPOXY_PUBLIC GLint (EPOXY_CALLSPEC *epoxy_glGetUniformLocation)(GLuint program, const GLchar * name);
+   --  #define glGetUniformLocation epoxy_glGetUniformLocation
+
+   type PFNGLGETUNIFORMLOCATIONPROC is access function
+     (program : epoxy.GLuint;
+      name    : Interfaces.C.char_array) return OpenGL.GLint
+     with Convention => C;
+
+   glGetUniformLocation : constant not null PFNGLGETUNIFORMLOCATIONPROC
+     with Import,
+          Convention    => C,
+          External_Name => "epoxy_glGetUniformLocation";
+
 --  EPOXY_PUBLIC GLint (EPOXY_CALLSPEC *epoxy_glGetUniformLocationARB)(GLhandleARB programObj, const GLcharARB * name);
---  
+--
 --  EPOXY_PUBLIC GLintptr (EPOXY_CALLSPEC *epoxy_glGetUniformOffsetEXT)(GLuint program, GLint location);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetUniformSubroutineuiv)(GLenum shadertype, GLint location, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetUniformdv)(GLuint program, GLint location, GLdouble * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetUniformfv)(GLuint program, GLint location, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetUniformfvARB)(GLhandleARB programObj, GLint location, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetUniformi64vARB)(GLuint program, GLint location, GLint64 * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetUniformi64vNV)(GLuint program, GLint location, GLint64EXT * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetUniformiv)(GLuint program, GLint location, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetUniformivARB)(GLhandleARB programObj, GLint location, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetUniformui64vARB)(GLuint program, GLint location, GLuint64 * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetUniformui64vNV)(GLuint program, GLint location, GLuint64EXT * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetUniformuiv)(GLuint program, GLint location, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetUniformuivEXT)(GLuint program, GLint location, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetUnsignedBytei_vEXT)(GLenum target, GLuint index, GLubyte * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetUnsignedBytevEXT)(GLenum pname, GLubyte * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVariantArrayObjectfvATI)(GLuint id, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVariantArrayObjectivATI)(GLuint id, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVariantBooleanvEXT)(GLuint id, GLenum value, GLboolean * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVariantFloatvEXT)(GLuint id, GLenum value, GLfloat * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVariantIntegervEXT)(GLuint id, GLenum value, GLint * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVariantPointervEXT)(GLuint id, GLenum value, void ** data);
---  
+--
 --  EPOXY_PUBLIC GLint (EPOXY_CALLSPEC *epoxy_glGetVaryingLocationNV)(GLuint program, const GLchar * name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexArrayIndexed64iv)(GLuint vaobj, GLuint index, GLenum pname, GLint64 * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexArrayIndexediv)(GLuint vaobj, GLuint index, GLenum pname, GLint * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexArrayIntegeri_vEXT)(GLuint vaobj, GLuint index, GLenum pname, GLint * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexArrayIntegervEXT)(GLuint vaobj, GLenum pname, GLint * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexArrayPointeri_vEXT)(GLuint vaobj, GLuint index, GLenum pname, void ** param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexArrayPointervEXT)(GLuint vaobj, GLenum pname, void ** param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexArrayiv)(GLuint vaobj, GLenum pname, GLint * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexAttribArrayObjectfvATI)(GLuint index, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexAttribArrayObjectivATI)(GLuint index, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexAttribIiv)(GLuint index, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexAttribIivEXT)(GLuint index, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexAttribIuiv)(GLuint index, GLenum pname, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexAttribIuivEXT)(GLuint index, GLenum pname, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexAttribLdv)(GLuint index, GLenum pname, GLdouble * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexAttribLdvEXT)(GLuint index, GLenum pname, GLdouble * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexAttribLi64vNV)(GLuint index, GLenum pname, GLint64EXT * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexAttribLui64vARB)(GLuint index, GLenum pname, GLuint64EXT * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexAttribLui64vNV)(GLuint index, GLenum pname, GLuint64EXT * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexAttribPointerv)(GLuint index, GLenum pname, void ** pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexAttribPointervARB)(GLuint index, GLenum pname, void ** pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexAttribPointervNV)(GLuint index, GLenum pname, void ** pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexAttribdv)(GLuint index, GLenum pname, GLdouble * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexAttribdvARB)(GLuint index, GLenum pname, GLdouble * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexAttribdvNV)(GLuint index, GLenum pname, GLdouble * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexAttribfv)(GLuint index, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexAttribfvARB)(GLuint index, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexAttribfvNV)(GLuint index, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexAttribiv)(GLuint index, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexAttribivARB)(GLuint index, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVertexAttribivNV)(GLuint index, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVideoCaptureStreamdvNV)(GLuint video_capture_slot, GLuint stream, GLenum pname, GLdouble * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVideoCaptureStreamfvNV)(GLuint video_capture_slot, GLuint stream, GLenum pname, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVideoCaptureStreamivNV)(GLuint video_capture_slot, GLuint stream, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVideoCaptureivNV)(GLuint video_capture_slot, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVideoi64vNV)(GLuint video_slot, GLenum pname, GLint64EXT * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVideoivNV)(GLuint video_slot, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVideoui64vNV)(GLuint video_slot, GLenum pname, GLuint64EXT * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetVideouivNV)(GLuint video_slot, GLenum pname, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC GLVULKANPROCNV (EPOXY_CALLSPEC *epoxy_glGetVkProcAddrNV)(const GLchar * name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnColorTable)(GLenum target, GLenum format, GLenum type, GLsizei bufSize, void * table);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnColorTableARB)(GLenum target, GLenum format, GLenum type, GLsizei bufSize, void * table);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnCompressedTexImage)(GLenum target, GLint lod, GLsizei bufSize, void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnCompressedTexImageARB)(GLenum target, GLint lod, GLsizei bufSize, void * img);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnConvolutionFilter)(GLenum target, GLenum format, GLenum type, GLsizei bufSize, void * image);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnConvolutionFilterARB)(GLenum target, GLenum format, GLenum type, GLsizei bufSize, void * image);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnHistogram)(GLenum target, GLboolean reset, GLenum format, GLenum type, GLsizei bufSize, void * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnHistogramARB)(GLenum target, GLboolean reset, GLenum format, GLenum type, GLsizei bufSize, void * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnMapdv)(GLenum target, GLenum query, GLsizei bufSize, GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnMapdvARB)(GLenum target, GLenum query, GLsizei bufSize, GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnMapfv)(GLenum target, GLenum query, GLsizei bufSize, GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnMapfvARB)(GLenum target, GLenum query, GLsizei bufSize, GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnMapiv)(GLenum target, GLenum query, GLsizei bufSize, GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnMapivARB)(GLenum target, GLenum query, GLsizei bufSize, GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnMinmax)(GLenum target, GLboolean reset, GLenum format, GLenum type, GLsizei bufSize, void * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnMinmaxARB)(GLenum target, GLboolean reset, GLenum format, GLenum type, GLsizei bufSize, void * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnPixelMapfv)(GLenum map, GLsizei bufSize, GLfloat * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnPixelMapfvARB)(GLenum map, GLsizei bufSize, GLfloat * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnPixelMapuiv)(GLenum map, GLsizei bufSize, GLuint * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnPixelMapuivARB)(GLenum map, GLsizei bufSize, GLuint * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnPixelMapusv)(GLenum map, GLsizei bufSize, GLushort * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnPixelMapusvARB)(GLenum map, GLsizei bufSize, GLushort * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnPolygonStipple)(GLsizei bufSize, GLubyte * pattern);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnPolygonStippleARB)(GLsizei bufSize, GLubyte * pattern);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnSeparableFilter)(GLenum target, GLenum format, GLenum type, GLsizei rowBufSize, void * row, GLsizei columnBufSize, void * column, void * span);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnSeparableFilterARB)(GLenum target, GLenum format, GLenum type, GLsizei rowBufSize, void * row, GLsizei columnBufSize, void * column, void * span);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnTexImage)(GLenum target, GLint level, GLenum format, GLenum type, GLsizei bufSize, void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnTexImageARB)(GLenum target, GLint level, GLenum format, GLenum type, GLsizei bufSize, void * img);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnUniformdv)(GLuint program, GLint location, GLsizei bufSize, GLdouble * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnUniformdvARB)(GLuint program, GLint location, GLsizei bufSize, GLdouble * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnUniformfv)(GLuint program, GLint location, GLsizei bufSize, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnUniformfvARB)(GLuint program, GLint location, GLsizei bufSize, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnUniformfvEXT)(GLuint program, GLint location, GLsizei bufSize, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnUniformfvKHR)(GLuint program, GLint location, GLsizei bufSize, GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnUniformi64vARB)(GLuint program, GLint location, GLsizei bufSize, GLint64 * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnUniformiv)(GLuint program, GLint location, GLsizei bufSize, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnUniformivARB)(GLuint program, GLint location, GLsizei bufSize, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnUniformivEXT)(GLuint program, GLint location, GLsizei bufSize, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnUniformivKHR)(GLuint program, GLint location, GLsizei bufSize, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnUniformui64vARB)(GLuint program, GLint location, GLsizei bufSize, GLuint64 * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnUniformuiv)(GLuint program, GLint location, GLsizei bufSize, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnUniformuivARB)(GLuint program, GLint location, GLsizei bufSize, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetnUniformuivKHR)(GLuint program, GLint location, GLsizei bufSize, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGlobalAlphaFactorbSUN)(GLbyte factor);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGlobalAlphaFactordSUN)(GLdouble factor);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGlobalAlphaFactorfSUN)(GLfloat factor);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGlobalAlphaFactoriSUN)(GLint factor);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGlobalAlphaFactorsSUN)(GLshort factor);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGlobalAlphaFactorubSUN)(GLubyte factor);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGlobalAlphaFactoruiSUN)(GLuint factor);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGlobalAlphaFactorusSUN)(GLushort factor);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glHint)(GLenum target, GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glHintPGI)(GLenum target, GLint mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glHistogram)(GLenum target, GLsizei width, GLenum internalformat, GLboolean sink);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glHistogramEXT)(GLenum target, GLsizei width, GLenum internalformat, GLboolean sink);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glIglooInterfaceSGIX)(GLenum pname, const void * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glImageTransformParameterfHP)(GLenum target, GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glImageTransformParameterfvHP)(GLenum target, GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glImageTransformParameteriHP)(GLenum target, GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glImageTransformParameterivHP)(GLenum target, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glImportMemoryFdEXT)(GLuint memory, GLuint64 size, GLenum handleType, GLint fd);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glImportMemoryWin32HandleEXT)(GLuint memory, GLuint64 size, GLenum handleType, void * handle);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glImportMemoryWin32NameEXT)(GLuint memory, GLuint64 size, GLenum handleType, const void * name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glImportSemaphoreFdEXT)(GLuint semaphore, GLenum handleType, GLint fd);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glImportSemaphoreWin32HandleEXT)(GLuint semaphore, GLenum handleType, void * handle);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glImportSemaphoreWin32NameEXT)(GLuint semaphore, GLenum handleType, const void * name);
---  
+--
 --  EPOXY_PUBLIC GLsync (EPOXY_CALLSPEC *epoxy_glImportSyncEXT)(GLenum external_sync_type, GLintptr external_sync, GLbitfield flags);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glIndexFormatNV)(GLenum type, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glIndexFuncEXT)(GLenum func, GLclampf ref);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glIndexMask)(GLuint mask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glIndexMaterialEXT)(GLenum face, GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glIndexPointer)(GLenum type, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glIndexPointerEXT)(GLenum type, GLsizei stride, GLsizei count, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glIndexPointerListIBM)(GLenum type, GLint stride, const void ** pointer, GLint ptrstride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glIndexd)(GLdouble c);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glIndexdv)(const GLdouble * c);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glIndexf)(GLfloat c);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glIndexfv)(const GLfloat * c);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glIndexi)(GLint c);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glIndexiv)(const GLint * c);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glIndexs)(GLshort c);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glIndexsv)(const GLshort * c);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glIndexub)(GLubyte c);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glIndexubv)(const GLubyte * c);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glIndexxOES)(GLfixed component);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glIndexxvOES)(const GLfixed * component);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glInitNames)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glInsertComponentEXT)(GLuint res, GLuint src, GLuint num);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glInsertEventMarkerEXT)(GLsizei length, const GLchar * marker);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glInstrumentsBufferSGIX)(GLsizei size, GLint * buffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glInterleavedArrays)(GLenum format, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glInterpolatePathsNV)(GLuint resultPath, GLuint pathA, GLuint pathB, GLfloat weight);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glInvalidateBufferData)(GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glInvalidateBufferSubData)(GLuint buffer, GLintptr offset, GLsizeiptr length);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glInvalidateFramebuffer)(GLenum target, GLsizei numAttachments, const GLenum * attachments);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glInvalidateNamedFramebufferData)(GLuint framebuffer, GLsizei numAttachments, const GLenum * attachments);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glInvalidateNamedFramebufferSubData)(GLuint framebuffer, GLsizei numAttachments, const GLenum * attachments, GLint x, GLint y, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glInvalidateSubFramebuffer)(GLenum target, GLsizei numAttachments, const GLenum * attachments, GLint x, GLint y, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glInvalidateTexImage)(GLuint texture, GLint level);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glInvalidateTexSubImage)(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsAsyncMarkerSGIX)(GLuint marker);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsBuffer)(GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsBufferARB)(GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsBufferResidentNV)(GLenum target);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsCommandListNV)(GLuint list);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsEnabled)(GLenum cap);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsEnabledIndexedEXT)(GLenum target, GLuint index);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsEnabledi)(GLenum target, GLuint index);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsEnablediEXT)(GLenum target, GLuint index);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsEnablediNV)(GLenum target, GLuint index);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsEnablediOES)(GLenum target, GLuint index);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsFenceAPPLE)(GLuint fence);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsFenceNV)(GLuint fence);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsFramebuffer)(GLuint framebuffer);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsFramebufferEXT)(GLuint framebuffer);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsFramebufferOES)(GLuint framebuffer);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsImageHandleResidentARB)(GLuint64 handle);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsImageHandleResidentNV)(GLuint64 handle);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsList)(GLuint list);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsMemoryObjectEXT)(GLuint memoryObject);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsNameAMD)(GLenum identifier, GLuint name);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsNamedBufferResidentNV)(GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsNamedStringARB)(GLint namelen, const GLchar * name);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsObjectBufferATI)(GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsOcclusionQueryNV)(GLuint id);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsPathNV)(GLuint path);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsPointInFillPathNV)(GLuint path, GLuint mask, GLfloat x, GLfloat y);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsPointInStrokePathNV)(GLuint path, GLfloat x, GLfloat y);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsProgram)(GLuint program);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsProgramARB)(GLuint program);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsProgramNV)(GLuint id);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsProgramPipeline)(GLuint pipeline);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsProgramPipelineEXT)(GLuint pipeline);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsQuery)(GLuint id);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsQueryARB)(GLuint id);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsQueryEXT)(GLuint id);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsRenderbuffer)(GLuint renderbuffer);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsRenderbufferEXT)(GLuint renderbuffer);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsRenderbufferOES)(GLuint renderbuffer);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsSampler)(GLuint sampler);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsSemaphoreEXT)(GLuint semaphore);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsShader)(GLuint shader);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsStateNV)(GLuint state);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsSync)(GLsync sync);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsSyncAPPLE)(GLsync sync);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsTexture)(GLuint texture);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsTextureEXT)(GLuint texture);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsTextureHandleResidentARB)(GLuint64 handle);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsTextureHandleResidentNV)(GLuint64 handle);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsTransformFeedback)(GLuint id);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsTransformFeedbackNV)(GLuint id);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsVariantEnabledEXT)(GLuint id, GLenum cap);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsVertexArray)(GLuint array);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsVertexArrayAPPLE)(GLuint array);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsVertexArrayOES)(GLuint array);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glIsVertexAttribEnabledAPPLE)(GLuint index, GLenum pname);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLGPUCopyImageSubDataNVX)(GLuint sourceGpu, GLbitfield destinationGpuMask, GLuint srcName, GLenum srcTarget, GLint srcLevel, GLint srcX, GLint srxY, GLint srcZ, GLuint dstName, GLenum dstTarget, GLint dstLevel, GLint dstX, GLint dstY, GLint dstZ, GLsizei width, GLsizei height, GLsizei depth);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLGPUInterlockNVX)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLGPUNamedBufferSubDataNVX)(GLbitfield gpuMask, GLuint buffer, GLintptr offset, GLsizeiptr size, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLabelObjectEXT)(GLenum type, GLuint object, GLsizei length, const GLchar * label);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLightEnviSGIX)(GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLightModelf)(GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLightModelfv)(GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLightModeli)(GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLightModeliv)(GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLightModelx)(GLenum pname, GLfixed param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLightModelxOES)(GLenum pname, GLfixed param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLightModelxv)(GLenum pname, const GLfixed * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLightModelxvOES)(GLenum pname, const GLfixed * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLightf)(GLenum light, GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLightfv)(GLenum light, GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLighti)(GLenum light, GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLightiv)(GLenum light, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLightx)(GLenum light, GLenum pname, GLfixed param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLightxOES)(GLenum light, GLenum pname, GLfixed param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLightxv)(GLenum light, GLenum pname, const GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLightxvOES)(GLenum light, GLenum pname, const GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLineStipple)(GLint factor, GLushort pattern);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLineWidth)(GLfloat width);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLineWidthx)(GLfixed width);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLineWidthxOES)(GLfixed width);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLinkProgram)(GLuint program);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLLINKPROGRAMPROC)(GLuint program);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLinkProgram)(GLuint program);
+   --  #define glLinkProgram epoxy_glLinkProgram
+
+   type PFNGLLINKPROGRAMPROC is access procedure (program : epoxy.GLuint)
+     with Convention => C;
+
+   glLinkProgram : constant not null PFNGLLINKPROGRAMPROC
+     with Import, Convention => C, External_Name => "epoxy_glLinkProgram";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLinkProgramARB)(GLhandleARB programObj);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glListBase)(GLuint base);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glListDrawCommandsStatesClientNV)(GLuint list, GLuint segment, const void ** indirects, const GLsizei * sizes, const GLuint * states, const GLuint * fbos, GLuint count);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glListParameterfSGIX)(GLuint list, GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glListParameterfvSGIX)(GLuint list, GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glListParameteriSGIX)(GLuint list, GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glListParameterivSGIX)(GLuint list, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLoadIdentity)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLoadIdentityDeformationMapSGIX)(GLbitfield mask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLoadMatrixd)(const GLdouble * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLoadMatrixf)(const GLfloat * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLoadMatrixx)(const GLfixed * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLoadMatrixxOES)(const GLfixed * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLoadName)(GLuint name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLoadPaletteFromModelViewMatrixOES)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLoadProgramNV)(GLenum target, GLuint id, GLsizei len, const GLubyte * program);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLoadTransposeMatrixd)(const GLdouble * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLoadTransposeMatrixdARB)(const GLdouble * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLoadTransposeMatrixf)(const GLfloat * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLoadTransposeMatrixfARB)(const GLfloat * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLoadTransposeMatrixxOES)(const GLfixed * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLockArraysEXT)(GLint first, GLsizei count);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glLogicOp)(GLenum opcode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMakeBufferNonResidentNV)(GLenum target);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMakeBufferResidentNV)(GLenum target, GLenum access);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMakeImageHandleNonResidentARB)(GLuint64 handle);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMakeImageHandleNonResidentNV)(GLuint64 handle);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMakeImageHandleResidentARB)(GLuint64 handle, GLenum access);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMakeImageHandleResidentNV)(GLuint64 handle, GLenum access);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMakeNamedBufferNonResidentNV)(GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMakeNamedBufferResidentNV)(GLuint buffer, GLenum access);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMakeTextureHandleNonResidentARB)(GLuint64 handle);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMakeTextureHandleNonResidentNV)(GLuint64 handle);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMakeTextureHandleResidentARB)(GLuint64 handle);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMakeTextureHandleResidentNV)(GLuint64 handle);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMap1d)(GLenum target, GLdouble u1, GLdouble u2, GLint stride, GLint order, const GLdouble * points);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMap1f)(GLenum target, GLfloat u1, GLfloat u2, GLint stride, GLint order, const GLfloat * points);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMap1xOES)(GLenum target, GLfixed u1, GLfixed u2, GLint stride, GLint order, GLfixed points);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMap2d)(GLenum target, GLdouble u1, GLdouble u2, GLint ustride, GLint uorder, GLdouble v1, GLdouble v2, GLint vstride, GLint vorder, const GLdouble * points);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMap2f)(GLenum target, GLfloat u1, GLfloat u2, GLint ustride, GLint uorder, GLfloat v1, GLfloat v2, GLint vstride, GLint vorder, const GLfloat * points);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMap2xOES)(GLenum target, GLfixed u1, GLfixed u2, GLint ustride, GLint uorder, GLfixed v1, GLfixed v2, GLint vstride, GLint vorder, GLfixed points);
---  
+--
 --  EPOXY_PUBLIC void * (EPOXY_CALLSPEC *epoxy_glMapBuffer)(GLenum target, GLenum access);
---  
+--
 --  EPOXY_PUBLIC void * (EPOXY_CALLSPEC *epoxy_glMapBufferARB)(GLenum target, GLenum access);
---  
+--
 --  EPOXY_PUBLIC void * (EPOXY_CALLSPEC *epoxy_glMapBufferOES)(GLenum target, GLenum access);
---  
+--
 --  EPOXY_PUBLIC void * (EPOXY_CALLSPEC *epoxy_glMapBufferRange)(GLenum target, GLintptr offset, GLsizeiptr length, GLbitfield access);
---  
+--
 --  EPOXY_PUBLIC void * (EPOXY_CALLSPEC *epoxy_glMapBufferRangeEXT)(GLenum target, GLintptr offset, GLsizeiptr length, GLbitfield access);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMapControlPointsNV)(GLenum target, GLuint index, GLenum type, GLsizei ustride, GLsizei vstride, GLint uorder, GLint vorder, GLboolean packed, const void * points);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMapGrid1d)(GLint un, GLdouble u1, GLdouble u2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMapGrid1f)(GLint un, GLfloat u1, GLfloat u2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMapGrid1xOES)(GLint n, GLfixed u1, GLfixed u2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMapGrid2d)(GLint un, GLdouble u1, GLdouble u2, GLint vn, GLdouble v1, GLdouble v2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMapGrid2f)(GLint un, GLfloat u1, GLfloat u2, GLint vn, GLfloat v1, GLfloat v2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMapGrid2xOES)(GLint n, GLfixed u1, GLfixed u2, GLfixed v1, GLfixed v2);
---  
+--
 --  EPOXY_PUBLIC void * (EPOXY_CALLSPEC *epoxy_glMapNamedBuffer)(GLuint buffer, GLenum access);
---  
+--
 --  EPOXY_PUBLIC void * (EPOXY_CALLSPEC *epoxy_glMapNamedBufferEXT)(GLuint buffer, GLenum access);
---  
+--
 --  EPOXY_PUBLIC void * (EPOXY_CALLSPEC *epoxy_glMapNamedBufferRange)(GLuint buffer, GLintptr offset, GLsizeiptr length, GLbitfield access);
---  
+--
 --  EPOXY_PUBLIC void * (EPOXY_CALLSPEC *epoxy_glMapNamedBufferRangeEXT)(GLuint buffer, GLintptr offset, GLsizeiptr length, GLbitfield access);
---  
+--
 --  EPOXY_PUBLIC void * (EPOXY_CALLSPEC *epoxy_glMapObjectBufferATI)(GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMapParameterfvNV)(GLenum target, GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMapParameterivNV)(GLenum target, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void * (EPOXY_CALLSPEC *epoxy_glMapTexture2DINTEL)(GLuint texture, GLint level, GLbitfield access, GLint * stride, GLenum * layout);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMapVertexAttrib1dAPPLE)(GLuint index, GLuint size, GLdouble u1, GLdouble u2, GLint stride, GLint order, const GLdouble * points);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMapVertexAttrib1fAPPLE)(GLuint index, GLuint size, GLfloat u1, GLfloat u2, GLint stride, GLint order, const GLfloat * points);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMapVertexAttrib2dAPPLE)(GLuint index, GLuint size, GLdouble u1, GLdouble u2, GLint ustride, GLint uorder, GLdouble v1, GLdouble v2, GLint vstride, GLint vorder, const GLdouble * points);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMapVertexAttrib2fAPPLE)(GLuint index, GLuint size, GLfloat u1, GLfloat u2, GLint ustride, GLint uorder, GLfloat v1, GLfloat v2, GLint vstride, GLint vorder, const GLfloat * points);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMaterialf)(GLenum face, GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMaterialfv)(GLenum face, GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMateriali)(GLenum face, GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMaterialiv)(GLenum face, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMaterialx)(GLenum face, GLenum pname, GLfixed param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMaterialxOES)(GLenum face, GLenum pname, GLfixed param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMaterialxv)(GLenum face, GLenum pname, const GLfixed * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMaterialxvOES)(GLenum face, GLenum pname, const GLfixed * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixFrustumEXT)(GLenum mode, GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GLdouble zNear, GLdouble zFar);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixIndexPointerARB)(GLint size, GLenum type, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixIndexPointerOES)(GLint size, GLenum type, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixIndexubvARB)(GLint size, const GLubyte * indices);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixIndexuivARB)(GLint size, const GLuint * indices);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixIndexusvARB)(GLint size, const GLushort * indices);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixLoad3x2fNV)(GLenum matrixMode, const GLfloat * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixLoad3x3fNV)(GLenum matrixMode, const GLfloat * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixLoadIdentityEXT)(GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixLoadTranspose3x3fNV)(GLenum matrixMode, const GLfloat * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixLoadTransposedEXT)(GLenum mode, const GLdouble * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixLoadTransposefEXT)(GLenum mode, const GLfloat * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixLoaddEXT)(GLenum mode, const GLdouble * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixLoadfEXT)(GLenum mode, const GLfloat * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixMode)(GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixMult3x2fNV)(GLenum matrixMode, const GLfloat * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixMult3x3fNV)(GLenum matrixMode, const GLfloat * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixMultTranspose3x3fNV)(GLenum matrixMode, const GLfloat * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixMultTransposedEXT)(GLenum mode, const GLdouble * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixMultTransposefEXT)(GLenum mode, const GLfloat * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixMultdEXT)(GLenum mode, const GLdouble * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixMultfEXT)(GLenum mode, const GLfloat * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixOrthoEXT)(GLenum mode, GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GLdouble zNear, GLdouble zFar);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixPopEXT)(GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixPushEXT)(GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixRotatedEXT)(GLenum mode, GLdouble angle, GLdouble x, GLdouble y, GLdouble z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixRotatefEXT)(GLenum mode, GLfloat angle, GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixScaledEXT)(GLenum mode, GLdouble x, GLdouble y, GLdouble z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixScalefEXT)(GLenum mode, GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixTranslatedEXT)(GLenum mode, GLdouble x, GLdouble y, GLdouble z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMatrixTranslatefEXT)(GLenum mode, GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMaxShaderCompilerThreadsARB)(GLuint count);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMaxShaderCompilerThreadsKHR)(GLuint count);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMemoryBarrier)(GLbitfield barriers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMemoryBarrierByRegion)(GLbitfield barriers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMemoryBarrierEXT)(GLbitfield barriers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMemoryObjectParameterivEXT)(GLuint memoryObject, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMinSampleShading)(GLfloat value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMinSampleShadingARB)(GLfloat value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMinSampleShadingOES)(GLfloat value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMinmax)(GLenum target, GLenum internalformat, GLboolean sink);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMinmaxEXT)(GLenum target, GLenum internalformat, GLboolean sink);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultMatrixd)(const GLdouble * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultMatrixf)(const GLfloat * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultMatrixx)(const GLfixed * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultMatrixxOES)(const GLfixed * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultTransposeMatrixd)(const GLdouble * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultTransposeMatrixdARB)(const GLdouble * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultTransposeMatrixf)(const GLfloat * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultTransposeMatrixfARB)(const GLfloat * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultTransposeMatrixxOES)(const GLfixed * m);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiDrawArrays)(GLenum mode, const GLint * first, const GLsizei * count, GLsizei drawcount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiDrawArraysEXT)(GLenum mode, const GLint * first, const GLsizei * count, GLsizei primcount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiDrawArraysIndirect)(GLenum mode, const void * indirect, GLsizei drawcount, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiDrawArraysIndirectAMD)(GLenum mode, const void * indirect, GLsizei primcount, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiDrawArraysIndirectBindlessCountNV)(GLenum mode, const void * indirect, GLsizei drawCount, GLsizei maxDrawCount, GLsizei stride, GLint vertexBufferCount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiDrawArraysIndirectBindlessNV)(GLenum mode, const void * indirect, GLsizei drawCount, GLsizei stride, GLint vertexBufferCount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiDrawArraysIndirectCount)(GLenum mode, const void * indirect, GLintptr drawcount, GLsizei maxdrawcount, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiDrawArraysIndirectCountARB)(GLenum mode, const void * indirect, GLintptr drawcount, GLsizei maxdrawcount, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiDrawArraysIndirectEXT)(GLenum mode, const void * indirect, GLsizei drawcount, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiDrawElementArrayAPPLE)(GLenum mode, const GLint * first, const GLsizei * count, GLsizei primcount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiDrawElements)(GLenum mode, const GLsizei * count, GLenum type, const void *const* indices, GLsizei drawcount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiDrawElementsBaseVertex)(GLenum mode, const GLsizei * count, GLenum type, const void *const* indices, GLsizei drawcount, const GLint * basevertex);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiDrawElementsBaseVertexEXT)(GLenum mode, const GLsizei * count, GLenum type, const void *const* indices, GLsizei primcount, const GLint * basevertex);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiDrawElementsEXT)(GLenum mode, const GLsizei * count, GLenum type, const void *const* indices, GLsizei primcount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiDrawElementsIndirect)(GLenum mode, GLenum type, const void * indirect, GLsizei drawcount, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiDrawElementsIndirectAMD)(GLenum mode, GLenum type, const void * indirect, GLsizei primcount, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiDrawElementsIndirectBindlessCountNV)(GLenum mode, GLenum type, const void * indirect, GLsizei drawCount, GLsizei maxDrawCount, GLsizei stride, GLint vertexBufferCount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiDrawElementsIndirectBindlessNV)(GLenum mode, GLenum type, const void * indirect, GLsizei drawCount, GLsizei stride, GLint vertexBufferCount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiDrawElementsIndirectCount)(GLenum mode, GLenum type, const void * indirect, GLintptr drawcount, GLsizei maxdrawcount, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiDrawElementsIndirectCountARB)(GLenum mode, GLenum type, const void * indirect, GLintptr drawcount, GLsizei maxdrawcount, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiDrawElementsIndirectEXT)(GLenum mode, GLenum type, const void * indirect, GLsizei drawcount, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiDrawMeshTasksIndirectCountNV)(GLintptr indirect, GLintptr drawcount, GLsizei maxdrawcount, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiDrawMeshTasksIndirectNV)(GLintptr indirect, GLsizei drawcount, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiDrawRangeElementArrayAPPLE)(GLenum mode, GLuint start, GLuint end, const GLint * first, const GLsizei * count, GLsizei primcount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiModeDrawArraysIBM)(const GLenum * mode, const GLint * first, const GLsizei * count, GLsizei primcount, GLint modestride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiModeDrawElementsIBM)(const GLenum * mode, const GLsizei * count, GLenum type, const void *const* indices, GLsizei primcount, GLint modestride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexBufferEXT)(GLenum texunit, GLenum target, GLenum internalformat, GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord1bOES)(GLenum texture, GLbyte s);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord1bvOES)(GLenum texture, const GLbyte * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord1d)(GLenum target, GLdouble s);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord1dARB)(GLenum target, GLdouble s);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord1dv)(GLenum target, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord1dvARB)(GLenum target, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord1f)(GLenum target, GLfloat s);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord1fARB)(GLenum target, GLfloat s);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord1fv)(GLenum target, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord1fvARB)(GLenum target, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord1hNV)(GLenum target, GLhalfNV s);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord1hvNV)(GLenum target, const GLhalfNV * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord1i)(GLenum target, GLint s);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord1iARB)(GLenum target, GLint s);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord1iv)(GLenum target, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord1ivARB)(GLenum target, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord1s)(GLenum target, GLshort s);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord1sARB)(GLenum target, GLshort s);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord1sv)(GLenum target, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord1svARB)(GLenum target, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord1xOES)(GLenum texture, GLfixed s);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord1xvOES)(GLenum texture, const GLfixed * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord2bOES)(GLenum texture, GLbyte s, GLbyte t);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord2bvOES)(GLenum texture, const GLbyte * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord2d)(GLenum target, GLdouble s, GLdouble t);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord2dARB)(GLenum target, GLdouble s, GLdouble t);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord2dv)(GLenum target, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord2dvARB)(GLenum target, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord2f)(GLenum target, GLfloat s, GLfloat t);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord2fARB)(GLenum target, GLfloat s, GLfloat t);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord2fv)(GLenum target, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord2fvARB)(GLenum target, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord2hNV)(GLenum target, GLhalfNV s, GLhalfNV t);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord2hvNV)(GLenum target, const GLhalfNV * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord2i)(GLenum target, GLint s, GLint t);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord2iARB)(GLenum target, GLint s, GLint t);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord2iv)(GLenum target, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord2ivARB)(GLenum target, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord2s)(GLenum target, GLshort s, GLshort t);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord2sARB)(GLenum target, GLshort s, GLshort t);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord2sv)(GLenum target, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord2svARB)(GLenum target, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord2xOES)(GLenum texture, GLfixed s, GLfixed t);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord2xvOES)(GLenum texture, const GLfixed * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord3bOES)(GLenum texture, GLbyte s, GLbyte t, GLbyte r);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord3bvOES)(GLenum texture, const GLbyte * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord3d)(GLenum target, GLdouble s, GLdouble t, GLdouble r);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord3dARB)(GLenum target, GLdouble s, GLdouble t, GLdouble r);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord3dv)(GLenum target, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord3dvARB)(GLenum target, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord3f)(GLenum target, GLfloat s, GLfloat t, GLfloat r);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord3fARB)(GLenum target, GLfloat s, GLfloat t, GLfloat r);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord3fv)(GLenum target, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord3fvARB)(GLenum target, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord3hNV)(GLenum target, GLhalfNV s, GLhalfNV t, GLhalfNV r);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord3hvNV)(GLenum target, const GLhalfNV * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord3i)(GLenum target, GLint s, GLint t, GLint r);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord3iARB)(GLenum target, GLint s, GLint t, GLint r);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord3iv)(GLenum target, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord3ivARB)(GLenum target, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord3s)(GLenum target, GLshort s, GLshort t, GLshort r);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord3sARB)(GLenum target, GLshort s, GLshort t, GLshort r);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord3sv)(GLenum target, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord3svARB)(GLenum target, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord3xOES)(GLenum texture, GLfixed s, GLfixed t, GLfixed r);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord3xvOES)(GLenum texture, const GLfixed * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord4bOES)(GLenum texture, GLbyte s, GLbyte t, GLbyte r, GLbyte q);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord4bvOES)(GLenum texture, const GLbyte * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord4d)(GLenum target, GLdouble s, GLdouble t, GLdouble r, GLdouble q);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord4dARB)(GLenum target, GLdouble s, GLdouble t, GLdouble r, GLdouble q);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord4dv)(GLenum target, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord4dvARB)(GLenum target, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord4f)(GLenum target, GLfloat s, GLfloat t, GLfloat r, GLfloat q);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord4fARB)(GLenum target, GLfloat s, GLfloat t, GLfloat r, GLfloat q);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord4fv)(GLenum target, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord4fvARB)(GLenum target, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord4hNV)(GLenum target, GLhalfNV s, GLhalfNV t, GLhalfNV r, GLhalfNV q);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord4hvNV)(GLenum target, const GLhalfNV * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord4i)(GLenum target, GLint s, GLint t, GLint r, GLint q);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord4iARB)(GLenum target, GLint s, GLint t, GLint r, GLint q);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord4iv)(GLenum target, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord4ivARB)(GLenum target, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord4s)(GLenum target, GLshort s, GLshort t, GLshort r, GLshort q);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord4sARB)(GLenum target, GLshort s, GLshort t, GLshort r, GLshort q);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord4sv)(GLenum target, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord4svARB)(GLenum target, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord4x)(GLenum texture, GLfixed s, GLfixed t, GLfixed r, GLfixed q);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord4xOES)(GLenum texture, GLfixed s, GLfixed t, GLfixed r, GLfixed q);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoord4xvOES)(GLenum texture, const GLfixed * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoordP1ui)(GLenum texture, GLenum type, GLuint coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoordP1uiv)(GLenum texture, GLenum type, const GLuint * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoordP2ui)(GLenum texture, GLenum type, GLuint coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoordP2uiv)(GLenum texture, GLenum type, const GLuint * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoordP3ui)(GLenum texture, GLenum type, GLuint coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoordP3uiv)(GLenum texture, GLenum type, const GLuint * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoordP4ui)(GLenum texture, GLenum type, GLuint coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoordP4uiv)(GLenum texture, GLenum type, const GLuint * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexCoordPointerEXT)(GLenum texunit, GLint size, GLenum type, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexEnvfEXT)(GLenum texunit, GLenum target, GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexEnvfvEXT)(GLenum texunit, GLenum target, GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexEnviEXT)(GLenum texunit, GLenum target, GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexEnvivEXT)(GLenum texunit, GLenum target, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexGendEXT)(GLenum texunit, GLenum coord, GLenum pname, GLdouble param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexGendvEXT)(GLenum texunit, GLenum coord, GLenum pname, const GLdouble * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexGenfEXT)(GLenum texunit, GLenum coord, GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexGenfvEXT)(GLenum texunit, GLenum coord, GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexGeniEXT)(GLenum texunit, GLenum coord, GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexGenivEXT)(GLenum texunit, GLenum coord, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexImage1DEXT)(GLenum texunit, GLenum target, GLint level, GLint internalformat, GLsizei width, GLint border, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexImage2DEXT)(GLenum texunit, GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexImage3DEXT)(GLenum texunit, GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexParameterIivEXT)(GLenum texunit, GLenum target, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexParameterIuivEXT)(GLenum texunit, GLenum target, GLenum pname, const GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexParameterfEXT)(GLenum texunit, GLenum target, GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexParameterfvEXT)(GLenum texunit, GLenum target, GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexParameteriEXT)(GLenum texunit, GLenum target, GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexParameterivEXT)(GLenum texunit, GLenum target, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexRenderbufferEXT)(GLenum texunit, GLenum target, GLuint renderbuffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexSubImage1DEXT)(GLenum texunit, GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexSubImage2DEXT)(GLenum texunit, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMultiTexSubImage3DEXT)(GLenum texunit, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMulticastBarrierNV)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMulticastBlitFramebufferNV)(GLuint srcGpu, GLuint dstGpu, GLint srcX0, GLint srcY0, GLint srcX1, GLint srcY1, GLint dstX0, GLint dstY0, GLint dstX1, GLint dstY1, GLbitfield mask, GLenum filter);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMulticastBufferSubDataNV)(GLbitfield gpuMask, GLuint buffer, GLintptr offset, GLsizeiptr size, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMulticastCopyBufferSubDataNV)(GLuint readGpu, GLbitfield writeGpuMask, GLuint readBuffer, GLuint writeBuffer, GLintptr readOffset, GLintptr writeOffset, GLsizeiptr size);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMulticastCopyImageSubDataNV)(GLuint srcGpu, GLbitfield dstGpuMask, GLuint srcName, GLenum srcTarget, GLint srcLevel, GLint srcX, GLint srcY, GLint srcZ, GLuint dstName, GLenum dstTarget, GLint dstLevel, GLint dstX, GLint dstY, GLint dstZ, GLsizei srcWidth, GLsizei srcHeight, GLsizei srcDepth);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMulticastFramebufferSampleLocationsfvNV)(GLuint gpu, GLuint framebuffer, GLuint start, GLsizei count, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMulticastGetQueryObjecti64vNV)(GLuint gpu, GLuint id, GLenum pname, GLint64 * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMulticastGetQueryObjectivNV)(GLuint gpu, GLuint id, GLenum pname, GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMulticastGetQueryObjectui64vNV)(GLuint gpu, GLuint id, GLenum pname, GLuint64 * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMulticastGetQueryObjectuivNV)(GLuint gpu, GLuint id, GLenum pname, GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMulticastScissorArrayvNVX)(GLuint gpu, GLuint first, GLsizei count, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMulticastViewportArrayvNVX)(GLuint gpu, GLuint first, GLsizei count, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMulticastViewportPositionWScaleNVX)(GLuint gpu, GLuint index, GLfloat xcoeff, GLfloat ycoeff);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glMulticastWaitSyncNV)(GLuint signalGpu, GLbitfield waitGpuMask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedBufferAttachMemoryNV)(GLuint buffer, GLuint memory, GLuint64 offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedBufferData)(GLuint buffer, GLsizeiptr size, const void * data, GLenum usage);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedBufferDataEXT)(GLuint buffer, GLsizeiptr size, const void * data, GLenum usage);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedBufferPageCommitmentARB)(GLuint buffer, GLintptr offset, GLsizeiptr size, GLboolean commit);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedBufferPageCommitmentEXT)(GLuint buffer, GLintptr offset, GLsizeiptr size, GLboolean commit);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedBufferStorage)(GLuint buffer, GLsizeiptr size, const void * data, GLbitfield flags);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedBufferStorageEXT)(GLuint buffer, GLsizeiptr size, const void * data, GLbitfield flags);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedBufferStorageExternalEXT)(GLuint buffer, GLintptr offset, GLsizeiptr size, GLeglClientBufferEXT clientBuffer, GLbitfield flags);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedBufferStorageMemEXT)(GLuint buffer, GLsizeiptr size, GLuint memory, GLuint64 offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedBufferSubData)(GLuint buffer, GLintptr offset, GLsizeiptr size, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedBufferSubDataEXT)(GLuint buffer, GLintptr offset, GLsizeiptr size, const void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedCopyBufferSubDataEXT)(GLuint readBuffer, GLuint writeBuffer, GLintptr readOffset, GLintptr writeOffset, GLsizeiptr size);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedFramebufferDrawBuffer)(GLuint framebuffer, GLenum buf);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedFramebufferDrawBuffers)(GLuint framebuffer, GLsizei n, const GLenum * bufs);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedFramebufferParameteri)(GLuint framebuffer, GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedFramebufferParameteriEXT)(GLuint framebuffer, GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedFramebufferReadBuffer)(GLuint framebuffer, GLenum src);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedFramebufferRenderbuffer)(GLuint framebuffer, GLenum attachment, GLenum renderbuffertarget, GLuint renderbuffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedFramebufferRenderbufferEXT)(GLuint framebuffer, GLenum attachment, GLenum renderbuffertarget, GLuint renderbuffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedFramebufferSampleLocationsfvARB)(GLuint framebuffer, GLuint start, GLsizei count, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedFramebufferSampleLocationsfvNV)(GLuint framebuffer, GLuint start, GLsizei count, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedFramebufferSamplePositionsfvAMD)(GLuint framebuffer, GLuint numsamples, GLuint pixelindex, const GLfloat * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedFramebufferTexture)(GLuint framebuffer, GLenum attachment, GLuint texture, GLint level);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedFramebufferTexture1DEXT)(GLuint framebuffer, GLenum attachment, GLenum textarget, GLuint texture, GLint level);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedFramebufferTexture2DEXT)(GLuint framebuffer, GLenum attachment, GLenum textarget, GLuint texture, GLint level);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedFramebufferTexture3DEXT)(GLuint framebuffer, GLenum attachment, GLenum textarget, GLuint texture, GLint level, GLint zoffset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedFramebufferTextureEXT)(GLuint framebuffer, GLenum attachment, GLuint texture, GLint level);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedFramebufferTextureFaceEXT)(GLuint framebuffer, GLenum attachment, GLuint texture, GLint level, GLenum face);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedFramebufferTextureLayer)(GLuint framebuffer, GLenum attachment, GLuint texture, GLint level, GLint layer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedFramebufferTextureLayerEXT)(GLuint framebuffer, GLenum attachment, GLuint texture, GLint level, GLint layer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedProgramLocalParameter4dEXT)(GLuint program, GLenum target, GLuint index, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedProgramLocalParameter4dvEXT)(GLuint program, GLenum target, GLuint index, const GLdouble * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedProgramLocalParameter4fEXT)(GLuint program, GLenum target, GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedProgramLocalParameter4fvEXT)(GLuint program, GLenum target, GLuint index, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedProgramLocalParameterI4iEXT)(GLuint program, GLenum target, GLuint index, GLint x, GLint y, GLint z, GLint w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedProgramLocalParameterI4ivEXT)(GLuint program, GLenum target, GLuint index, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedProgramLocalParameterI4uiEXT)(GLuint program, GLenum target, GLuint index, GLuint x, GLuint y, GLuint z, GLuint w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedProgramLocalParameterI4uivEXT)(GLuint program, GLenum target, GLuint index, const GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedProgramLocalParameters4fvEXT)(GLuint program, GLenum target, GLuint index, GLsizei count, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedProgramLocalParametersI4ivEXT)(GLuint program, GLenum target, GLuint index, GLsizei count, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedProgramLocalParametersI4uivEXT)(GLuint program, GLenum target, GLuint index, GLsizei count, const GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedProgramStringEXT)(GLuint program, GLenum target, GLenum format, GLsizei len, const void * string);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedRenderbufferStorage)(GLuint renderbuffer, GLenum internalformat, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedRenderbufferStorageEXT)(GLuint renderbuffer, GLenum internalformat, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedRenderbufferStorageMultisample)(GLuint renderbuffer, GLsizei samples, GLenum internalformat, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedRenderbufferStorageMultisampleAdvancedAMD)(GLuint renderbuffer, GLsizei samples, GLsizei storageSamples, GLenum internalformat, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedRenderbufferStorageMultisampleCoverageEXT)(GLuint renderbuffer, GLsizei coverageSamples, GLsizei colorSamples, GLenum internalformat, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedRenderbufferStorageMultisampleEXT)(GLuint renderbuffer, GLsizei samples, GLenum internalformat, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNamedStringARB)(GLenum type, GLint namelen, const GLchar * name, GLint stringlen, const GLchar * string);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNewList)(GLuint list, GLenum mode);
---  
+--
 --  EPOXY_PUBLIC GLuint (EPOXY_CALLSPEC *epoxy_glNewObjectBufferATI)(GLsizei size, const void * pointer, GLenum usage);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormal3b)(GLbyte nx, GLbyte ny, GLbyte nz);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormal3bv)(const GLbyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormal3d)(GLdouble nx, GLdouble ny, GLdouble nz);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormal3dv)(const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormal3f)(GLfloat nx, GLfloat ny, GLfloat nz);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormal3fVertex3fSUN)(GLfloat nx, GLfloat ny, GLfloat nz, GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormal3fVertex3fvSUN)(const GLfloat * n, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormal3fv)(const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormal3hNV)(GLhalfNV nx, GLhalfNV ny, GLhalfNV nz);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormal3hvNV)(const GLhalfNV * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormal3i)(GLint nx, GLint ny, GLint nz);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormal3iv)(const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormal3s)(GLshort nx, GLshort ny, GLshort nz);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormal3sv)(const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormal3x)(GLfixed nx, GLfixed ny, GLfixed nz);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormal3xOES)(GLfixed nx, GLfixed ny, GLfixed nz);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormal3xvOES)(const GLfixed * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormalFormatNV)(GLenum type, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormalP3ui)(GLenum type, GLuint coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormalP3uiv)(GLenum type, const GLuint * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormalPointer)(GLenum type, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormalPointerEXT)(GLenum type, GLsizei stride, GLsizei count, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormalPointerListIBM)(GLenum type, GLint stride, const void ** pointer, GLint ptrstride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormalPointervINTEL)(GLenum type, const void ** pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormalStream3bATI)(GLenum stream, GLbyte nx, GLbyte ny, GLbyte nz);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormalStream3bvATI)(GLenum stream, const GLbyte * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormalStream3dATI)(GLenum stream, GLdouble nx, GLdouble ny, GLdouble nz);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormalStream3dvATI)(GLenum stream, const GLdouble * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormalStream3fATI)(GLenum stream, GLfloat nx, GLfloat ny, GLfloat nz);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormalStream3fvATI)(GLenum stream, const GLfloat * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormalStream3iATI)(GLenum stream, GLint nx, GLint ny, GLint nz);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormalStream3ivATI)(GLenum stream, const GLint * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormalStream3sATI)(GLenum stream, GLshort nx, GLshort ny, GLshort nz);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glNormalStream3svATI)(GLenum stream, const GLshort * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glObjectLabel)(GLenum identifier, GLuint name, GLsizei length, const GLchar * label);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glObjectLabelKHR)(GLenum identifier, GLuint name, GLsizei length, const GLchar * label);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glObjectPtrLabel)(const void * ptr, GLsizei length, const GLchar * label);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glObjectPtrLabelKHR)(const void * ptr, GLsizei length, const GLchar * label);
---  
+--
 --  EPOXY_PUBLIC GLenum (EPOXY_CALLSPEC *epoxy_glObjectPurgeableAPPLE)(GLenum objectType, GLuint name, GLenum option);
---  
+--
 --  EPOXY_PUBLIC GLenum (EPOXY_CALLSPEC *epoxy_glObjectUnpurgeableAPPLE)(GLenum objectType, GLuint name, GLenum option);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glOrtho)(GLdouble left, GLdouble right, GLdouble bottom, GLdouble top, GLdouble zNear, GLdouble zFar);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glOrthof)(GLfloat l, GLfloat r, GLfloat b, GLfloat t, GLfloat n, GLfloat f);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glOrthofOES)(GLfloat l, GLfloat r, GLfloat b, GLfloat t, GLfloat n, GLfloat f);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glOrthox)(GLfixed l, GLfixed r, GLfixed b, GLfixed t, GLfixed n, GLfixed f);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glOrthoxOES)(GLfixed l, GLfixed r, GLfixed b, GLfixed t, GLfixed n, GLfixed f);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPNTrianglesfATI)(GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPNTrianglesiATI)(GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPassTexCoordATI)(GLuint dst, GLuint coord, GLenum swizzle);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPassThrough)(GLfloat token);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPassThroughxOES)(GLfixed token);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPatchParameterfv)(GLenum pname, const GLfloat * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPatchParameteri)(GLenum pname, GLint value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPatchParameteriEXT)(GLenum pname, GLint value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPatchParameteriOES)(GLenum pname, GLint value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPathColorGenNV)(GLenum color, GLenum genMode, GLenum colorFormat, const GLfloat * coeffs);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPathCommandsNV)(GLuint path, GLsizei numCommands, const GLubyte * commands, GLsizei numCoords, GLenum coordType, const void * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPathCoordsNV)(GLuint path, GLsizei numCoords, GLenum coordType, const void * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPathCoverDepthFuncNV)(GLenum func);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPathDashArrayNV)(GLuint path, GLsizei dashCount, const GLfloat * dashArray);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPathFogGenNV)(GLenum genMode);
---  
+--
 --  EPOXY_PUBLIC GLenum (EPOXY_CALLSPEC *epoxy_glPathGlyphIndexArrayNV)(GLuint firstPathName, GLenum fontTarget, const void * fontName, GLbitfield fontStyle, GLuint firstGlyphIndex, GLsizei numGlyphs, GLuint pathParameterTemplate, GLfloat emScale);
---  
+--
 --  EPOXY_PUBLIC GLenum (EPOXY_CALLSPEC *epoxy_glPathGlyphIndexRangeNV)(GLenum fontTarget, const void * fontName, GLbitfield fontStyle, GLuint pathParameterTemplate, GLfloat emScale, GLuint baseAndCount);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPathGlyphRangeNV)(GLuint firstPathName, GLenum fontTarget, const void * fontName, GLbitfield fontStyle, GLuint firstGlyph, GLsizei numGlyphs, GLenum handleMissingGlyphs, GLuint pathParameterTemplate, GLfloat emScale);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPathGlyphsNV)(GLuint firstPathName, GLenum fontTarget, const void * fontName, GLbitfield fontStyle, GLsizei numGlyphs, GLenum type, const void * charcodes, GLenum handleMissingGlyphs, GLuint pathParameterTemplate, GLfloat emScale);
---  
+--
 --  EPOXY_PUBLIC GLenum (EPOXY_CALLSPEC *epoxy_glPathMemoryGlyphIndexArrayNV)(GLuint firstPathName, GLenum fontTarget, GLsizeiptr fontSize, const void * fontData, GLsizei faceIndex, GLuint firstGlyphIndex, GLsizei numGlyphs, GLuint pathParameterTemplate, GLfloat emScale);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPathParameterfNV)(GLuint path, GLenum pname, GLfloat value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPathParameterfvNV)(GLuint path, GLenum pname, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPathParameteriNV)(GLuint path, GLenum pname, GLint value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPathParameterivNV)(GLuint path, GLenum pname, const GLint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPathStencilDepthOffsetNV)(GLfloat factor, GLfloat units);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPathStencilFuncNV)(GLenum func, GLint ref, GLuint mask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPathStringNV)(GLuint path, GLenum format, GLsizei length, const void * pathString);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPathSubCommandsNV)(GLuint path, GLsizei commandStart, GLsizei commandsToDelete, GLsizei numCommands, const GLubyte * commands, GLsizei numCoords, GLenum coordType, const void * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPathSubCoordsNV)(GLuint path, GLsizei coordStart, GLsizei numCoords, GLenum coordType, const void * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPathTexGenNV)(GLenum texCoordSet, GLenum genMode, GLint components, const GLfloat * coeffs);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPauseTransformFeedback)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPauseTransformFeedbackNV)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPixelDataRangeNV)(GLenum target, GLsizei length, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPixelMapfv)(GLenum map, GLsizei mapsize, const GLfloat * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPixelMapuiv)(GLenum map, GLsizei mapsize, const GLuint * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPixelMapusv)(GLenum map, GLsizei mapsize, const GLushort * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPixelMapx)(GLenum map, GLint size, const GLfixed * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPixelStoref)(GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPixelStorei)(GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPixelStorex)(GLenum pname, GLfixed param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPixelTexGenParameterfSGIS)(GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPixelTexGenParameterfvSGIS)(GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPixelTexGenParameteriSGIS)(GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPixelTexGenParameterivSGIS)(GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPixelTexGenSGIX)(GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPixelTransferf)(GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPixelTransferi)(GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPixelTransferxOES)(GLenum pname, GLfixed param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPixelTransformParameterfEXT)(GLenum target, GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPixelTransformParameterfvEXT)(GLenum target, GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPixelTransformParameteriEXT)(GLenum target, GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPixelTransformParameterivEXT)(GLenum target, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPixelZoom)(GLfloat xfactor, GLfloat yfactor);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPixelZoomxOES)(GLfixed xfactor, GLfixed yfactor);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glPointAlongPathNV)(GLuint path, GLsizei startSegment, GLsizei numSegments, GLfloat distance, GLfloat * x, GLfloat * y, GLfloat * tangentX, GLfloat * tangentY);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPointParameterf)(GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPointParameterfARB)(GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPointParameterfEXT)(GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPointParameterfSGIS)(GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPointParameterfv)(GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPointParameterfvARB)(GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPointParameterfvEXT)(GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPointParameterfvSGIS)(GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPointParameteri)(GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPointParameteriNV)(GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPointParameteriv)(GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPointParameterivNV)(GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPointParameterx)(GLenum pname, GLfixed param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPointParameterxOES)(GLenum pname, GLfixed param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPointParameterxv)(GLenum pname, const GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPointParameterxvOES)(GLenum pname, const GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPointSize)(GLfloat size);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPointSizePointerOES)(GLenum type, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPointSizex)(GLfixed size);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPointSizexOES)(GLfixed size);
---  
+--
 --  EPOXY_PUBLIC GLint (EPOXY_CALLSPEC *epoxy_glPollAsyncSGIX)(GLuint * markerp);
---  
+--
 --  EPOXY_PUBLIC GLint (EPOXY_CALLSPEC *epoxy_glPollInstrumentsSGIX)(GLint * marker_p);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPolygonMode)(GLenum face, GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPolygonModeNV)(GLenum face, GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPolygonOffset)(GLfloat factor, GLfloat units);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPolygonOffsetClamp)(GLfloat factor, GLfloat units, GLfloat clamp);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPolygonOffsetClampEXT)(GLfloat factor, GLfloat units, GLfloat clamp);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPolygonOffsetEXT)(GLfloat factor, GLfloat bias);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPolygonOffsetx)(GLfixed factor, GLfixed units);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPolygonOffsetxOES)(GLfixed factor, GLfixed units);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPolygonStipple)(const GLubyte * mask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPopAttrib)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPopClientAttrib)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPopDebugGroup)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPopDebugGroupKHR)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPopGroupMarkerEXT)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPopMatrix)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPopName)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPresentFrameDualFillNV)(GLuint video_slot, GLuint64EXT minPresentTime, GLuint beginPresentTimeId, GLuint presentDurationId, GLenum type, GLenum target0, GLuint fill0, GLenum target1, GLuint fill1, GLenum target2, GLuint fill2, GLenum target3, GLuint fill3);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPresentFrameKeyedNV)(GLuint video_slot, GLuint64EXT minPresentTime, GLuint beginPresentTimeId, GLuint presentDurationId, GLenum type, GLenum target0, GLuint fill0, GLuint key0, GLenum target1, GLuint fill1, GLuint key1);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPrimitiveBoundingBox)(GLfloat minX, GLfloat minY, GLfloat minZ, GLfloat minW, GLfloat maxX, GLfloat maxY, GLfloat maxZ, GLfloat maxW);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPrimitiveBoundingBoxARB)(GLfloat minX, GLfloat minY, GLfloat minZ, GLfloat minW, GLfloat maxX, GLfloat maxY, GLfloat maxZ, GLfloat maxW);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPrimitiveBoundingBoxEXT)(GLfloat minX, GLfloat minY, GLfloat minZ, GLfloat minW, GLfloat maxX, GLfloat maxY, GLfloat maxZ, GLfloat maxW);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPrimitiveBoundingBoxOES)(GLfloat minX, GLfloat minY, GLfloat minZ, GLfloat minW, GLfloat maxX, GLfloat maxY, GLfloat maxZ, GLfloat maxW);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPrimitiveRestartIndex)(GLuint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPrimitiveRestartIndexNV)(GLuint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPrimitiveRestartNV)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPrioritizeTextures)(GLsizei n, const GLuint * textures, const GLfloat * priorities);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPrioritizeTexturesEXT)(GLsizei n, const GLuint * textures, const GLclampf * priorities);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPrioritizeTexturesxOES)(GLsizei n, const GLuint * textures, const GLfixed * priorities);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramBinary)(GLuint program, GLenum binaryFormat, const void * binary, GLsizei length);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramBinaryOES)(GLuint program, GLenum binaryFormat, const void * binary, GLint length);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramBufferParametersIivNV)(GLenum target, GLuint bindingIndex, GLuint wordIndex, GLsizei count, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramBufferParametersIuivNV)(GLenum target, GLuint bindingIndex, GLuint wordIndex, GLsizei count, const GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramBufferParametersfvNV)(GLenum target, GLuint bindingIndex, GLuint wordIndex, GLsizei count, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramEnvParameter4dARB)(GLenum target, GLuint index, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramEnvParameter4dvARB)(GLenum target, GLuint index, const GLdouble * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramEnvParameter4fARB)(GLenum target, GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramEnvParameter4fvARB)(GLenum target, GLuint index, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramEnvParameterI4iNV)(GLenum target, GLuint index, GLint x, GLint y, GLint z, GLint w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramEnvParameterI4ivNV)(GLenum target, GLuint index, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramEnvParameterI4uiNV)(GLenum target, GLuint index, GLuint x, GLuint y, GLuint z, GLuint w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramEnvParameterI4uivNV)(GLenum target, GLuint index, const GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramEnvParameters4fvEXT)(GLenum target, GLuint index, GLsizei count, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramEnvParametersI4ivNV)(GLenum target, GLuint index, GLsizei count, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramEnvParametersI4uivNV)(GLenum target, GLuint index, GLsizei count, const GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramLocalParameter4dARB)(GLenum target, GLuint index, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramLocalParameter4dvARB)(GLenum target, GLuint index, const GLdouble * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramLocalParameter4fARB)(GLenum target, GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramLocalParameter4fvARB)(GLenum target, GLuint index, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramLocalParameterI4iNV)(GLenum target, GLuint index, GLint x, GLint y, GLint z, GLint w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramLocalParameterI4ivNV)(GLenum target, GLuint index, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramLocalParameterI4uiNV)(GLenum target, GLuint index, GLuint x, GLuint y, GLuint z, GLuint w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramLocalParameterI4uivNV)(GLenum target, GLuint index, const GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramLocalParameters4fvEXT)(GLenum target, GLuint index, GLsizei count, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramLocalParametersI4ivNV)(GLenum target, GLuint index, GLsizei count, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramLocalParametersI4uivNV)(GLenum target, GLuint index, GLsizei count, const GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramNamedParameter4dNV)(GLuint id, GLsizei len, const GLubyte * name, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramNamedParameter4dvNV)(GLuint id, GLsizei len, const GLubyte * name, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramNamedParameter4fNV)(GLuint id, GLsizei len, const GLubyte * name, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramNamedParameter4fvNV)(GLuint id, GLsizei len, const GLubyte * name, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramParameter4dNV)(GLenum target, GLuint index, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramParameter4dvNV)(GLenum target, GLuint index, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramParameter4fNV)(GLenum target, GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramParameter4fvNV)(GLenum target, GLuint index, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramParameteri)(GLuint program, GLenum pname, GLint value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramParameteriARB)(GLuint program, GLenum pname, GLint value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramParameteriEXT)(GLuint program, GLenum pname, GLint value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramParameters4dvNV)(GLenum target, GLuint index, GLsizei count, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramParameters4fvNV)(GLenum target, GLuint index, GLsizei count, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramPathFragmentInputGenNV)(GLuint program, GLint location, GLenum genMode, GLint components, const GLfloat * coeffs);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramStringARB)(GLenum target, GLenum format, GLsizei len, const void * string);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramSubroutineParametersuivNV)(GLenum target, GLsizei count, const GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform1d)(GLuint program, GLint location, GLdouble v0);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform1dEXT)(GLuint program, GLint location, GLdouble x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform1dv)(GLuint program, GLint location, GLsizei count, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform1dvEXT)(GLuint program, GLint location, GLsizei count, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform1f)(GLuint program, GLint location, GLfloat v0);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform1fEXT)(GLuint program, GLint location, GLfloat v0);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform1fv)(GLuint program, GLint location, GLsizei count, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform1fvEXT)(GLuint program, GLint location, GLsizei count, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform1i)(GLuint program, GLint location, GLint v0);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform1i64ARB)(GLuint program, GLint location, GLint64 x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform1i64NV)(GLuint program, GLint location, GLint64EXT x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform1i64vARB)(GLuint program, GLint location, GLsizei count, const GLint64 * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform1i64vNV)(GLuint program, GLint location, GLsizei count, const GLint64EXT * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform1iEXT)(GLuint program, GLint location, GLint v0);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform1iv)(GLuint program, GLint location, GLsizei count, const GLint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform1ivEXT)(GLuint program, GLint location, GLsizei count, const GLint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform1ui)(GLuint program, GLint location, GLuint v0);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform1ui64ARB)(GLuint program, GLint location, GLuint64 x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform1ui64NV)(GLuint program, GLint location, GLuint64EXT x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform1ui64vARB)(GLuint program, GLint location, GLsizei count, const GLuint64 * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform1ui64vNV)(GLuint program, GLint location, GLsizei count, const GLuint64EXT * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform1uiEXT)(GLuint program, GLint location, GLuint v0);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform1uiv)(GLuint program, GLint location, GLsizei count, const GLuint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform1uivEXT)(GLuint program, GLint location, GLsizei count, const GLuint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform2d)(GLuint program, GLint location, GLdouble v0, GLdouble v1);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform2dEXT)(GLuint program, GLint location, GLdouble x, GLdouble y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform2dv)(GLuint program, GLint location, GLsizei count, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform2dvEXT)(GLuint program, GLint location, GLsizei count, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform2f)(GLuint program, GLint location, GLfloat v0, GLfloat v1);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform2fEXT)(GLuint program, GLint location, GLfloat v0, GLfloat v1);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform2fv)(GLuint program, GLint location, GLsizei count, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform2fvEXT)(GLuint program, GLint location, GLsizei count, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform2i)(GLuint program, GLint location, GLint v0, GLint v1);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform2i64ARB)(GLuint program, GLint location, GLint64 x, GLint64 y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform2i64NV)(GLuint program, GLint location, GLint64EXT x, GLint64EXT y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform2i64vARB)(GLuint program, GLint location, GLsizei count, const GLint64 * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform2i64vNV)(GLuint program, GLint location, GLsizei count, const GLint64EXT * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform2iEXT)(GLuint program, GLint location, GLint v0, GLint v1);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform2iv)(GLuint program, GLint location, GLsizei count, const GLint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform2ivEXT)(GLuint program, GLint location, GLsizei count, const GLint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform2ui)(GLuint program, GLint location, GLuint v0, GLuint v1);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform2ui64ARB)(GLuint program, GLint location, GLuint64 x, GLuint64 y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform2ui64NV)(GLuint program, GLint location, GLuint64EXT x, GLuint64EXT y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform2ui64vARB)(GLuint program, GLint location, GLsizei count, const GLuint64 * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform2ui64vNV)(GLuint program, GLint location, GLsizei count, const GLuint64EXT * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform2uiEXT)(GLuint program, GLint location, GLuint v0, GLuint v1);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform2uiv)(GLuint program, GLint location, GLsizei count, const GLuint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform2uivEXT)(GLuint program, GLint location, GLsizei count, const GLuint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform3d)(GLuint program, GLint location, GLdouble v0, GLdouble v1, GLdouble v2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform3dEXT)(GLuint program, GLint location, GLdouble x, GLdouble y, GLdouble z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform3dv)(GLuint program, GLint location, GLsizei count, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform3dvEXT)(GLuint program, GLint location, GLsizei count, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform3f)(GLuint program, GLint location, GLfloat v0, GLfloat v1, GLfloat v2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform3fEXT)(GLuint program, GLint location, GLfloat v0, GLfloat v1, GLfloat v2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform3fv)(GLuint program, GLint location, GLsizei count, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform3fvEXT)(GLuint program, GLint location, GLsizei count, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform3i)(GLuint program, GLint location, GLint v0, GLint v1, GLint v2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform3i64ARB)(GLuint program, GLint location, GLint64 x, GLint64 y, GLint64 z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform3i64NV)(GLuint program, GLint location, GLint64EXT x, GLint64EXT y, GLint64EXT z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform3i64vARB)(GLuint program, GLint location, GLsizei count, const GLint64 * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform3i64vNV)(GLuint program, GLint location, GLsizei count, const GLint64EXT * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform3iEXT)(GLuint program, GLint location, GLint v0, GLint v1, GLint v2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform3iv)(GLuint program, GLint location, GLsizei count, const GLint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform3ivEXT)(GLuint program, GLint location, GLsizei count, const GLint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform3ui)(GLuint program, GLint location, GLuint v0, GLuint v1, GLuint v2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform3ui64ARB)(GLuint program, GLint location, GLuint64 x, GLuint64 y, GLuint64 z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform3ui64NV)(GLuint program, GLint location, GLuint64EXT x, GLuint64EXT y, GLuint64EXT z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform3ui64vARB)(GLuint program, GLint location, GLsizei count, const GLuint64 * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform3ui64vNV)(GLuint program, GLint location, GLsizei count, const GLuint64EXT * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform3uiEXT)(GLuint program, GLint location, GLuint v0, GLuint v1, GLuint v2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform3uiv)(GLuint program, GLint location, GLsizei count, const GLuint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform3uivEXT)(GLuint program, GLint location, GLsizei count, const GLuint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform4d)(GLuint program, GLint location, GLdouble v0, GLdouble v1, GLdouble v2, GLdouble v3);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform4dEXT)(GLuint program, GLint location, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform4dv)(GLuint program, GLint location, GLsizei count, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform4dvEXT)(GLuint program, GLint location, GLsizei count, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform4f)(GLuint program, GLint location, GLfloat v0, GLfloat v1, GLfloat v2, GLfloat v3);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform4fEXT)(GLuint program, GLint location, GLfloat v0, GLfloat v1, GLfloat v2, GLfloat v3);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform4fv)(GLuint program, GLint location, GLsizei count, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform4fvEXT)(GLuint program, GLint location, GLsizei count, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform4i)(GLuint program, GLint location, GLint v0, GLint v1, GLint v2, GLint v3);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform4i64ARB)(GLuint program, GLint location, GLint64 x, GLint64 y, GLint64 z, GLint64 w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform4i64NV)(GLuint program, GLint location, GLint64EXT x, GLint64EXT y, GLint64EXT z, GLint64EXT w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform4i64vARB)(GLuint program, GLint location, GLsizei count, const GLint64 * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform4i64vNV)(GLuint program, GLint location, GLsizei count, const GLint64EXT * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform4iEXT)(GLuint program, GLint location, GLint v0, GLint v1, GLint v2, GLint v3);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform4iv)(GLuint program, GLint location, GLsizei count, const GLint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform4ivEXT)(GLuint program, GLint location, GLsizei count, const GLint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform4ui)(GLuint program, GLint location, GLuint v0, GLuint v1, GLuint v2, GLuint v3);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform4ui64ARB)(GLuint program, GLint location, GLuint64 x, GLuint64 y, GLuint64 z, GLuint64 w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform4ui64NV)(GLuint program, GLint location, GLuint64EXT x, GLuint64EXT y, GLuint64EXT z, GLuint64EXT w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform4ui64vARB)(GLuint program, GLint location, GLsizei count, const GLuint64 * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform4ui64vNV)(GLuint program, GLint location, GLsizei count, const GLuint64EXT * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform4uiEXT)(GLuint program, GLint location, GLuint v0, GLuint v1, GLuint v2, GLuint v3);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform4uiv)(GLuint program, GLint location, GLsizei count, const GLuint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniform4uivEXT)(GLuint program, GLint location, GLsizei count, const GLuint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformHandleui64ARB)(GLuint program, GLint location, GLuint64 value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformHandleui64IMG)(GLuint program, GLint location, GLuint64 value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformHandleui64NV)(GLuint program, GLint location, GLuint64 value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformHandleui64vARB)(GLuint program, GLint location, GLsizei count, const GLuint64 * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformHandleui64vIMG)(GLuint program, GLint location, GLsizei count, const GLuint64 * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformHandleui64vNV)(GLuint program, GLint location, GLsizei count, const GLuint64 * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix2dv)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix2dvEXT)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix2fv)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix2fvEXT)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix2x3dv)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix2x3dvEXT)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix2x3fv)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix2x3fvEXT)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix2x4dv)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix2x4dvEXT)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix2x4fv)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix2x4fvEXT)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix3dv)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix3dvEXT)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix3fv)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix3fvEXT)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix3x2dv)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix3x2dvEXT)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix3x2fv)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix3x2fvEXT)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix3x4dv)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix3x4dvEXT)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix3x4fv)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix3x4fvEXT)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix4dv)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix4dvEXT)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix4fv)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix4fvEXT)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix4x2dv)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix4x2dvEXT)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix4x2fv)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix4x2fvEXT)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix4x3dv)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix4x3dvEXT)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix4x3fv)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformMatrix4x3fvEXT)(GLuint program, GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformui64NV)(GLuint program, GLint location, GLuint64EXT value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramUniformui64vNV)(GLuint program, GLint location, GLsizei count, const GLuint64EXT * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProgramVertexLimitNV)(GLenum target, GLint limit);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProvokingVertex)(GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glProvokingVertexEXT)(GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPushAttrib)(GLbitfield mask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPushClientAttrib)(GLbitfield mask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPushClientAttribDefaultEXT)(GLbitfield mask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPushDebugGroup)(GLenum source, GLuint id, GLsizei length, const GLchar * message);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPushDebugGroupKHR)(GLenum source, GLuint id, GLsizei length, const GLchar * message);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPushGroupMarkerEXT)(GLsizei length, const GLchar * marker);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPushMatrix)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPushName)(GLuint name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glQueryCounter)(GLuint id, GLenum target);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glQueryCounterEXT)(GLuint id, GLenum target);
---  
+--
 --  EPOXY_PUBLIC GLbitfield (EPOXY_CALLSPEC *epoxy_glQueryMatrixxOES)(GLfixed * mantissa, GLint * exponent);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glQueryObjectParameteruiAMD)(GLenum target, GLuint id, GLenum pname, GLuint param);
---  
+--
 --  EPOXY_PUBLIC GLint (EPOXY_CALLSPEC *epoxy_glQueryResourceNV)(GLenum queryType, GLint tagId, GLuint bufSize, GLint * buffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glQueryResourceTagNV)(GLint tagId, const GLchar * tagString);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos2d)(GLdouble x, GLdouble y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos2dv)(const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos2f)(GLfloat x, GLfloat y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos2fv)(const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos2i)(GLint x, GLint y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos2iv)(const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos2s)(GLshort x, GLshort y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos2sv)(const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos2xOES)(GLfixed x, GLfixed y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos2xvOES)(const GLfixed * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos3d)(GLdouble x, GLdouble y, GLdouble z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos3dv)(const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos3f)(GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos3fv)(const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos3i)(GLint x, GLint y, GLint z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos3iv)(const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos3s)(GLshort x, GLshort y, GLshort z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos3sv)(const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos3xOES)(GLfixed x, GLfixed y, GLfixed z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos3xvOES)(const GLfixed * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos4d)(GLdouble x, GLdouble y, GLdouble z, GLdouble w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos4dv)(const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos4f)(GLfloat x, GLfloat y, GLfloat z, GLfloat w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos4fv)(const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos4i)(GLint x, GLint y, GLint z, GLint w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos4iv)(const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos4s)(GLshort x, GLshort y, GLshort z, GLshort w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos4sv)(const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos4xOES)(GLfixed x, GLfixed y, GLfixed z, GLfixed w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterPos4xvOES)(const GLfixed * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRasterSamplesEXT)(GLuint samples, GLboolean fixedsamplelocations);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReadBuffer)(GLenum src);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReadBufferIndexedEXT)(GLenum src, GLint index);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReadBufferNV)(GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReadInstrumentsSGIX)(GLint marker);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReadPixels)(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReadnPixels)(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, GLsizei bufSize, void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReadnPixelsARB)(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, GLsizei bufSize, void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReadnPixelsEXT)(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, GLsizei bufSize, void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReadnPixelsKHR)(GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, GLsizei bufSize, void * data);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRectd)(GLdouble x1, GLdouble y1, GLdouble x2, GLdouble y2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRectdv)(const GLdouble * v1, const GLdouble * v2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRectf)(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRectfv)(const GLfloat * v1, const GLfloat * v2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRecti)(GLint x1, GLint y1, GLint x2, GLint y2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRectiv)(const GLint * v1, const GLint * v2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRects)(GLshort x1, GLshort y1, GLshort x2, GLshort y2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRectsv)(const GLshort * v1, const GLshort * v2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRectxOES)(GLfixed x1, GLfixed y1, GLfixed x2, GLfixed y2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRectxvOES)(const GLfixed * v1, const GLfixed * v2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReferencePlaneSGIX)(const GLdouble * equation);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glReleaseKeyedMutexWin32EXT)(GLuint memory, GLuint64 key);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReleaseShaderCompiler)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRenderGpuMaskNV)(GLbitfield mask);
---  
+--
 --  EPOXY_PUBLIC GLint (EPOXY_CALLSPEC *epoxy_glRenderMode)(GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRenderbufferStorage)(GLenum target, GLenum internalformat, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRenderbufferStorageEXT)(GLenum target, GLenum internalformat, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRenderbufferStorageMultisample)(GLenum target, GLsizei samples, GLenum internalformat, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRenderbufferStorageMultisampleANGLE)(GLenum target, GLsizei samples, GLenum internalformat, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRenderbufferStorageMultisampleAPPLE)(GLenum target, GLsizei samples, GLenum internalformat, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRenderbufferStorageMultisampleAdvancedAMD)(GLenum target, GLsizei samples, GLsizei storageSamples, GLenum internalformat, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRenderbufferStorageMultisampleCoverageNV)(GLenum target, GLsizei coverageSamples, GLsizei colorSamples, GLenum internalformat, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRenderbufferStorageMultisampleEXT)(GLenum target, GLsizei samples, GLenum internalformat, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRenderbufferStorageMultisampleIMG)(GLenum target, GLsizei samples, GLenum internalformat, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRenderbufferStorageMultisampleNV)(GLenum target, GLsizei samples, GLenum internalformat, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRenderbufferStorageOES)(GLenum target, GLenum internalformat, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReplacementCodePointerSUN)(GLenum type, GLsizei stride, const void ** pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReplacementCodeubSUN)(GLubyte code);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReplacementCodeubvSUN)(const GLubyte * code);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReplacementCodeuiColor3fVertex3fSUN)(GLuint rc, GLfloat r, GLfloat g, GLfloat b, GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReplacementCodeuiColor3fVertex3fvSUN)(const GLuint * rc, const GLfloat * c, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReplacementCodeuiColor4fNormal3fVertex3fSUN)(GLuint rc, GLfloat r, GLfloat g, GLfloat b, GLfloat a, GLfloat nx, GLfloat ny, GLfloat nz, GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReplacementCodeuiColor4fNormal3fVertex3fvSUN)(const GLuint * rc, const GLfloat * c, const GLfloat * n, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReplacementCodeuiColor4ubVertex3fSUN)(GLuint rc, GLubyte r, GLubyte g, GLubyte b, GLubyte a, GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReplacementCodeuiColor4ubVertex3fvSUN)(const GLuint * rc, const GLubyte * c, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReplacementCodeuiNormal3fVertex3fSUN)(GLuint rc, GLfloat nx, GLfloat ny, GLfloat nz, GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReplacementCodeuiNormal3fVertex3fvSUN)(const GLuint * rc, const GLfloat * n, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReplacementCodeuiSUN)(GLuint code);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReplacementCodeuiTexCoord2fColor4fNormal3fVertex3fSUN)(GLuint rc, GLfloat s, GLfloat t, GLfloat r, GLfloat g, GLfloat b, GLfloat a, GLfloat nx, GLfloat ny, GLfloat nz, GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReplacementCodeuiTexCoord2fColor4fNormal3fVertex3fvSUN)(const GLuint * rc, const GLfloat * tc, const GLfloat * c, const GLfloat * n, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReplacementCodeuiTexCoord2fNormal3fVertex3fSUN)(GLuint rc, GLfloat s, GLfloat t, GLfloat nx, GLfloat ny, GLfloat nz, GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReplacementCodeuiTexCoord2fNormal3fVertex3fvSUN)(const GLuint * rc, const GLfloat * tc, const GLfloat * n, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReplacementCodeuiTexCoord2fVertex3fSUN)(GLuint rc, GLfloat s, GLfloat t, GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReplacementCodeuiTexCoord2fVertex3fvSUN)(const GLuint * rc, const GLfloat * tc, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReplacementCodeuiVertex3fSUN)(GLuint rc, GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReplacementCodeuiVertex3fvSUN)(const GLuint * rc, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReplacementCodeuivSUN)(const GLuint * code);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReplacementCodeusSUN)(GLushort code);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glReplacementCodeusvSUN)(const GLushort * code);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRequestResidentProgramsNV)(GLsizei n, const GLuint * programs);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glResetHistogram)(GLenum target);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glResetHistogramEXT)(GLenum target);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glResetMemoryObjectParameterNV)(GLuint memory, GLenum pname);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glResetMinmax)(GLenum target);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glResetMinmaxEXT)(GLenum target);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glResizeBuffersMESA)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glResolveDepthValuesNV)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glResolveMultisampleFramebufferAPPLE)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glResumeTransformFeedback)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glResumeTransformFeedbackNV)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRotated)(GLdouble angle, GLdouble x, GLdouble y, GLdouble z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRotatef)(GLfloat angle, GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRotatex)(GLfixed angle, GLfixed x, GLfixed y, GLfixed z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glRotatexOES)(GLfixed angle, GLfixed x, GLfixed y, GLfixed z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSampleCoverage)(GLfloat value, GLboolean invert);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSampleCoverageARB)(GLfloat value, GLboolean invert);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSampleCoveragex)(GLclampx value, GLboolean invert);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSampleCoveragexOES)(GLclampx value, GLboolean invert);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSampleMapATI)(GLuint dst, GLuint interp, GLenum swizzle);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSampleMaskEXT)(GLclampf value, GLboolean invert);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSampleMaskIndexedNV)(GLuint index, GLbitfield mask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSampleMaskSGIS)(GLclampf value, GLboolean invert);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSampleMaski)(GLuint maskNumber, GLbitfield mask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSamplePatternEXT)(GLenum pattern);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSamplePatternSGIS)(GLenum pattern);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSamplerParameterIiv)(GLuint sampler, GLenum pname, const GLint * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSamplerParameterIivEXT)(GLuint sampler, GLenum pname, const GLint * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSamplerParameterIivOES)(GLuint sampler, GLenum pname, const GLint * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSamplerParameterIuiv)(GLuint sampler, GLenum pname, const GLuint * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSamplerParameterIuivEXT)(GLuint sampler, GLenum pname, const GLuint * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSamplerParameterIuivOES)(GLuint sampler, GLenum pname, const GLuint * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSamplerParameterf)(GLuint sampler, GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSamplerParameterfv)(GLuint sampler, GLenum pname, const GLfloat * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSamplerParameteri)(GLuint sampler, GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSamplerParameteriv)(GLuint sampler, GLenum pname, const GLint * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glScaled)(GLdouble x, GLdouble y, GLdouble z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glScalef)(GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glScalex)(GLfixed x, GLfixed y, GLfixed z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glScalexOES)(GLfixed x, GLfixed y, GLfixed z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glScissor)(GLint x, GLint y, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glScissorArrayv)(GLuint first, GLsizei count, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glScissorArrayvNV)(GLuint first, GLsizei count, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glScissorArrayvOES)(GLuint first, GLsizei count, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glScissorExclusiveArrayvNV)(GLuint first, GLsizei count, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glScissorExclusiveNV)(GLint x, GLint y, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glScissorIndexed)(GLuint index, GLint left, GLint bottom, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glScissorIndexedNV)(GLuint index, GLint left, GLint bottom, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glScissorIndexedOES)(GLuint index, GLint left, GLint bottom, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glScissorIndexedv)(GLuint index, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glScissorIndexedvNV)(GLuint index, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glScissorIndexedvOES)(GLuint index, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3b)(GLbyte red, GLbyte green, GLbyte blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3bEXT)(GLbyte red, GLbyte green, GLbyte blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3bv)(const GLbyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3bvEXT)(const GLbyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3d)(GLdouble red, GLdouble green, GLdouble blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3dEXT)(GLdouble red, GLdouble green, GLdouble blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3dv)(const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3dvEXT)(const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3f)(GLfloat red, GLfloat green, GLfloat blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3fEXT)(GLfloat red, GLfloat green, GLfloat blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3fv)(const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3fvEXT)(const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3hNV)(GLhalfNV red, GLhalfNV green, GLhalfNV blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3hvNV)(const GLhalfNV * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3i)(GLint red, GLint green, GLint blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3iEXT)(GLint red, GLint green, GLint blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3iv)(const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3ivEXT)(const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3s)(GLshort red, GLshort green, GLshort blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3sEXT)(GLshort red, GLshort green, GLshort blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3sv)(const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3svEXT)(const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3ub)(GLubyte red, GLubyte green, GLubyte blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3ubEXT)(GLubyte red, GLubyte green, GLubyte blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3ubv)(const GLubyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3ubvEXT)(const GLubyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3ui)(GLuint red, GLuint green, GLuint blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3uiEXT)(GLuint red, GLuint green, GLuint blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3uiv)(const GLuint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3uivEXT)(const GLuint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3us)(GLushort red, GLushort green, GLushort blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3usEXT)(GLushort red, GLushort green, GLushort blue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3usv)(const GLushort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColor3usvEXT)(const GLushort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColorFormatNV)(GLint size, GLenum type, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColorP3ui)(GLenum type, GLuint color);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColorP3uiv)(GLenum type, const GLuint * color);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColorPointer)(GLint size, GLenum type, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColorPointerEXT)(GLint size, GLenum type, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSecondaryColorPointerListIBM)(GLint size, GLenum type, GLint stride, const void ** pointer, GLint ptrstride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSelectBuffer)(GLsizei size, GLuint * buffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSelectPerfMonitorCountersAMD)(GLuint monitor, GLboolean enable, GLuint group, GLint numCounters, GLuint * counterList);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSemaphoreParameterui64vEXT)(GLuint semaphore, GLenum pname, const GLuint64 * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSeparableFilter2D)(GLenum target, GLenum internalformat, GLsizei width, GLsizei height, GLenum format, GLenum type, const void * row, const void * column);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSeparableFilter2DEXT)(GLenum target, GLenum internalformat, GLsizei width, GLsizei height, GLenum format, GLenum type, const void * row, const void * column);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSetFenceAPPLE)(GLuint fence);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSetFenceNV)(GLuint fence, GLenum condition);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSetFragmentShaderConstantATI)(GLuint dst, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSetInvariantEXT)(GLuint id, GLenum type, const void * addr);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSetLocalConstantEXT)(GLuint id, GLenum type, const void * addr);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSetMultisamplefvAMD)(GLenum pname, GLuint index, const GLfloat * val);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glShadeModel)(GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glShaderBinary)(GLsizei count, const GLuint * shaders, GLenum binaryformat, const void * binary, GLsizei length);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glShaderOp1EXT)(GLenum op, GLuint res, GLuint arg1);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glShaderOp2EXT)(GLenum op, GLuint res, GLuint arg1, GLuint arg2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glShaderOp3EXT)(GLenum op, GLuint res, GLuint arg1, GLuint arg2, GLuint arg3);
 
    --  typedef void (GLAPIENTRY *PFNGLSHADERSOURCEPROC)(GLuint shader, GLsizei count, const GLchar *const* string, const GLint * length);
@@ -14108,1637 +14166,1796 @@ is
      with Import, Convention => C, External_Name => "epoxy_glShaderSource";
 
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glShaderSourceARB)(GLhandleARB shaderObj, GLsizei count, const GLcharARB ** string, const GLint * length);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glShaderStorageBlockBinding)(GLuint program, GLuint storageBlockIndex, GLuint storageBlockBinding);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glShadingRateImageBarrierNV)(GLboolean synchronize);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glShadingRateImagePaletteNV)(GLuint viewport, GLuint first, GLsizei count, const GLenum * rates);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glShadingRateSampleOrderCustomNV)(GLenum rate, GLuint samples, const GLint * locations);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glShadingRateSampleOrderNV)(GLenum order);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSharpenTexFuncSGIS)(GLenum target, GLsizei n, const GLfloat * points);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSignalSemaphoreEXT)(GLuint semaphore, GLuint numBufferBarriers, const GLuint * buffers, GLuint numTextureBarriers, const GLuint * textures, const GLenum * dstLayouts);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSignalSemaphoreui64NVX)(GLuint signalGpu, GLsizei fenceObjectCount, const GLuint * semaphoreArray, const GLuint64 * fenceValueArray);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSignalVkFenceNV)(GLuint64 vkFence);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSignalVkSemaphoreNV)(GLuint64 vkSemaphore);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSpecializeShader)(GLuint shader, const GLchar * pEntryPoint, GLuint numSpecializationConstants, const GLuint * pConstantIndex, const GLuint * pConstantValue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSpecializeShaderARB)(GLuint shader, const GLchar * pEntryPoint, GLuint numSpecializationConstants, const GLuint * pConstantIndex, const GLuint * pConstantValue);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSpriteParameterfSGIX)(GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSpriteParameterfvSGIX)(GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSpriteParameteriSGIX)(GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSpriteParameterivSGIX)(GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glStartInstrumentsSGIX)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glStartTilingQCOM)(GLuint x, GLuint y, GLuint width, GLuint height, GLbitfield preserveMask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glStateCaptureNV)(GLuint state, GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glStencilClearTagEXT)(GLsizei stencilTagBits, GLuint stencilClearTag);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glStencilFillPathInstancedNV)(GLsizei numPaths, GLenum pathNameType, const void * paths, GLuint pathBase, GLenum fillMode, GLuint mask, GLenum transformType, const GLfloat * transformValues);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glStencilFillPathNV)(GLuint path, GLenum fillMode, GLuint mask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glStencilFunc)(GLenum func, GLint ref, GLuint mask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glStencilFuncSeparate)(GLenum face, GLenum func, GLint ref, GLuint mask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glStencilFuncSeparateATI)(GLenum frontfunc, GLenum backfunc, GLint ref, GLuint mask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glStencilMask)(GLuint mask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glStencilMaskSeparate)(GLenum face, GLuint mask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glStencilOp)(GLenum fail, GLenum zfail, GLenum zpass);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glStencilOpSeparate)(GLenum face, GLenum sfail, GLenum dpfail, GLenum dppass);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glStencilOpSeparateATI)(GLenum face, GLenum sfail, GLenum dpfail, GLenum dppass);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glStencilOpValueAMD)(GLenum face, GLuint value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glStencilStrokePathInstancedNV)(GLsizei numPaths, GLenum pathNameType, const void * paths, GLuint pathBase, GLint reference, GLuint mask, GLenum transformType, const GLfloat * transformValues);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glStencilStrokePathNV)(GLuint path, GLint reference, GLuint mask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glStencilThenCoverFillPathInstancedNV)(GLsizei numPaths, GLenum pathNameType, const void * paths, GLuint pathBase, GLenum fillMode, GLuint mask, GLenum coverMode, GLenum transformType, const GLfloat * transformValues);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glStencilThenCoverFillPathNV)(GLuint path, GLenum fillMode, GLuint mask, GLenum coverMode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glStencilThenCoverStrokePathInstancedNV)(GLsizei numPaths, GLenum pathNameType, const void * paths, GLuint pathBase, GLint reference, GLuint mask, GLenum coverMode, GLenum transformType, const GLfloat * transformValues);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glStencilThenCoverStrokePathNV)(GLuint path, GLint reference, GLuint mask, GLenum coverMode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glStopInstrumentsSGIX)(GLint marker);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glStringMarkerGREMEDY)(GLsizei len, const void * string);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSubpixelPrecisionBiasNV)(GLuint xbits, GLuint ybits);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSwizzleEXT)(GLuint res, GLuint in, GLenum outX, GLenum outY, GLenum outZ, GLenum outW);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glSyncTextureINTEL)(GLuint texture);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTagSampleBufferSGIX)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTangent3bEXT)(GLbyte tx, GLbyte ty, GLbyte tz);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTangent3bvEXT)(const GLbyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTangent3dEXT)(GLdouble tx, GLdouble ty, GLdouble tz);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTangent3dvEXT)(const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTangent3fEXT)(GLfloat tx, GLfloat ty, GLfloat tz);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTangent3fvEXT)(const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTangent3iEXT)(GLint tx, GLint ty, GLint tz);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTangent3ivEXT)(const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTangent3sEXT)(GLshort tx, GLshort ty, GLshort tz);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTangent3svEXT)(const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTangentPointerEXT)(GLenum type, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTbufferMask3DFX)(GLuint mask);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTessellationFactorAMD)(GLfloat factor);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTessellationModeAMD)(GLenum mode);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glTestFenceAPPLE)(GLuint fence);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glTestFenceNV)(GLuint fence);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glTestObjectAPPLE)(GLenum object, GLuint name);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexAttachMemoryNV)(GLenum target, GLuint memory, GLuint64 offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexBuffer)(GLenum target, GLenum internalformat, GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexBufferARB)(GLenum target, GLenum internalformat, GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexBufferEXT)(GLenum target, GLenum internalformat, GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexBufferOES)(GLenum target, GLenum internalformat, GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexBufferRange)(GLenum target, GLenum internalformat, GLuint buffer, GLintptr offset, GLsizeiptr size);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexBufferRangeEXT)(GLenum target, GLenum internalformat, GLuint buffer, GLintptr offset, GLsizeiptr size);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexBufferRangeOES)(GLenum target, GLenum internalformat, GLuint buffer, GLintptr offset, GLsizeiptr size);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexBumpParameterfvATI)(GLenum pname, const GLfloat * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexBumpParameterivATI)(GLenum pname, const GLint * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord1bOES)(GLbyte s);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord1bvOES)(const GLbyte * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord1d)(GLdouble s);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord1dv)(const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord1f)(GLfloat s);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord1fv)(const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord1hNV)(GLhalfNV s);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord1hvNV)(const GLhalfNV * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord1i)(GLint s);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord1iv)(const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord1s)(GLshort s);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord1sv)(const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord1xOES)(GLfixed s);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord1xvOES)(const GLfixed * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord2bOES)(GLbyte s, GLbyte t);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord2bvOES)(const GLbyte * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord2d)(GLdouble s, GLdouble t);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord2dv)(const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord2f)(GLfloat s, GLfloat t);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord2fColor3fVertex3fSUN)(GLfloat s, GLfloat t, GLfloat r, GLfloat g, GLfloat b, GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord2fColor3fVertex3fvSUN)(const GLfloat * tc, const GLfloat * c, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord2fColor4fNormal3fVertex3fSUN)(GLfloat s, GLfloat t, GLfloat r, GLfloat g, GLfloat b, GLfloat a, GLfloat nx, GLfloat ny, GLfloat nz, GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord2fColor4fNormal3fVertex3fvSUN)(const GLfloat * tc, const GLfloat * c, const GLfloat * n, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord2fColor4ubVertex3fSUN)(GLfloat s, GLfloat t, GLubyte r, GLubyte g, GLubyte b, GLubyte a, GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord2fColor4ubVertex3fvSUN)(const GLfloat * tc, const GLubyte * c, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord2fNormal3fVertex3fSUN)(GLfloat s, GLfloat t, GLfloat nx, GLfloat ny, GLfloat nz, GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord2fNormal3fVertex3fvSUN)(const GLfloat * tc, const GLfloat * n, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord2fVertex3fSUN)(GLfloat s, GLfloat t, GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord2fVertex3fvSUN)(const GLfloat * tc, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord2fv)(const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord2hNV)(GLhalfNV s, GLhalfNV t);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord2hvNV)(const GLhalfNV * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord2i)(GLint s, GLint t);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord2iv)(const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord2s)(GLshort s, GLshort t);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord2sv)(const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord2xOES)(GLfixed s, GLfixed t);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord2xvOES)(const GLfixed * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord3bOES)(GLbyte s, GLbyte t, GLbyte r);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord3bvOES)(const GLbyte * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord3d)(GLdouble s, GLdouble t, GLdouble r);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord3dv)(const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord3f)(GLfloat s, GLfloat t, GLfloat r);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord3fv)(const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord3hNV)(GLhalfNV s, GLhalfNV t, GLhalfNV r);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord3hvNV)(const GLhalfNV * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord3i)(GLint s, GLint t, GLint r);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord3iv)(const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord3s)(GLshort s, GLshort t, GLshort r);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord3sv)(const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord3xOES)(GLfixed s, GLfixed t, GLfixed r);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord3xvOES)(const GLfixed * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord4bOES)(GLbyte s, GLbyte t, GLbyte r, GLbyte q);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord4bvOES)(const GLbyte * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord4d)(GLdouble s, GLdouble t, GLdouble r, GLdouble q);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord4dv)(const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord4f)(GLfloat s, GLfloat t, GLfloat r, GLfloat q);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord4fColor4fNormal3fVertex4fSUN)(GLfloat s, GLfloat t, GLfloat p, GLfloat q, GLfloat r, GLfloat g, GLfloat b, GLfloat a, GLfloat nx, GLfloat ny, GLfloat nz, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord4fColor4fNormal3fVertex4fvSUN)(const GLfloat * tc, const GLfloat * c, const GLfloat * n, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord4fVertex4fSUN)(GLfloat s, GLfloat t, GLfloat p, GLfloat q, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord4fVertex4fvSUN)(const GLfloat * tc, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord4fv)(const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord4hNV)(GLhalfNV s, GLhalfNV t, GLhalfNV r, GLhalfNV q);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord4hvNV)(const GLhalfNV * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord4i)(GLint s, GLint t, GLint r, GLint q);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord4iv)(const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord4s)(GLshort s, GLshort t, GLshort r, GLshort q);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord4sv)(const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord4xOES)(GLfixed s, GLfixed t, GLfixed r, GLfixed q);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoord4xvOES)(const GLfixed * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoordFormatNV)(GLint size, GLenum type, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoordP1ui)(GLenum type, GLuint coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoordP1uiv)(GLenum type, const GLuint * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoordP2ui)(GLenum type, GLuint coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoordP2uiv)(GLenum type, const GLuint * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoordP3ui)(GLenum type, GLuint coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoordP3uiv)(GLenum type, const GLuint * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoordP4ui)(GLenum type, GLuint coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoordP4uiv)(GLenum type, const GLuint * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoordPointer)(GLint size, GLenum type, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoordPointerEXT)(GLint size, GLenum type, GLsizei stride, GLsizei count, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoordPointerListIBM)(GLint size, GLenum type, GLint stride, const void ** pointer, GLint ptrstride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexCoordPointervINTEL)(GLint size, GLenum type, const void ** pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexEnvf)(GLenum target, GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexEnvfv)(GLenum target, GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexEnvi)(GLenum target, GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexEnviv)(GLenum target, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexEnvx)(GLenum target, GLenum pname, GLfixed param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexEnvxOES)(GLenum target, GLenum pname, GLfixed param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexEnvxv)(GLenum target, GLenum pname, const GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexEnvxvOES)(GLenum target, GLenum pname, const GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexFilterFuncSGIS)(GLenum target, GLenum filter, GLsizei n, const GLfloat * weights);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexGend)(GLenum coord, GLenum pname, GLdouble param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexGendv)(GLenum coord, GLenum pname, const GLdouble * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexGenf)(GLenum coord, GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexGenfOES)(GLenum coord, GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexGenfv)(GLenum coord, GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexGenfvOES)(GLenum coord, GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexGeni)(GLenum coord, GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexGeniOES)(GLenum coord, GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexGeniv)(GLenum coord, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexGenivOES)(GLenum coord, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexGenxOES)(GLenum coord, GLenum pname, GLfixed param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexGenxvOES)(GLenum coord, GLenum pname, const GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexImage1D)(GLenum target, GLint level, GLint internalformat, GLsizei width, GLint border, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexImage2D)(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexImage2DMultisample)(GLenum target, GLsizei samples, GLenum internalformat, GLsizei width, GLsizei height, GLboolean fixedsamplelocations);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexImage2DMultisampleCoverageNV)(GLenum target, GLsizei coverageSamples, GLsizei colorSamples, GLint internalFormat, GLsizei width, GLsizei height, GLboolean fixedSampleLocations);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexImage3D)(GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexImage3DEXT)(GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexImage3DMultisample)(GLenum target, GLsizei samples, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth, GLboolean fixedsamplelocations);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexImage3DMultisampleCoverageNV)(GLenum target, GLsizei coverageSamples, GLsizei colorSamples, GLint internalFormat, GLsizei width, GLsizei height, GLsizei depth, GLboolean fixedSampleLocations);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexImage3DOES)(GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexImage4DSGIS)(GLenum target, GLint level, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth, GLsizei size4d, GLint border, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexPageCommitmentARB)(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLboolean commit);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexPageCommitmentEXT)(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLboolean commit);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexParameterIiv)(GLenum target, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexParameterIivEXT)(GLenum target, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexParameterIivOES)(GLenum target, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexParameterIuiv)(GLenum target, GLenum pname, const GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexParameterIuivEXT)(GLenum target, GLenum pname, const GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexParameterIuivOES)(GLenum target, GLenum pname, const GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexParameterf)(GLenum target, GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexParameterfv)(GLenum target, GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexParameteri)(GLenum target, GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexParameteriv)(GLenum target, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexParameterx)(GLenum target, GLenum pname, GLfixed param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexParameterxOES)(GLenum target, GLenum pname, GLfixed param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexParameterxv)(GLenum target, GLenum pname, const GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexParameterxvOES)(GLenum target, GLenum pname, const GLfixed * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexRenderbufferNV)(GLenum target, GLuint renderbuffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexStorage1D)(GLenum target, GLsizei levels, GLenum internalformat, GLsizei width);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexStorage1DEXT)(GLenum target, GLsizei levels, GLenum internalformat, GLsizei width);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexStorage2D)(GLenum target, GLsizei levels, GLenum internalformat, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexStorage2DEXT)(GLenum target, GLsizei levels, GLenum internalformat, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexStorage2DMultisample)(GLenum target, GLsizei samples, GLenum internalformat, GLsizei width, GLsizei height, GLboolean fixedsamplelocations);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexStorage3D)(GLenum target, GLsizei levels, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexStorage3DEXT)(GLenum target, GLsizei levels, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexStorage3DMultisample)(GLenum target, GLsizei samples, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth, GLboolean fixedsamplelocations);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexStorage3DMultisampleOES)(GLenum target, GLsizei samples, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth, GLboolean fixedsamplelocations);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexStorageMem1DEXT)(GLenum target, GLsizei levels, GLenum internalFormat, GLsizei width, GLuint memory, GLuint64 offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexStorageMem2DEXT)(GLenum target, GLsizei levels, GLenum internalFormat, GLsizei width, GLsizei height, GLuint memory, GLuint64 offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexStorageMem2DMultisampleEXT)(GLenum target, GLsizei samples, GLenum internalFormat, GLsizei width, GLsizei height, GLboolean fixedSampleLocations, GLuint memory, GLuint64 offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexStorageMem3DEXT)(GLenum target, GLsizei levels, GLenum internalFormat, GLsizei width, GLsizei height, GLsizei depth, GLuint memory, GLuint64 offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexStorageMem3DMultisampleEXT)(GLenum target, GLsizei samples, GLenum internalFormat, GLsizei width, GLsizei height, GLsizei depth, GLboolean fixedSampleLocations, GLuint memory, GLuint64 offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexStorageSparseAMD)(GLenum target, GLenum internalFormat, GLsizei width, GLsizei height, GLsizei depth, GLsizei layers, GLbitfield flags);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexSubImage1D)(GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexSubImage1DEXT)(GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexSubImage2D)(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexSubImage2DEXT)(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexSubImage3D)(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexSubImage3DEXT)(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexSubImage3DOES)(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexSubImage4DSGIS)(GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLint woffset, GLsizei width, GLsizei height, GLsizei depth, GLsizei size4d, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureAttachMemoryNV)(GLuint texture, GLuint memory, GLuint64 offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureBarrier)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureBarrierNV)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureBuffer)(GLuint texture, GLenum internalformat, GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureBufferEXT)(GLuint texture, GLenum target, GLenum internalformat, GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureBufferRange)(GLuint texture, GLenum internalformat, GLuint buffer, GLintptr offset, GLsizeiptr size);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureBufferRangeEXT)(GLuint texture, GLenum target, GLenum internalformat, GLuint buffer, GLintptr offset, GLsizeiptr size);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureColorMaskSGIS)(GLboolean red, GLboolean green, GLboolean blue, GLboolean alpha);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureFoveationParametersQCOM)(GLuint texture, GLuint layer, GLuint focalPoint, GLfloat focalX, GLfloat focalY, GLfloat gainX, GLfloat gainY, GLfloat foveaArea);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureImage1DEXT)(GLuint texture, GLenum target, GLint level, GLint internalformat, GLsizei width, GLint border, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureImage2DEXT)(GLuint texture, GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureImage2DMultisampleCoverageNV)(GLuint texture, GLenum target, GLsizei coverageSamples, GLsizei colorSamples, GLint internalFormat, GLsizei width, GLsizei height, GLboolean fixedSampleLocations);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureImage2DMultisampleNV)(GLuint texture, GLenum target, GLsizei samples, GLint internalFormat, GLsizei width, GLsizei height, GLboolean fixedSampleLocations);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureImage3DEXT)(GLuint texture, GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLsizei depth, GLint border, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureImage3DMultisampleCoverageNV)(GLuint texture, GLenum target, GLsizei coverageSamples, GLsizei colorSamples, GLint internalFormat, GLsizei width, GLsizei height, GLsizei depth, GLboolean fixedSampleLocations);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureImage3DMultisampleNV)(GLuint texture, GLenum target, GLsizei samples, GLint internalFormat, GLsizei width, GLsizei height, GLsizei depth, GLboolean fixedSampleLocations);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureLightEXT)(GLenum pname);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureMaterialEXT)(GLenum face, GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureNormalEXT)(GLenum mode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTexturePageCommitmentEXT)(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLboolean commit);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureParameterIiv)(GLuint texture, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureParameterIivEXT)(GLuint texture, GLenum target, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureParameterIuiv)(GLuint texture, GLenum pname, const GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureParameterIuivEXT)(GLuint texture, GLenum target, GLenum pname, const GLuint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureParameterf)(GLuint texture, GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureParameterfEXT)(GLuint texture, GLenum target, GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureParameterfv)(GLuint texture, GLenum pname, const GLfloat * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureParameterfvEXT)(GLuint texture, GLenum target, GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureParameteri)(GLuint texture, GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureParameteriEXT)(GLuint texture, GLenum target, GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureParameteriv)(GLuint texture, GLenum pname, const GLint * param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureParameterivEXT)(GLuint texture, GLenum target, GLenum pname, const GLint * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureRangeAPPLE)(GLenum target, GLsizei length, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureRenderbufferEXT)(GLuint texture, GLenum target, GLuint renderbuffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureStorage1D)(GLuint texture, GLsizei levels, GLenum internalformat, GLsizei width);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureStorage1DEXT)(GLuint texture, GLenum target, GLsizei levels, GLenum internalformat, GLsizei width);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureStorage2D)(GLuint texture, GLsizei levels, GLenum internalformat, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureStorage2DEXT)(GLuint texture, GLenum target, GLsizei levels, GLenum internalformat, GLsizei width, GLsizei height);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureStorage2DMultisample)(GLuint texture, GLsizei samples, GLenum internalformat, GLsizei width, GLsizei height, GLboolean fixedsamplelocations);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureStorage2DMultisampleEXT)(GLuint texture, GLenum target, GLsizei samples, GLenum internalformat, GLsizei width, GLsizei height, GLboolean fixedsamplelocations);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureStorage3D)(GLuint texture, GLsizei levels, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureStorage3DEXT)(GLuint texture, GLenum target, GLsizei levels, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureStorage3DMultisample)(GLuint texture, GLsizei samples, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth, GLboolean fixedsamplelocations);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureStorage3DMultisampleEXT)(GLuint texture, GLenum target, GLsizei samples, GLenum internalformat, GLsizei width, GLsizei height, GLsizei depth, GLboolean fixedsamplelocations);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureStorageMem1DEXT)(GLuint texture, GLsizei levels, GLenum internalFormat, GLsizei width, GLuint memory, GLuint64 offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureStorageMem2DEXT)(GLuint texture, GLsizei levels, GLenum internalFormat, GLsizei width, GLsizei height, GLuint memory, GLuint64 offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureStorageMem2DMultisampleEXT)(GLuint texture, GLsizei samples, GLenum internalFormat, GLsizei width, GLsizei height, GLboolean fixedSampleLocations, GLuint memory, GLuint64 offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureStorageMem3DEXT)(GLuint texture, GLsizei levels, GLenum internalFormat, GLsizei width, GLsizei height, GLsizei depth, GLuint memory, GLuint64 offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureStorageMem3DMultisampleEXT)(GLuint texture, GLsizei samples, GLenum internalFormat, GLsizei width, GLsizei height, GLsizei depth, GLboolean fixedSampleLocations, GLuint memory, GLuint64 offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureStorageSparseAMD)(GLuint texture, GLenum target, GLenum internalFormat, GLsizei width, GLsizei height, GLsizei depth, GLsizei layers, GLbitfield flags);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureSubImage1D)(GLuint texture, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureSubImage1DEXT)(GLuint texture, GLenum target, GLint level, GLint xoffset, GLsizei width, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureSubImage2D)(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureSubImage2DEXT)(GLuint texture, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureSubImage3D)(GLuint texture, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureSubImage3DEXT)(GLuint texture, GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint zoffset, GLsizei width, GLsizei height, GLsizei depth, GLenum format, GLenum type, const void * pixels);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureView)(GLuint texture, GLenum target, GLuint origtexture, GLenum internalformat, GLuint minlevel, GLuint numlevels, GLuint minlayer, GLuint numlayers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureViewEXT)(GLuint texture, GLenum target, GLuint origtexture, GLenum internalformat, GLuint minlevel, GLuint numlevels, GLuint minlayer, GLuint numlayers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTextureViewOES)(GLuint texture, GLenum target, GLuint origtexture, GLenum internalformat, GLuint minlevel, GLuint numlevels, GLuint minlayer, GLuint numlayers);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTrackMatrixNV)(GLenum target, GLuint address, GLenum matrix, GLenum transform);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTransformFeedbackAttribsNV)(GLsizei count, const GLint * attribs, GLenum bufferMode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTransformFeedbackBufferBase)(GLuint xfb, GLuint index, GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTransformFeedbackBufferRange)(GLuint xfb, GLuint index, GLuint buffer, GLintptr offset, GLsizeiptr size);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTransformFeedbackStreamAttribsNV)(GLsizei count, const GLint * attribs, GLsizei nbuffers, const GLint * bufstreams, GLenum bufferMode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTransformFeedbackVaryings)(GLuint program, GLsizei count, const GLchar *const* varyings, GLenum bufferMode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTransformFeedbackVaryingsEXT)(GLuint program, GLsizei count, const GLchar *const* varyings, GLenum bufferMode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTransformFeedbackVaryingsNV)(GLuint program, GLsizei count, const GLint * locations, GLenum bufferMode);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTransformPathNV)(GLuint resultPath, GLuint srcPath, GLenum transformType, const GLfloat * transformValues);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTranslated)(GLdouble x, GLdouble y, GLdouble z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTranslatef)(GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTranslatex)(GLfixed x, GLfixed y, GLfixed z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glTranslatexOES)(GLfixed x, GLfixed y, GLfixed z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform1d)(GLint location, GLdouble x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform1dv)(GLint location, GLsizei count, const GLdouble * value);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform1f)(GLint location, GLfloat v0);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLUNIFORM1FPROC)(GLint location, GLfloat v0);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform1f)(GLint location, GLfloat v0);
+   --  #define glUniform1f epoxy_glUniform1f
+
+   type PFNGLUNIFORM1FPROC is access procedure
+     (location : OpenGL.GLint;
+      v0       : OpenGL.GLfloat) with Convention => C;
+
+   glUniform1f : constant not null PFNGLUNIFORM1FPROC
+     with Import, Convention => C, External_Name => "epoxy_glUniform1f";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform1fARB)(GLint location, GLfloat v0);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform1fv)(GLint location, GLsizei count, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform1fvARB)(GLint location, GLsizei count, const GLfloat * value);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform1i)(GLint location, GLint v0);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLUNIFORM1IPROC)(GLint location, GLint v0);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform1i)(GLint location, GLint v0);
+   --  #define glUniform1i epoxy_glUniform1i
+
+   type PFNGLUNIFORM1IPROC is access procedure
+     (location : OpenGL.GLint;
+      v0       : OpenGL.GLint) with Convention => C;
+
+   glUniform1i : constant not null PFNGLUNIFORM1IPROC
+     with Import, Convention => C, External_Name => "epoxy_glUniform1i";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform1i64ARB)(GLint location, GLint64 x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform1i64NV)(GLint location, GLint64EXT x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform1i64vARB)(GLint location, GLsizei count, const GLint64 * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform1i64vNV)(GLint location, GLsizei count, const GLint64EXT * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform1iARB)(GLint location, GLint v0);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform1iv)(GLint location, GLsizei count, const GLint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform1ivARB)(GLint location, GLsizei count, const GLint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform1ui)(GLint location, GLuint v0);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform1ui64ARB)(GLint location, GLuint64 x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform1ui64NV)(GLint location, GLuint64EXT x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform1ui64vARB)(GLint location, GLsizei count, const GLuint64 * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform1ui64vNV)(GLint location, GLsizei count, const GLuint64EXT * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform1uiEXT)(GLint location, GLuint v0);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform1uiv)(GLint location, GLsizei count, const GLuint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform1uivEXT)(GLint location, GLsizei count, const GLuint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform2d)(GLint location, GLdouble x, GLdouble y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform2dv)(GLint location, GLsizei count, const GLdouble * value);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform2f)(GLint location, GLfloat v0, GLfloat v1);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLUNIFORM2FPROC)(GLint location, GLfloat v0, GLfloat v1);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform2f)(GLint location, GLfloat v0, GLfloat v1);
+   --  #define glUniform2f epoxy_glUniform2f
+
+   type PFNGLUNIFORM2FPROC is access procedure
+     (location : OpenGL.GLint;
+      v0       : OpenGL.GLfloat;
+      v1       : OpenGL.GLfloat) with Convention => C;
+
+   glUniform2f : constant not null PFNGLUNIFORM2FPROC
+     with Import, Convention => C, External_Name => "epoxy_glUniform2f";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform2fARB)(GLint location, GLfloat v0, GLfloat v1);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform2fv)(GLint location, GLsizei count, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform2fvARB)(GLint location, GLsizei count, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform2i)(GLint location, GLint v0, GLint v1);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform2i64ARB)(GLint location, GLint64 x, GLint64 y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform2i64NV)(GLint location, GLint64EXT x, GLint64EXT y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform2i64vARB)(GLint location, GLsizei count, const GLint64 * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform2i64vNV)(GLint location, GLsizei count, const GLint64EXT * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform2iARB)(GLint location, GLint v0, GLint v1);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform2iv)(GLint location, GLsizei count, const GLint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform2ivARB)(GLint location, GLsizei count, const GLint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform2ui)(GLint location, GLuint v0, GLuint v1);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform2ui64ARB)(GLint location, GLuint64 x, GLuint64 y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform2ui64NV)(GLint location, GLuint64EXT x, GLuint64EXT y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform2ui64vARB)(GLint location, GLsizei count, const GLuint64 * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform2ui64vNV)(GLint location, GLsizei count, const GLuint64EXT * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform2uiEXT)(GLint location, GLuint v0, GLuint v1);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform2uiv)(GLint location, GLsizei count, const GLuint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform2uivEXT)(GLint location, GLsizei count, const GLuint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform3d)(GLint location, GLdouble x, GLdouble y, GLdouble z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform3dv)(GLint location, GLsizei count, const GLdouble * value);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform3f)(GLint location, GLfloat v0, GLfloat v1, GLfloat v2);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLUNIFORM3FPROC)(GLint location, GLfloat v0, GLfloat v1, GLfloat v2);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform3f)(GLint location, GLfloat v0, GLfloat v1, GLfloat v2);
+   --  #define glUniform3f epoxy_glUniform3f
+
+   type PFNGLUNIFORM3FPROC is access procedure
+     (location : OpenGL.GLint;
+      v0       : OpenGL.GLfloat;
+      v1       : OpenGL.GLfloat;
+      v2       : OpenGL.GLfloat) with Convention => C;
+
+   glUniform3f : constant not null PFNGLUNIFORM3FPROC
+     with Import, Convention => C, External_Name => "epoxy_glUniform3f";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform3fARB)(GLint location, GLfloat v0, GLfloat v1, GLfloat v2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform3fv)(GLint location, GLsizei count, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform3fvARB)(GLint location, GLsizei count, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform3i)(GLint location, GLint v0, GLint v1, GLint v2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform3i64ARB)(GLint location, GLint64 x, GLint64 y, GLint64 z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform3i64NV)(GLint location, GLint64EXT x, GLint64EXT y, GLint64EXT z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform3i64vARB)(GLint location, GLsizei count, const GLint64 * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform3i64vNV)(GLint location, GLsizei count, const GLint64EXT * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform3iARB)(GLint location, GLint v0, GLint v1, GLint v2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform3iv)(GLint location, GLsizei count, const GLint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform3ivARB)(GLint location, GLsizei count, const GLint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform3ui)(GLint location, GLuint v0, GLuint v1, GLuint v2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform3ui64ARB)(GLint location, GLuint64 x, GLuint64 y, GLuint64 z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform3ui64NV)(GLint location, GLuint64EXT x, GLuint64EXT y, GLuint64EXT z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform3ui64vARB)(GLint location, GLsizei count, const GLuint64 * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform3ui64vNV)(GLint location, GLsizei count, const GLuint64EXT * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform3uiEXT)(GLint location, GLuint v0, GLuint v1, GLuint v2);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform3uiv)(GLint location, GLsizei count, const GLuint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform3uivEXT)(GLint location, GLsizei count, const GLuint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform4d)(GLint location, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform4dv)(GLint location, GLsizei count, const GLdouble * value);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform4f)(GLint location, GLfloat v0, GLfloat v1, GLfloat v2, GLfloat v3);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLUNIFORM4FPROC)(GLint location, GLfloat v0, GLfloat v1, GLfloat v2, GLfloat v3);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform4f)(GLint location, GLfloat v0, GLfloat v1, GLfloat v2, GLfloat v3);
+   --  #define glUniform4f epoxy_glUniform4f
+
+   type PFNGLUNIFORM4FPROC is access procedure
+     (location : OpenGL.GLint;
+      v0       : OpenGL.GLfloat;
+      v1       : OpenGL.GLfloat;
+      v2       : OpenGL.GLfloat;
+      v3       : OpenGL.GLfloat) with Convention => C;
+
+   glUniform4f : constant not null PFNGLUNIFORM4FPROC
+     with Import, Convention => C, External_Name => "epoxy_glUniform4f";
+
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform4fARB)(GLint location, GLfloat v0, GLfloat v1, GLfloat v2, GLfloat v3);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform4fv)(GLint location, GLsizei count, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform4fvARB)(GLint location, GLsizei count, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform4i)(GLint location, GLint v0, GLint v1, GLint v2, GLint v3);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform4i64ARB)(GLint location, GLint64 x, GLint64 y, GLint64 z, GLint64 w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform4i64NV)(GLint location, GLint64EXT x, GLint64EXT y, GLint64EXT z, GLint64EXT w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform4i64vARB)(GLint location, GLsizei count, const GLint64 * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform4i64vNV)(GLint location, GLsizei count, const GLint64EXT * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform4iARB)(GLint location, GLint v0, GLint v1, GLint v2, GLint v3);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform4iv)(GLint location, GLsizei count, const GLint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform4ivARB)(GLint location, GLsizei count, const GLint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform4ui)(GLint location, GLuint v0, GLuint v1, GLuint v2, GLuint v3);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform4ui64ARB)(GLint location, GLuint64 x, GLuint64 y, GLuint64 z, GLuint64 w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform4ui64NV)(GLint location, GLuint64EXT x, GLuint64EXT y, GLuint64EXT z, GLuint64EXT w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform4ui64vARB)(GLint location, GLsizei count, const GLuint64 * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform4ui64vNV)(GLint location, GLsizei count, const GLuint64EXT * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform4uiEXT)(GLint location, GLuint v0, GLuint v1, GLuint v2, GLuint v3);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform4uiv)(GLint location, GLsizei count, const GLuint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniform4uivEXT)(GLint location, GLsizei count, const GLuint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformBlockBinding)(GLuint program, GLuint uniformBlockIndex, GLuint uniformBlockBinding);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformBufferEXT)(GLuint program, GLint location, GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformHandleui64ARB)(GLint location, GLuint64 value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformHandleui64IMG)(GLint location, GLuint64 value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformHandleui64NV)(GLint location, GLuint64 value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformHandleui64vARB)(GLint location, GLsizei count, const GLuint64 * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformHandleui64vIMG)(GLint location, GLsizei count, const GLuint64 * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformHandleui64vNV)(GLint location, GLsizei count, const GLuint64 * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix2dv)(GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix2fv)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLUNIFORMMATRIX2FVPROC)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix2fv)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
+   --  #define glUniformMatrix2fv epoxy_glUniformMatrix2fv
+
+   type PFNGLUNIFORMMATRIX2FVPROC is access procedure
+     (location  : OpenGL.GLint;
+      count     : OpenGL.GLsizei;
+      transpose : epoxy.GLboolean;
+      value     : OpenGL.GLfloat_Matrix_2x2) with Convention => C;
+
+   glUniformMatrix2fv : constant not null PFNGLUNIFORMMATRIX2FVPROC
+     with Import, Convention => C, External_Name => "epoxy_glUniformMatrix2fv";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix2fvARB)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix2x3dv)(GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix2x3fv)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix2x3fvNV)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix2x4dv)(GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix2x4fv)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix2x4fvNV)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix3dv)(GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix3fv)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLUNIFORMMATRIX3FVPROC)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix3fv)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
+   --  #define glUniformMatrix3fv epoxy_glUniformMatrix3fv
+
+   type PFNGLUNIFORMMATRIX3FVPROC is access procedure
+     (location  : OpenGL.GLint;
+      count     : OpenGL.GLsizei;
+      transpose : epoxy.GLboolean;
+      value     : OpenGL.GLfloat_Matrix_3x3) with Convention => C;
+
+   glUniformMatrix3fv : constant not null PFNGLUNIFORMMATRIX3FVPROC
+     with Import, Convention => C, External_Name => "epoxy_glUniformMatrix3fv";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix3fvARB)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix3x2dv)(GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix3x2fv)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix3x2fvNV)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix3x4dv)(GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix3x4fv)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix3x4fvNV)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix4dv)(GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix4fv)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLUNIFORMMATRIX4FVPROC)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix4fv)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
+   --  #define glUniformMatrix4fv epoxy_glUniformMatrix4fv
+
+   type PFNGLUNIFORMMATRIX4FVPROC is access procedure
+     (location  : OpenGL.GLint;
+      count     : OpenGL.GLsizei;
+      transpose : epoxy.GLboolean;
+      value     : OpenGL.GLfloat_Matrix_4x4) with Convention => C;
+
+   glUniformMatrix4fv : constant not null PFNGLUNIFORMMATRIX4FVPROC
+     with Import, Convention => C, External_Name => "epoxy_glUniformMatrix4fv";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix4fvARB)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix4x2dv)(GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix4x2fv)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix4x2fvNV)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix4x3dv)(GLint location, GLsizei count, GLboolean transpose, const GLdouble * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix4x3fv)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformMatrix4x3fvNV)(GLint location, GLsizei count, GLboolean transpose, const GLfloat * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformSubroutinesuiv)(GLenum shadertype, GLsizei count, const GLuint * indices);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformui64NV)(GLint location, GLuint64EXT value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUniformui64vNV)(GLint location, GLsizei count, const GLuint64EXT * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUnlockArraysEXT)(void);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glUnmapBuffer)(GLenum target);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glUnmapBufferARB)(GLenum target);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glUnmapBufferOES)(GLenum target);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glUnmapNamedBuffer)(GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glUnmapNamedBufferEXT)(GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUnmapObjectBufferATI)(GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUnmapTexture2DINTEL)(GLuint texture, GLint level);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUpdateObjectBufferATI)(GLuint buffer, GLuint offset, GLsizei size, const void * pointer, GLenum preserve);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUploadGpuMaskNVX)(GLbitfield mask);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUseProgram)(GLuint program);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLUSEPROGRAMPROC)(GLuint program);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUseProgram)(GLuint program);
+   --  #define glUseProgram epoxy_glUseProgram
+
+   type PFNGLUSEPROGRAMPROC is access procedure (program : epoxy.GLuint)
+     with Convention => C;
+
+   glUseProgram : constant not null PFNGLUSEPROGRAMPROC
+     with Import, Convention => C, External_Name => "epoxy_glUseProgram";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUseProgramObjectARB)(GLhandleARB programObj);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUseProgramStages)(GLuint pipeline, GLbitfield stages, GLuint program);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUseProgramStagesEXT)(GLuint pipeline, GLbitfield stages, GLuint program);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glUseShaderProgramEXT)(GLenum type, GLuint program);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVDPAUFiniNV)(void);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVDPAUGetSurfaceivNV)(GLvdpauSurfaceNV surface, GLenum pname, GLsizei bufSize, GLsizei * length, GLint * values);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVDPAUInitNV)(const void * vdpDevice, const void * getProcAddress);
---  
+--
 --  EPOXY_PUBLIC GLboolean (EPOXY_CALLSPEC *epoxy_glVDPAUIsSurfaceNV)(GLvdpauSurfaceNV surface);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVDPAUMapSurfacesNV)(GLsizei numSurfaces, const GLvdpauSurfaceNV * surfaces);
---  
+--
 --  EPOXY_PUBLIC GLvdpauSurfaceNV (EPOXY_CALLSPEC *epoxy_glVDPAURegisterOutputSurfaceNV)(const void * vdpSurface, GLenum target, GLsizei numTextureNames, const GLuint * textureNames);
---  
+--
 --  EPOXY_PUBLIC GLvdpauSurfaceNV (EPOXY_CALLSPEC *epoxy_glVDPAURegisterVideoSurfaceNV)(const void * vdpSurface, GLenum target, GLsizei numTextureNames, const GLuint * textureNames);
---  
+--
 --  EPOXY_PUBLIC GLvdpauSurfaceNV (EPOXY_CALLSPEC *epoxy_glVDPAURegisterVideoSurfaceWithPictureStructureNV)(const void * vdpSurface, GLenum target, GLsizei numTextureNames, const GLuint * textureNames, GLboolean isFrameStructure);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVDPAUSurfaceAccessNV)(GLvdpauSurfaceNV surface, GLenum access);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVDPAUUnmapSurfacesNV)(GLsizei numSurface, const GLvdpauSurfaceNV * surfaces);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVDPAUUnregisterSurfaceNV)(GLvdpauSurfaceNV surface);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glValidateProgram)(GLuint program);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glValidateProgramARB)(GLhandleARB programObj);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glValidateProgramPipeline)(GLuint pipeline);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glValidateProgramPipelineEXT)(GLuint pipeline);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVariantArrayObjectATI)(GLuint id, GLenum type, GLsizei stride, GLuint buffer, GLuint offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVariantPointerEXT)(GLuint id, GLenum type, GLuint stride, const void * addr);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVariantbvEXT)(GLuint id, const GLbyte * addr);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVariantdvEXT)(GLuint id, const GLdouble * addr);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVariantfvEXT)(GLuint id, const GLfloat * addr);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVariantivEXT)(GLuint id, const GLint * addr);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVariantsvEXT)(GLuint id, const GLshort * addr);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVariantubvEXT)(GLuint id, const GLubyte * addr);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVariantuivEXT)(GLuint id, const GLuint * addr);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVariantusvEXT)(GLuint id, const GLushort * addr);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex2bOES)(GLbyte x, GLbyte y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex2bvOES)(const GLbyte * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex2d)(GLdouble x, GLdouble y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex2dv)(const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex2f)(GLfloat x, GLfloat y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex2fv)(const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex2hNV)(GLhalfNV x, GLhalfNV y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex2hvNV)(const GLhalfNV * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex2i)(GLint x, GLint y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex2iv)(const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex2s)(GLshort x, GLshort y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex2sv)(const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex2xOES)(GLfixed x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex2xvOES)(const GLfixed * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex3bOES)(GLbyte x, GLbyte y, GLbyte z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex3bvOES)(const GLbyte * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex3d)(GLdouble x, GLdouble y, GLdouble z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex3dv)(const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex3f)(GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex3fv)(const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex3hNV)(GLhalfNV x, GLhalfNV y, GLhalfNV z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex3hvNV)(const GLhalfNV * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex3i)(GLint x, GLint y, GLint z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex3iv)(const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex3s)(GLshort x, GLshort y, GLshort z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex3sv)(const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex3xOES)(GLfixed x, GLfixed y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex3xvOES)(const GLfixed * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex4bOES)(GLbyte x, GLbyte y, GLbyte z, GLbyte w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex4bvOES)(const GLbyte * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex4d)(GLdouble x, GLdouble y, GLdouble z, GLdouble w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex4dv)(const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex4f)(GLfloat x, GLfloat y, GLfloat z, GLfloat w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex4fv)(const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex4hNV)(GLhalfNV x, GLhalfNV y, GLhalfNV z, GLhalfNV w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex4hvNV)(const GLhalfNV * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex4i)(GLint x, GLint y, GLint z, GLint w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex4iv)(const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex4s)(GLshort x, GLshort y, GLshort z, GLshort w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex4sv)(const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex4xOES)(GLfixed x, GLfixed y, GLfixed z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertex4xvOES)(const GLfixed * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayAttribBinding)(GLuint vaobj, GLuint attribindex, GLuint bindingindex);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayAttribFormat)(GLuint vaobj, GLuint attribindex, GLint size, GLenum type, GLboolean normalized, GLuint relativeoffset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayAttribIFormat)(GLuint vaobj, GLuint attribindex, GLint size, GLenum type, GLuint relativeoffset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayAttribLFormat)(GLuint vaobj, GLuint attribindex, GLint size, GLenum type, GLuint relativeoffset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayBindVertexBufferEXT)(GLuint vaobj, GLuint bindingindex, GLuint buffer, GLintptr offset, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayBindingDivisor)(GLuint vaobj, GLuint bindingindex, GLuint divisor);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayColorOffsetEXT)(GLuint vaobj, GLuint buffer, GLint size, GLenum type, GLsizei stride, GLintptr offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayEdgeFlagOffsetEXT)(GLuint vaobj, GLuint buffer, GLsizei stride, GLintptr offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayElementBuffer)(GLuint vaobj, GLuint buffer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayFogCoordOffsetEXT)(GLuint vaobj, GLuint buffer, GLenum type, GLsizei stride, GLintptr offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayIndexOffsetEXT)(GLuint vaobj, GLuint buffer, GLenum type, GLsizei stride, GLintptr offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayMultiTexCoordOffsetEXT)(GLuint vaobj, GLuint buffer, GLenum texunit, GLint size, GLenum type, GLsizei stride, GLintptr offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayNormalOffsetEXT)(GLuint vaobj, GLuint buffer, GLenum type, GLsizei stride, GLintptr offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayParameteriAPPLE)(GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayRangeAPPLE)(GLsizei length, void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayRangeNV)(GLsizei length, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArraySecondaryColorOffsetEXT)(GLuint vaobj, GLuint buffer, GLint size, GLenum type, GLsizei stride, GLintptr offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayTexCoordOffsetEXT)(GLuint vaobj, GLuint buffer, GLint size, GLenum type, GLsizei stride, GLintptr offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayVertexAttribBindingEXT)(GLuint vaobj, GLuint attribindex, GLuint bindingindex);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayVertexAttribDivisorEXT)(GLuint vaobj, GLuint index, GLuint divisor);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayVertexAttribFormatEXT)(GLuint vaobj, GLuint attribindex, GLint size, GLenum type, GLboolean normalized, GLuint relativeoffset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayVertexAttribIFormatEXT)(GLuint vaobj, GLuint attribindex, GLint size, GLenum type, GLuint relativeoffset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayVertexAttribIOffsetEXT)(GLuint vaobj, GLuint buffer, GLuint index, GLint size, GLenum type, GLsizei stride, GLintptr offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayVertexAttribLFormatEXT)(GLuint vaobj, GLuint attribindex, GLint size, GLenum type, GLuint relativeoffset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayVertexAttribLOffsetEXT)(GLuint vaobj, GLuint buffer, GLuint index, GLint size, GLenum type, GLsizei stride, GLintptr offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayVertexAttribOffsetEXT)(GLuint vaobj, GLuint buffer, GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, GLintptr offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayVertexBindingDivisorEXT)(GLuint vaobj, GLuint bindingindex, GLuint divisor);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayVertexBuffer)(GLuint vaobj, GLuint bindingindex, GLuint buffer, GLintptr offset, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayVertexBuffers)(GLuint vaobj, GLuint first, GLsizei count, const GLuint * buffers, const GLintptr * offsets, const GLsizei * strides);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexArrayVertexOffsetEXT)(GLuint vaobj, GLuint buffer, GLint size, GLenum type, GLsizei stride, GLintptr offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib1d)(GLuint index, GLdouble x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib1dARB)(GLuint index, GLdouble x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib1dNV)(GLuint index, GLdouble x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib1dv)(GLuint index, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib1dvARB)(GLuint index, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib1dvNV)(GLuint index, const GLdouble * v);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib1f)(GLuint index, GLfloat x);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB1FPROC)(GLuint index, GLfloat x);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib1f)(GLuint index, GLfloat x);
+   --  #define glVertexAttrib1f epoxy_glVertexAttrib1f
+
+   type PFNGLVERTEXATTRIB1FPROC is access procedure
+     (index : epoxy.GLuint;
+      x     : OpenGL.GLfloat) with Convention => C;
+
+   glVertexAttrib1f : constant not null PFNGLVERTEXATTRIB1FPROC
+     with Import, Convention => C, External_Name => "epoxy_glVertexAttrib1f";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib1fARB)(GLuint index, GLfloat x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib1fNV)(GLuint index, GLfloat x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib1fv)(GLuint index, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib1fvARB)(GLuint index, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib1fvNV)(GLuint index, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib1hNV)(GLuint index, GLhalfNV x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib1hvNV)(GLuint index, const GLhalfNV * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib1s)(GLuint index, GLshort x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib1sARB)(GLuint index, GLshort x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib1sNV)(GLuint index, GLshort x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib1sv)(GLuint index, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib1svARB)(GLuint index, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib1svNV)(GLuint index, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib2d)(GLuint index, GLdouble x, GLdouble y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib2dARB)(GLuint index, GLdouble x, GLdouble y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib2dNV)(GLuint index, GLdouble x, GLdouble y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib2dv)(GLuint index, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib2dvARB)(GLuint index, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib2dvNV)(GLuint index, const GLdouble * v);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib2f)(GLuint index, GLfloat x, GLfloat y);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB2FPROC)(GLuint index, GLfloat x, GLfloat y);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib2f)(GLuint index, GLfloat x, GLfloat y);
+   --  #define glVertexAttrib2f epoxy_glVertexAttrib2f
+
+   type PFNGLVERTEXATTRIB2FPROC is access procedure
+     (index : epoxy.GLuint;
+      x     : OpenGL.GLfloat;
+      y     : OpenGL.GLfloat) with Convention => C;
+
+   glVertexAttrib2f : constant not null PFNGLVERTEXATTRIB2FPROC
+     with Import, Convention => C, External_Name => "epoxy_glVertexAttrib2f";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib2fARB)(GLuint index, GLfloat x, GLfloat y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib2fNV)(GLuint index, GLfloat x, GLfloat y);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib2fv)(GLuint index, const GLfloat * v);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB2FVPROC)(GLuint index, const GLfloat * v);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib2fv)(GLuint index, const GLfloat * v);
+   --  #define glVertexAttrib2fv epoxy_glVertexAttrib2fv
+
+   type PFNGLVERTEXATTRIB2FVPROC is access procedure
+     (index : epoxy.GLuint;
+      v     : OpenGL.GLfloat_Vector_2) with Convention => C;
+
+   glVertexAttrib2fv : constant not null PFNGLVERTEXATTRIB2FVPROC
+     with Import, Convention => C, External_Name => "epoxy_glVertexAttrib2fv";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib2fvARB)(GLuint index, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib2fvNV)(GLuint index, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib2hNV)(GLuint index, GLhalfNV x, GLhalfNV y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib2hvNV)(GLuint index, const GLhalfNV * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib2s)(GLuint index, GLshort x, GLshort y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib2sARB)(GLuint index, GLshort x, GLshort y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib2sNV)(GLuint index, GLshort x, GLshort y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib2sv)(GLuint index, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib2svARB)(GLuint index, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib2svNV)(GLuint index, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib3d)(GLuint index, GLdouble x, GLdouble y, GLdouble z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib3dARB)(GLuint index, GLdouble x, GLdouble y, GLdouble z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib3dNV)(GLuint index, GLdouble x, GLdouble y, GLdouble z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib3dv)(GLuint index, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib3dvARB)(GLuint index, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib3dvNV)(GLuint index, const GLdouble * v);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib3f)(GLuint index, GLfloat x, GLfloat y, GLfloat z);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB3FPROC)(GLuint index, GLfloat x, GLfloat y, GLfloat z);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib3f)(GLuint index, GLfloat x, GLfloat y, GLfloat z);
+   --  #define glVertexAttrib3f epoxy_glVertexAttrib3f
+
+   type PFNGLVERTEXATTRIB3FPROC is access procedure
+     (index : epoxy.GLuint;
+      x     : OpenGL.GLfloat;
+      y     : OpenGL.GLfloat;
+      z     : OpenGL.GLfloat) with Convention => C;
+
+   glVertexAttrib3f : constant not null PFNGLVERTEXATTRIB3FPROC
+     with Import, Convention => C, External_Name => "epoxy_glVertexAttrib3f";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib3fARB)(GLuint index, GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib3fNV)(GLuint index, GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib3fv)(GLuint index, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib3fvARB)(GLuint index, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib3fvNV)(GLuint index, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib3hNV)(GLuint index, GLhalfNV x, GLhalfNV y, GLhalfNV z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib3hvNV)(GLuint index, const GLhalfNV * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib3s)(GLuint index, GLshort x, GLshort y, GLshort z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib3sARB)(GLuint index, GLshort x, GLshort y, GLshort z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib3sNV)(GLuint index, GLshort x, GLshort y, GLshort z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib3sv)(GLuint index, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib3svARB)(GLuint index, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib3svNV)(GLuint index, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4Nbv)(GLuint index, const GLbyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4NbvARB)(GLuint index, const GLbyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4Niv)(GLuint index, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4NivARB)(GLuint index, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4Nsv)(GLuint index, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4NsvARB)(GLuint index, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4Nub)(GLuint index, GLubyte x, GLubyte y, GLubyte z, GLubyte w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4NubARB)(GLuint index, GLubyte x, GLubyte y, GLubyte z, GLubyte w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4Nubv)(GLuint index, const GLubyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4NubvARB)(GLuint index, const GLubyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4Nuiv)(GLuint index, const GLuint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4NuivARB)(GLuint index, const GLuint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4Nusv)(GLuint index, const GLushort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4NusvARB)(GLuint index, const GLushort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4bv)(GLuint index, const GLbyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4bvARB)(GLuint index, const GLbyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4d)(GLuint index, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4dARB)(GLuint index, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4dNV)(GLuint index, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4dv)(GLuint index, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4dvARB)(GLuint index, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4dvNV)(GLuint index, const GLdouble * v);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4f)(GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIB4FPROC)(GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4f)(GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
+   --  #define glVertexAttrib4f epoxy_glVertexAttrib4f
+
+   type PFNGLVERTEXATTRIB4FPROC is access procedure
+     (index : epoxy.GLuint;
+      x     : OpenGL.GLfloat;
+      y     : OpenGL.GLfloat;
+      z     : OpenGL.GLfloat;
+      w     : OpenGL.GLfloat) with Convention => C;
+
+   glVertexAttrib4f : constant not null PFNGLVERTEXATTRIB4FPROC
+     with Import, Convention => C, External_Name => "epoxy_glVertexAttrib4f";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4fARB)(GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4fNV)(GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4fv)(GLuint index, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4fvARB)(GLuint index, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4fvNV)(GLuint index, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4hNV)(GLuint index, GLhalfNV x, GLhalfNV y, GLhalfNV z, GLhalfNV w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4hvNV)(GLuint index, const GLhalfNV * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4iv)(GLuint index, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4ivARB)(GLuint index, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4s)(GLuint index, GLshort x, GLshort y, GLshort z, GLshort w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4sARB)(GLuint index, GLshort x, GLshort y, GLshort z, GLshort w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4sNV)(GLuint index, GLshort x, GLshort y, GLshort z, GLshort w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4sv)(GLuint index, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4svARB)(GLuint index, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4svNV)(GLuint index, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4ubNV)(GLuint index, GLubyte x, GLubyte y, GLubyte z, GLubyte w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4ubv)(GLuint index, const GLubyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4ubvARB)(GLuint index, const GLubyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4ubvNV)(GLuint index, const GLubyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4uiv)(GLuint index, const GLuint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4uivARB)(GLuint index, const GLuint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4usv)(GLuint index, const GLushort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttrib4usvARB)(GLuint index, const GLushort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribArrayObjectATI)(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, GLuint buffer, GLuint offset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribBinding)(GLuint attribindex, GLuint bindingindex);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribDivisor)(GLuint index, GLuint divisor);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribDivisorANGLE)(GLuint index, GLuint divisor);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribDivisorARB)(GLuint index, GLuint divisor);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribDivisorEXT)(GLuint index, GLuint divisor);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribDivisorNV)(GLuint index, GLuint divisor);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribFormat)(GLuint attribindex, GLint size, GLenum type, GLboolean normalized, GLuint relativeoffset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribFormatNV)(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI1i)(GLuint index, GLint x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI1iEXT)(GLuint index, GLint x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI1iv)(GLuint index, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI1ivEXT)(GLuint index, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI1ui)(GLuint index, GLuint x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI1uiEXT)(GLuint index, GLuint x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI1uiv)(GLuint index, const GLuint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI1uivEXT)(GLuint index, const GLuint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI2i)(GLuint index, GLint x, GLint y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI2iEXT)(GLuint index, GLint x, GLint y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI2iv)(GLuint index, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI2ivEXT)(GLuint index, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI2ui)(GLuint index, GLuint x, GLuint y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI2uiEXT)(GLuint index, GLuint x, GLuint y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI2uiv)(GLuint index, const GLuint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI2uivEXT)(GLuint index, const GLuint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI3i)(GLuint index, GLint x, GLint y, GLint z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI3iEXT)(GLuint index, GLint x, GLint y, GLint z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI3iv)(GLuint index, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI3ivEXT)(GLuint index, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI3ui)(GLuint index, GLuint x, GLuint y, GLuint z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI3uiEXT)(GLuint index, GLuint x, GLuint y, GLuint z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI3uiv)(GLuint index, const GLuint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI3uivEXT)(GLuint index, const GLuint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI4bv)(GLuint index, const GLbyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI4bvEXT)(GLuint index, const GLbyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI4i)(GLuint index, GLint x, GLint y, GLint z, GLint w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI4iEXT)(GLuint index, GLint x, GLint y, GLint z, GLint w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI4iv)(GLuint index, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI4ivEXT)(GLuint index, const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI4sv)(GLuint index, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI4svEXT)(GLuint index, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI4ubv)(GLuint index, const GLubyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI4ubvEXT)(GLuint index, const GLubyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI4ui)(GLuint index, GLuint x, GLuint y, GLuint z, GLuint w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI4uiEXT)(GLuint index, GLuint x, GLuint y, GLuint z, GLuint w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI4uiv)(GLuint index, const GLuint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI4uivEXT)(GLuint index, const GLuint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI4usv)(GLuint index, const GLushort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribI4usvEXT)(GLuint index, const GLushort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribIFormat)(GLuint attribindex, GLint size, GLenum type, GLuint relativeoffset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribIFormatNV)(GLuint index, GLint size, GLenum type, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribIPointer)(GLuint index, GLint size, GLenum type, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribIPointerEXT)(GLuint index, GLint size, GLenum type, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL1d)(GLuint index, GLdouble x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL1dEXT)(GLuint index, GLdouble x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL1dv)(GLuint index, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL1dvEXT)(GLuint index, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL1i64NV)(GLuint index, GLint64EXT x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL1i64vNV)(GLuint index, const GLint64EXT * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL1ui64ARB)(GLuint index, GLuint64EXT x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL1ui64NV)(GLuint index, GLuint64EXT x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL1ui64vARB)(GLuint index, const GLuint64EXT * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL1ui64vNV)(GLuint index, const GLuint64EXT * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL2d)(GLuint index, GLdouble x, GLdouble y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL2dEXT)(GLuint index, GLdouble x, GLdouble y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL2dv)(GLuint index, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL2dvEXT)(GLuint index, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL2i64NV)(GLuint index, GLint64EXT x, GLint64EXT y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL2i64vNV)(GLuint index, const GLint64EXT * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL2ui64NV)(GLuint index, GLuint64EXT x, GLuint64EXT y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL2ui64vNV)(GLuint index, const GLuint64EXT * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL3d)(GLuint index, GLdouble x, GLdouble y, GLdouble z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL3dEXT)(GLuint index, GLdouble x, GLdouble y, GLdouble z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL3dv)(GLuint index, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL3dvEXT)(GLuint index, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL3i64NV)(GLuint index, GLint64EXT x, GLint64EXT y, GLint64EXT z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL3i64vNV)(GLuint index, const GLint64EXT * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL3ui64NV)(GLuint index, GLuint64EXT x, GLuint64EXT y, GLuint64EXT z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL3ui64vNV)(GLuint index, const GLuint64EXT * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL4d)(GLuint index, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL4dEXT)(GLuint index, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL4dv)(GLuint index, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL4dvEXT)(GLuint index, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL4i64NV)(GLuint index, GLint64EXT x, GLint64EXT y, GLint64EXT z, GLint64EXT w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL4i64vNV)(GLuint index, const GLint64EXT * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL4ui64NV)(GLuint index, GLuint64EXT x, GLuint64EXT y, GLuint64EXT z, GLuint64EXT w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribL4ui64vNV)(GLuint index, const GLuint64EXT * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribLFormat)(GLuint attribindex, GLint size, GLenum type, GLuint relativeoffset);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribLFormatNV)(GLuint index, GLint size, GLenum type, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribLPointer)(GLuint index, GLint size, GLenum type, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribLPointerEXT)(GLuint index, GLint size, GLenum type, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribP1ui)(GLuint index, GLenum type, GLboolean normalized, GLuint value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribP1uiv)(GLuint index, GLenum type, GLboolean normalized, const GLuint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribP2ui)(GLuint index, GLenum type, GLboolean normalized, GLuint value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribP2uiv)(GLuint index, GLenum type, GLboolean normalized, const GLuint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribP3ui)(GLuint index, GLenum type, GLboolean normalized, GLuint value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribP3uiv)(GLuint index, GLenum type, GLboolean normalized, const GLuint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribP4ui)(GLuint index, GLenum type, GLboolean normalized, GLuint value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribP4uiv)(GLuint index, GLenum type, GLboolean normalized, const GLuint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribParameteriAMD)(GLuint index, GLenum pname, GLint param);
---  
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribPointer)(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const void * pointer);
---  
+
+   --  typedef void (GLAPIENTRY *PFNGLVERTEXATTRIBPOINTERPROC)(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const void * pointer);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribPointer)(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const void * pointer);
+   --  #define glVertexAttribPointer epoxy_glVertexAttribPointer
+
+   type PFNGLVERTEXATTRIBPOINTERPROC is access procedure
+     (index      : epoxy.GLuint;
+      size       : OpenGL.GLint;
+      the_type   : OpenGL.GLenum;
+      normalized : epoxy.GLboolean;
+      stride     : OpenGL.GLsizei;
+      pointer    : System.Address) with Convention => C;
+
+   glVertexAttribPointer : constant not null PFNGLVERTEXATTRIBPOINTERPROC
+     with Import,
+          Convention    => C,
+          External_Name => "epoxy_glVertexAttribPointer";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribPointerARB)(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribPointerNV)(GLuint index, GLint fsize, GLenum type, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribs1dvNV)(GLuint index, GLsizei count, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribs1fvNV)(GLuint index, GLsizei count, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribs1hvNV)(GLuint index, GLsizei n, const GLhalfNV * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribs1svNV)(GLuint index, GLsizei count, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribs2dvNV)(GLuint index, GLsizei count, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribs2fvNV)(GLuint index, GLsizei count, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribs2hvNV)(GLuint index, GLsizei n, const GLhalfNV * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribs2svNV)(GLuint index, GLsizei count, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribs3dvNV)(GLuint index, GLsizei count, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribs3fvNV)(GLuint index, GLsizei count, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribs3hvNV)(GLuint index, GLsizei n, const GLhalfNV * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribs3svNV)(GLuint index, GLsizei count, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribs4dvNV)(GLuint index, GLsizei count, const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribs4fvNV)(GLuint index, GLsizei count, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribs4hvNV)(GLuint index, GLsizei n, const GLhalfNV * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribs4svNV)(GLuint index, GLsizei count, const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexAttribs4ubvNV)(GLuint index, GLsizei count, const GLubyte * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexBindingDivisor)(GLuint bindingindex, GLuint divisor);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexBlendARB)(GLint count);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexBlendEnvfATI)(GLenum pname, GLfloat param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexBlendEnviATI)(GLenum pname, GLint param);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexFormatNV)(GLint size, GLenum type, GLsizei stride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexP2ui)(GLenum type, GLuint value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexP2uiv)(GLenum type, const GLuint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexP3ui)(GLenum type, GLuint value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexP3uiv)(GLenum type, const GLuint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexP4ui)(GLenum type, GLuint value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexP4uiv)(GLenum type, const GLuint * value);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexPointer)(GLint size, GLenum type, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexPointerEXT)(GLint size, GLenum type, GLsizei stride, GLsizei count, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexPointerListIBM)(GLint size, GLenum type, GLint stride, const void ** pointer, GLint ptrstride);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexPointervINTEL)(GLint size, GLenum type, const void ** pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream1dATI)(GLenum stream, GLdouble x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream1dvATI)(GLenum stream, const GLdouble * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream1fATI)(GLenum stream, GLfloat x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream1fvATI)(GLenum stream, const GLfloat * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream1iATI)(GLenum stream, GLint x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream1ivATI)(GLenum stream, const GLint * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream1sATI)(GLenum stream, GLshort x);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream1svATI)(GLenum stream, const GLshort * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream2dATI)(GLenum stream, GLdouble x, GLdouble y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream2dvATI)(GLenum stream, const GLdouble * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream2fATI)(GLenum stream, GLfloat x, GLfloat y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream2fvATI)(GLenum stream, const GLfloat * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream2iATI)(GLenum stream, GLint x, GLint y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream2ivATI)(GLenum stream, const GLint * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream2sATI)(GLenum stream, GLshort x, GLshort y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream2svATI)(GLenum stream, const GLshort * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream3dATI)(GLenum stream, GLdouble x, GLdouble y, GLdouble z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream3dvATI)(GLenum stream, const GLdouble * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream3fATI)(GLenum stream, GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream3fvATI)(GLenum stream, const GLfloat * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream3iATI)(GLenum stream, GLint x, GLint y, GLint z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream3ivATI)(GLenum stream, const GLint * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream3sATI)(GLenum stream, GLshort x, GLshort y, GLshort z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream3svATI)(GLenum stream, const GLshort * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream4dATI)(GLenum stream, GLdouble x, GLdouble y, GLdouble z, GLdouble w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream4dvATI)(GLenum stream, const GLdouble * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream4fATI)(GLenum stream, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream4fvATI)(GLenum stream, const GLfloat * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream4iATI)(GLenum stream, GLint x, GLint y, GLint z, GLint w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream4ivATI)(GLenum stream, const GLint * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream4sATI)(GLenum stream, GLshort x, GLshort y, GLshort z, GLshort w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexStream4svATI)(GLenum stream, const GLshort * coords);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexWeightPointerEXT)(GLint size, GLenum type, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexWeightfEXT)(GLfloat weight);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexWeightfvEXT)(const GLfloat * weight);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexWeighthNV)(GLhalfNV weight);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVertexWeighthvNV)(const GLhalfNV * weight);
---  
+--
 --  EPOXY_PUBLIC GLenum (EPOXY_CALLSPEC *epoxy_glVideoCaptureNV)(GLuint video_capture_slot, GLuint * sequence_num, GLuint64EXT * capture_time);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVideoCaptureStreamParameterdvNV)(GLuint video_capture_slot, GLuint stream, GLenum pname, const GLdouble * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVideoCaptureStreamParameterfvNV)(GLuint video_capture_slot, GLuint stream, GLenum pname, const GLfloat * params);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glVideoCaptureStreamParameterivNV)(GLuint video_capture_slot, GLuint stream, GLenum pname, const GLint * params);
 
    --  typedef void (GLAPIENTRY *PFNGLVIEWPORTPROC)(GLint x, GLint y, GLsizei width, GLsizei height);
@@ -15750,180 +15967,180 @@ is
       y      : OpenGL.GLint;
       width  : OpenGL.GLsizei;
       height : OpenGL.GLsizei) with Convention => C;
-   
+
    glViewport : constant not null PFNGLVIEWPORTPROC
      with Import, Convention => C, External_Name => "epoxy_glViewport";
-   
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glViewportArrayv)(GLuint first, GLsizei count, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glViewportArrayvNV)(GLuint first, GLsizei count, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glViewportArrayvOES)(GLuint first, GLsizei count, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glViewportIndexedf)(GLuint index, GLfloat x, GLfloat y, GLfloat w, GLfloat h);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glViewportIndexedfNV)(GLuint index, GLfloat x, GLfloat y, GLfloat w, GLfloat h);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glViewportIndexedfOES)(GLuint index, GLfloat x, GLfloat y, GLfloat w, GLfloat h);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glViewportIndexedfv)(GLuint index, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glViewportIndexedfvNV)(GLuint index, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glViewportIndexedfvOES)(GLuint index, const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glViewportPositionWScaleNV)(GLuint index, GLfloat xcoeff, GLfloat ycoeff);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glViewportSwizzleNV)(GLuint index, GLenum swizzlex, GLenum swizzley, GLenum swizzlez, GLenum swizzlew);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWaitSemaphoreEXT)(GLuint semaphore, GLuint numBufferBarriers, const GLuint * buffers, GLuint numTextureBarriers, const GLuint * textures, const GLenum * srcLayouts);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWaitSemaphoreui64NVX)(GLuint waitGpu, GLsizei fenceObjectCount, const GLuint * semaphoreArray, const GLuint64 * fenceValueArray);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWaitSync)(GLsync sync, GLbitfield flags, GLuint64 timeout);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWaitSyncAPPLE)(GLsync sync, GLbitfield flags, GLuint64 timeout);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWaitVkSemaphoreNV)(GLuint64 vkSemaphore);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWeightPathsNV)(GLuint resultPath, GLsizei numPaths, const GLuint * paths, const GLfloat * weights);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWeightPointerARB)(GLint size, GLenum type, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWeightPointerOES)(GLint size, GLenum type, GLsizei stride, const void * pointer);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWeightbvARB)(GLint size, const GLbyte * weights);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWeightdvARB)(GLint size, const GLdouble * weights);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWeightfvARB)(GLint size, const GLfloat * weights);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWeightivARB)(GLint size, const GLint * weights);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWeightsvARB)(GLint size, const GLshort * weights);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWeightubvARB)(GLint size, const GLubyte * weights);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWeightuivARB)(GLint size, const GLuint * weights);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWeightusvARB)(GLint size, const GLushort * weights);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos2d)(GLdouble x, GLdouble y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos2dARB)(GLdouble x, GLdouble y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos2dMESA)(GLdouble x, GLdouble y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos2dv)(const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos2dvARB)(const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos2dvMESA)(const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos2f)(GLfloat x, GLfloat y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos2fARB)(GLfloat x, GLfloat y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos2fMESA)(GLfloat x, GLfloat y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos2fv)(const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos2fvARB)(const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos2fvMESA)(const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos2i)(GLint x, GLint y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos2iARB)(GLint x, GLint y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos2iMESA)(GLint x, GLint y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos2iv)(const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos2ivARB)(const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos2ivMESA)(const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos2s)(GLshort x, GLshort y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos2sARB)(GLshort x, GLshort y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos2sMESA)(GLshort x, GLshort y);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos2sv)(const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos2svARB)(const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos2svMESA)(const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos3d)(GLdouble x, GLdouble y, GLdouble z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos3dARB)(GLdouble x, GLdouble y, GLdouble z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos3dMESA)(GLdouble x, GLdouble y, GLdouble z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos3dv)(const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos3dvARB)(const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos3dvMESA)(const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos3f)(GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos3fARB)(GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos3fMESA)(GLfloat x, GLfloat y, GLfloat z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos3fv)(const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos3fvARB)(const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos3fvMESA)(const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos3i)(GLint x, GLint y, GLint z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos3iARB)(GLint x, GLint y, GLint z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos3iMESA)(GLint x, GLint y, GLint z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos3iv)(const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos3ivARB)(const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos3ivMESA)(const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos3s)(GLshort x, GLshort y, GLshort z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos3sARB)(GLshort x, GLshort y, GLshort z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos3sMESA)(GLshort x, GLshort y, GLshort z);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos3sv)(const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos3svARB)(const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos3svMESA)(const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos4dMESA)(GLdouble x, GLdouble y, GLdouble z, GLdouble w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos4dvMESA)(const GLdouble * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos4fMESA)(GLfloat x, GLfloat y, GLfloat z, GLfloat w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos4fvMESA)(const GLfloat * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos4iMESA)(GLint x, GLint y, GLint z, GLint w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos4ivMESA)(const GLint * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos4sMESA)(GLshort x, GLshort y, GLshort z, GLshort w);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowPos4svMESA)(const GLshort * v);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWindowRectanglesEXT)(GLenum mode, GLsizei count, const GLint * box);
---  
+--
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glWriteMaskEXT)(GLuint res, GLuint in, GLenum outX, GLenum outY, GLenum outZ, GLenum outW);
---  
+--
 --  #define glAccum epoxy_glAccum
 --  #define glAccumxOES epoxy_glAccumxOES
 --  #define glAcquireKeyedMutexWin32EXT epoxy_glAcquireKeyedMutexWin32EXT
@@ -15954,7 +16171,6 @@ is
 --  #define glAsyncCopyImageSubDataNVX epoxy_glAsyncCopyImageSubDataNVX
 --  #define glAsyncMarkerSGIX epoxy_glAsyncMarkerSGIX
 --  #define glAttachObjectARB epoxy_glAttachObjectARB
---  #define glAttachShader epoxy_glAttachShader
 --  #define glBegin epoxy_glBegin
 --  #define glBeginConditionalRender epoxy_glBeginConditionalRender
 --  #define glBeginConditionalRenderNV epoxy_glBeginConditionalRenderNV
@@ -16337,7 +16553,6 @@ is
 --  #define glCreateFramebuffers epoxy_glCreateFramebuffers
 --  #define glCreateMemoryObjectsEXT epoxy_glCreateMemoryObjectsEXT
 --  #define glCreatePerfQueryINTEL epoxy_glCreatePerfQueryINTEL
---  #define glCreateProgram epoxy_glCreateProgram
 --  #define glCreateProgramObjectARB epoxy_glCreateProgramObjectARB
 --  #define glCreateProgramPipelines epoxy_glCreateProgramPipelines
 --  #define glCreateProgressFenceNVX epoxy_glCreateProgressFenceNVX
@@ -16445,7 +16660,6 @@ is
 --  #define glDisableVertexArrayAttribEXT epoxy_glDisableVertexArrayAttribEXT
 --  #define glDisableVertexArrayEXT epoxy_glDisableVertexArrayEXT
 --  #define glDisableVertexAttribAPPLE epoxy_glDisableVertexAttribAPPLE
---  #define glDisableVertexAttribArray epoxy_glDisableVertexAttribArray
 --  #define glDisableVertexAttribArrayARB epoxy_glDisableVertexAttribArrayARB
 --  #define glDisablei epoxy_glDisablei
 --  #define glDisableiEXT epoxy_glDisableiEXT
@@ -16543,7 +16757,6 @@ is
 --  #define glEnableVertexArrayAttribEXT epoxy_glEnableVertexArrayAttribEXT
 --  #define glEnableVertexArrayEXT epoxy_glEnableVertexArrayEXT
 --  #define glEnableVertexAttribAPPLE epoxy_glEnableVertexAttribAPPLE
---  #define glEnableVertexAttribArray epoxy_glEnableVertexAttribArray
 --  #define glEnableVertexAttribArrayARB epoxy_glEnableVertexAttribArrayARB
 --  #define glEnablei epoxy_glEnablei
 --  #define glEnableiEXT epoxy_glEnableiEXT
@@ -16763,7 +16976,6 @@ is
 --  #define glGetArrayObjectivATI epoxy_glGetArrayObjectivATI
 --  #define glGetAttachedObjectsARB epoxy_glGetAttachedObjectsARB
 --  #define glGetAttachedShaders epoxy_glGetAttachedShaders
---  #define glGetAttribLocation epoxy_glGetAttribLocation
 --  #define glGetAttribLocationARB epoxy_glGetAttribLocationARB
 --  #define glGetBooleanIndexedvEXT epoxy_glGetBooleanIndexedvEXT
 --  #define glGetBooleani_v epoxy_glGetBooleani_v
@@ -17035,7 +17247,6 @@ is
 --  #define glGetProgramStringARB epoxy_glGetProgramStringARB
 --  #define glGetProgramStringNV epoxy_glGetProgramStringNV
 --  #define glGetProgramSubroutineParameteruivNV epoxy_glGetProgramSubroutineParameteruivNV
---  #define glGetProgramiv epoxy_glGetProgramiv
 --  #define glGetProgramivARB epoxy_glGetProgramivARB
 --  #define glGetProgramivNV epoxy_glGetProgramivNV
 --  #define glGetQueryBufferObjecti64v epoxy_glGetQueryBufferObjecti64v
@@ -17143,7 +17354,6 @@ is
 --  #define glGetUniformBlockIndex epoxy_glGetUniformBlockIndex
 --  #define glGetUniformBufferSizeEXT epoxy_glGetUniformBufferSizeEXT
 --  #define glGetUniformIndices epoxy_glGetUniformIndices
---  #define glGetUniformLocation epoxy_glGetUniformLocation
 --  #define glGetUniformLocationARB epoxy_glGetUniformLocationARB
 --  #define glGetUniformOffsetEXT epoxy_glGetUniformOffsetEXT
 --  #define glGetUniformSubroutineuiv epoxy_glGetUniformSubroutineuiv
@@ -17387,7 +17597,6 @@ is
 --  #define glLineWidth epoxy_glLineWidth
 --  #define glLineWidthx epoxy_glLineWidthx
 --  #define glLineWidthxOES epoxy_glLineWidthxOES
---  #define glLinkProgram epoxy_glLinkProgram
 --  #define glLinkProgramARB epoxy_glLinkProgramARB
 --  #define glListBase epoxy_glListBase
 --  #define glListDrawCommandsStatesClientNV epoxy_glListDrawCommandsStatesClientNV
@@ -18571,11 +18780,9 @@ is
 --  #define glTranslatexOES epoxy_glTranslatexOES
 --  #define glUniform1d epoxy_glUniform1d
 --  #define glUniform1dv epoxy_glUniform1dv
---  #define glUniform1f epoxy_glUniform1f
 --  #define glUniform1fARB epoxy_glUniform1fARB
 --  #define glUniform1fv epoxy_glUniform1fv
 --  #define glUniform1fvARB epoxy_glUniform1fvARB
---  #define glUniform1i epoxy_glUniform1i
 --  #define glUniform1i64ARB epoxy_glUniform1i64ARB
 --  #define glUniform1i64NV epoxy_glUniform1i64NV
 --  #define glUniform1i64vARB epoxy_glUniform1i64vARB
@@ -18593,7 +18800,6 @@ is
 --  #define glUniform1uivEXT epoxy_glUniform1uivEXT
 --  #define glUniform2d epoxy_glUniform2d
 --  #define glUniform2dv epoxy_glUniform2dv
---  #define glUniform2f epoxy_glUniform2f
 --  #define glUniform2fARB epoxy_glUniform2fARB
 --  #define glUniform2fv epoxy_glUniform2fv
 --  #define glUniform2fvARB epoxy_glUniform2fvARB
@@ -18615,7 +18821,6 @@ is
 --  #define glUniform2uivEXT epoxy_glUniform2uivEXT
 --  #define glUniform3d epoxy_glUniform3d
 --  #define glUniform3dv epoxy_glUniform3dv
---  #define glUniform3f epoxy_glUniform3f
 --  #define glUniform3fARB epoxy_glUniform3fARB
 --  #define glUniform3fv epoxy_glUniform3fv
 --  #define glUniform3fvARB epoxy_glUniform3fvARB
@@ -18637,7 +18842,6 @@ is
 --  #define glUniform3uivEXT epoxy_glUniform3uivEXT
 --  #define glUniform4d epoxy_glUniform4d
 --  #define glUniform4dv epoxy_glUniform4dv
---  #define glUniform4f epoxy_glUniform4f
 --  #define glUniform4fARB epoxy_glUniform4fARB
 --  #define glUniform4fv epoxy_glUniform4fv
 --  #define glUniform4fvARB epoxy_glUniform4fvARB
@@ -18666,7 +18870,6 @@ is
 --  #define glUniformHandleui64vIMG epoxy_glUniformHandleui64vIMG
 --  #define glUniformHandleui64vNV epoxy_glUniformHandleui64vNV
 --  #define glUniformMatrix2dv epoxy_glUniformMatrix2dv
---  #define glUniformMatrix2fv epoxy_glUniformMatrix2fv
 --  #define glUniformMatrix2fvARB epoxy_glUniformMatrix2fvARB
 --  #define glUniformMatrix2x3dv epoxy_glUniformMatrix2x3dv
 --  #define glUniformMatrix2x3fv epoxy_glUniformMatrix2x3fv
@@ -18675,7 +18878,6 @@ is
 --  #define glUniformMatrix2x4fv epoxy_glUniformMatrix2x4fv
 --  #define glUniformMatrix2x4fvNV epoxy_glUniformMatrix2x4fvNV
 --  #define glUniformMatrix3dv epoxy_glUniformMatrix3dv
---  #define glUniformMatrix3fv epoxy_glUniformMatrix3fv
 --  #define glUniformMatrix3fvARB epoxy_glUniformMatrix3fvARB
 --  #define glUniformMatrix3x2dv epoxy_glUniformMatrix3x2dv
 --  #define glUniformMatrix3x2fv epoxy_glUniformMatrix3x2fv
@@ -18684,7 +18886,6 @@ is
 --  #define glUniformMatrix3x4fv epoxy_glUniformMatrix3x4fv
 --  #define glUniformMatrix3x4fvNV epoxy_glUniformMatrix3x4fvNV
 --  #define glUniformMatrix4dv epoxy_glUniformMatrix4dv
---  #define glUniformMatrix4fv epoxy_glUniformMatrix4fv
 --  #define glUniformMatrix4fvARB epoxy_glUniformMatrix4fvARB
 --  #define glUniformMatrix4x2dv epoxy_glUniformMatrix4x2dv
 --  #define glUniformMatrix4x2fv epoxy_glUniformMatrix4x2fv
@@ -18705,7 +18906,6 @@ is
 --  #define glUnmapTexture2DINTEL epoxy_glUnmapTexture2DINTEL
 --  #define glUpdateObjectBufferATI epoxy_glUpdateObjectBufferATI
 --  #define glUploadGpuMaskNVX epoxy_glUploadGpuMaskNVX
---  #define glUseProgram epoxy_glUseProgram
 --  #define glUseProgramObjectARB epoxy_glUseProgramObjectARB
 --  #define glUseProgramStages epoxy_glUseProgramStages
 --  #define glUseProgramStagesEXT epoxy_glUseProgramStagesEXT
@@ -18813,7 +19013,6 @@ is
 --  #define glVertexAttrib1dv epoxy_glVertexAttrib1dv
 --  #define glVertexAttrib1dvARB epoxy_glVertexAttrib1dvARB
 --  #define glVertexAttrib1dvNV epoxy_glVertexAttrib1dvNV
---  #define glVertexAttrib1f epoxy_glVertexAttrib1f
 --  #define glVertexAttrib1fARB epoxy_glVertexAttrib1fARB
 --  #define glVertexAttrib1fNV epoxy_glVertexAttrib1fNV
 --  #define glVertexAttrib1fv epoxy_glVertexAttrib1fv
@@ -18833,10 +19032,8 @@ is
 --  #define glVertexAttrib2dv epoxy_glVertexAttrib2dv
 --  #define glVertexAttrib2dvARB epoxy_glVertexAttrib2dvARB
 --  #define glVertexAttrib2dvNV epoxy_glVertexAttrib2dvNV
---  #define glVertexAttrib2f epoxy_glVertexAttrib2f
 --  #define glVertexAttrib2fARB epoxy_glVertexAttrib2fARB
 --  #define glVertexAttrib2fNV epoxy_glVertexAttrib2fNV
---  #define glVertexAttrib2fv epoxy_glVertexAttrib2fv
 --  #define glVertexAttrib2fvARB epoxy_glVertexAttrib2fvARB
 --  #define glVertexAttrib2fvNV epoxy_glVertexAttrib2fvNV
 --  #define glVertexAttrib2hNV epoxy_glVertexAttrib2hNV
@@ -18853,7 +19050,6 @@ is
 --  #define glVertexAttrib3dv epoxy_glVertexAttrib3dv
 --  #define glVertexAttrib3dvARB epoxy_glVertexAttrib3dvARB
 --  #define glVertexAttrib3dvNV epoxy_glVertexAttrib3dvNV
---  #define glVertexAttrib3f epoxy_glVertexAttrib3f
 --  #define glVertexAttrib3fARB epoxy_glVertexAttrib3fARB
 --  #define glVertexAttrib3fNV epoxy_glVertexAttrib3fNV
 --  #define glVertexAttrib3fv epoxy_glVertexAttrib3fv
@@ -18889,7 +19085,6 @@ is
 --  #define glVertexAttrib4dv epoxy_glVertexAttrib4dv
 --  #define glVertexAttrib4dvARB epoxy_glVertexAttrib4dvARB
 --  #define glVertexAttrib4dvNV epoxy_glVertexAttrib4dvNV
---  #define glVertexAttrib4f epoxy_glVertexAttrib4f
 --  #define glVertexAttrib4fARB epoxy_glVertexAttrib4fARB
 --  #define glVertexAttrib4fNV epoxy_glVertexAttrib4fNV
 --  #define glVertexAttrib4fv epoxy_glVertexAttrib4fv
@@ -19013,7 +19208,6 @@ is
 --  #define glVertexAttribP4ui epoxy_glVertexAttribP4ui
 --  #define glVertexAttribP4uiv epoxy_glVertexAttribP4uiv
 --  #define glVertexAttribParameteriAMD epoxy_glVertexAttribParameteriAMD
---  #define glVertexAttribPointer epoxy_glVertexAttribPointer
 --  #define glVertexAttribPointerARB epoxy_glVertexAttribPointerARB
 --  #define glVertexAttribPointerNV epoxy_glVertexAttribPointerNV
 --  #define glVertexAttribs1dvNV epoxy_glVertexAttribs1dvNV
@@ -19178,120 +19372,6 @@ is
    --  type GLuint_Array is array (Positive range <>) of GLuint
    --    with Convention => C;
    --
-   --  type glewAttachShader is access procedure
-   --    (program   : GLuint;
-   --     shader    : GLuint)
-   --    with Convention => C;
-   --
-   --  glAttachShader : glewAttachShader
-   --    with Import, Convention => C, External_Name => "__glewAttachShader";
-   --
-   --  type glewGetAttribLocation is access function
-   --    (program : GLuint;
-   --     name    : Interfaces.C.char_array) return OpenGL.GLint
-   --       with Convention => C;
-   --
-   --  glGetAttribLocation : glewGetAttribLocation
-   --    with Import, Convention => C, External_Name => "__glewGetAttribLocation";
-   --
-   --  type glewUseProgram is access procedure (program   : GLuint)
-   --    with Convention => C;
-   --
-   --  glUseProgram : glewUseProgram
-   --    with Import, Convention => C, External_Name => "__glewUseProgram";
-   --
-   --  type glewCreateProgram is access function return GLuint
-   --    with Convention => C;
-   --
-   --  glCreateProgram : glewCreateProgram
-   --    with Import, Convention => C, External_Name => "__glewCreateProgram";
-   --
-   --  type glewDisableVertexAttribArray is access procedure (index : GLuint)
-   --    with Convention => C;
-   --
-   --  glDisableVertexAttribArray : glewDisableVertexAttribArray
-   --    with Import, Convention => C,
-   --      External_Name => "__glewDisableVertexAttribArray";
-   --
-   --  type glewEnableVertexAttribArray is access procedure (index : GLuint)
-   --    with Convention => C;
-   --
-   --  glEnableVertexAttribArray : glewEnableVertexAttribArray
-   --    with Import, Convention => C,
-   --      External_Name => "__glewEnableVertexAttribArray";
-   --
-   --  type glewGetProgramiv is access procedure
-   --    (program : GLuint;
-   --     pname   : OpenGL.GLenum;
-   --     params  : access OpenGL.GLint) with Convention => C;
-   --
-   --  glGetProgramiv : glewGetProgramiv
-   --    with Import, Convention => C, External_Name => "__glewGetProgramiv";
-   --
-   --  type glewLinkProgram is access procedure (index : GLuint)
-   --    with Convention => C;
-   --
-   --  glLinkProgram : glewLinkProgram
-   --    with Import, Convention => C, External_Name => "__glewLinkProgram";
-   --
-   --  type glewVertexAttribPointer is access procedure
-   --    (index      : GLuint;
-   --     size       : OpenGL.GLint;
-   --     kind       : OpenGL.GLenum;
-   --     normalized : OpenGL.GLint;
-   --     stride     : OpenGL.GLsizei;
-   --     pointer    : System.Address)
-   --    with Convention => C;
-   --
-   --  glVertexAttribPointer : glewVertexAttribPointer
-   --    with Import, Convention => C, External_Name => "__glewVertexAttribPointer";
-   --
-   --  type glewVertexAttrib1f is access procedure
-   --    (index : GLuint;
-   --     v0    : OpenGL.GLfloat)
-   --    with Convention => C;
-   --
-   --  glVertexAttrib1f : glewVertexAttrib1f
-   --    with Import, Convention => C, External_Name => "__glewVertexAttrib1f";
-   --
-   --  type glewVertexAttrib2f is access procedure
-   --    (index : GLuint;
-   --     v0    : OpenGL.GLfloat;
-   --     v1    : OpenGL.GLfloat)
-   --    with Convention => C;
-   --
-   --  glVertexAttrib2f : glewVertexAttrib2f
-   --    with Import, Convention => C, External_Name => "__glewVertexAttrib2f";
-   --
-   --  type glewVertexAttrib3f is access procedure
-   --    (index : GLuint;
-   --     v0    : OpenGL.GLfloat;
-   --     v1    : OpenGL.GLfloat;
-   --     v2    : OpenGL.GLfloat)
-   --    with Convention => C;
-   --
-   --  glVertexAttrib3f : glewVertexAttrib3f
-   --    with Import, Convention => C, External_Name => "__glewVertexAttrib3f";
-   --
-   --  type glewVertexAttrib4f is access procedure
-   --    (index : GLuint;
-   --     v0    : OpenGL.GLfloat;
-   --     v1    : OpenGL.GLfloat;
-   --     v2    : OpenGL.GLfloat;
-   --     v4    : OpenGL.GLfloat)
-   --    with Convention => C;
-   --
-   --  glVertexAttrib4f : glewVertexAttrib4f
-   --    with Import, Convention => C, External_Name => "__glewVertexAttrib4f";
-   --
-   --  type glewVertexAttrib2fv is access procedure
-   --    (index : GLuint;
-   --     v     : OpenGL.GLfloat_Matrix_2x2)
-   --    with Convention => C;
-   --
-   --  glVertexAttrib2fv : glewVertexAttrib2fv
-   --    with Import, Convention => C, External_Name => "__glewVertexAttrib2fv";
-   --
    --  type glewVertexAttrib3fv is access procedure
    --    (index : GLuint;
    --     v     : OpenGL.GLfloat_Matrix_3x3)
@@ -19307,90 +19387,6 @@ is
    --
    --  glVertexAttrib4fv : glewVertexAttrib4fv
    --    with Import, Convention => C, External_Name => "__glewVertexAttrib4fv";
-   --
-   --  type glewUniform1i is access procedure
-   --    (index : OpenGL.GLint;
-   --     v0    : OpenGL.GLint)
-   --    with Convention => C;
-   --
-   --  glUniform1i : glewUniform1i
-   --    with Import, Convention => C, External_Name => "__glewUniform1i";
-   --
-   --  type glewUniform1f is access procedure
-   --    (index : OpenGL.GLint;
-   --     v0    : OpenGL.GLfloat)
-   --    with Convention => C;
-   --
-   --  glUniform1f : glewUniform1f
-   --    with Import, Convention => C, External_Name => "__glewUniform1f";
-   --
-   --  type glewUniform2f is access procedure
-   --    (index : OpenGL.GLint;
-   --     v0    : OpenGL.GLfloat;
-   --     v1    : OpenGL.GLfloat)
-   --    with Convention => C;
-   --
-   --  glUniform2f : glewUniform2f
-   --    with Import, Convention => C, External_Name => "__glewUniform2f";
-   --
-   --  type glewUniform3f is access procedure
-   --    (index : OpenGL.GLint;
-   --     v0    : OpenGL.GLfloat;
-   --     v1    : OpenGL.GLfloat;
-   --     v2    : OpenGL.GLfloat)
-   --    with Convention => C;
-   --
-   --  glUniform3f : glewUniform3f
-   --    with Import, Convention => C, External_Name => "__glewUniform3f";
-   --
-   --  type glewUniform4f is access procedure
-   --    (index : OpenGL.GLint;
-   --     v0    : OpenGL.GLfloat;
-   --     v1    : OpenGL.GLfloat;
-   --     v2    : OpenGL.GLfloat;
-   --     v4    : OpenGL.GLfloat)
-   --    with Convention => C;
-   --
-   --  glUniform4f : glewUniform4f
-   --    with Import, Convention => C, External_Name => "__glewUniform4f";
-   --
-   --  type glewUniformMatrix2fv is access procedure
-   --    (index     : OpenGL.GLint;
-   --     count     : OpenGL.GLsizei;
-   --     transpose : OpenGL.GLint;
-   --     v         : OpenGL.GLfloat_Matrix_2x2)
-   --    with Convention => C;
-   --
-   --  glUniformMatrix2fv : glewUniformMatrix2fv
-   --    with Import, Convention => C, External_Name => "__glewUniformMatrix2fv";
-   --
-   --  type glewUniformMatrix3fv is access procedure
-   --    (index     : OpenGL.GLint;
-   --     count     : OpenGL.GLsizei;
-   --     transpose : OpenGL.GLint;
-   --     v         : OpenGL.GLfloat_Matrix_3x3)
-   --    with Convention => C;
-   --
-   --  glUniformMatrix3fv : glewUniformMatrix3fv
-   --    with Import, Convention => C, External_Name => "__glewUniformMatrix3fv";
-   --
-   --  type glewUniformMatrix4fv is access procedure
-   --    (index     : OpenGL.GLint;
-   --     count     : OpenGL.GLsizei;
-   --     transpose : OpenGL.GLint;
-   --     v         : OpenGL.GLfloat_Matrix_4x4)
-   --    with Convention => C;
-   --
-   --  glUniformMatrix4fv : glewUniformMatrix4fv
-   --    with Import, Convention => C, External_Name => "__glewUniformMatrix4fv";
-   --
-   --  type glewGetUniformLocation is access function
-   --    (program : GLuint;
-   --     name    : Interfaces.C.char_array) return OpenGL.GLint
-   --    with Convention => C;
-   --
-   --  glGetUniformLocation : glewGetUniformLocation
-   --    with Import, Convention => C, External_Name => "__glewGetUniformLocation";
    --
    --  type glewActiveTexture is access procedure (texture : OpenGL.GLenum)
    --    with Convention => C;
@@ -19432,7 +19428,5 @@ is
    --       with Import, Convention => C, External_Name => "glTexParameteri";
    --
    --  FRAGMENT_SHADER : constant := 16#8B30#;
-   --
-   --  LINK_STATUS    : constant := 16#8B82#;
 
 end epoxy_gl_generated_h;

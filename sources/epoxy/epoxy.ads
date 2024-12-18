@@ -10,6 +10,7 @@ package epoxy
   with Preelaborate
 is
 
+   type GLboolean is new Interfaces.Integer_32;
    type GLuint is new Interfaces.Unsigned_32;
 
 end epoxy;

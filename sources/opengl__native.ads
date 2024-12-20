@@ -130,6 +130,10 @@ package OpenGL is
    type GLubyte_Vector_4_Array is
      array (Positive range <>) of aliased GLubyte_Vector_4;
 
+   function "*"
+     (Left  : GLfloat_Matrix_4x4;
+      Right : GLfloat_Matrix_4x4) return GLfloat_Matrix_4x4;
+
    --------------
    -- Bitfield --
    --------------

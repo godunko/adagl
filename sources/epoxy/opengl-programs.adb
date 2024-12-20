@@ -718,7 +718,7 @@ package body OpenGL.Programs is
 
       epoxy_gl_generated_h.glUniformMatrix2fv
         (location  => OpenGL.GLint (Location),
-         count     => 4,
+         count     => 1,
          transpose => epoxy_gl_generated_h.GL_FALSE,
          value     => Value);
    end Set_Uniform_Value;
@@ -743,7 +743,7 @@ package body OpenGL.Programs is
 
       epoxy_gl_generated_h.glUniformMatrix3fv
         (location  => OpenGL.GLint (Location),
-         count     => 9,
+         count     => 1,
          transpose => epoxy_gl_generated_h.GL_FALSE,
          value     => Value);
    end Set_Uniform_Value;
@@ -768,7 +768,7 @@ package body OpenGL.Programs is
 
       epoxy_gl_generated_h.glUniformMatrix4fv
         (location  => OpenGL.GLint (Location),
-         count     => 16,
+         count     => 1,
          transpose => epoxy_gl_generated_h.GL_FALSE,
          value     => Value);
    end Set_Uniform_Value;

@@ -17,5 +17,6 @@ generate_c = false
 generate_gpr = true
 
 [[depends-on]]
+gnat = ">=14"  #  VSS 25.0.0 limits compiler to be >=11, but only 14 support necessary language features
 gtkada = "*"
 vss = "*"

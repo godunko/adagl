@@ -7,6 +7,8 @@
 with Ada.Unchecked_Deallocation;
 with Interfaces.C;
 
+with VSS.Strings.Conversions;
+
 with epoxy_gl_generated_h;
 with OpenGL.Contexts.Internals;
 with OpenGL.Shaders.Internals;
@@ -28,7 +30,7 @@ package body OpenGL.Programs is
    function Add_Shader_From_Source_Code
     (Self        : in out OpenGL_Program'Class;
      Shader_Type : OpenGL.Shader_Type;
-     Source      : League.Strings.Universal_String) return Boolean
+     Source      : VSS.Strings.Virtual_String) return Boolean
    is
       Shader : OpenGL.Shaders.OpenGL_Shader_Access;
 
@@ -65,7 +67,7 @@ package body OpenGL.Programs is
    procedure Add_Shader_From_Source_Code
     (Self        : in out OpenGL_Program'Class;
      Shader_Type : OpenGL.Shader_Type;
-     Source      : League.Strings.Universal_String) is
+     Source      : VSS.Strings.Virtual_String) is
    begin
       if not Self.Add_Shader_From_Source_Code (Shader_Type, Source) then
          raise Program_Error;
@@ -78,7 +80,7 @@ package body OpenGL.Programs is
 
    function Attribute_Location
      (Self : in out OpenGL_Program'Class;
-      Name : League.Strings.Universal_String)
+      Name : VSS.Strings.Virtual_String)
       return OpenGL.Attribute_Location is
    begin
       if Self.Context = null or Self.Program = 0 then
@@ -87,7 +89,8 @@ package body OpenGL.Programs is
       else
          declare
             Text : Interfaces.C.char_array :=
-              Interfaces.C.To_C (Name.To_UTF_8_String);
+              Interfaces.C.To_C
+                (VSS.Strings.Conversions.To_UTF_8_String (Name));
 
          begin
             return
@@ -180,7 +183,7 @@ package body OpenGL.Programs is
 
    procedure Disable_Attribute_Array
     (Self : in out OpenGL_Program'Class;
-     Name : League.Strings.Universal_String)
+     Name : VSS.Strings.Virtual_String)
    is
       Location : constant OpenGL.Attribute_Location
         := Self.Attribute_Location (Name);
@@ -211,7 +214,7 @@ package body OpenGL.Programs is
 
    procedure Enable_Attribute_Array
     (Self : in out OpenGL_Program'Class;
-     Name : League.Strings.Universal_String)
+     Name : VSS.Strings.Virtual_String)
    is
       Location : constant OpenGL.Attribute_Location
         := Self.Attribute_Location (Name);
@@ -321,7 +324,7 @@ package body OpenGL.Programs is
 
    procedure Set_Attribute_Buffer
     (Self       : in out OpenGL_Program'Class;
-     Name       : League.Strings.Universal_String;
+     Name       : VSS.Strings.Virtual_String;
      Data_Type  : OpenGL.GLenum;
      Tuple_Size : Positive;
      Offset     : System.Storage_Elements.Storage_Count := 0;
@@ -499,7 +502,7 @@ package body OpenGL.Programs is
 
    procedure Set_Attribute_Value
     (Self  : in out OpenGL_Program'Class;
-     Name  : League.Strings.Universal_String;
+     Name  : VSS.Strings.Virtual_String;
      Value : OpenGL.GLfloat) is
    begin
       Self.Set_Attribute_Value (Self.Attribute_Location (Name), Value);
@@ -511,7 +514,7 @@ package body OpenGL.Programs is
 
    procedure Set_Attribute_Value
     (Self  : in out OpenGL_Program'Class;
-     Name  : League.Strings.Universal_String;
+     Name  : VSS.Strings.Virtual_String;
      Value : OpenGL.GLfloat_Vector_2) is
    begin
       Self.Set_Attribute_Value (Self.Attribute_Location (Name), Value);
@@ -523,7 +526,7 @@ package body OpenGL.Programs is
 
    procedure Set_Attribute_Value
     (Self  : in out OpenGL_Program'Class;
-     Name  : League.Strings.Universal_String;
+     Name  : VSS.Strings.Virtual_String;
      Value : OpenGL.GLfloat_Vector_3) is
    begin
       Self.Set_Attribute_Value (Self.Attribute_Location (Name), Value);
@@ -535,7 +538,7 @@ package body OpenGL.Programs is
 
    procedure Set_Attribute_Value
     (Self  : in out OpenGL_Program'Class;
-     Name  : League.Strings.Universal_String;
+     Name  : VSS.Strings.Virtual_String;
      Value : OpenGL.GLfloat_Vector_4) is
    begin
       Self.Set_Attribute_Value (Self.Attribute_Location (Name), Value);
@@ -779,7 +782,7 @@ package body OpenGL.Programs is
 
    procedure Set_Uniform_Value
     (Self  : in out OpenGL_Program'Class;
-     Name  : League.Strings.Universal_String;
+     Name  : VSS.Strings.Virtual_String;
      Value : OpenGL.Glfloat) is
    begin
       Self.Set_Uniform_Value (Self.Uniform_Location (Name), Value);
@@ -791,7 +794,7 @@ package body OpenGL.Programs is
 
    procedure Set_Uniform_Value
     (Self  : in out OpenGL_Program'Class;
-     Name  : League.Strings.Universal_String;
+     Name  : VSS.Strings.Virtual_String;
      Value : OpenGL.Glfloat_Vector_2) is
    begin
       Self.Set_Uniform_Value (Self.Uniform_Location (Name), Value);
@@ -803,7 +806,7 @@ package body OpenGL.Programs is
 
    procedure Set_Uniform_Value
     (Self  : in out OpenGL_Program'Class;
-     Name  : League.Strings.Universal_String;
+     Name  : VSS.Strings.Virtual_String;
      Value : OpenGL.Glfloat_Vector_3) is
    begin
       Self.Set_Uniform_Value (Self.Uniform_Location (Name), Value);
@@ -815,7 +818,7 @@ package body OpenGL.Programs is
 
    procedure Set_Uniform_Value
     (Self  : in out OpenGL_Program'Class;
-     Name  : League.Strings.Universal_String;
+     Name  : VSS.Strings.Virtual_String;
      Value : OpenGL.Glfloat_Vector_4) is
    begin
       Self.Set_Uniform_Value (Self.Uniform_Location (Name), Value);
@@ -827,7 +830,7 @@ package body OpenGL.Programs is
 
    procedure Set_Uniform_Value
     (Self  : in out OpenGL_Program'Class;
-     Name  : League.Strings.Universal_String;
+     Name  : VSS.Strings.Virtual_String;
      Value : OpenGL.Glfloat_Matrix_2x2) is
    begin
       Self.Set_Uniform_Value (Self.Uniform_Location (Name), Value);
@@ -839,7 +842,7 @@ package body OpenGL.Programs is
 
    procedure Set_Uniform_Value
     (Self  : in out OpenGL_Program'Class;
-     Name  : League.Strings.Universal_String;
+     Name  : VSS.Strings.Virtual_String;
      Value : OpenGL.Glfloat_Matrix_3x3) is
    begin
       Self.Set_Uniform_Value (Self.Uniform_Location (Name), Value);
@@ -851,7 +854,7 @@ package body OpenGL.Programs is
 
    procedure Set_Uniform_Value
     (Self  : in out OpenGL_Program'Class;
-     Name  : League.Strings.Universal_String;
+     Name  : VSS.Strings.Virtual_String;
      Value : OpenGL.Glfloat_Matrix_4x4) is
    begin
       Self.Set_Uniform_Value (Self.Uniform_Location (Name), Value);
@@ -863,7 +866,7 @@ package body OpenGL.Programs is
 
    function Uniform_Location
     (Self : in out OpenGL_Program'Class;
-     Name : League.Strings.Universal_String) return OpenGL.Uniform_Location is
+     Name : VSS.Strings.Virtual_String) return OpenGL.Uniform_Location is
    begin
       if Self.Context = null or Self.Program = 0 then
          return No_Uniform_Location;
@@ -871,7 +874,8 @@ package body OpenGL.Programs is
       else
          declare
             Text : Interfaces.C.char_array :=
-              Interfaces.C.To_C (Name.To_UTF_8_String);
+              Interfaces.C.To_C
+                (VSS.Strings.Conversions.To_UTF_8_String (Name));
          begin
             return
               OpenGL.Uniform_Location

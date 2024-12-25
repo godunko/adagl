@@ -5,8 +5,6 @@
 --
 
 with "../adagl_gtk3/config/adagl_gtk3_config";
-with "matreshka_league.gpr";
-with "matreshka_webapi.gpr";
 
 with "adagl_config.gpr";
 

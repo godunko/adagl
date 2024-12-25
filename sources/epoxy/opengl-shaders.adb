@@ -6,6 +6,8 @@
 
 with Interfaces.C.Strings;
 
+with VSS.Strings.Conversions;
+
 with epoxy_gl_generated_h;
 with OpenGL.Contexts.Internals;
 
@@ -17,7 +19,7 @@ package body OpenGL.Shaders is
 
    function Compile_Source_Code
     (Self   : in out OpenGL_Shader'Class;
-     Source : League.Strings.Universal_String) return Boolean
+     Source : VSS.Strings.Virtual_String) return Boolean
    is
       use type Gdk.GLContext.Gdk_GLContext;
       use type epoxy.GLuint;
@@ -45,7 +47,8 @@ package body OpenGL.Shaders is
 
       declare
          Text : Interfaces.C.Strings.chars_ptr :=
-           Interfaces.C.Strings.New_String (Source.To_UTF_8_String);
+           Interfaces.C.Strings.New_String
+             (VSS.Strings.Conversions.To_UTF_8_String (Source));
          Length : OpenGL.GLsizei :=
            OpenGL.GLsizei (Interfaces.C.Strings.Strlen (Text));
       begin

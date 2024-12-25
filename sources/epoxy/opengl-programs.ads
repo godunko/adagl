@@ -6,7 +6,7 @@
 
 with System.Storage_Elements;
 
-with League.Strings;
+with VSS.Strings;
 
 private with Gdk.GLContext;
 
@@ -22,7 +22,7 @@ package OpenGL.Programs is
    function Add_Shader_From_Source_Code
     (Self        : in out OpenGL_Program'Class;
      Shader_Type : OpenGL.Shader_Type;
-     Source      : League.Strings.Universal_String) return Boolean;
+     Source      : VSS.Strings.Virtual_String) return Boolean;
    --  Compiles source as a shader of the specified type and adds it to this
    --  shader program. Returns True if compilation was successful, False
    --  otherwise. The compilation errors and warnings will be made available
@@ -31,14 +31,14 @@ package OpenGL.Programs is
    procedure Add_Shader_From_Source_Code
     (Self        : in out OpenGL_Program'Class;
      Shader_Type : OpenGL.Shader_Type;
-     Source      : League.Strings.Universal_String);
+     Source      : VSS.Strings.Virtual_String);
    --  Compiles source as a shader of the specified type and adds it to this
    --  shader program. Raise Program_Error if compilation was not successful.
    --  The compilation errors and warnings will be made available via Log.
 
    function Attribute_Location
     (Self : in out OpenGL_Program'Class;
-     Name : League.Strings.Universal_String) return OpenGL.Attribute_Location;
+     Name : VSS.Strings.Virtual_String) return OpenGL.Attribute_Location;
    --  Returns the location of the attribute Name within this shader program's
    --  parameter list. Returns -1 if name is not a valid attribute for this
    --  shader program.
@@ -65,7 +65,7 @@ package OpenGL.Programs is
 
    procedure Disable_Attribute_Array
     (Self : in out OpenGL_Program'Class;
-     Name : League.Strings.Universal_String);
+     Name : VSS.Strings.Virtual_String);
    --  Disables the vertex array called name in this shader program that was
    --  enabled by a previous call to Enable_Attribute_Array.
 
@@ -78,7 +78,7 @@ package OpenGL.Programs is
 
    procedure Enable_Attribute_Array
     (Self : in out OpenGL_Program'Class;
-     Name : League.Strings.Universal_String);
+     Name : VSS.Strings.Virtual_String);
    --  Enables the vertex array called Name in this shader program so that the
    --  value set by Set_Attribute_Array on Name will be used by the shader
    --  program.
@@ -119,7 +119,7 @@ package OpenGL.Programs is
 
    procedure Set_Attribute_Buffer
     (Self       : in out OpenGL_Program'Class;
-     Name       : League.Strings.Universal_String;
+     Name       : VSS.Strings.Virtual_String;
      Data_Type  : OpenGL.GLenum;
      Tuple_Size : Positive;
      Offset     : System.Storage_Elements.Storage_Count := 0;
@@ -171,19 +171,19 @@ package OpenGL.Programs is
 
    procedure Set_Attribute_Value
     (Self  : in out OpenGL_Program'Class;
-     Name  : League.Strings.Universal_String;
+     Name  : VSS.Strings.Virtual_String;
      Value : OpenGL.GLfloat);
    procedure Set_Attribute_Value
     (Self  : in out OpenGL_Program'Class;
-     Name  : League.Strings.Universal_String;
+     Name  : VSS.Strings.Virtual_String;
      Value : OpenGL.GLfloat_Vector_2);
    procedure Set_Attribute_Value
     (Self  : in out OpenGL_Program'Class;
-     Name  : League.Strings.Universal_String;
+     Name  : VSS.Strings.Virtual_String;
      Value : OpenGL.GLfloat_Vector_3);
    procedure Set_Attribute_Value
     (Self  : in out OpenGL_Program'Class;
-     Name  : League.Strings.Universal_String;
+     Name  : VSS.Strings.Virtual_String;
      Value : OpenGL.GLfloat_Vector_4);
    --  procedure Set_Attribute_Value
    --   (Self  : in out OpenGL_Program'Class;
@@ -235,37 +235,37 @@ package OpenGL.Programs is
 
    procedure Set_Uniform_Value
     (Self  : in out OpenGL_Program'Class;
-     Name  : League.Strings.Universal_String;
+     Name  : VSS.Strings.Virtual_String;
      Value : OpenGL.Glfloat);
    procedure Set_Uniform_Value
     (Self  : in out OpenGL_Program'Class;
-     Name  : League.Strings.Universal_String;
+     Name  : VSS.Strings.Virtual_String;
      Value : OpenGL.Glfloat_Vector_2);
    procedure Set_Uniform_Value
     (Self  : in out OpenGL_Program'Class;
-     Name  : League.Strings.Universal_String;
+     Name  : VSS.Strings.Virtual_String;
      Value : OpenGL.Glfloat_Vector_3);
    procedure Set_Uniform_Value
     (Self  : in out OpenGL_Program'Class;
-     Name  : League.Strings.Universal_String;
+     Name  : VSS.Strings.Virtual_String;
      Value : OpenGL.Glfloat_Vector_4);
    procedure Set_Uniform_Value
     (Self  : in out OpenGL_Program'Class;
-     Name  : League.Strings.Universal_String;
+     Name  : VSS.Strings.Virtual_String;
      Value : OpenGL.Glfloat_Matrix_2x2);
    procedure Set_Uniform_Value
     (Self  : in out OpenGL_Program'Class;
-     Name  : League.Strings.Universal_String;
+     Name  : VSS.Strings.Virtual_String;
      Value : OpenGL.Glfloat_Matrix_3x3);
    procedure Set_Uniform_Value
     (Self  : in out OpenGL_Program'Class;
-     Name  : League.Strings.Universal_String;
+     Name  : VSS.Strings.Virtual_String;
      Value : OpenGL.Glfloat_Matrix_4x4);
    --  Sets the uniform variable called Name in the current context to Value.
 
    function Uniform_Location
     (Self : in out OpenGL_Program'Class;
-     Name : League.Strings.Universal_String) return OpenGL.Uniform_Location;
+     Name : VSS.Strings.Virtual_String) return OpenGL.Uniform_Location;
    --  Returns the location of the uniform variable Name within this shader
    --  program's parameter list. Returns No_Uniform_Location if Name is not a
    --  valid uniform variable for this shader program.

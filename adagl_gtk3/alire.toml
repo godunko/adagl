@@ -17,5 +17,5 @@ generate_c = false
 generate_gpr = true
 
 [[depends-on]]
-gtkada = "^25.0.1"
-matreshka_league = "*"
+gtkada = "*"
+vss = "*"

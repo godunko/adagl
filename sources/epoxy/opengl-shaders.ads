@@ -4,7 +4,7 @@
 --  SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 --
 
-with League.Strings;
+with VSS.Strings;
 
 private with Gdk.GLContext;
 
@@ -19,7 +19,7 @@ package OpenGL.Shaders is
 
    function Compile_Source_Code
     (Self   : in out OpenGL_Shader'Class;
-     Source : League.Strings.Universal_String) return Boolean;
+     Source : VSS.Strings.Virtual_String) return Boolean;
    --  Sets the source code for this shader and compiles it. Returns True if
    --  the source was successfully compiled, False otherwise.
 

@@ -4385,7 +4385,7 @@ is
 --  #define GL_UNSIGNED_INT_SAMPLER_BUFFER                                             0x8DD8
 --  #define GL_UNSIGNED_INT_SAMPLER_BUFFER_EXT                                         0x8DD8
 --  #define GL_UNSIGNED_INT_SAMPLER_BUFFER_OES                                         0x8DD8
---  #define GL_GEOMETRY_SHADER                                                         0x8DD9
+   GL_GEOMETRY_SHADER                                  : constant := 16#8DD9#;
 --  #define GL_GEOMETRY_SHADER_ARB                                                     0x8DD9
 --  #define GL_GEOMETRY_SHADER_EXT                                                     0x8DD9
 --  #define GL_GEOMETRY_SHADER_OES                                                     0x8DD9

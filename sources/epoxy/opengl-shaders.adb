@@ -38,6 +38,7 @@ package body OpenGL.Shaders is
            epoxy_gl_generated_h.glCreateShader
             ((case Self.Shader_Type is
                 when Vertex   => epoxy_gl_generated_h.GL_VERTEX_SHADER,
+                when Geometry => epoxy_gl_generated_h.GL_GEOMETRY_SHADER,
                 when Fragment => epoxy_gl_generated_h.GL_FRAGMENT_SHADER));
 
          if Self.Shader = 0 then

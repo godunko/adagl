@@ -484,7 +484,7 @@ package OpenGL is
 
    type Buffer_Type is (Vertex, Index);
 
-   type Shader_Type is (Vertex, Fragment);
+   type Shader_Type is (Vertex, Geometry, Fragment);
 
    type Texture_Type is
     (Texture_2D,

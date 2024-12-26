@@ -7003,7 +7003,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLGETPROGRAMENVPARAMETERIUIVNVPROC)(GLenum target, GLuint index, GLuint * params);
 --  typedef void (GLAPIENTRY *PFNGLGETPROGRAMENVPARAMETERDVARBPROC)(GLenum target, GLuint index, GLdouble * params);
 --  typedef void (GLAPIENTRY *PFNGLGETPROGRAMENVPARAMETERFVARBPROC)(GLenum target, GLuint index, GLfloat * params);
---  typedef void (GLAPIENTRY *PFNGLGETPROGRAMINFOLOGPROC)(GLuint program, GLsizei bufSize, GLsizei * length, GLchar * infoLog);
 --  typedef void (GLAPIENTRY *PFNGLGETPROGRAMINTERFACEIVPROC)(GLuint program, GLenum programInterface, GLenum pname, GLint * params);
 --  typedef void (GLAPIENTRY *PFNGLGETPROGRAMLOCALPARAMETERIIVNVPROC)(GLenum target, GLuint index, GLint * params);
 --  typedef void (GLAPIENTRY *PFNGLGETPROGRAMLOCALPARAMETERIUIVNVPROC)(GLenum target, GLuint index, GLuint * params);
@@ -11594,9 +11593,22 @@ is
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramEnvParameterdvARB)(GLenum target, GLuint index, GLdouble * params);
 --
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramEnvParameterfvARB)(GLenum target, GLuint index, GLfloat * params);
---
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramInfoLog)(GLuint program, GLsizei bufSize, GLsizei * length, GLchar * infoLog);
---
+
+   --  typedef void (GLAPIENTRY *PFNGLGETPROGRAMINFOLOGPROC)(GLuint program, GLsizei bufSize, GLsizei * length, GLchar * infoLog);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramInfoLog)(GLuint program, GLsizei bufSize, GLsizei * length, GLchar * infoLog);
+   --  #define glGetProgramInfoLog epoxy_glGetProgramInfoLog
+
+   type PFNGLGETPROGRAMINFOLOGPROC is access procedure
+     (program : epoxy.GLuint;
+      bufSize : OpenGL.GLsizei;
+      length  : out OpenGL.GLsizei;
+      infoLog : out Interfaces.C.char_array) with Convention => C;
+
+   glGetProgramInfoLog : constant not null PFNGLGETPROGRAMINFOLOGPROC
+     with Import,
+          Convention    => C,
+          External_Name => "epoxy_glGetProgramInfoLog";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramInterfaceiv)(GLuint program, GLenum programInterface, GLenum pname, GLint * params);
 --
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetProgramLocalParameterIivNV)(GLenum target, GLuint index, GLint * params);
@@ -17241,7 +17253,6 @@ is
 --  #define glGetProgramEnvParameterIuivNV epoxy_glGetProgramEnvParameterIuivNV
 --  #define glGetProgramEnvParameterdvARB epoxy_glGetProgramEnvParameterdvARB
 --  #define glGetProgramEnvParameterfvARB epoxy_glGetProgramEnvParameterfvARB
---  #define glGetProgramInfoLog epoxy_glGetProgramInfoLog
 --  #define glGetProgramInterfaceiv epoxy_glGetProgramInterfaceiv
 --  #define glGetProgramLocalParameterIivNV epoxy_glGetProgramLocalParameterIivNV
 --  #define glGetProgramLocalParameterIuivNV epoxy_glGetProgramLocalParameterIuivNV

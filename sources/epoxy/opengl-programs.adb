@@ -288,9 +288,22 @@ package body OpenGL.Programs is
          params  => Status);
 
       if Status = 0 then
-         --  XXX Error handling should be implemented.
+         declare
+            Buffer : Interfaces.C.char_array (1 .. 1024);
+            Last   : aliased OpenGL.GLsizei;
 
-         raise Program_Error;
+         begin
+            epoxy_gl_generated_h.glGetProgramInfoLog
+              (program  => Self.Program,
+               bufSize => Buffer'Length,
+               length  => Last,
+               infoLog => Buffer);
+
+            raise Program_Error
+              with "glLinkProgram: "
+                     & Interfaces.C.To_Ada
+                         (Buffer (1 .. Interfaces.C.size_t (Last)), False);
+         end;
       end if;
 
       return True;

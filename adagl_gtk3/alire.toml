@@ -1,6 +1,6 @@
 name = "adagl_gtk3"
 description = "OpenGL/Gtk3 binding"
-version = "0.0.1"
+version = "0.1.0-dev"
 
 authors = ["Vadim Godunko"]
 maintainers = ["Vadim Godunko <vgodunko@gmail.com>"]

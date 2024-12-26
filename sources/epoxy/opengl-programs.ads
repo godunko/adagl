@@ -7,6 +7,7 @@
 with System.Storage_Elements;
 
 with VSS.Strings;
+with VSS.String_Vectors;
 
 private with Gdk.GLContext;
 
@@ -23,6 +24,10 @@ package OpenGL.Programs is
     (Self        : in out OpenGL_Program'Class;
      Shader_Type : OpenGL.Shader_Type;
      Source      : VSS.Strings.Virtual_String) return Boolean;
+   function Add_Shader_From_Source_Code
+    (Self        : in out OpenGL_Program'Class;
+     Shader_Type : OpenGL.Shader_Type;
+     Source      : VSS.String_Vectors.Virtual_String_Vector) return Boolean;
    --  Compiles source as a shader of the specified type and adds it to this
    --  shader program. Returns True if compilation was successful, False
    --  otherwise. The compilation errors and warnings will be made available
@@ -32,6 +37,10 @@ package OpenGL.Programs is
     (Self        : in out OpenGL_Program'Class;
      Shader_Type : OpenGL.Shader_Type;
      Source      : VSS.Strings.Virtual_String);
+   procedure Add_Shader_From_Source_Code
+    (Self        : in out OpenGL_Program'Class;
+     Shader_Type : OpenGL.Shader_Type;
+     Source      : VSS.String_Vectors.Virtual_String_Vector);
    --  Compiles source as a shader of the specified type and adds it to this
    --  shader program. Raise Program_Error if compilation was not successful.
    --  The compilation errors and warnings will be made available via Log.

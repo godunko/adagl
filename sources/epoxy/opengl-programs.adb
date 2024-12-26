@@ -64,6 +64,20 @@ package body OpenGL.Programs is
    -- Add_Shader_From_Source_Code --
    ---------------------------------
 
+   function Add_Shader_From_Source_Code
+    (Self        : in out OpenGL_Program'Class;
+     Shader_Type : OpenGL.Shader_Type;
+     Source      : VSS.String_Vectors.Virtual_String_Vector) return Boolean is
+   begin
+      return
+        Self.Add_Shader_From_Source_Code
+          (Shader_Type, Source.Join_Lines (VSS.Strings.LF));
+   end Add_Shader_From_Source_Code;
+
+   ---------------------------------
+   -- Add_Shader_From_Source_Code --
+   ---------------------------------
+
    procedure Add_Shader_From_Source_Code
     (Self        : in out OpenGL_Program'Class;
      Shader_Type : OpenGL.Shader_Type;
@@ -72,6 +86,19 @@ package body OpenGL.Programs is
       if not Self.Add_Shader_From_Source_Code (Shader_Type, Source) then
          raise Program_Error;
       end if;
+   end Add_Shader_From_Source_Code;
+
+   ---------------------------------
+   -- Add_Shader_From_Source_Code --
+   ---------------------------------
+
+   procedure Add_Shader_From_Source_Code
+    (Self        : in out OpenGL_Program'Class;
+     Shader_Type : OpenGL.Shader_Type;
+     Source      : VSS.String_Vectors.Virtual_String_Vector) is
+   begin
+      Self.Add_Shader_From_Source_Code
+        (Shader_Type, Source.Join_Lines (VSS.Strings.LF));
    end Add_Shader_From_Source_Code;
 
    ------------------------

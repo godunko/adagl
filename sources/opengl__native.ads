@@ -164,6 +164,7 @@ package OpenGL is
    GL_TRIANGLES      : constant GLenum;
    GL_TRIANGLE_STRIP : constant GLenum;
    GL_TRIANGLE_FAN   : constant GLenum;
+   GL_PATCHES        : constant GLenum;
 
    GL_COLOR_ATTACHMENT0  : constant GLenum;
    GL_DEPTH_ATTACHMENT   : constant GLenum;
@@ -540,6 +541,7 @@ private
    GL_TRIANGLES                   : constant GLenum := 16#0004#;
    GL_TRIANGLE_STRIP              : constant GLenum := 16#0005#;
    GL_TRIANGLE_FAN                : constant GLenum := 16#0006#;
+   GL_PATCHES                     : constant GLenum := 16#000E#;
 
    GL_NEVER                       : constant GLenum := 16#0200#;
    GL_LESS                        : constant GLenum := 16#0201#;

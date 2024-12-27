@@ -7765,7 +7765,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLPASSTHROUGHPROC)(GLfloat token);
 --  typedef void (GLAPIENTRY *PFNGLPASSTHROUGHXOESPROC)(GLfixed token);
 --  typedef void (GLAPIENTRY *PFNGLPATCHPARAMETERFVPROC)(GLenum pname, const GLfloat * values);
---  typedef void (GLAPIENTRY *PFNGLPATCHPARAMETERIPROC)(GLenum pname, GLint value);
 --  typedef void (GLAPIENTRY *PFNGLPATCHPARAMETERIEXTPROC)(GLenum pname, GLint value);
 --  typedef void (GLAPIENTRY *PFNGLPATCHPARAMETERIOESPROC)(GLenum pname, GLint value);
 --  typedef void (GLAPIENTRY *PFNGLPATHCOLORGENNVPROC)(GLenum color, GLenum genMode, GLenum colorFormat, const GLfloat * coeffs);
@@ -13193,9 +13192,18 @@ is
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPassThroughxOES)(GLfixed token);
 --
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPatchParameterfv)(GLenum pname, const GLfloat * values);
---
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPatchParameteri)(GLenum pname, GLint value);
---
+
+   --  typedef void (GLAPIENTRY *PFNGLPATCHPARAMETERIPROC)(GLenum pname, GLint value);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPatchParameteri)(GLenum pname, GLint value);
+   --  #define glPatchParameteri epoxy_glPatchParameteri
+
+   type PFNGLPATCHPARAMETERIPROC is access procedure
+     (pname : OpenGL.GLenum;
+      value : OpenGL.GLint) with Convention => C;
+
+   glPatchParameteri : constant not null PFNGLPATCHPARAMETERIPROC
+     with Import, Convention => C, External_Name => "epoxy_glPatchParameteri";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPatchParameteriEXT)(GLenum pname, GLint value);
 --
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glPatchParameteriOES)(GLenum pname, GLint value);
@@ -18015,7 +18023,6 @@ is
 --  #define glPassThrough epoxy_glPassThrough
 --  #define glPassThroughxOES epoxy_glPassThroughxOES
 --  #define glPatchParameterfv epoxy_glPatchParameterfv
---  #define glPatchParameteri epoxy_glPatchParameteri
 --  #define glPatchParameteriEXT epoxy_glPatchParameteriEXT
 --  #define glPatchParameteriOES epoxy_glPatchParameteriOES
 --  #define glPathColorGenNV epoxy_glPathColorGenNV

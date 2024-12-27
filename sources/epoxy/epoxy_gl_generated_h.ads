@@ -6871,7 +6871,6 @@ is
 --  typedef void (GLAPIENTRY *PFNGLGETINTEGERI_VEXTPROC)(GLenum target, GLuint index, GLint * data);
 --  typedef void (GLAPIENTRY *PFNGLGETINTEGERUI64I_VNVPROC)(GLenum value, GLuint index, GLuint64EXT * result);
 --  typedef void (GLAPIENTRY *PFNGLGETINTEGERUI64VNVPROC)(GLenum value, GLuint64EXT * result);
---  typedef void (GLAPIENTRY *PFNGLGETINTEGERVPROC)(GLenum pname, GLint * data);
 --  typedef void (GLAPIENTRY *PFNGLGETINTERNALFORMATSAMPLEIVNVPROC)(GLenum target, GLenum internalformat, GLsizei samples, GLenum pname, GLsizei bufSize, GLint * params);
 --  typedef void (GLAPIENTRY *PFNGLGETINTERNALFORMATI64VPROC)(GLenum target, GLenum internalformat, GLenum pname, GLsizei bufSize, GLint64 * params);
 --  typedef void (GLAPIENTRY *PFNGLGETINTERNALFORMATIVPROC)(GLenum target, GLenum internalformat, GLenum pname, GLsizei bufSize, GLint * params);
@@ -11328,9 +11327,18 @@ is
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetIntegerui64i_vNV)(GLenum value, GLuint index, GLuint64EXT * result);
 --
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetIntegerui64vNV)(GLenum value, GLuint64EXT * result);
---
---  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetIntegerv)(GLenum pname, GLint * data);
---
+
+   --  typedef void (GLAPIENTRY *PFNGLGETINTEGERVPROC)(GLenum pname, GLint * data);
+   --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetIntegerv)(GLenum pname, GLint * data);
+   --  #define glGetIntegerv epoxy_glGetIntegerv
+
+   type PFNGLGETINTEGERVPROC is access procedure
+     (pname : OpenGL.GLenum;
+      data  : not null access OpenGL.GLint) with Convention => C;
+
+   glGetIntegerv : constant not null PFNGLGETINTEGERVPROC
+     with Import, Convention => C, External_Name => "epoxy_glGetIntegerv";
+
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetInternalformatSampleivNV)(GLenum target, GLenum internalformat, GLsizei samples, GLenum pname, GLsizei bufSize, GLint * params);
 --
 --  EPOXY_PUBLIC void (EPOXY_CALLSPEC *epoxy_glGetInternalformati64v)(GLenum target, GLenum internalformat, GLenum pname, GLsizei bufSize, GLint64 * params);
@@ -17129,7 +17137,6 @@ is
 --  #define glGetIntegeri_vEXT epoxy_glGetIntegeri_vEXT
 --  #define glGetIntegerui64i_vNV epoxy_glGetIntegerui64i_vNV
 --  #define glGetIntegerui64vNV epoxy_glGetIntegerui64vNV
---  #define glGetIntegerv epoxy_glGetIntegerv
 --  #define glGetInternalformatSampleivNV epoxy_glGetInternalformatSampleivNV
 --  #define glGetInternalformati64v epoxy_glGetInternalformati64v
 --  #define glGetInternalformativ epoxy_glGetInternalformativ

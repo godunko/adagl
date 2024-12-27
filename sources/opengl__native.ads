@@ -150,106 +150,109 @@ package OpenGL is
 
    type GLenum is private;
 
-   GL_BYTE           : constant GLenum;
-   GL_UNSIGNED_BYTE  : constant GLenum;
-   GL_SHORT          : constant GLenum;
-   GL_UNSIGNED_SHORT : constant GLenum;
-   GL_FIXED          : constant GLenum;
-   GL_FLOAT          : constant GLenum;
+   GL_BYTE                                      : constant GLenum;
+   GL_UNSIGNED_BYTE                             : constant GLenum;
+   GL_SHORT                                     : constant GLenum;
+   GL_UNSIGNED_SHORT                            : constant GLenum;
+   GL_FIXED                                     : constant GLenum;
+   GL_FLOAT                                     : constant GLenum;
 
-   GL_POINTS         : constant GLenum;
-   GL_LINES          : constant GLenum;
-   GL_LINE_LOOP      : constant GLenum;
-   GL_LINE_STRIP     : constant GLenum;
-   GL_TRIANGLES      : constant GLenum;
-   GL_TRIANGLE_STRIP : constant GLenum;
-   GL_TRIANGLE_FAN   : constant GLenum;
-   GL_PATCHES        : constant GLenum;
+   GL_POINTS                                    : constant GLenum;
+   GL_LINES                                     : constant GLenum;
+   GL_LINE_LOOP                                 : constant GLenum;
+   GL_LINE_STRIP                                : constant GLenum;
+   GL_TRIANGLES                                 : constant GLenum;
+   GL_TRIANGLE_STRIP                            : constant GLenum;
+   GL_TRIANGLE_FAN                              : constant GLenum;
+   GL_PATCHES                                   : constant GLenum;
 
-   GL_COLOR_ATTACHMENT0  : constant GLenum;
-   GL_DEPTH_ATTACHMENT   : constant GLenum;
-   GL_STENCIL_ATTACHMENT : constant GLenum;
+   GL_COLOR_ATTACHMENT0                         : constant GLenum;
+   GL_DEPTH_ATTACHMENT                          : constant GLenum;
+   GL_STENCIL_ATTACHMENT                        : constant GLenum;
 
-   GL_TEXTURE_2D                  : constant GLenum;
-   GL_TEXTURE_CUBE_MAP_POSITIVE_X : constant GLenum;
-   GL_TEXTURE_CUBE_MAP_NEGATIVE_X : constant GLenum;
-   GL_TEXTURE_CUBE_MAP_POSITIVE_Y : constant GLenum;
-   GL_TEXTURE_CUBE_MAP_NEGATIVE_Y : constant GLenum;
-   GL_TEXTURE_CUBE_MAP_POSITIVE_Z : constant GLenum;
-   GL_TEXTURE_CUBE_MAP_NEGATIVE_Z : constant GLenum;
+   GL_TEXTURE_2D                                : constant GLenum;
+   GL_TEXTURE_CUBE_MAP_POSITIVE_X               : constant GLenum;
+   GL_TEXTURE_CUBE_MAP_NEGATIVE_X               : constant GLenum;
+   GL_TEXTURE_CUBE_MAP_POSITIVE_Y               : constant GLenum;
+   GL_TEXTURE_CUBE_MAP_NEGATIVE_Y               : constant GLenum;
+   GL_TEXTURE_CUBE_MAP_POSITIVE_Z               : constant GLenum;
+   GL_TEXTURE_CUBE_MAP_NEGATIVE_Z               : constant GLenum;
 
-   GL_RGBA4             : constant GLenum;
-   GL_RGB5_A1           : constant GLenum;
-   GL_RGB565            : constant GLenum;
-   GL_DEPTH_COMPONENT16 : constant GLenum;
-   GL_STENCIL_INDEX8    : constant GLenum;
+   GL_RGBA4                                     : constant GLenum;
+   GL_RGB5_A1                                   : constant GLenum;
+   GL_RGB565                                    : constant GLenum;
+   GL_DEPTH_COMPONENT16                         : constant GLenum;
+   GL_STENCIL_INDEX8                            : constant GLenum;
 
-   GL_ALPHA           : constant GLenum;
-   GL_LUMINANCE       : constant GLenum;
-   GL_LUMINANCE_ALPHA : constant GLenum;
-   GL_RGB             : constant GLenum;
-   GL_RGBA            : constant GLenum;
+   GL_ALPHA                                     : constant GLenum;
+   GL_LUMINANCE                                 : constant GLenum;
+   GL_LUMINANCE_ALPHA                           : constant GLenum;
+   GL_RGB                                       : constant GLenum;
+   GL_RGBA                                      : constant GLenum;
 
-   GL_UNSIGNED_SHORT_4_4_4_4 : constant GLenum;
-   GL_UNSIGNED_SHORT_5_5_5_1 : constant GLenum;
-   GL_UNSIGNED_SHORT_5_6_5   : constant GLenum;
+   GL_UNSIGNED_SHORT_4_4_4_4                    : constant GLenum;
+   GL_UNSIGNED_SHORT_5_5_5_1                    : constant GLenum;
+   GL_UNSIGNED_SHORT_5_6_5                      : constant GLenum;
 
-   GL_TEXTURE_MAG_FILTER : constant GLenum;
-   GL_TEXTURE_MIN_FILTER : constant GLenum;
-   GL_TEXTURE_WRAP_S     : constant GLenum;
-   GL_TEXTURE_WRAP_T     : constant GLenum;
+   GL_TEXTURE_MAG_FILTER                        : constant GLenum;
+   GL_TEXTURE_MIN_FILTER                        : constant GLenum;
+   GL_TEXTURE_WRAP_S                            : constant GLenum;
+   GL_TEXTURE_WRAP_T                            : constant GLenum;
 
-   GL_NEAREST                : constant GLenum;
-   GL_LINEAR                 : constant GLenum;
-   GL_NEAREST_MIPMAP_NEAREST : constant GLenum;
-   GL_LINEAR_MIPMAP_NEAREST  : constant GLenum;
-   GL_NEAREST_MIPMAP_LINEAR  : constant GLenum;
-   GL_LINEAR_MIPMAP_LINEAR   : constant GLenum;
+   GL_NEAREST                                   : constant GLenum;
+   GL_LINEAR                                    : constant GLenum;
+   GL_NEAREST_MIPMAP_NEAREST                    : constant GLenum;
+   GL_LINEAR_MIPMAP_NEAREST                     : constant GLenum;
+   GL_NEAREST_MIPMAP_LINEAR                     : constant GLenum;
+   GL_LINEAR_MIPMAP_LINEAR                      : constant GLenum;
 
-   GL_REPEAT          : constant GLenum;
-   GL_CLAMP_TO_EDGE   : constant GLenum;
-   GL_MIRRORED_REPEAT : constant GLenum;
+   GL_REPEAT                                    : constant GLenum;
+   GL_CLAMP_TO_EDGE                             : constant GLenum;
+   GL_MIRRORED_REPEAT                           : constant GLenum;
 
-   GL_CULL_FACE                : constant GLenum;
-   GL_BLEND                    : constant GLenum;
-   GL_DITHER                   : constant GLenum;
-   GL_STENCIL_TEST             : constant GLenum;
-   GL_DEPTH_TEST               : constant GLenum;
-   GL_SCISSOR_TEST             : constant GLenum;
-   GL_POLYGON_OFFSET_FILL      : constant GLenum;
-   GL_SAMPLE_ALPHA_TO_COVERAGE : constant GLenum;
-   GL_SAMPLE_COVERAGE          : constant GLenum;
+   GL_CULL_FACE                                 : constant GLenum;
+   GL_BLEND                                     : constant GLenum;
+   GL_DITHER                                    : constant GLenum;
+   GL_STENCIL_TEST                              : constant GLenum;
+   GL_DEPTH_TEST                                : constant GLenum;
+   GL_SCISSOR_TEST                              : constant GLenum;
+   GL_POLYGON_OFFSET_FILL                       : constant GLenum;
+   GL_SAMPLE_ALPHA_TO_COVERAGE                  : constant GLenum;
+   GL_SAMPLE_COVERAGE                           : constant GLenum;
 
-   GL_ZERO                     : constant GLenum;
-   GL_ONE                      : constant GLenum;
-   GL_SRC_COLOR                : constant GLenum;
-   GL_ONE_MINUS_SRC_COLOR      : constant GLenum;
-   GL_DST_COLOR                : constant GLenum;
-   GL_ONE_MINUS_DST_COLOR      : constant GLenum;
-   GL_SRC_ALPHA                : constant GLenum;
-   GL_ONE_MINUS_SRC_ALPHA      : constant GLenum;
-   GL_DST_ALPHA                : constant GLenum;
-   GL_ONE_MINUS_DST_ALPHA      : constant GLenum;
-   GL_CONSTANT_COLOR           : constant GLenum;
-   GL_ONE_MINUS_CONSTANT_COLOR : constant GLenum;
-   GL_CONSTANT_ALPHA           : constant GLenum;
-   GL_ONE_MINUS_CONSTANT_ALPHA : constant GLenum;
-   GL_SRC_ALPHA_SATURATE       : constant GLenum;
+   GL_ZERO                                      : constant GLenum;
+   GL_ONE                                       : constant GLenum;
+   GL_SRC_COLOR                                 : constant GLenum;
+   GL_ONE_MINUS_SRC_COLOR                       : constant GLenum;
+   GL_DST_COLOR                                 : constant GLenum;
+   GL_ONE_MINUS_DST_COLOR                       : constant GLenum;
+   GL_SRC_ALPHA                                 : constant GLenum;
+   GL_ONE_MINUS_SRC_ALPHA                       : constant GLenum;
+   GL_DST_ALPHA                                 : constant GLenum;
+   GL_ONE_MINUS_DST_ALPHA                       : constant GLenum;
+   GL_CONSTANT_COLOR                            : constant GLenum;
+   GL_ONE_MINUS_CONSTANT_COLOR                  : constant GLenum;
+   GL_CONSTANT_ALPHA                            : constant GLenum;
+   GL_ONE_MINUS_CONSTANT_ALPHA                  : constant GLenum;
+   GL_SRC_ALPHA_SATURATE                        : constant GLenum;
 
-   GL_NEVER                    : constant GLenum;
-   GL_LESS                     : constant GLenum;
-   GL_EQUAL                    : constant GLenum;
-   GL_LEQUAL                   : constant GLenum;
-   GL_GREATER                  : constant GLenum;
-   GL_NOTEQUAL                 : constant GLenum;
-   GL_GEQUAL                   : constant GLenum;
-   GL_ALWAYS                   : constant GLenum;
+   GL_NEVER                                     : constant GLenum;
+   GL_LESS                                      : constant GLenum;
+   GL_EQUAL                                     : constant GLenum;
+   GL_LEQUAL                                    : constant GLenum;
+   GL_GREATER                                   : constant GLenum;
+   GL_NOTEQUAL                                  : constant GLenum;
+   GL_GEQUAL                                    : constant GLenum;
+   GL_ALWAYS                                    : constant GLenum;
 
-   GL_NO_ERROR                 : constant GLenum;
-   GL_INVALID_ENUM             : constant GLenum;
-   GL_INVALID_VALUE            : constant GLenum;
-   GL_INVALID_OPERATION        : constant GLenum;
-   GL_OUT_OF_MEMORY            : constant GLenum;
+   GL_NO_ERROR                                  : constant GLenum;
+   GL_INVALID_ENUM                              : constant GLenum;
+   GL_INVALID_VALUE                             : constant GLenum;
+   GL_INVALID_OPERATION                         : constant GLenum;
+   GL_OUT_OF_MEMORY                             : constant GLenum;
+
+   GL_PATCH_VERTICES                            : constant GLenum;
+   GL_MAX_GEOMETRY_OUTPUT_VERTICES              : constant GLenum;
 
 --            <enum name="GL_FALSE"/>
 --            <enum name="GL_TRUE"/>
@@ -525,112 +528,116 @@ private
    GL_STENCIL_BUFFER_BIT : constant GLbitfield := 16#0000_0400#;
    GL_COLOR_BUFFER_BIT   : constant GLbitfield := 16#0000_4000#;
 
-   GL_ZERO                        : constant GLenum := 16#0000#;
-   GL_ONE                         : constant GLenum := 16#0001#;
+   GL_ZERO                                      : constant GLenum := 16#0000#;
+   GL_ONE                                       : constant GLenum := 16#0001#;
 
-   GL_NO_ERROR                    : constant GLenum := 16#0000#;
-   GL_INVALID_ENUM                : constant GLenum := 16#0500#;
-   GL_INVALID_VALUE               : constant GLenum := 16#0501#;
-   GL_INVALID_OPERATION           : constant GLenum := 16#0502#;
-   GL_OUT_OF_MEMORY               : constant GLenum := 16#0505#;
+   GL_NO_ERROR                                  : constant GLenum := 16#0000#;
+   GL_INVALID_ENUM                              : constant GLenum := 16#0500#;
+   GL_INVALID_VALUE                             : constant GLenum := 16#0501#;
+   GL_INVALID_OPERATION                         : constant GLenum := 16#0502#;
+   GL_OUT_OF_MEMORY                             : constant GLenum := 16#0505#;
 
-   GL_POINTS                      : constant GLenum := 16#0000#;
-   GL_LINES                       : constant GLenum := 16#0001#;
-   GL_LINE_LOOP                   : constant GLenum := 16#0002#;
-   GL_LINE_STRIP                  : constant GLenum := 16#0003#;
-   GL_TRIANGLES                   : constant GLenum := 16#0004#;
-   GL_TRIANGLE_STRIP              : constant GLenum := 16#0005#;
-   GL_TRIANGLE_FAN                : constant GLenum := 16#0006#;
-   GL_PATCHES                     : constant GLenum := 16#000E#;
+   GL_POINTS                                    : constant GLenum := 16#0000#;
+   GL_LINES                                     : constant GLenum := 16#0001#;
+   GL_LINE_LOOP                                 : constant GLenum := 16#0002#;
+   GL_LINE_STRIP                                : constant GLenum := 16#0003#;
+   GL_TRIANGLES                                 : constant GLenum := 16#0004#;
+   GL_TRIANGLE_STRIP                            : constant GLenum := 16#0005#;
+   GL_TRIANGLE_FAN                              : constant GLenum := 16#0006#;
+   GL_PATCHES                                   : constant GLenum := 16#000E#;
 
-   GL_NEVER                       : constant GLenum := 16#0200#;
-   GL_LESS                        : constant GLenum := 16#0201#;
-   GL_EQUAL                       : constant GLenum := 16#0202#;
-   GL_LEQUAL                      : constant GLenum := 16#0203#;
-   GL_GREATER                     : constant GLenum := 16#0204#;
-   GL_NOTEQUAL                    : constant GLenum := 16#0205#;
-   GL_GEQUAL                      : constant GLenum := 16#0206#;
-   GL_ALWAYS                      : constant GLenum := 16#0207#;
+   GL_NEVER                                     : constant GLenum := 16#0200#;
+   GL_LESS                                      : constant GLenum := 16#0201#;
+   GL_EQUAL                                     : constant GLenum := 16#0202#;
+   GL_LEQUAL                                    : constant GLenum := 16#0203#;
+   GL_GREATER                                   : constant GLenum := 16#0204#;
+   GL_NOTEQUAL                                  : constant GLenum := 16#0205#;
+   GL_GEQUAL                                    : constant GLenum := 16#0206#;
+   GL_ALWAYS                                    : constant GLenum := 16#0207#;
 
-   GL_SRC_COLOR                   : constant GLenum := 16#0300#;
-   GL_ONE_MINUS_SRC_COLOR         : constant GLenum := 16#0301#;
-   GL_SRC_ALPHA                   : constant GLenum := 16#0302#;
-   GL_ONE_MINUS_SRC_ALPHA         : constant GLenum := 16#0303#;
-   GL_DST_ALPHA                   : constant GLenum := 16#0304#;
-   GL_ONE_MINUS_DST_ALPHA         : constant GLenum := 16#0305#;
-   GL_DST_COLOR                   : constant GLenum := 16#0306#;
-   GL_ONE_MINUS_DST_COLOR         : constant GLenum := 16#0307#;
-   GL_SRC_ALPHA_SATURATE          : constant GLenum := 16#0308#;
+   GL_SRC_COLOR                                 : constant GLenum := 16#0300#;
+   GL_ONE_MINUS_SRC_COLOR                       : constant GLenum := 16#0301#;
+   GL_SRC_ALPHA                                 : constant GLenum := 16#0302#;
+   GL_ONE_MINUS_SRC_ALPHA                       : constant GLenum := 16#0303#;
+   GL_DST_ALPHA                                 : constant GLenum := 16#0304#;
+   GL_ONE_MINUS_DST_ALPHA                       : constant GLenum := 16#0305#;
+   GL_DST_COLOR                                 : constant GLenum := 16#0306#;
+   GL_ONE_MINUS_DST_COLOR                       : constant GLenum := 16#0307#;
+   GL_SRC_ALPHA_SATURATE                        : constant GLenum := 16#0308#;
 
-   GL_CULL_FACE                   : constant GLenum := 16#0B44#;
-   GL_DEPTH_TEST                  : constant GLenum := 16#0B71#;
-   GL_STENCIL_TEST                : constant GLenum := 16#0B90#;
-   GL_DITHER                      : constant GLenum := 16#0BD0#;
-   GL_BLEND                       : constant GLenum := 16#0BE2#;
+   GL_CULL_FACE                                 : constant GLenum := 16#0B44#;
+   GL_DEPTH_TEST                                : constant GLenum := 16#0B71#;
+   GL_STENCIL_TEST                              : constant GLenum := 16#0B90#;
+   GL_DITHER                                    : constant GLenum := 16#0BD0#;
+   GL_BLEND                                     : constant GLenum := 16#0BE2#;
 
-   GL_SCISSOR_TEST                : constant GLenum := 16#0C11#;
+   GL_SCISSOR_TEST                              : constant GLenum := 16#0C11#;
 
-   GL_TEXTURE_2D                  : constant GLenum := 16#0DE1#;
+   GL_TEXTURE_2D                                : constant GLenum := 16#0DE1#;
 
-   GL_BYTE                        : constant GLenum := 16#1400#;
-   GL_UNSIGNED_BYTE               : constant GLenum := 16#1401#;
-   GL_SHORT                       : constant GLenum := 16#1402#;
-   GL_UNSIGNED_SHORT              : constant GLenum := 16#1403#;
-   GL_FLOAT                       : constant GLenum := 16#1406#;
-   GL_FIXED                       : constant GLenum := 16#140C#;
+   GL_BYTE                                      : constant GLenum := 16#1400#;
+   GL_UNSIGNED_BYTE                             : constant GLenum := 16#1401#;
+   GL_SHORT                                     : constant GLenum := 16#1402#;
+   GL_UNSIGNED_SHORT                            : constant GLenum := 16#1403#;
+   GL_FLOAT                                     : constant GLenum := 16#1406#;
+   GL_FIXED                                     : constant GLenum := 16#140C#;
 
-   GL_ALPHA                       : constant GLenum := 16#1906#;
-   GL_RGB                         : constant GLenum := 16#1907#;
-   GL_RGBA                        : constant GLenum := 16#1908#;
-   GL_LUMINANCE                   : constant GLenum := 16#1909#;
-   GL_LUMINANCE_ALPHA             : constant GLenum := 16#190A#;
+   GL_ALPHA                                     : constant GLenum := 16#1906#;
+   GL_RGB                                       : constant GLenum := 16#1907#;
+   GL_RGBA                                      : constant GLenum := 16#1908#;
+   GL_LUMINANCE                                 : constant GLenum := 16#1909#;
+   GL_LUMINANCE_ALPHA                           : constant GLenum := 16#190A#;
 
-   GL_NEAREST                     : constant GLenum := 16#2600#;
-   GL_LINEAR                      : constant GLenum := 16#2601#;
+   GL_NEAREST                                   : constant GLenum := 16#2600#;
+   GL_LINEAR                                    : constant GLenum := 16#2601#;
 
-   GL_NEAREST_MIPMAP_NEAREST      : constant GLenum := 16#2700#;
-   GL_LINEAR_MIPMAP_NEAREST       : constant GLenum := 16#2701#;
-   GL_NEAREST_MIPMAP_LINEAR       : constant GLenum := 16#2702#;
-   GL_LINEAR_MIPMAP_LINEAR        : constant GLenum := 16#2703#;
+   GL_NEAREST_MIPMAP_NEAREST                    : constant GLenum := 16#2700#;
+   GL_LINEAR_MIPMAP_NEAREST                     : constant GLenum := 16#2701#;
+   GL_NEAREST_MIPMAP_LINEAR                     : constant GLenum := 16#2702#;
+   GL_LINEAR_MIPMAP_LINEAR                      : constant GLenum := 16#2703#;
 
-   GL_TEXTURE_MAG_FILTER          : constant GLenum := 16#2800#;
-   GL_TEXTURE_MIN_FILTER          : constant GLenum := 16#2801#;
-   GL_TEXTURE_WRAP_S              : constant GLenum := 16#2802#;
-   GL_TEXTURE_WRAP_T              : constant GLenum := 16#2803#;
+   GL_TEXTURE_MAG_FILTER                        : constant GLenum := 16#2800#;
+   GL_TEXTURE_MIN_FILTER                        : constant GLenum := 16#2801#;
+   GL_TEXTURE_WRAP_S                            : constant GLenum := 16#2802#;
+   GL_TEXTURE_WRAP_T                            : constant GLenum := 16#2803#;
 
-   GL_REPEAT                      : constant GLenum := 16#2901#;
+   GL_REPEAT                                    : constant GLenum := 16#2901#;
 
-   GL_CONSTANT_COLOR              : constant GLenum := 16#8001#;
-   GL_ONE_MINUS_CONSTANT_COLOR    : constant GLenum := 16#8002#;
-   GL_CONSTANT_ALPHA              : constant GLenum := 16#8003#;
-   GL_ONE_MINUS_CONSTANT_ALPHA    : constant GLenum := 16#8004#;
-   GL_UNSIGNED_SHORT_4_4_4_4      : constant GLenum := 16#8033#;
-   GL_UNSIGNED_SHORT_5_5_5_1      : constant GLenum := 16#8034#;
-   GL_POLYGON_OFFSET_FILL         : constant GLenum := 16#8037#;
-   GL_RGBA4                       : constant GLenum := 16#8056#;
-   GL_RGB5_A1                     : constant GLenum := 16#8057#;
-   GL_SAMPLE_ALPHA_TO_COVERAGE    : constant GLenum := 16#809E#;
-   GL_SAMPLE_COVERAGE             : constant GLenum := 16#80A0#;
+   GL_CONSTANT_COLOR                            : constant GLenum := 16#8001#;
+   GL_ONE_MINUS_CONSTANT_COLOR                  : constant GLenum := 16#8002#;
+   GL_CONSTANT_ALPHA                            : constant GLenum := 16#8003#;
+   GL_ONE_MINUS_CONSTANT_ALPHA                  : constant GLenum := 16#8004#;
+   GL_UNSIGNED_SHORT_4_4_4_4                    : constant GLenum := 16#8033#;
+   GL_UNSIGNED_SHORT_5_5_5_1                    : constant GLenum := 16#8034#;
+   GL_POLYGON_OFFSET_FILL                       : constant GLenum := 16#8037#;
+   GL_RGBA4                                     : constant GLenum := 16#8056#;
+   GL_RGB5_A1                                   : constant GLenum := 16#8057#;
+   GL_SAMPLE_ALPHA_TO_COVERAGE                  : constant GLenum := 16#809E#;
+   GL_SAMPLE_COVERAGE                           : constant GLenum := 16#80A0#;
 
-   GL_CLAMP_TO_EDGE               : constant GLenum := 16#812F#;
-   GL_DEPTH_COMPONENT16           : constant GLenum := 16#81A5#;
+   GL_CLAMP_TO_EDGE                             : constant GLenum := 16#812F#;
+   GL_DEPTH_COMPONENT16                         : constant GLenum := 16#81A5#;
 
-   GL_UNSIGNED_SHORT_5_6_5        : constant GLenum := 16#8363#;
-   GL_MIRRORED_REPEAT             : constant GLenum := 16#8370#;
+   GL_UNSIGNED_SHORT_5_6_5                      : constant GLenum := 16#8363#;
+   GL_MIRRORED_REPEAT                           : constant GLenum := 16#8370#;
 
-   GL_TEXTURE_CUBE_MAP_POSITIVE_X : constant GLenum := 16#8515#;
-   GL_TEXTURE_CUBE_MAP_NEGATIVE_X : constant GLenum := 16#8516#;
-   GL_TEXTURE_CUBE_MAP_POSITIVE_Y : constant GLenum := 16#8517#;
-   GL_TEXTURE_CUBE_MAP_NEGATIVE_Y : constant GLenum := 16#8518#;
-   GL_TEXTURE_CUBE_MAP_POSITIVE_Z : constant GLenum := 16#8519#;
-   GL_TEXTURE_CUBE_MAP_NEGATIVE_Z : constant GLenum := 16#851A#;
+   GL_TEXTURE_CUBE_MAP_POSITIVE_X               : constant GLenum := 16#8515#;
+   GL_TEXTURE_CUBE_MAP_NEGATIVE_X               : constant GLenum := 16#8516#;
+   GL_TEXTURE_CUBE_MAP_POSITIVE_Y               : constant GLenum := 16#8517#;
+   GL_TEXTURE_CUBE_MAP_NEGATIVE_Y               : constant GLenum := 16#8518#;
+   GL_TEXTURE_CUBE_MAP_POSITIVE_Z               : constant GLenum := 16#8519#;
+   GL_TEXTURE_CUBE_MAP_NEGATIVE_Z               : constant GLenum := 16#851A#;
 
-   GL_COLOR_ATTACHMENT0           : constant GLenum := 16#8CE0#;
+   GL_COLOR_ATTACHMENT0                         : constant GLenum := 16#8CE0#;
 
-   GL_DEPTH_ATTACHMENT            : constant GLenum := 16#8D00#;
-   GL_STENCIL_ATTACHMENT          : constant GLenum := 16#8D20#;
-   GL_STENCIL_INDEX8              : constant GLenum := 16#8D48#;
-   GL_RGB565                      : constant GLenum := 16#8D62#;
+   GL_DEPTH_ATTACHMENT                          : constant GLenum := 16#8D00#;
+   GL_STENCIL_ATTACHMENT                        : constant GLenum := 16#8D20#;
+   GL_STENCIL_INDEX8                            : constant GLenum := 16#8D48#;
+   GL_RGB565                                    : constant GLenum := 16#8D62#;
+
+   GL_MAX_GEOMETRY_OUTPUT_VERTICES              : constant GLenum := 16#8DE0#;
+
+   GL_PATCH_VERTICES                            : constant GLenum := 16#8E72#;
 
    pragma Convention (Fortran, GLfixed_Matrix_2x2);
    pragma Convention (Fortran, GLfixed_Matrix_3x3);
